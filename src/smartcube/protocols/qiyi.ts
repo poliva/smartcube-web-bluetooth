@@ -128,6 +128,12 @@ class QiYiConnection implements SmartCubeConnection {
         }
 
         const msg = this.encrypter.decrypt(encMsg);
+
+        if (msg[0] === 0xCC && msg[1] === 0x10) {
+            this.handleQuaternionPacket(msg);
+            return;
+        }
+
         const trimmed = msg.slice(0, msg[1]);
         if (trimmed.length < 3 || crc16modbus(trimmed) !== 0) {
             return;
@@ -135,6 +141,35 @@ class QiYiConnection implements SmartCubeConnection {
 
         this.parseCubeData(trimmed);
     };
+
+    private handleQuaternionPacket(msg: number[]): void {
+        if (msg.length < 16) return;
+
+        const expectedCrc = crc16modbus(msg.slice(0, 14));
+        const actualCrc = msg[14] | (msg[15] << 8);
+        if (expectedCrc !== actualCrc) return;
+
+        if (!this.capabilities.gyroscope) {
+            this.capabilities.gyroscope = true;
+        }
+
+        const dv = new DataView(Uint8Array.from(msg).buffer);
+        const ax = dv.getInt16(6, false) / 1000;
+        const ay = dv.getInt16(8, false) / 1000;
+        const az = dv.getInt16(10, false) / 1000;
+        const aw = dv.getInt16(12, false) / 1000;
+
+        this.events$.next({
+            timestamp: now(),
+            type: "GYRO",
+            quaternion: {
+                x: ax,
+                y: -az,
+                z: ay,
+                w: aw
+            }
+        });
+    }
 
     private parseCubeData(msg: number[]): void {
         const timestamp = now();

@@ -89,7 +89,7 @@ class Moyu32Connection implements SmartCubeConnection {
     readonly deviceName: string;
     readonly deviceMAC: string;
     readonly capabilities: SmartCubeCapabilities = {
-        gyroscope: false,
+        gyroscope: true,
         battery: true,
         facelets: true,
         hardware: true,
@@ -142,6 +142,12 @@ class Moyu32Connection implements SmartCubeConnection {
             raw[i] = value.getUint8(i);
         }
         const decoded = this.encrypter ? this.encrypter.decrypt(raw) : raw;
+
+        if ((decoded[0] | 0) === 171) {
+            this.parseGyroData(decoded, timestamp);
+            return;
+        }
+
         const bits = decoded.map(b => ((b + 256) & 0xFF).toString(2).padStart(8, '0')).join('');
         const msgType = parseInt(bits.slice(0, 8), 2);
 
@@ -242,6 +248,29 @@ class Moyu32Connection implements SmartCubeConnection {
                 this.deviceTimeOffset = timestamp - this.deviceTime;
             }
         }
+    }
+
+    private parseGyroData(decoded: number[], timestamp: number): void {
+        const dv = new DataView(Uint8Array.from(decoded).buffer);
+        const scale = 1073741824; // 2^30
+        let w = dv.getInt32(1, true) / scale;
+        let x = dv.getInt32(5, true) / scale;
+        let y = dv.getInt32(9, true) / scale;
+        let z = dv.getInt32(13, true) / scale;
+
+        const len = Math.hypot(w, x, y, z);
+        if (len > 0) {
+            w /= len;
+            x /= len;
+            y /= len;
+            z /= len;
+        }
+
+        this.events$.next({
+            timestamp,
+            type: "GYRO",
+            quaternion: { x, y, z, w }
+        });
     }
 
     private onDisconnect = (): void => {
