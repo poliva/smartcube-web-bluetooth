@@ -15,7 +15,8 @@
     "clean": "rm -rf dist/",
     "compile:bundles": "rollup -c",
     "compile:types": "tsc -p tsconfig.types.json",
-    "build": "npm run clean && npm run compile:types && npm run compile:bundles"
+    "build": "npm run clean && npm run compile:types && npm run compile:bundles",
+    "prepare": "npm run build"
   },
   "keywords": [
     "GAN",
