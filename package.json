@@ -1,6 +1,6 @@
 {
-  "name": "gan-web-bluetooth",
-  "version": "3.0.2",
+  "name": "smartcube-web-bluetooth",
+  "version": "4.0.0",
   "description": "Library for interaction with Smart Cubes (GAN, Giiker, GoCube, MoYu, QiYi) and GAN Smart Timers using Web Bluetooth API",
   "private": false,
   "types": "./dist/types/index.d.ts",
@@ -35,11 +35,11 @@
     "Speedcubing",
     "Rubik's Cube"
   ],
-  "author": "Andy Fedotov <andy.fedotov@gmail.com>",
+  "author": "Andy Fedotov and Pau Oliva",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/afedotov/gan-web-bluetooth.git"
+    "url": "git+https://github.com/poliva/smartcube-web-bluetooth.git"
   },
   "dependencies": {
     "@types/web-bluetooth": "^0.0.20",

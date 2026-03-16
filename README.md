@@ -1,20 +1,108 @@
-## Use of GAN Smart Timers & Smart Cubes via Web Bluetooth API
+## smartcube-web-bluetooth: multi-vendor Smart Cubes & GAN Smart Timers via Web Bluetooth API
 
-This library is designed for easy interaction with GAN Smart Timers and Smart Cubes 
-on the platforms that support [Web Bluetooth API](https://github.com/WebBluetoothCG/web-bluetooth/blob/main/implementation-status.md).
+This library is designed for easy interaction with Smart Cubes (GAN, Giiker, GoCube, MoYu, QiYi) and GAN Smart Timers on platforms that support [Web Bluetooth API](https://github.com/WebBluetoothCG/web-bluetooth/blob/main/implementation-status.md).
 
-Nature of the GAN Smart Timer and Smart Cubes is event-driven, so this library is
-depends on [RxJS](https://rxjs.dev/), and library API provide [Observable](https://rxjs.dev/guide/observable) 
-where you can subscribe for events.
+Nature of the GAN Smart Timer and Smart Cubes is event-driven, so this library depends on [RxJS](https://rxjs.dev/), and library API provides [Observable](https://rxjs.dev/guide/observable) where you can subscribe for events.
 
 ## Installation
 
-Package `gan-web-bluetooth` is available in the npm registry:
+The project is currently hosted on GitHub:
 
-[![npm version](https://badge.fury.io/js/gan-web-bluetooth.svg)](https://badge.fury.io/js/gan-web-bluetooth)
+- Repository: `https://github.com/poliva/smartcube-web-bluetooth`
 
+You can consume it directly via npm using the GitHub URL:
+
+```bash
+npm install poliva/smartcube-web-bluetooth
 ```
-$ npm install gan-web-bluetooth
+
+Or, add it to your `package.json`:
+
+```json
+{
+  "dependencies": {
+    "smartcube-web-bluetooth": "github:poliva/smartcube-web-bluetooth"
+  }
+}
+```
+
+If you are upgrading from the original [gan-web-bluetooth](https://afedotov.github.io/gan-timer-display/) package:
+
+- The existing GAN-specific APIs (`connectGanCube`, `connectGanTimer`, etc.) remain available for backwards compatibility.
+- A new generic Smart Cube API (`connectSmartCube`, `SmartCubeConnection`, `SmartCubeEvent`, …) is now the recommended entry point for all brands.
+
+## Smart Cubes
+
+### Supported Smart Cubes
+
+Via the generic Smart Cube API (`connectSmartCube`) this library supports:
+
+- GAN Smart Cubes (Gen2 / Gen3 / Gen4)
+- Giiker / Mi Smart / Hi- cubes
+- GoCube / Rubik’s Connected
+- MoYu smart cubes:
+  - MoYu AI 2023 (GAN Gen2 protocol)
+  - MoYu MHC smart cubes
+  - MoYu WRM smart cubes (`WCU_MY3`)
+- QiYi Smart Cubes and XMD Tornado V4
+
+
+### Generic Smart Cube API
+
+For new applications, use the generic Smart Cube API. It automatically detects the connected cube brand and exposes a unified event model.
+
+Sample TypeScript code:
+
+```typescript
+import {
+    connectSmartCube,
+    SmartCubeConnection,
+    SmartCubeEvent
+} from 'smartcube-web-bluetooth';
+
+// Connect to any supported smart cube
+const conn: SmartCubeConnection = await connectSmartCube();
+
+conn.events$.subscribe((event: SmartCubeEvent) => {
+    if (event.type === "FACELETS") {
+        console.log("Cube facelets state", event.facelets);
+    } else if (event.type === "MOVE") {
+        console.log("Cube move", event.move, "face", event.face, "direction", event.direction);
+    } else if (event.type === "GYRO") {
+        console.log("Cube orientation quaternion", event.quaternion);
+    } else if (event.type === "BATTERY") {
+        console.log("Battery level", event.batteryLevel);
+    }
+});
+
+// Request current facelets / battery if supported
+if (conn.capabilities.facelets) {
+    await conn.sendCommand({ type: "REQUEST_FACELETS" });
+}
+if (conn.capabilities.battery) {
+    await conn.sendCommand({ type: "REQUEST_BATTERY" });
+}
+```
+
+### GAN-specific Smart Cube API (legacy)
+
+The original GAN-only APIs are still available for existing applications and continue to work on top of the new implementation:
+
+Sample TypeScript code:
+```typescript
+import { connectGanCube } from 'smartcube-web-bluetooth';
+
+var conn = await connectGanCube();
+
+conn.events$.subscribe((event) => {
+    if (event.type == "FACELETS") {
+        console.log("Cube facelets state", event.facelets);
+    } else if (event.type == "MOVE") {
+        console.log("Cube move", event.move);
+    }
+});
+
+await conn.sendCubeCommand({ type: "REQUEST_FACELETS" });
 ```
 
 ## GAN Smart Timers
@@ -85,45 +173,6 @@ stateDiagram-v2
     FINISHED --> IDLE
 ```
 
-## GAN Smart Cubes
-
-Supported Smart Cube devices:
-- GAN Gen2 protocol smart cubes:
-  - GAN Mini ui FreePlay
-  - GAN12 ui FreePlay
-  - GAN12 ui
-  - GAN356 i Carry S
-  - GAN356 i Carry
-  - GAN356 i 3
-  - Monster Go 3Ai
-- MoYu AI 2023 (this cube uses GAN Gen2 protocol)
-- GAN Gen3 protocol smart cubes:
-  - GAN356 i Carry 2
-- GAN Gen4 protocol smart cubes:
-  - GAN12 ui Maglev
-  - GAN14 ui FreePlay
-
-Sample application how to use this library with GAN Smart Cubes can be found here:
-- https://github.com/afedotov/gan-cube-sample
-- Live version: [gan-cube-sample](https://afedotov.github.io/gan-cube-sample/)
-
-Sample TypeScript code:
-```typescript
-import { connectGanCube } from 'gan-web-bluetooth';
-
-var conn = await connectGanCube();
-
-conn.events$.subscribe((event) => {
-    if (event.type == "FACELETS") {
-        console.log("Cube facelets state", event.facelets);
-    } else if (event.type == "MOVE") {
-        console.log("Cube move", event.move);
-    }
-});
-
-await conn.sendCubeCommand({ type: "REQUEST_FACELETS" });
-```
-
 Since internal clock of the most GAN Smart Cubes is not ideally calibrated, they typically introduce 
 noticeable time skew with host device clock. Best practice here is to record timestamps of move events 
 during solve using both clocks - host device and cube. Then apply linear regression algorithm 
@@ -132,4 +181,3 @@ and firstly implemented by **Chen Shuang** in the **csTimer**. This library also
 function to accomplish such procedure. You can look into the mentioned sample application code for details, 
 and this [Jupyter notebook](https://github.com/afedotov/scipy-notebooks/blob/main/ts-linregress.ipynb) for visualisation
 of such approach.
-
