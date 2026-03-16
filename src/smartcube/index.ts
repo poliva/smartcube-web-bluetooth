@@ -1,0 +1,28 @@
+
+// Register all protocols (side-effect imports)
+import './protocols/gan';
+import './protocols/giiker';
+import './protocols/gocube';
+import './protocols/moyu-mhc';
+import './protocols/moyu32';
+import './protocols/qiyi';
+
+// Re-export types and connect function
+export type {
+    SmartCubeEvent,
+    SmartCubeEventMessage,
+    SmartCubeMoveEvent,
+    SmartCubeFaceletsEvent,
+    SmartCubeGyroEvent,
+    SmartCubeBatteryEvent,
+    SmartCubeHardwareEvent,
+    SmartCubeDisconnectEvent,
+    SmartCubeCommand,
+    SmartCubeCapabilities,
+    SmartCubeConnection
+} from './types';
+
+export { connectSmartCube } from './connect';
+
+export type { SmartCubeProtocol } from './protocol';
+export { registerProtocol, getRegisteredProtocols } from './protocol';
