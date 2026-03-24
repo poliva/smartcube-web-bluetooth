@@ -13,6 +13,7 @@
       "DOM"
     ],
     "strict": true,
+    "skipLibCheck": true,
     "noEmit": true,
     "forceConsistentCasingInFileNames": true,
     "strictNullChecks": true,

@@ -80,15 +80,24 @@ type MacAddressProvider = (device: BluetoothDevice, isFallbackCall?: boolean) =>
 async function connectGanCube(customMacAddressProvider?: MacAddressProvider): Promise<GanCubeConnection> {
 
     // Request user for the bluetooth device (popup selection dialog)
+    const nameFilters: BluetoothLEScanFilter[] = [
+        { namePrefix: "GAN" },
+        { namePrefix: "MG" },
+        { namePrefix: "AiCube" },
+    ];
+    const cicFilters: BluetoothLEScanFilter[] = def.GAN_CIC_LIST.map((companyIdentifier) => ({
+        manufacturerData: [{ companyIdentifier }],
+    }));
     var device: BluetoothDeviceWithMAC = await navigator.bluetooth.requestDevice(
         {
-            filters: [
-                { namePrefix: "GAN" },
-                { namePrefix: "MG" },
-                { namePrefix: "AiCube" }
+            filters: [...nameFilters, ...cicFilters],
+            optionalServices: [
+                def.GAN_GEN2_SERVICE,
+                def.GAN_GEN3_SERVICE,
+                def.GAN_GEN4_SERVICE,
+                "0000180a-0000-1000-8000-00805f9b34fb",
+                "00001800-0000-1000-8000-00805f9b34fb",
             ],
-            optionalServices: [def.GAN_GEN2_SERVICE, def.GAN_GEN3_SERVICE, def.GAN_GEN4_SERVICE],
-            optionalManufacturerData: def.GAN_CIC_LIST
         }
     );
 

@@ -1,6 +1,8 @@
-
 import { Subject, map } from 'rxjs';
 import { SmartCubeConnection, SmartCubeEvent, SmartCubeCommand, SmartCubeCapabilities, MacAddressProvider } from '../types';
+import type { AttachmentContext } from '../attachment/types';
+import { normalizeUuid } from '../attachment/normalize-uuid';
+import { getCachedMacForDevice, macFromGanManufacturerData, waitForManufacturerData } from '../attachment/address-hints';
 import { SmartCubeProtocol, registerProtocol } from '../protocol';
 import * as def from '../../gan-cube-definitions';
 import { GanGen2CubeEncrypter, GanGen3CubeEncrypter, GanGen4CubeEncrypter } from '../../gan-cube-encrypter';
@@ -13,52 +15,6 @@ import {
     GanGen3ProtocolDriver,
     GanGen4ProtocolDriver
 } from '../../gan-cube-protocol';
-
-function getManufacturerDataBytes(manufacturerData: BluetoothManufacturerData | DataView): DataView | undefined {
-    if (manufacturerData instanceof DataView) {
-        return new DataView(manufacturerData.buffer.slice(2, 11));
-    }
-    for (const id of def.GAN_CIC_LIST) {
-        if (manufacturerData.has(id)) {
-            return new DataView(manufacturerData.get(id)!.buffer.slice(0, 9));
-        }
-    }
-    return;
-}
-
-function extractMAC(manufacturerData: BluetoothManufacturerData): string {
-    const mac: string[] = [];
-    const dataView = getManufacturerDataBytes(manufacturerData);
-    if (dataView && dataView.byteLength >= 6) {
-        for (let i = 1; i <= 6; i++) {
-            mac.push(dataView.getUint8(dataView.byteLength - i).toString(16).toUpperCase().padStart(2, "0"));
-        }
-    }
-    return mac.join(":");
-}
-
-async function autoRetrieveMacAddress(device: BluetoothDevice): Promise<string | null> {
-    return new Promise<string | null>((resolve) => {
-        if (typeof device.watchAdvertisements != 'function') {
-            resolve(null);
-        }
-        const abortController = new AbortController();
-        const onAdvEvent = (evt: Event) => {
-            device.removeEventListener("advertisementreceived", onAdvEvent);
-            abortController.abort();
-            const mac = extractMAC((evt as BluetoothAdvertisingEvent).manufacturerData);
-            resolve(mac || null);
-        };
-        const onAbort = () => {
-            device.removeEventListener("advertisementreceived", onAdvEvent);
-            abortController.abort();
-            resolve(null);
-        };
-        device.addEventListener("advertisementreceived", onAdvEvent);
-        device.watchAdvertisements({ signal: abortController.signal }).catch(onAbort);
-        setTimeout(onAbort, 10000);
-    });
-}
 
 function ganEventToSmartEvent(event: GanCubeEvent): SmartCubeEvent {
     switch (event.type) {
@@ -151,12 +107,36 @@ class GanSmartCubeConnection implements SmartCubeConnection {
     }
 }
 
-async function connectGanDevice(device: BluetoothDevice, macProvider?: MacAddressProvider): Promise<SmartCubeConnection> {
+async function connectGanDevice(
+    device: BluetoothDevice,
+    macProvider?: MacAddressProvider,
+    context?: AttachmentContext
+): Promise<SmartCubeConnection> {
     const bleDevice = device as BluetoothDeviceWithMAC;
 
-    const mac = (macProvider && await macProvider(device, false))
-        || await autoRetrieveMacAddress(device)
-        || (macProvider && await macProvider(device, true));
+    let mac: string | null = null;
+    if (context?.advertisementManufacturerData) {
+        mac = macFromGanManufacturerData(context.advertisementManufacturerData);
+    }
+    mac = mac || getCachedMacForDevice(device);
+    if (!mac && macProvider) {
+        const r = await macProvider(device, false);
+        if (r) {
+            mac = r;
+        }
+    }
+    if (!mac) {
+        const mf = await waitForManufacturerData(device, 10000);
+        if (mf) {
+            mac = macFromGanManufacturerData(mf);
+        }
+    }
+    if (!mac && macProvider) {
+        const r = await macProvider(device, true);
+        if (r) {
+            mac = r;
+        }
+    }
 
     if (!mac) {
         throw new Error('Unable to determine cube MAC address, connection is not possible!');
@@ -164,7 +144,10 @@ async function connectGanDevice(device: BluetoothDevice, macProvider?: MacAddres
     bleDevice.mac = mac;
 
     const salt = new Uint8Array(mac.split(/[:-\s]+/).map(c => parseInt(c, 16)).reverse());
-    const gatt = await device.gatt!.connect();
+    const gatt = device.gatt!;
+    if (!gatt.connected) {
+        await gatt.connect();
+    }
     const services = await gatt.getPrimaryServices();
 
     let ganConn: GanCubeConnection | null = null;
@@ -217,6 +200,24 @@ const ganProtocol: SmartCubeProtocol = {
     matchesDevice(device: BluetoothDevice): boolean {
         const name = device.name || '';
         return name.startsWith('GAN') || name.startsWith('MG') || name.startsWith('AiCube');
+    },
+
+    gattAffinity(serviceUuids: ReadonlySet<string>, _device: BluetoothDevice): number {
+        const g2 = normalizeUuid(def.GAN_GEN2_SERVICE);
+        const g3 = normalizeUuid(def.GAN_GEN3_SERVICE);
+        const g4 = normalizeUuid(def.GAN_GEN4_SERVICE);
+        const deviceInfo = normalizeUuid('0000180a-0000-1000-8000-00805f9b34fb');
+        const bonus = serviceUuids.has(deviceInfo) ? 5 : 0;
+        if (serviceUuids.has(g4)) {
+            return 120 + bonus;
+        }
+        if (serviceUuids.has(g3)) {
+            return 120 + bonus;
+        }
+        if (serviceUuids.has(g2)) {
+            return 120 + bonus;
+        }
+        return 0;
     },
 
     connect: connectGanDevice

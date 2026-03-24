@@ -1,10 +1,12 @@
 {
   "extends": "./tsconfig.json",
+  "exclude": ["node_modules", "dist"],
   "compilerOptions": {
     "noEmit": false,
     "emitDeclarationOnly": true,
     "declarationDir": "./dist/types",
     "declaration": true,
-    "declarationMap": true
+    "declarationMap": true,
+    "skipLibCheck": true
   }
 }

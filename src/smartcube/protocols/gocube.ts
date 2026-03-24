@@ -1,8 +1,10 @@
 
 import { Subject } from 'rxjs';
 import { SmartCubeConnection, SmartCubeEvent, SmartCubeCommand, SmartCubeCapabilities, MacAddressProvider } from '../types';
+import type { AttachmentContext } from '../attachment/types';
+import { normalizeUuid } from '../attachment/normalize-uuid';
 import { SmartCubeProtocol, registerProtocol } from '../protocol';
-import { CubieCube, SOLVED_FACELET } from '../cubie-cube';
+import { CubieCube } from '../cubie-cube';
 import { now } from '../ble-utils';
 
 const UUID_SUFFIX = '-b5a3-f393-e0a9-e50e24dcca9e';
@@ -168,8 +170,9 @@ class GoCubeConnection implements SmartCubeConnection {
 
 const goCubeProtocol: SmartCubeProtocol = {
     nameFilters: [
-        { namePrefix: "GoCube" },
-        { namePrefix: "Rubiks" }
+        { namePrefix: 'GoCube_' },
+        { namePrefix: 'GoCube' },
+        { namePrefix: 'Rubiks' }
     ],
     optionalServices: [SERVICE_UUID],
 
@@ -178,7 +181,15 @@ const goCubeProtocol: SmartCubeProtocol = {
         return name.startsWith('GoCube') || name.startsWith('Rubiks');
     },
 
-    async connect(device: BluetoothDevice): Promise<SmartCubeConnection> {
+    gattAffinity(serviceUuids: ReadonlySet<string>, _device: BluetoothDevice): number {
+        return serviceUuids.has(normalizeUuid(SERVICE_UUID)) ? 110 : 0;
+    },
+
+    async connect(
+        device: BluetoothDevice,
+        _macProvider?: MacAddressProvider,
+        _context?: AttachmentContext
+    ): Promise<SmartCubeConnection> {
         const name = device.name?.startsWith('GoCube') ? 'GoCube' : 'Rubiks Connected';
         const conn = new GoCubeConnection(device, name);
         await conn.init();

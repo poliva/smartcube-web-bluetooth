@@ -2,9 +2,14 @@
 import { Subject } from 'rxjs';
 import { ModeOfOperation } from 'aes-js';
 import { SmartCubeConnection, SmartCubeEvent, SmartCubeCommand, SmartCubeCapabilities, MacAddressProvider } from '../types';
+import type { AttachmentContext } from '../attachment/types';
+import { normalizeUuid } from '../attachment/normalize-uuid';
+import { getCachedMacForDevice } from '../attachment/address-hints';
+import { buildMoyu32MacCandidatesFromName } from '../attachment/mac-candidates';
+import { probeMoyu32Mac } from '../attachment/mac-probe-moyu32';
 import { SmartCubeProtocol, registerProtocol } from '../protocol';
 import { CubieCube, SOLVED_FACELET } from '../cubie-cube';
-import { now, findCharacteristic, waitForAdvertisements } from '../ble-utils';
+import { now, findCharacteristic, waitForAdvertisements, extractMacFromManufacturerData } from '../ble-utils';
 
 const SERVICE_UUID = '0783b03e-7735-b5a0-1760-a305d2795cb0';
 const CHRT_UUID_READ = '0783b03e-7735-b5a0-1760-a305d2795cb1';
@@ -13,8 +18,25 @@ const CHRT_UUID_WRITE = '0783b03e-7735-b5a0-1760-a305d2795cb2';
 const BASE_KEY = [21, 119, 58, 92, 103, 14, 45, 31, 23, 103, 42, 19, 155, 103, 82, 87];
 const BASE_IV = [17, 35, 38, 37, 134, 42, 44, 59, 85, 6, 127, 49, 126, 103, 33, 87];
 
-// CIC range 0x0100..0xFF00
-const MOYU32_CIC_LIST = Array(255).fill(undefined).map((_v: undefined, i: number) => (i + 1) << 8);
+function parseMoyu32MacFromMf(mfData: BluetoothManufacturerData | DataView | null): string | null {
+    if (!mfData) {
+        return null;
+    }
+    if (mfData instanceof DataView) {
+        return extractMacFromManufacturerData(mfData, [], true);
+    }
+    for (const id of mfData.keys()) {
+        const dataView = mfData.get(id);
+        if (dataView && dataView.byteLength >= 6) {
+            const parts: string[] = [];
+            for (let i = 0; i < 6; i++) {
+                parts.push((dataView.getUint8(dataView.byteLength - i - 1) + 0x100).toString(16).slice(1));
+            }
+            return parts.join(':');
+        }
+    }
+    return null;
+}
 
 class Moyu32Encrypter {
     private key: number[];
@@ -164,7 +186,8 @@ class Moyu32Connection implements SmartCubeConnection {
                 type: "HARDWARE",
                 hardwareName: devName.trim(),
                 softwareVersion,
-                hardwareVersion
+                hardwareVersion,
+                gyroSupported: true
             });
         } else if (msgType === 163) { // Facelets state
             if (this.prevMoveCnt === -1) {
@@ -333,53 +356,68 @@ class Moyu32Connection implements SmartCubeConnection {
     }
 }
 
-async function connectMoyu32Device(device: BluetoothDevice, macProvider?: MacAddressProvider): Promise<SmartCubeConnection> {
-    // Try to get MAC from advertisements
-    const mfData = await waitForAdvertisements(device);
-    let mac: string | null = null;
-
-    if (mfData) {
-        if (mfData instanceof DataView) {
-            const dataView = new DataView(mfData.buffer.slice(2));
-            if (dataView.byteLength >= 6) {
-                const parts: string[] = [];
-                for (let i = 0; i < 6; i++) {
-                    parts.push((dataView.getUint8(dataView.byteLength - i - 1) + 0x100).toString(16).slice(1));
-                }
-                mac = parts.join(':');
-            }
-        } else {
-            for (const id of MOYU32_CIC_LIST) {
-                if (mfData.has(id)) {
-                    const dataView = mfData.get(id)!;
-                    if (dataView.byteLength >= 6) {
-                        const parts: string[] = [];
-                        for (let i = 0; i < 6; i++) {
-                            parts.push((dataView.getUint8(dataView.byteLength - i - 1) + 0x100).toString(16).slice(1));
-                        }
-                        mac = parts.join(':');
-                    }
-                    break;
-                }
-            }
+async function connectMoyu32Device(
+    device: BluetoothDevice,
+    macProvider?: MacAddressProvider,
+    context?: AttachmentContext
+): Promise<SmartCubeConnection> {
+    let mac = parseMoyu32MacFromMf(context?.advertisementManufacturerData ?? null);
+    mac = mac || getCachedMacForDevice(device);
+    if (!mac && macProvider) {
+        const r = await macProvider(device, false);
+        if (r) {
+            mac = r;
         }
     }
 
-    if (!mac && macProvider) {
-        mac = await macProvider(device, false);
+    if (!mac) {
+        const mfData = await waitForAdvertisements(device, context?.enableAddressSearch ? 15000 : 10000);
+        mac = parseMoyu32MacFromMf(mfData);
     }
 
-    // Try to derive MAC from device name as fallback
     if (!mac) {
         const name = device.name || '';
-        const match = /^WCU_MY32_([0-9A-F]{4})$/.exec(name);
-        if (match) {
-            mac = 'CF:30:16:00:' + match[1].slice(0, 2) + ':' + match[1].slice(2, 4);
+        const m32 = /^WCU_MY32_([0-9A-Fa-f]{4})$/.exec(name);
+        if (m32) {
+            const x = m32[1]!.toUpperCase();
+            mac = `CF:30:16:00:${x.slice(0, 2)}:${x.slice(2, 4)}`;
+        }
+        const m33 = /^WCU_MY33_([0-9A-Fa-f]{4})$/.exec(name);
+        if (!mac && m33) {
+            const x = m33[1]!.toUpperCase();
+            mac = `CF:30:16:02:${x.slice(0, 2)}:${x.slice(2, 4)}`;
+        }
+    }
+
+    if (!mac && context?.enableAddressSearch) {
+        const candidates = buildMoyu32MacCandidatesFromName(device.name);
+        const timeoutMs = 2000;
+        for (let i = 0; i < candidates.length; i++) {
+            if (context.signal?.aborted) {
+                break;
+            }
+            context.onStatus?.(`Testing address (${i + 1}/${candidates.length})…`);
+            try {
+                if (
+                    await probeMoyu32Mac(device, candidates[i]!, {
+                        timeoutMs,
+                        signal: context.signal,
+                    })
+                ) {
+                    mac = candidates[i]!;
+                    break;
+                }
+            } catch {
+                /* try next */
+            }
         }
     }
 
     if (!mac && macProvider) {
-        mac = await macProvider(device, true);
+        const r = await macProvider(device, true);
+        if (r) {
+            mac = r;
+        }
     }
 
     if (!mac) {
@@ -392,15 +430,16 @@ async function connectMoyu32Device(device: BluetoothDevice, macProvider?: MacAdd
 }
 
 const moyu32Protocol: SmartCubeProtocol = {
-    nameFilters: [
-        { namePrefix: "WCU_MY3" }
-    ],
+    nameFilters: [{ namePrefix: '^S' }, { namePrefix: 'WCU_' }, { namePrefix: 'WCU_MY3' }],
     optionalServices: [SERVICE_UUID],
-    optionalManufacturerData: MOYU32_CIC_LIST,
 
     matchesDevice(device: BluetoothDevice): boolean {
         const name = device.name || '';
-        return name.startsWith('WCU_MY3');
+        return name.startsWith('^S') || name.startsWith('WCU_') || name.startsWith('WCU_MY3');
+    },
+
+    gattAffinity(serviceUuids: ReadonlySet<string>, _device: BluetoothDevice): number {
+        return serviceUuids.has(normalizeUuid(SERVICE_UUID)) ? 110 : 0;
     },
 
     connect: connectMoyu32Device

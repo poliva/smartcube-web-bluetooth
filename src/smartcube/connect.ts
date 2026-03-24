@@ -1,50 +1,88 @@
 
-import { SmartCubeConnection, MacAddressProvider } from './types';
+import { buildRequestDeviceOptions } from './attachment/build-picker-options';
+import { collectPrimaryServiceUuids } from './attachment/gatt-snapshot';
+import { resolveProtocolByGatt } from './attachment/profile-rank';
+import { waitForManufacturerData, setCachedMacForDevice } from './attachment/address-hints';
+import type { ConnectSmartCubeOptions, DeviceSelectionMode } from './attachment/types';
+import type { MacAddressProvider, SmartCubeConnection } from './types';
 import { getRegisteredProtocols } from './protocol';
 
-async function connectSmartCube(customMacAddressProvider?: MacAddressProvider): Promise<SmartCubeConnection> {
+function isMacAddressProvider(x: unknown): x is MacAddressProvider {
+    return typeof x === 'function';
+}
+
+function normalizeOptions(
+    arg?: MacAddressProvider | ConnectSmartCubeOptions
+): ConnectSmartCubeOptions {
+    if (arg === undefined) {
+        return {};
+    }
+    if (isMacAddressProvider(arg)) {
+        return { macAddressProvider: arg };
+    }
+    return arg;
+}
+
+export async function connectSmartCube(
+    arg?: MacAddressProvider | ConnectSmartCubeOptions
+): Promise<SmartCubeConnection> {
+    const opts = normalizeOptions(arg);
     const protocols = getRegisteredProtocols();
 
     if (protocols.length === 0) {
         throw new Error('No smartcube protocols registered');
     }
 
-    const allFilters: BluetoothLEScanFilter[] = [];
-    const allServices = new Set<string>();
-    const allCICs = new Set<number>();
-
-    for (const protocol of protocols) {
-        for (const filter of protocol.nameFilters) {
-            allFilters.push(filter);
-        }
-        for (const service of protocol.optionalServices) {
-            allServices.add(service);
-        }
-        if (protocol.optionalManufacturerData) {
-            for (const cic of protocol.optionalManufacturerData) {
-                allCICs.add(cic);
-            }
-        }
-    }
-
-    const requestOptions: RequestDeviceOptions = {
-        filters: allFilters,
-        optionalServices: Array.from(allServices),
-    };
-
-    if (allCICs.size > 0) {
-        (requestOptions as any).optionalManufacturerData = Array.from(allCICs);
-    }
+    const mode: DeviceSelectionMode = opts.deviceSelection ?? 'filtered';
+    const requestOptions = buildRequestDeviceOptions(protocols, mode, {
+        deviceName: opts.deviceName,
+    });
+    opts.onStatus?.('Select your cube…');
 
     const device = await navigator.bluetooth.requestDevice(requestOptions);
 
-    for (const protocol of protocols) {
-        if (protocol.matchesDevice(device)) {
-            return protocol.connect(device, customMacAddressProvider);
+    opts.onStatus?.('Reading advertisements…');
+    const advertisementManufacturerData = await waitForManufacturerData(
+        device,
+        opts.enableAddressSearch ? 12000 : 4000
+    );
+
+    opts.onStatus?.('Connecting…');
+    const serviceUuids = await collectPrimaryServiceUuids(device);
+
+    const protocol = resolveProtocolByGatt(protocols, serviceUuids, device);
+
+    if (!protocol) {
+        try {
+            device.gatt?.disconnect();
+        } catch {
+            /* ignore */
         }
+        throw new Error("Selected device doesn't match any registered smartcube protocol");
     }
 
-    throw new Error("Selected device doesn't match any registered smartcube protocol");
+    const context = {
+        serviceUuids,
+        advertisementManufacturerData,
+        enableAddressSearch: opts.enableAddressSearch === true,
+        onStatus: opts.onStatus,
+        signal: opts.signal,
+    };
+
+    let conn: SmartCubeConnection;
+    try {
+        conn = await protocol.connect(device, opts.macAddressProvider, context);
+    } catch (e) {
+        try {
+            device.gatt?.disconnect();
+        } catch {
+            /* ignore */
+        }
+        throw e;
+    }
+    if (conn.deviceMAC) {
+        setCachedMacForDevice(device, conn.deviceMAC);
+    }
+    return conn;
 }
 
-export { connectSmartCube };

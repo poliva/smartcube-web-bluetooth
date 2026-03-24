@@ -1,10 +1,14 @@
-
 import { Subject } from 'rxjs';
 import { ModeOfOperation } from 'aes-js';
 import { SmartCubeConnection, SmartCubeEvent, SmartCubeCommand, SmartCubeCapabilities, MacAddressProvider } from '../types';
+import type { AttachmentContext } from '../attachment/types';
+import { normalizeUuid } from '../attachment/normalize-uuid';
+import { getCachedMacForDevice } from '../attachment/address-hints';
+import { buildQiYiMacCandidatesFromName } from '../attachment/mac-candidates';
+import { probeQiYiMac } from '../attachment/mac-probe-qiyi';
 import { SmartCubeProtocol, registerProtocol } from '../protocol';
 import { CubieCube } from '../cubie-cube';
-import { now, findCharacteristic, waitForAdvertisements } from '../ble-utils';
+import { now, findCharacteristic, waitForAdvertisements, extractMacFromManufacturerData } from '../ble-utils';
 
 const UUID_SUFFIX = '-0000-1000-8000-00805f9b34fb';
 const SERVICE_UUID = '0000fff0' + UUID_SUFFIX;
@@ -297,51 +301,68 @@ class QiYiConnection implements SmartCubeConnection {
     }
 }
 
-async function connectQiYiDevice(device: BluetoothDevice, macProvider?: MacAddressProvider): Promise<SmartCubeConnection> {
-    // Try to get MAC from advertisements
-    const mfData = await waitForAdvertisements(device);
-    let mac: string | null = null;
+function parseQiYiMacFromMf(mfData: BluetoothManufacturerData | DataView | null): string | null {
+    if (!mfData) {
+        return null;
+    }
+    return extractMacFromManufacturerData(mfData, QIYI_CIC_LIST, true);
+}
 
-    if (mfData && !(mfData instanceof DataView)) {
-        for (const id of QIYI_CIC_LIST) {
-            if (mfData.has(id)) {
-                const dataView = mfData.get(id)!;
-                if (dataView.byteLength >= 6) {
-                    const parts: string[] = [];
-                    for (let i = 5; i >= 0; i--) {
-                        parts.push((dataView.getUint8(i) + 0x100).toString(16).slice(1));
-                    }
-                    mac = parts.join(':');
-                }
+async function connectQiYiDevice(
+    device: BluetoothDevice,
+    macProvider?: MacAddressProvider,
+    context?: AttachmentContext
+): Promise<SmartCubeConnection> {
+    let mac = parseQiYiMacFromMf(context?.advertisementManufacturerData ?? null);
+    mac = mac || getCachedMacForDevice(device);
+    if (!mac && macProvider) {
+        const r = await macProvider(device, false);
+        if (r) {
+            mac = r;
+        }
+    }
+
+    if (!mac) {
+        const mfData = await waitForAdvertisements(device, context?.enableAddressSearch ? 15000 : 10000);
+        mac = parseQiYiMacFromMf(mfData);
+    }
+
+    if (!mac) {
+        const c = buildQiYiMacCandidatesFromName(device.name);
+        if (c.length === 1) {
+            mac = c[0]!;
+        }
+    }
+
+    if (!mac && context?.enableAddressSearch) {
+        const candidates = buildQiYiMacCandidatesFromName(device.name);
+        const timeoutMs = 8000;
+        for (let i = 0; i < candidates.length; i++) {
+            if (context.signal?.aborted) {
                 break;
             }
-        }
-    } else if (mfData instanceof DataView) {
-        const dataView = new DataView(mfData.buffer.slice(2));
-        if (dataView.byteLength >= 6) {
-            const parts: string[] = [];
-            for (let i = 5; i >= 0; i--) {
-                parts.push((dataView.getUint8(i) + 0x100).toString(16).slice(1));
+            context.onStatus?.(`Testing address (${i + 1}/${candidates.length})…`);
+            try {
+                if (
+                    await probeQiYiMac(device, candidates[i]!, {
+                        timeoutMs,
+                        signal: context.signal,
+                    })
+                ) {
+                    mac = candidates[i]!;
+                    break;
+                }
+            } catch {
+                /* try next */
             }
-            mac = parts.join(':');
         }
     }
 
     if (!mac && macProvider) {
-        mac = await macProvider(device, false);
-    }
-
-    // Try deriving MAC from device name as fallback
-    if (!mac) {
-        const name = device.name || '';
-        const match = /^(QY-QYSC|XMD-TornadoV4-i)-.-([0-9A-F]{4})$/.exec(name);
-        if (match) {
-            mac = 'CC:A3:00:00:' + match[2].slice(0, 2) + ':' + match[2].slice(2, 4);
+        const r = await macProvider(device, true);
+        if (r) {
+            mac = r;
         }
-    }
-
-    if (!mac && macProvider) {
-        mac = await macProvider(device, true);
     }
 
     if (!mac) {
@@ -364,6 +385,10 @@ const qiyiProtocol: SmartCubeProtocol = {
     matchesDevice(device: BluetoothDevice): boolean {
         const name = device.name || '';
         return name.startsWith('QY-QYSC') || name.startsWith('XMD-TornadoV4-i');
+    },
+
+    gattAffinity(serviceUuids: ReadonlySet<string>, _device: BluetoothDevice): number {
+        return serviceUuids.has(normalizeUuid(SERVICE_UUID)) ? 110 : 0;
     },
 
     connect: connectQiYiDevice

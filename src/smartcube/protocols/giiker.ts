@@ -1,6 +1,8 @@
 
 import { Subject } from 'rxjs';
 import { SmartCubeConnection, SmartCubeEvent, SmartCubeCommand, SmartCubeCapabilities, MacAddressProvider } from '../types';
+import type { AttachmentContext } from '../attachment/types';
+import { normalizeUuid } from '../attachment/normalize-uuid';
 import { SmartCubeProtocol, registerProtocol } from '../protocol';
 import { CubieCube } from '../cubie-cube';
 import { now, findCharacteristic } from '../ble-utils';
@@ -226,7 +228,15 @@ const giikerProtocol: SmartCubeProtocol = {
         return name.startsWith('Gi') || name.startsWith('Mi Smart Magic Cube') || name.startsWith('Hi-');
     },
 
-    async connect(device: BluetoothDevice): Promise<SmartCubeConnection> {
+    gattAffinity(serviceUuids: ReadonlySet<string>, _device: BluetoothDevice): number {
+        return serviceUuids.has(normalizeUuid(SERVICE_UUID_DATA)) ? 115 : 0;
+    },
+
+    async connect(
+        device: BluetoothDevice,
+        _macProvider?: MacAddressProvider,
+        _context?: AttachmentContext
+    ): Promise<SmartCubeConnection> {
         const name = device.name?.startsWith('Gi') ? 'Giiker' : device.name?.startsWith('Mi') ? 'Mi Smart' : device.name || 'Unknown';
         const conn = new GiikerConnection(device, name);
         await conn.init();

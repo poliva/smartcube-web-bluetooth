@@ -1,6 +1,8 @@
 
 import { Subject } from 'rxjs';
 import { SmartCubeConnection, SmartCubeEvent, SmartCubeCommand, SmartCubeCapabilities, MacAddressProvider } from '../types';
+import type { AttachmentContext } from '../attachment/types';
+import { normalizeUuid } from '../attachment/normalize-uuid';
 import { SmartCubeProtocol, registerProtocol } from '../protocol';
 import { CubieCube, SOLVED_FACELET } from '../cubie-cube';
 import { now, findCharacteristic } from '../ble-utils';
@@ -175,7 +177,15 @@ const moyuMhcProtocol: SmartCubeProtocol = {
         return name.startsWith('MHC');
     },
 
-    async connect(device: BluetoothDevice): Promise<SmartCubeConnection> {
+    gattAffinity(serviceUuids: ReadonlySet<string>, _device: BluetoothDevice): number {
+        return serviceUuids.has(normalizeUuid(SERVICE_UUID)) ? 110 : 0;
+    },
+
+    async connect(
+        device: BluetoothDevice,
+        _macProvider?: MacAddressProvider,
+        _context?: AttachmentContext
+    ): Promise<SmartCubeConnection> {
         const conn = new MoyuMhcConnection(device);
         await conn.init();
         return conn;

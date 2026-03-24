@@ -244,7 +244,8 @@ class GanCubeClassicConnection implements GanCubeConnection, GanCubeRawConnectio
         var characteristic = evt.target as BluetoothRemoteGATTCharacteristic;
         var eventMessage = characteristic.value;
         if (eventMessage && eventMessage.byteLength >= 16) {
-            var decryptedMessage = this.encrypter.decrypt(new Uint8Array(eventMessage.buffer));
+            var raw = new Uint8Array(eventMessage.buffer, eventMessage.byteOffset, eventMessage.byteLength);
+            var decryptedMessage = this.encrypter.decrypt(raw);
             var cubeEvents = await this.driver.handleStateEvent(this, decryptedMessage);
             cubeEvents.forEach(e => this.events$.next(e));
         }

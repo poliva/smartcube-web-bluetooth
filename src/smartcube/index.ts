@@ -24,5 +24,11 @@ export type {
 
 export { connectSmartCube } from './connect';
 
-export type { SmartCubeProtocol } from './protocol';
+export type {
+    SmartCubeProtocol,
+    SmartCubeNameFilter,
+    AttachmentContext,
+    ConnectSmartCubeOptions,
+    DeviceSelectionMode
+} from './protocol';
 export { registerProtocol, getRegisteredProtocols } from './protocol';
