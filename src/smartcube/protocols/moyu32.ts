@@ -9,30 +9,53 @@ import { buildMoyu32MacCandidatesFromName } from '../attachment/mac-candidates';
 import { probeMoyu32Mac } from '../attachment/mac-probe-moyu32';
 import { SmartCubeProtocol, registerProtocol } from '../protocol';
 import { CubieCube, SOLVED_FACELET } from '../cubie-cube';
-import { now, findCharacteristic, waitForAdvertisements, extractMacFromManufacturerData } from '../ble-utils';
+import { now, findCharacteristic, waitForAdvertisements } from '../ble-utils';
 
 const SERVICE_UUID = '0783b03e-7735-b5a0-1760-a305d2795cb0';
 const CHRT_UUID_READ = '0783b03e-7735-b5a0-1760-a305d2795cb1';
 const CHRT_UUID_WRITE = '0783b03e-7735-b5a0-1760-a305d2795cb2';
 
+/** Opcode 172 + payload to enable gyro notifications (MoYu WCU). */
+const ENABLE_GYRO_PAYLOAD = [172, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
 const BASE_KEY = [21, 119, 58, 92, 103, 14, 45, 31, 23, 103, 42, 19, 155, 103, 82, 87];
 const BASE_IV = [17, 35, 38, 37, 134, 42, 44, 59, 85, 6, 127, 49, 126, 103, 33, 87];
+
+/**
+ * Parse 6 MAC octets from a manufacturer data DataView into canonical `aa:bb:…` form.
+ * When length >= 8, the first two bytes are treated as company ID and skipped; the next six
+ * are the cube address in LSB-first wire order (reversed into display order), matching key derivation.
+ */
+function moyu32MacColonFromManufacturerDataView(dv: DataView): string | null {
+    const n = dv.byteLength;
+    if (n < 6) {
+        return null;
+    }
+    const skipCid = n >= 8 ? 2 : 0;
+    if (n < skipCid + 6) {
+        return null;
+    }
+    const parts: string[] = [];
+    for (let i = 0; i < 6; i++) {
+        parts.push((dv.getUint8(skipCid + 5 - i) + 0x100).toString(16).slice(1));
+    }
+    return parts.join(':');
+}
 
 function parseMoyu32MacFromMf(mfData: BluetoothManufacturerData | DataView | null): string | null {
     if (!mfData) {
         return null;
     }
     if (mfData instanceof DataView) {
-        return extractMacFromManufacturerData(mfData, [], true);
+        return moyu32MacColonFromManufacturerDataView(mfData);
     }
     for (const id of mfData.keys()) {
         const dataView = mfData.get(id);
-        if (dataView && dataView.byteLength >= 6) {
-            const parts: string[] = [];
-            for (let i = 0; i < 6; i++) {
-                parts.push((dataView.getUint8(dataView.byteLength - i - 1) + 0x100).toString(16).slice(1));
+        if (dataView) {
+            const mac = moyu32MacColonFromManufacturerDataView(dataView);
+            if (mac) {
+                return mac;
             }
-            return parts.join(':');
         }
     }
     return null;
@@ -190,18 +213,17 @@ class Moyu32Connection implements SmartCubeConnection {
                 gyroSupported: true
             });
         } else if (msgType === 163) { // Facelets state
-            if (this.prevMoveCnt === -1) {
-                this.moveCnt = parseInt(bits.slice(152, 160), 2);
-                this.latestFacelet = parseFacelet(bits.slice(8, 152));
-                this.prevCubie.fromFacelet(this.latestFacelet);
-                this.prevMoveCnt = this.moveCnt;
+            const seq = parseInt(bits.slice(152, 160), 2);
+            this.latestFacelet = parseFacelet(bits.slice(8, 152));
+            this.prevCubie.fromFacelet(this.latestFacelet);
+            this.moveCnt = seq;
+            this.prevMoveCnt = seq;
 
-                this.events$.next({
-                    timestamp,
-                    type: "FACELETS",
-                    facelets: this.latestFacelet
-                });
-            }
+            this.events$.next({
+                timestamp,
+                type: "FACELETS",
+                facelets: this.latestFacelet
+            });
         } else if (msgType === 164) { // Battery
             this.batteryLevel = parseInt(bits.slice(8, 16), 2);
             this.events$.next({
@@ -227,7 +249,11 @@ class Moyu32Connection implements SmartCubeConnection {
             }
 
             if (!invalidMove) {
-                const moveDiff = Math.min((this.moveCnt - this.prevMoveCnt) & 0xff, prevMoves.length);
+                const rawDelta = (this.moveCnt - this.prevMoveCnt) & 0xff;
+                if (rawDelta > prevMoves.length) {
+                    console.warn('[Moyu32] lost move events', rawDelta - prevMoves.length);
+                }
+                const moveDiff = Math.min(rawDelta, prevMoves.length);
                 this.prevMoveCnt = this.moveCnt;
 
                 let calcTs = this.deviceTime + this.deviceTimeOffset;
@@ -245,8 +271,8 @@ class Moyu32Connection implements SmartCubeConnection {
                     CubieCube.CubeMult(this.prevCubie, CubieCube.moveCube[m], this.curCubie);
                     this.deviceTime += timeOffs[i];
 
-                    const face = "URFDLB".indexOf(moveNotation[0]);
-                    const direction = moveNotation[1] === "'" ? 1 : 0;
+                    const face = Math.floor(m / 3);
+                    const direction = m % 3;
 
                     this.events$.next({
                         timestamp,
@@ -310,8 +336,12 @@ class Moyu32Connection implements SmartCubeConnection {
         this.readChrct = findCharacteristic(chrcts, CHRT_UUID_READ);
         this.writeChrct = findCharacteristic(chrcts, CHRT_UUID_WRITE);
 
-        if (!this.readChrct) {
-            throw new Error('[Moyu32] Cannot find required characteristics');
+        if (!this.readChrct || !this.writeChrct) {
+            throw new Error(
+                !this.readChrct
+                    ? '[Moyu32] Cannot find required characteristics'
+                    : '[Moyu32] Cannot find write characteristic'
+            );
         }
 
         this.readChrct.addEventListener('characteristicvaluechanged', this.onStateChanged);
@@ -324,6 +354,7 @@ class Moyu32Connection implements SmartCubeConnection {
         await this.sendSimpleRequest(161); // Request cube info
         await this.sendSimpleRequest(163); // Request cube status (facelets)
         await this.sendSimpleRequest(164); // Request battery level
+        await this.sendRequest(ENABLE_GYRO_PAYLOAD.slice());
     }
 
     async sendCommand(command: SmartCubeCommand): Promise<void> {

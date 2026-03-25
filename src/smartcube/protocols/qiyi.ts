@@ -17,6 +17,9 @@ const CHRCT_UUID_CUBE = '0000fff6' + UUID_SUFFIX;
 const QIYI_CIC_LIST = [0x0504];
 const QIYI_KEY = [87, 177, 249, 171, 205, 90, 232, 167, 156, 185, 140, 231, 87, 140, 81, 8];
 
+/** Kociemba facelet string for solved cube */
+const QIYI_SOLVED_FACELETS = 'UUUUUUUUURRRRRRRRRFFFFFFFFFDDDDDDDDDLLLLLLLLLBBBBBBBBB';
+
 function crc16modbus(data: number[]): number {
     let crc = 0xFFFF;
     for (let i = 0; i < data.length; i++) {
@@ -68,6 +71,39 @@ function parseFacelet(faceMsg: number[]): string {
     return ret.join("");
 }
 
+/** Device timestamps in bytes 3–6 and history slots: big-endian uint32 */
+function readQiYiTimestampBE(msg: number[], offset: number): number {
+    return (msg[offset]! << 24) | (msg[offset + 1]! << 16) | (msg[offset + 2]! << 8) | msg[offset + 3]!;
+}
+
+/** Collect primary + all 11 history slots (bytes 36..90) */
+function collectQiYiStateChangeMoves(msg: number[], headerTs: number): [number, number][] {
+    const out: [number, number][] = [[msg[34]!, headerTs]];
+    for (let i = 0; i < 11; i++) {
+        const off = 36 + 5 * i;
+        if (off + 5 > msg.length) break;
+        let allFf = true;
+        for (let j = 0; j < 5; j++) {
+            if (msg[off + j] !== 0xff) {
+                allFf = false;
+                break;
+            }
+        }
+        if (allFf) continue;
+        const slotTs = readQiYiTimestampBE(msg, off);
+        const code = msg[off + 4]!;
+        out.push([code, slotTs]);
+    }
+    out.sort((a, b) => a[1] - b[1]);
+    const seen = new Set<string>();
+    return out.filter(([code, t]) => {
+        const k = `${code},${t}`;
+        if (seen.has(k)) return false;
+        seen.add(k);
+        return true;
+    });
+}
+
 class QiYiConnection implements SmartCubeConnection {
     readonly deviceName: string;
     readonly deviceMAC: string;
@@ -87,6 +123,7 @@ class QiYiConnection implements SmartCubeConnection {
     private prevCubie = new CubieCube();
     private lastTs = 0;
     private batteryLevel = 0;
+    private writeChain: Promise<void> = Promise.resolve();
 
     constructor(device: BluetoothDevice, mac: string) {
         this.device = device;
@@ -98,19 +135,24 @@ class QiYiConnection implements SmartCubeConnection {
 
     private sendMessage(content: number[]): Promise<void> {
         if (!this.cubeChrct) return Promise.reject();
-        const msg = [0xfe];
-        msg.push(4 + content.length);
-        for (let i = 0; i < content.length; i++) {
-            msg.push(content[i]);
-        }
-        const crc = crc16modbus(msg);
-        msg.push(crc & 0xff, crc >> 8);
-        const npad = (16 - msg.length % 16) % 16;
-        for (let i = 0; i < npad; i++) {
-            msg.push(0);
-        }
-        const encMsg = this.encrypter.encrypt(msg);
-        return this.cubeChrct.writeValue(new Uint8Array(encMsg).buffer).then(() => {});
+        const ch = this.cubeChrct;
+        const run = async (): Promise<void> => {
+            const msg = [0xfe];
+            msg.push(4 + content.length);
+            for (let i = 0; i < content.length; i++) {
+                msg.push(content[i]!);
+            }
+            const crc = crc16modbus(msg);
+            msg.push(crc & 0xff, crc >> 8);
+            const npad = (16 - msg.length % 16) % 16;
+            for (let i = 0; i < npad; i++) {
+                msg.push(0);
+            }
+            const encMsg = this.encrypter.encrypt(msg);
+            await ch.writeValue(new Uint8Array(encMsg).buffer);
+        };
+        this.writeChain = this.writeChain.then(run, run);
+        return this.writeChain;
     }
 
     private sendHello(): Promise<void> {
@@ -179,11 +221,12 @@ class QiYiConnection implements SmartCubeConnection {
         const timestamp = now();
         if (msg[0] !== 0xfe) return;
 
-        const opcode = msg[2];
-        const ts = (msg[3] << 24 | msg[4] << 16 | msg[5] << 8 | msg[6]);
+        const opcode = msg[2]!;
+        const ts = readQiYiTimestampBE(msg, 3);
 
-        if (opcode === 0x2) { // Hello response
-            this.batteryLevel = msg[35];
+        if (opcode === 0x2) {
+            // Hello response — always ACK
+            this.batteryLevel = msg[35]!;
             this.sendMessage(msg.slice(2, 7)).catch(() => {});
             const newFacelet = parseFacelet(msg.slice(7, 34));
 
@@ -202,22 +245,25 @@ class QiYiConnection implements SmartCubeConnection {
             }
 
             this.prevCubie.fromFacelet(newFacelet);
-        } else if (opcode === 0x3) { // State change (move)
-            this.sendMessage(msg.slice(2, 7)).catch(() => {});
+            this.lastTs = ts;
+            return;
+        }
 
-            const todoMoves: [number, number][] = [[msg[34], ts]];
-            while (todoMoves.length < 10) {
-                const off = 91 - 5 * todoMoves.length;
-                if (off + 4 >= msg.length) break;
-                const hisTs = (msg[off] << 24 | msg[off + 1] << 16 | msg[off + 2] << 8 | msg[off + 3]);
-                const hisMv = msg[off + 4];
-                if (hisTs <= this.lastTs) break;
-                todoMoves.push([hisMv, hisTs]);
+        if (opcode === 0x3) {
+            const needsAck = msg.length > 91 && msg[91] !== 0;
+            if (needsAck) {
+                this.sendMessage(msg.slice(2, 7)).catch(() => {});
             }
 
-            for (let i = todoMoves.length - 1; i >= 0; i--) {
-                const axis = [4, 1, 3, 0, 2, 5][(todoMoves[i][0] - 1) >> 1];
-                const power = [0, 2][todoMoves[i][0] & 1];
+            const candidates = collectQiYiStateChangeMoves(msg, ts);
+            const newMoves = candidates.filter(
+                ([code, moveTs]) => code >= 1 && code <= 12 && moveTs > this.lastTs,
+            );
+
+            for (let k = 0; k < newMoves.length; k++) {
+                const [code, moveTs] = newMoves[k]!;
+                const axis = [4, 1, 3, 0, 2, 5][(code - 1) >> 1]!;
+                const power = [0, 2][code & 1]!;
                 const m = axis * 3 + power;
                 const moveStr = ("URFDLB".charAt(axis) + " 2'".charAt(power)).trim();
 
@@ -230,8 +276,8 @@ class QiYiConnection implements SmartCubeConnection {
                     face: axis,
                     direction: power === 0 ? 0 : 1,
                     move: moveStr,
-                    localTimestamp: i === 0 ? timestamp : null,
-                    cubeTimestamp: Math.trunc(todoMoves[i][1] / 1.6)
+                    localTimestamp: k === newMoves.length - 1 ? timestamp : null,
+                    cubeTimestamp: Math.trunc(moveTs / 1.6)
                 });
 
                 this.events$.next({
@@ -245,7 +291,11 @@ class QiYiConnection implements SmartCubeConnection {
                 this.prevCubie = tmp;
             }
 
-            const newBatteryLevel = msg[35];
+            if (newMoves.length > 0) {
+                this.lastTs = newMoves[newMoves.length - 1]![1];
+            }
+
+            const newBatteryLevel = msg[35]!;
             if (newBatteryLevel !== this.batteryLevel) {
                 this.batteryLevel = newBatteryLevel;
                 this.events$.next({
@@ -254,8 +304,23 @@ class QiYiConnection implements SmartCubeConnection {
                     batteryLevel: this.batteryLevel
                 });
             }
+            return;
         }
-        this.lastTs = ts;
+
+        if (opcode === 0x4) {
+            // Sync confirmation: emit solved state; no ACK for op 4 in reference protocol.
+            if (msg[1] !== 38) return;
+            this.events$.next({
+                timestamp,
+                type: "FACELETS",
+                facelets: QIYI_SOLVED_FACELETS
+            });
+            this.prevCubie.fromFacelet(QIYI_SOLVED_FACELETS);
+            this.lastTs = ts;
+            return;
+        }
+
+        // Unknown opcode: do not advance lastTs (avoids skewing move history filters).
     }
 
     private onDisconnect = (): void => {
