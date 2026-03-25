@@ -6,6 +6,11 @@ import { normalizeUuid } from '../attachment/normalize-uuid';
 import { SmartCubeProtocol, registerProtocol } from '../protocol';
 import { CubieCube, SOLVED_FACELET } from '../cubie-cube';
 import { now, findCharacteristic } from '../ble-utils';
+import {
+    MoyuV1Client,
+    moyuStickersToFaceletString,
+    MOYU_V1_SOLVED_STICKERS,
+} from './moyu-v1';
 
 const UUID_SUFFIX = '-0000-1000-8000-00805f9b34fb';
 const SERVICE_UUID = '00001000' + UUID_SUFFIX;
@@ -14,22 +19,31 @@ const CHRCT_UUID_READ = '00001002' + UUID_SUFFIX;
 const CHRCT_UUID_TURN = '00001003' + UUID_SUFFIX;
 const CHRCT_UUID_GYRO = '00001004' + UUID_SUFFIX;
 
+const FACE_ORDER_LEN = 6;
+const DEVICE_FACE_TO_AXIS = [3, 4, 5, 1, 2, 0] as const;
+
+function normalizeQuaternion(q: { w: number; x: number; y: number; z: number }): {
+    w: number;
+    x: number;
+    y: number;
+    z: number;
+} {
+    const n = Math.hypot(q.w, q.x, q.y, q.z) || 1;
+    return { w: q.w / n, x: q.x / n, y: q.y / n, z: q.z / n };
+}
+
 class MoyuMhcConnection implements SmartCubeConnection {
     readonly deviceName: string;
     readonly deviceMAC: string;
-    readonly capabilities: SmartCubeCapabilities = {
-        gyroscope: false,
-        battery: false,
-        facelets: false,
-        hardware: false,
-        reset: false
-    };
+    readonly capabilities: SmartCubeCapabilities;
     events$: Subject<SmartCubeEvent>;
 
     private device: BluetoothDevice;
+    private writeChrct: BluetoothRemoteGATTCharacteristic | null = null;
     private readChrct: BluetoothRemoteGATTCharacteristic | null = null;
     private turnChrct: BluetoothRemoteGATTCharacteristic | null = null;
     private gyroChrct: BluetoothRemoteGATTCharacteristic | null = null;
+    private v1: MoyuV1Client | null = null;
     private faceStatus = [0, 0, 0, 0, 0, 0];
     private curCubie = new CubieCube();
     private prevCubie = new CubieCube();
@@ -39,6 +53,13 @@ class MoyuMhcConnection implements SmartCubeConnection {
         this.deviceName = device.name || 'MHC';
         this.deviceMAC = '';
         this.events$ = new Subject<SmartCubeEvent>();
+        this.capabilities = {
+            gyroscope: false,
+            battery: false,
+            facelets: false,
+            hardware: false,
+            reset: false,
+        };
     }
 
     private onTurnEvent = (event: Event): void => {
@@ -46,6 +67,53 @@ class MoyuMhcConnection implements SmartCubeConnection {
         if (!value) return;
         this.parseTurn(value);
     };
+
+    private onReadEvent = (event: Event): void => {
+        const value = (event.target as BluetoothRemoteGATTCharacteristic).value;
+        if (!value || !this.v1) return;
+        this.v1.onReadNotification(value);
+    };
+
+    private onGyroEvent = (event: Event): void => {
+        const e = (event.target as BluetoothRemoteGATTCharacteristic).value;
+        if (!e || e.byteLength < 20) return;
+        const fw = e.getFloat32(4, true);
+        const fx = e.getFloat32(8, true);
+        const fy = e.getFloat32(12, true);
+        const fz = e.getFloat32(16, true);
+        const quaternion = normalizeQuaternion({
+            w: fw,
+            x: fx,
+            y: -fy,
+            z: fz,
+        });
+        const timestamp = now();
+        this.events$.next({
+            timestamp,
+            type: 'GYRO',
+            quaternion,
+        });
+    };
+
+    /**
+     * After each move, `prevCubie` holds the latest physical state (see parseTurn swap).
+     * Seed that cube from the device facelet string and align turn counters with gyro angles.
+     */
+    private applyCubeStateFromDevice(stickers: number[][], angles: number[]): void {
+        const facelet = moyuStickersToFaceletString(stickers);
+        this.prevCubie = new CubieCube();
+        const parsed = this.prevCubie.fromFacelet(facelet);
+        if (parsed === -1) {
+            this.prevCubie = new CubieCube();
+            this.curCubie = new CubieCube();
+            this.faceStatus = [0, 0, 0, 0, 0, 0];
+            return;
+        }
+        this.curCubie = new CubieCube();
+        for (let i = 0; i < FACE_ORDER_LEN; i++) {
+            this.faceStatus[i] = (angles[i] ?? 0) % 9;
+        }
+    }
 
     private parseTurn(data: DataView): void {
         const timestamp = now();
@@ -62,12 +130,14 @@ class MoyuMhcConnection implements SmartCubeConnection {
             ts = Math.round(ts / 65536 * 1000);
 
             const face = data.getUint8(offset + 4);
-            const dir = Math.round(data.getUint8(offset + 5) / 36);
-            const prevRot = this.faceStatus[face];
-            const curRot = this.faceStatus[face] + dir;
+            if (face >= FACE_ORDER_LEN) continue;
+
+            const dir = Math.round(data.getInt8(offset + 5) / 36);
+            const prevRot = this.faceStatus[face]!;
+            const curRot = this.faceStatus[face]! + dir;
             this.faceStatus[face] = (curRot + 9) % 9;
 
-            const axis = [3, 4, 5, 1, 2, 0][face];
+            const axis = DEVICE_FACE_TO_AXIS[face]!;
             let pow: number;
             if (prevRot >= 5 && curRot <= 4) {
                 pow = 2;
@@ -80,8 +150,8 @@ class MoyuMhcConnection implements SmartCubeConnection {
             const m = axis * 3 + pow;
             const moveStr = ("URFDLB".charAt(axis) + " 2'".charAt(pow)).trim();
 
-            CubieCube.CubeMult(this.prevCubie, CubieCube.moveCube[m], this.curCubie);
-            const facelet = this.curCubie.toFaceCube();
+            CubieCube.CubeMult(this.prevCubie, CubieCube.moveCube[m]!, this.curCubie);
+            const faceletStr = this.curCubie.toFaceCube();
 
             this.events$.next({
                 timestamp,
@@ -96,7 +166,7 @@ class MoyuMhcConnection implements SmartCubeConnection {
             this.events$.next({
                 timestamp,
                 type: "FACELETS",
-                facelets: facelet
+                facelets: faceletStr
             });
 
             const tmp = this.curCubie;
@@ -111,40 +181,120 @@ class MoyuMhcConnection implements SmartCubeConnection {
         this.events$.complete();
     };
 
+    private updateCapabilities(): void {
+        const hasV1 = this.v1 !== null;
+        this.capabilities.gyroscope = this.gyroChrct !== null;
+        this.capabilities.battery = hasV1;
+        this.capabilities.facelets = hasV1;
+        this.capabilities.hardware = hasV1;
+        this.capabilities.reset = hasV1;
+    }
+
     async init(): Promise<void> {
         this.device.addEventListener('gattserverdisconnected', this.onDisconnect);
         const gatt = await this.device.gatt!.connect();
         const service = await gatt.getPrimaryService(SERVICE_UUID);
         const chrcts = await service.getCharacteristics();
 
+        this.writeChrct = findCharacteristic(chrcts, CHRCT_UUID_WRITE);
         this.readChrct = findCharacteristic(chrcts, CHRCT_UUID_READ);
         this.turnChrct = findCharacteristic(chrcts, CHRCT_UUID_TURN);
         this.gyroChrct = findCharacteristic(chrcts, CHRCT_UUID_GYRO);
 
+        if (this.writeChrct) {
+            this.v1 = new MoyuV1Client(this.writeChrct);
+        }
+
         if (this.readChrct) {
+            this.readChrct.addEventListener('characteristicvaluechanged', this.onReadEvent);
             await this.readChrct.startNotifications();
         }
+
         if (this.turnChrct) {
             this.turnChrct.addEventListener('characteristicvaluechanged', this.onTurnEvent);
             await this.turnChrct.startNotifications();
         }
+
         if (this.gyroChrct) {
+            this.gyroChrct.addEventListener('characteristicvaluechanged', this.onGyroEvent);
             await this.gyroChrct.startNotifications();
         }
 
-        this.events$.next({
-            timestamp: now(),
-            type: "FACELETS",
-            facelets: SOLVED_FACELET
-        });
+        this.updateCapabilities();
+
+        if (this.v1) {
+            try {
+                const st = await this.v1.getCubeState();
+                this.applyCubeStateFromDevice(st.stickers, st.angles);
+                const facelets = this.prevCubie.toFaceCube();
+                this.events$.next({
+                    timestamp: now(),
+                    type: 'FACELETS',
+                    facelets,
+                });
+            } catch {
+                this.events$.next({
+                    timestamp: now(),
+                    type: 'FACELETS',
+                    facelets: SOLVED_FACELET,
+                });
+            }
+        } else {
+            this.events$.next({
+                timestamp: now(),
+                type: 'FACELETS',
+                facelets: SOLVED_FACELET,
+            });
+        }
     }
 
-    async sendCommand(_command: SmartCubeCommand): Promise<void> {
-        // MoYu MHC doesn't support request commands
+    async sendCommand(command: SmartCubeCommand): Promise<void> {
+        if (!this.v1) return;
+
+        const ts = now();
+        try {
+            if (command.type === 'REQUEST_FACELETS') {
+                const st = await this.v1.getCubeState();
+                this.applyCubeStateFromDevice(st.stickers, st.angles);
+                this.events$.next({
+                    timestamp: ts,
+                    type: 'FACELETS',
+                    facelets: this.prevCubie.toFaceCube(),
+                });
+            } else if (command.type === 'REQUEST_BATTERY') {
+                const b = await this.v1.getBatteryInfo();
+                this.events$.next({
+                    timestamp: ts,
+                    type: 'BATTERY',
+                    batteryLevel: Math.min(100, Math.max(0, Math.round(b.value.percentage))),
+                });
+            } else if (command.type === 'REQUEST_HARDWARE') {
+                const h = await this.v1.getHardwareInfo();
+                this.events$.next({
+                    timestamp: ts,
+                    type: 'HARDWARE',
+                    softwareVersion: `${h.major}.${h.minor}.${h.patch}`,
+                    hardwareVersion: `boot:${h.bootCount}`,
+                });
+            } else if (command.type === 'REQUEST_RESET') {
+                await this.v1.setCubeState(MOYU_V1_SOLVED_STICKERS, [0, 0, 0, 0, 0, 0]);
+                this.faceStatus = [0, 0, 0, 0, 0, 0];
+                this.curCubie = new CubieCube();
+                this.prevCubie = new CubieCube();
+                this.events$.next({
+                    timestamp: ts,
+                    type: 'FACELETS',
+                    facelets: SOLVED_FACELET,
+                });
+            }
+        } catch {
+            /* ignore failed optional commands */
+        }
     }
 
     async disconnect(): Promise<void> {
         if (this.readChrct) {
+            this.readChrct.removeEventListener('characteristicvaluechanged', this.onReadEvent);
             await this.readChrct.stopNotifications().catch(() => {});
         }
         if (this.turnChrct) {
@@ -152,11 +302,14 @@ class MoyuMhcConnection implements SmartCubeConnection {
             await this.turnChrct.stopNotifications().catch(() => {});
         }
         if (this.gyroChrct) {
+            this.gyroChrct.removeEventListener('characteristicvaluechanged', this.onGyroEvent);
             await this.gyroChrct.stopNotifications().catch(() => {});
         }
         this.readChrct = null;
         this.turnChrct = null;
         this.gyroChrct = null;
+        this.writeChrct = null;
+        this.v1 = null;
         this.device.removeEventListener('gattserverdisconnected', this.onDisconnect);
         this.events$.next({ timestamp: now(), type: "DISCONNECT" });
         this.events$.complete();
