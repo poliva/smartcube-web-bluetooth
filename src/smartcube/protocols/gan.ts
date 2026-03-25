@@ -6,6 +6,13 @@ import { getCachedMacForDevice, macFromGanManufacturerData, waitForManufacturerD
 import { SmartCubeProtocol, registerProtocol } from '../protocol';
 import * as def from '../../gan-cube-definitions';
 import { GanGen2CubeEncrypter, GanGen3CubeEncrypter, GanGen4CubeEncrypter } from '../../gan-cube-encrypter';
+import { GanGen1CubeConnection } from '../../gan-gen1';
+import { macStringToSaltOrThrow } from '../../gan-mac-salt';
+import {
+    isValidGanGen2Packet,
+    isValidGanGen3Packet,
+    isValidGanGen4Packet,
+} from '../../gan-gen234-packet-validate';
 import {
     BluetoothDeviceWithMAC,
     GanCubeConnection,
@@ -15,6 +22,22 @@ import {
     GanGen3ProtocolDriver,
     GanGen4ProtocolDriver
 } from '../../gan-cube-protocol';
+
+const DEFAULT_GAN_CAPABILITIES: SmartCubeCapabilities = {
+    gyroscope: true,
+    battery: true,
+    facelets: true,
+    hardware: true,
+    reset: true,
+};
+
+const GAN_GEN1_CAPABILITIES: SmartCubeCapabilities = {
+    gyroscope: true,
+    battery: true,
+    facelets: true,
+    hardware: false,
+    reset: false,
+};
 
 function ganEventToSmartEvent(event: GanCubeEvent): SmartCubeEvent {
     switch (event.type) {
@@ -65,28 +88,27 @@ function ganEventToSmartEvent(event: GanCubeEvent): SmartCubeEvent {
     }
 }
 
+function hasGanGen1Profile(serviceUuids: ReadonlySet<string>): boolean {
+    const primary = normalizeUuid(def.GAN_GEN1_PRIMARY_SERVICE);
+    const deviceInfo = normalizeUuid(def.GAN_GEN1_DEVICE_INFO_SERVICE);
+    return serviceUuids.has(primary) && serviceUuids.has(deviceInfo);
+}
+
 class GanSmartCubeConnection implements SmartCubeConnection {
     private ganConn: GanCubeConnection;
     private deviceMac: string;
     events$: Subject<SmartCubeEvent>;
 
-    readonly capabilities: SmartCubeCapabilities = {
-        gyroscope: true,
-        battery: true,
-        facelets: true,
-        hardware: true,
-        reset: true
-    };
+    readonly capabilities: SmartCubeCapabilities;
 
-    constructor(ganConn: GanCubeConnection, mac: string) {
+    constructor(ganConn: GanCubeConnection, mac: string, capabilities?: SmartCubeCapabilities) {
         this.ganConn = ganConn;
         this.deviceMac = mac;
+        this.capabilities = capabilities ?? DEFAULT_GAN_CAPABILITIES;
         this.events$ = new Subject<SmartCubeEvent>();
-        ganConn.events$.pipe(
-            map(ganEventToSmartEvent)
-        ).subscribe({
-            next: e => this.events$.next(e),
-            complete: () => this.events$.complete()
+        ganConn.events$.pipe(map(ganEventToSmartEvent)).subscribe({
+            next: (e) => this.events$.next(e),
+            complete: () => this.events$.complete(),
         });
     }
 
@@ -113,6 +135,17 @@ async function connectGanDevice(
     context?: AttachmentContext
 ): Promise<SmartCubeConnection> {
     const bleDevice = device as BluetoothDeviceWithMAC;
+    const gatt = device.gatt!;
+    if (!gatt.connected) {
+        await gatt.connect();
+    }
+    const services = await gatt.getPrimaryServices();
+    const serviceUuidSet = new Set(services.map((s) => normalizeUuid(s.uuid)));
+
+    if (hasGanGen1Profile(serviceUuidSet)) {
+        const gen1Conn = await GanGen1CubeConnection.create(device);
+        return new GanSmartCubeConnection(gen1Conn, '', GAN_GEN1_CAPABILITIES);
+    }
 
     let mac: string | null = null;
     if (context?.advertisementManufacturerData) {
@@ -142,43 +175,65 @@ async function connectGanDevice(
         throw new Error('Unable to determine cube MAC address, connection is not possible!');
     }
     bleDevice.mac = mac;
+    const salt = macStringToSaltOrThrow(mac);
 
-    const salt = new Uint8Array(mac.split(/[:-\s]+/).map(c => parseInt(c, 16)).reverse());
-    const gatt = device.gatt!;
-    if (!gatt.connected) {
-        await gatt.connect();
-    }
-    const services = await gatt.getPrimaryServices();
+    const g2 = normalizeUuid(def.GAN_GEN2_SERVICE);
+    const g3 = normalizeUuid(def.GAN_GEN3_SERVICE);
+    const g4 = normalizeUuid(def.GAN_GEN4_SERVICE);
+
+    type Pick = 'g2' | 'g3' | 'g4' | null;
+    let pick: Pick = null;
+    if (serviceUuidSet.has(g2)) pick = 'g2';
+    else if (serviceUuidSet.has(g3)) pick = 'g3';
+    else if (serviceUuidSet.has(g4)) pick = 'g4';
 
     let ganConn: GanCubeConnection | null = null;
 
-    for (const service of services) {
-        const serviceUUID = service.uuid.toLowerCase();
-        if (serviceUUID == def.GAN_GEN2_SERVICE) {
-            const commandCharacteristic = await service.getCharacteristic(def.GAN_GEN2_COMMAND_CHARACTERISTIC);
-            const stateCharacteristic = await service.getCharacteristic(def.GAN_GEN2_STATE_CHARACTERISTIC);
-            const key = device.name?.startsWith('AiCube') ? def.GAN_ENCRYPTION_KEYS[1] : def.GAN_ENCRYPTION_KEYS[0];
-            const encrypter = new GanGen2CubeEncrypter(new Uint8Array(key.key), new Uint8Array(key.iv), salt);
-            const driver = new GanGen2ProtocolDriver();
-            ganConn = await GanCubeClassicConnection.create(bleDevice, commandCharacteristic, stateCharacteristic, encrypter, driver);
-            break;
-        } else if (serviceUUID == def.GAN_GEN3_SERVICE) {
-            const commandCharacteristic = await service.getCharacteristic(def.GAN_GEN3_COMMAND_CHARACTERISTIC);
-            const stateCharacteristic = await service.getCharacteristic(def.GAN_GEN3_STATE_CHARACTERISTIC);
-            const key = def.GAN_ENCRYPTION_KEYS[0];
-            const encrypter = new GanGen3CubeEncrypter(new Uint8Array(key.key), new Uint8Array(key.iv), salt);
-            const driver = new GanGen3ProtocolDriver();
-            ganConn = await GanCubeClassicConnection.create(bleDevice, commandCharacteristic, stateCharacteristic, encrypter, driver);
-            break;
-        } else if (serviceUUID == def.GAN_GEN4_SERVICE) {
-            const commandCharacteristic = await service.getCharacteristic(def.GAN_GEN4_COMMAND_CHARACTERISTIC);
-            const stateCharacteristic = await service.getCharacteristic(def.GAN_GEN4_STATE_CHARACTERISTIC);
-            const key = def.GAN_ENCRYPTION_KEYS[0];
-            const encrypter = new GanGen4CubeEncrypter(new Uint8Array(key.key), new Uint8Array(key.iv), salt);
-            const driver = new GanGen4ProtocolDriver();
-            ganConn = await GanCubeClassicConnection.create(bleDevice, commandCharacteristic, stateCharacteristic, encrypter, driver);
-            break;
-        }
+    if (pick === 'g2') {
+        const service = await gatt.getPrimaryService(def.GAN_GEN2_SERVICE);
+        const commandCharacteristic = await service.getCharacteristic(def.GAN_GEN2_COMMAND_CHARACTERISTIC);
+        const stateCharacteristic = await service.getCharacteristic(def.GAN_GEN2_STATE_CHARACTERISTIC);
+        const key = device.name?.startsWith('AiCube') ? def.GAN_ENCRYPTION_KEYS[1] : def.GAN_ENCRYPTION_KEYS[0];
+        const encrypter = new GanGen2CubeEncrypter(new Uint8Array(key.key), new Uint8Array(key.iv), salt);
+        const driver = new GanGen2ProtocolDriver();
+        ganConn = await GanCubeClassicConnection.create(
+            bleDevice,
+            commandCharacteristic,
+            stateCharacteristic,
+            encrypter,
+            driver,
+            { validateDecrypted: isValidGanGen2Packet },
+        );
+    } else if (pick === 'g3') {
+        const service = await gatt.getPrimaryService(def.GAN_GEN3_SERVICE);
+        const commandCharacteristic = await service.getCharacteristic(def.GAN_GEN3_COMMAND_CHARACTERISTIC);
+        const stateCharacteristic = await service.getCharacteristic(def.GAN_GEN3_STATE_CHARACTERISTIC);
+        const key = def.GAN_ENCRYPTION_KEYS[0];
+        const encrypter = new GanGen3CubeEncrypter(new Uint8Array(key.key), new Uint8Array(key.iv), salt);
+        const driver = new GanGen3ProtocolDriver();
+        ganConn = await GanCubeClassicConnection.create(
+            bleDevice,
+            commandCharacteristic,
+            stateCharacteristic,
+            encrypter,
+            driver,
+            { validateDecrypted: isValidGanGen3Packet },
+        );
+    } else if (pick === 'g4') {
+        const service = await gatt.getPrimaryService(def.GAN_GEN4_SERVICE);
+        const commandCharacteristic = await service.getCharacteristic(def.GAN_GEN4_COMMAND_CHARACTERISTIC);
+        const stateCharacteristic = await service.getCharacteristic(def.GAN_GEN4_STATE_CHARACTERISTIC);
+        const key = def.GAN_ENCRYPTION_KEYS[0];
+        const encrypter = new GanGen4CubeEncrypter(new Uint8Array(key.key), new Uint8Array(key.iv), salt);
+        const driver = new GanGen4ProtocolDriver();
+        ganConn = await GanCubeClassicConnection.create(
+            bleDevice,
+            commandCharacteristic,
+            stateCharacteristic,
+            encrypter,
+            driver,
+            { validateDecrypted: isValidGanGen4Packet },
+        );
     }
 
     if (!ganConn) {
@@ -189,12 +244,14 @@ async function connectGanDevice(
 }
 
 const ganProtocol: SmartCubeProtocol = {
-    nameFilters: [
-        { namePrefix: "GAN" },
-        { namePrefix: "MG" },
-        { namePrefix: "AiCube" }
+    nameFilters: [{ namePrefix: 'GAN' }, { namePrefix: 'MG' }, { namePrefix: 'AiCube' }],
+    optionalServices: [
+        def.GAN_GEN1_PRIMARY_SERVICE,
+        def.GAN_GEN1_DEVICE_INFO_SERVICE,
+        def.GAN_GEN2_SERVICE,
+        def.GAN_GEN3_SERVICE,
+        def.GAN_GEN4_SERVICE,
     ],
-    optionalServices: [def.GAN_GEN2_SERVICE, def.GAN_GEN3_SERVICE, def.GAN_GEN4_SERVICE],
     optionalManufacturerData: def.GAN_CIC_LIST,
 
     matchesDevice(device: BluetoothDevice): boolean {
@@ -206,8 +263,12 @@ const ganProtocol: SmartCubeProtocol = {
         const g2 = normalizeUuid(def.GAN_GEN2_SERVICE);
         const g3 = normalizeUuid(def.GAN_GEN3_SERVICE);
         const g4 = normalizeUuid(def.GAN_GEN4_SERVICE);
-        const deviceInfo = normalizeUuid('0000180a-0000-1000-8000-00805f9b34fb');
+        const g1Primary = normalizeUuid(def.GAN_GEN1_PRIMARY_SERVICE);
+        const deviceInfo = normalizeUuid(def.GAN_GEN1_DEVICE_INFO_SERVICE);
         const bonus = serviceUuids.has(deviceInfo) ? 5 : 0;
+        if (serviceUuids.has(g1Primary) && serviceUuids.has(deviceInfo)) {
+            return 125 + bonus;
+        }
         if (serviceUuids.has(g4)) {
             return 120 + bonus;
         }

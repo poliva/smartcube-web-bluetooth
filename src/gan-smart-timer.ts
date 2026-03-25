@@ -202,7 +202,7 @@ async function connectGanTimer(): Promise<GanTimerConnection> {
         stateCharacteristic.removeEventListener('characteristicvaluechanged', onStateChanged);
         await stateCharacteristic.stopNotifications().catch(() => { });
         eventSubject.next({ state: GanTimerState.DISCONNECT });
-        eventSubject.unsubscribe();
+        eventSubject.complete();
         if (server.connected) {
             server.disconnect();
         }

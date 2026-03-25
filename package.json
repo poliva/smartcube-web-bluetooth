@@ -45,6 +45,7 @@
   "dependencies": {
     "@types/web-bluetooth": "^0.0.20",
     "aes-js": "^3.1.2",
+    "lz-string": "^1.5.0",
     "rxjs": ">= 7"
   },
   "devDependencies": {

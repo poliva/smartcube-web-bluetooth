@@ -1,6 +1,7 @@
 
 import { now, toKociembaFacelets } from './utils';
 import { GanCubeEncrypter } from './gan-cube-encrypter';
+import { GattWriteQueue } from './gan-write-queue';
 import { Observable, Subject } from 'rxjs';
 
 /** Command for requesting information about GAN Smart Cube hardware  */
@@ -184,6 +185,12 @@ interface GanProtocolDriver {
 /** Calculate sum of all numbers in array */
 const sum: (arr: Array<number>) => number = arr => arr.reduce((a, v) => a + v, 0);
 
+/** Optional hooks for {@link GanCubeClassicConnection.create}. */
+export type GanClassicConnectionOptions = {
+    /** If set, decrypted payloads that fail this check are dropped (wrong MAC / noise). */
+    validateDecrypted?: (plaintext: Uint8Array) => boolean;
+};
+
 /**
  * Implementation of classic command/response connection with GAN Smart Cube device
  */
@@ -198,18 +205,24 @@ class GanCubeClassicConnection implements GanCubeConnection, GanCubeRawConnectio
 
     events$: Subject<GanCubeEvent>;
 
+    private readonly validateDecrypted?: (plaintext: Uint8Array) => boolean;
+    private readonly writeQueue = new GattWriteQueue();
+    private disconnectOnce = false;
+
     private constructor(
         device: BluetoothDeviceWithMAC,
         commandCharacteristic: BluetoothRemoteGATTCharacteristic,
         stateCharacteristic: BluetoothRemoteGATTCharacteristic,
         encrypter: GanCubeEncrypter,
-        driver: GanProtocolDriver
+        driver: GanProtocolDriver,
+        validateDecrypted?: (plaintext: Uint8Array) => boolean
     ) {
         this.device = device;
         this.commandCharacteristic = commandCharacteristic;
         this.stateCharacteristic = stateCharacteristic;
         this.encrypter = encrypter;
         this.driver = driver;
+        this.validateDecrypted = validateDecrypted;
         this.events$ = new Subject<GanCubeEvent>();
     }
 
@@ -218,9 +231,17 @@ class GanCubeClassicConnection implements GanCubeConnection, GanCubeRawConnectio
         commandCharacteristic: BluetoothRemoteGATTCharacteristic,
         stateCharacteristic: BluetoothRemoteGATTCharacteristic,
         encrypter: GanCubeEncrypter,
-        driver: GanProtocolDriver
+        driver: GanProtocolDriver,
+        options?: GanClassicConnectionOptions
     ): Promise<GanCubeConnection> {
-        var conn = new GanCubeClassicConnection(device, commandCharacteristic, stateCharacteristic, encrypter, driver);
+        var conn = new GanCubeClassicConnection(
+            device,
+            commandCharacteristic,
+            stateCharacteristic,
+            encrypter,
+            driver,
+            options?.validateDecrypted
+        );
         conn.device.addEventListener('gattserverdisconnected', conn.onDisconnect);
         conn.stateCharacteristic.addEventListener('characteristicvaluechanged', conn.onStateUpdate);
         await conn.stateCharacteristic.startNotifications();
@@ -237,26 +258,36 @@ class GanCubeClassicConnection implements GanCubeConnection, GanCubeRawConnectio
 
     async sendCommandMessage(message: Uint8Array): Promise<void> {
         var encryptedMessage = this.encrypter.encrypt(message);
-        return this.commandCharacteristic.writeValue(encryptedMessage);
+        return this.writeQueue.enqueue(() =>
+            this.commandCharacteristic.writeValue(encryptedMessage as BufferSource)
+        );
     }
 
     onStateUpdate = async (evt: Event) => {
-        var characteristic = evt.target as BluetoothRemoteGATTCharacteristic;
-        var eventMessage = characteristic.value;
-        if (eventMessage && eventMessage.byteLength >= 16) {
+        try {
+            var characteristic = evt.target as BluetoothRemoteGATTCharacteristic;
+            var eventMessage = characteristic.value;
+            if (!eventMessage || eventMessage.byteLength < 16) return;
             var raw = new Uint8Array(eventMessage.buffer, eventMessage.byteOffset, eventMessage.byteLength);
             var decryptedMessage = this.encrypter.decrypt(raw);
+            if (this.validateDecrypted && !this.validateDecrypted(decryptedMessage)) return;
             var cubeEvents = await this.driver.handleStateEvent(this, decryptedMessage);
             cubeEvents.forEach(e => this.events$.next(e));
+        } catch {
+            /* ignore corrupt frame */
         }
     }
 
-    onDisconnect = async (): Promise<any> => {
+    onDisconnect = async (): Promise<void> => {
+        if (this.disconnectOnce) return;
+        this.disconnectOnce = true;
         this.device.removeEventListener('gattserverdisconnected', this.onDisconnect);
         this.stateCharacteristic.removeEventListener('characteristicvaluechanged', this.onStateUpdate);
-        this.events$.next({ timestamp: now(), type: "DISCONNECT" });
-        this.events$.unsubscribe();
-        return this.stateCharacteristic.stopNotifications().catch(() => { });
+        await this.stateCharacteristic.stopNotifications().catch(() => { });
+        if (!this.events$.closed) {
+            this.events$.next({ timestamp: now(), type: "DISCONNECT" });
+            this.events$.complete();
+        }
     }
 
     async sendCubeCommand(command: GanCubeCommand): Promise<void> {

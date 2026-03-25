@@ -37,7 +37,7 @@ If you are upgrading from the original [gan-web-bluetooth](https://afedotov.gith
 
 Via the generic Smart Cube API (`connectSmartCube`) this library supports:
 
-- GAN Smart Cubes (Gen2 / Gen3 / Gen4)
+- GAN Smart Cubes (Gen1 / Gen2 / Gen3 / Gen4)
 - Giiker / Mi Smart / Hi- cubes
 - GoCube / Rubik’s Connected
 - MoYu smart cubes:
