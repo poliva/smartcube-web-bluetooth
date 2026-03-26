@@ -827,6 +827,12 @@ class GanGen4ProtocolDriver implements GanProtocolDriver {
     // Used to store partial result acquired from hardware info events
     private hwInfo: { [key: number]: string } = {};
 
+    /** Set when we have seen at least one 0xEC GYRO packet this connection (not cleared on REQUEST_HARDWARE). */
+    private gyroObserved: boolean = false;
+
+    /** Set when a full HARDWARE snapshot was emitted for the current hwInfo assembly; reset when REQUEST_HARDWARE clears hwInfo. */
+    private hardwareInfoEmitted: boolean = false;
+
     createCommandMessage(command: GanCubeCommand): Uint8Array | undefined {
         var msg: Uint8Array | undefined = new Uint8Array(20).fill(0);
         switch (command.type) {
@@ -835,6 +841,7 @@ class GanGen4ProtocolDriver implements GanProtocolDriver {
                 break;
             case 'REQUEST_HARDWARE':
                 this.hwInfo = {};
+                this.hardwareInfoEmitted = false;
                 msg.set([0xDF, 0x03, 0x00, 0x00, 0x00]);
                 break;
             case 'REQUEST_BATTERY':
@@ -847,6 +854,18 @@ class GanGen4ProtocolDriver implements GanProtocolDriver {
                 msg = undefined;
         }
         return msg;
+    }
+
+    private buildHardwareEvent(timestamp: number): GanCubeEvent {
+        return {
+            type: "HARDWARE",
+            timestamp: timestamp,
+            hardwareName: this.hwInfo[0xFC],
+            hardwareVersion: this.hwInfo[0xFE],
+            softwareVersion: this.hwInfo[0xFD],
+            productDate: this.hwInfo[0xFA],
+            gyroSupported: this.gyroObserved
+        };
     }
 
     /** Private cube command for requesting move history */
@@ -1095,18 +1114,14 @@ class GanGen4ProtocolDriver implements GanProtocolDriver {
             }
 
             if (Object.keys(this.hwInfo).length == 4) { // All fields are populated
-                cubeEvents.push({
-                    type: "HARDWARE",
-                    timestamp: timestamp,
-                    hardwareName: this.hwInfo[0xFC],
-                    hardwareVersion: this.hwInfo[0xFE],
-                    softwareVersion: this.hwInfo[0xFD],
-                    productDate: this.hwInfo[0xFA],
-                    gyroSupported: ['GAN12uiM'].indexOf(this.hwInfo[0xFC]) != -1
-                });
+                this.hardwareInfoEmitted = true;
+                cubeEvents.push(this.buildHardwareEvent(timestamp));
             }
 
         } else if (eventType == 0xEC) { // GYRO
+
+            const firstGyroThisSession = !this.gyroObserved;
+            this.gyroObserved = true;
 
             // Orientation Quaternion
             let qw = msg.getBitWord(16, 16);
@@ -1134,6 +1149,10 @@ class GanGen4ProtocolDriver implements GanProtocolDriver {
                     z: (1 - (vz >> 3) * 2) * (vz & 0x7)
                 }
             });
+
+            if (firstGyroThisSession && this.hardwareInfoEmitted && Object.keys(this.hwInfo).length == 4) {
+                cubeEvents.push(this.buildHardwareEvent(timestamp));
+            }
 
         } else if (eventType == 0xEF) { // BATTERY
 
