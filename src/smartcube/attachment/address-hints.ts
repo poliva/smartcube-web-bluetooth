@@ -24,6 +24,17 @@ export function setCachedMacForDevice(device: BluetoothDevice, mac: string): voi
     }
 }
 
+export function removeCachedMacForDevice(device: BluetoothDevice): void {
+    if (typeof localStorage === 'undefined') {
+        return;
+    }
+    try {
+        localStorage.removeItem(STORAGE_PREFIX + device.id);
+    } catch {
+        /* ignore */
+    }
+}
+
 function mergeManufacturerDataInto(
     acc: Map<number, DataView>,
     mf: BluetoothManufacturerData | null | undefined
@@ -49,7 +60,7 @@ function mergeManufacturerDataInto(
  */
 export async function waitForManufacturerData(
     device: BluetoothDevice,
-    timeoutMs = 8000
+    timeoutMs = 5000
 ): Promise<BluetoothManufacturerData | null> {
     if (typeof device.watchAdvertisements !== 'function') {
         return null;

@@ -402,7 +402,7 @@ async function connectMoyu32Device(
     }
 
     if (!mac) {
-        const mfData = await waitForAdvertisements(device, context?.enableAddressSearch ? 15000 : 10000);
+        const mfData = await waitForAdvertisements(device, context?.enableAddressSearch ? 8000 : 5000);
         mac = parseMoyu32MacFromMf(mfData);
     }
 

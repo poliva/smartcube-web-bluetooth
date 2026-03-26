@@ -14,7 +14,7 @@ export async function probeMoyu32Mac(
     mac: string,
     options?: { timeoutMs?: number; signal?: AbortSignal }
 ): Promise<boolean> {
-    const timeoutMs = options?.timeoutMs ?? 8000;
+    const timeoutMs = options?.timeoutMs ?? 2000;
     const gatt = device.gatt;
     if (!gatt) {
         return false;

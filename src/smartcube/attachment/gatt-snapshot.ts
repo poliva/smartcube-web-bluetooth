@@ -1,8 +1,8 @@
 import { normalizeUuid } from './normalize-uuid';
 
-const GATT_CONNECT_TIMEOUT_MS = 30_000;
+const GATT_CONNECT_TIMEOUT_MS = 25_000;
 const GATT_RETRY_MAX = 2;
-const GATT_RETRY_BASE_DELAY_MS = 250;
+const GATT_RETRY_BASE_DELAY_MS = 150;
 
 function disconnectGattSafe(gatt: BluetoothRemoteGATTServer): Promise<void> {
     return Promise.resolve(

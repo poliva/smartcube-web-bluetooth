@@ -67,7 +67,7 @@ async function autoRetrieveMacAddress(device: BluetoothDevice): Promise<string |
         };
         device.addEventListener("advertisementreceived", onAdvEvent);
         device.watchAdvertisements({ signal: abortController.signal }).catch(onAbort);
-        setTimeout(onAbort, 10000);
+        setTimeout(onAbort, 5000);
     });
 }
 

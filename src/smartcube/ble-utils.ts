@@ -21,7 +21,7 @@ function findCharacteristic(
     return null;
 }
 
-async function waitForAdvertisements(device: BluetoothDevice, timeoutMs = 10000): Promise<BluetoothManufacturerData | null> {
+async function waitForAdvertisements(device: BluetoothDevice, timeoutMs = 5000): Promise<BluetoothManufacturerData | null> {
     if (typeof device.watchAdvertisements !== 'function') {
         return null;
     }

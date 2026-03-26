@@ -159,7 +159,7 @@ async function connectGanDevice(
         }
     }
     if (!mac) {
-        const mf = await waitForManufacturerData(device, 10000);
+        const mf = await waitForManufacturerData(device, 5000);
         if (mf) {
             mac = macFromGanManufacturerData(mf);
         }

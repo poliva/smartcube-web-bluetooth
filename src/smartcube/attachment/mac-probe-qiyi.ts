@@ -68,7 +68,7 @@ export async function probeQiYiMac(
     mac: string,
     options?: { timeoutMs?: number; signal?: AbortSignal }
 ): Promise<boolean> {
-    const timeoutMs = options?.timeoutMs ?? 8000;
+    const timeoutMs = options?.timeoutMs ?? 3000;
     const gatt = device.gatt;
     if (!gatt) {
         return false;

@@ -388,7 +388,7 @@ async function connectQiYiDevice(
     }
 
     if (!mac) {
-        const mfData = await waitForAdvertisements(device, context?.enableAddressSearch ? 15000 : 10000);
+        const mfData = await waitForAdvertisements(device, context?.enableAddressSearch ? 8000 : 5000);
         mac = parseQiYiMacFromMf(mfData);
     }
 
@@ -401,7 +401,7 @@ async function connectQiYiDevice(
 
     if (!mac && context?.enableAddressSearch) {
         const candidates = buildQiYiMacCandidatesFromName(device.name);
-        const timeoutMs = 8000;
+        const timeoutMs = 3000;
         for (let i = 0; i < candidates.length; i++) {
             if (context.signal?.aborted) {
                 break;
