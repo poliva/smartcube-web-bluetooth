@@ -4,7 +4,7 @@ import { SmartCubeConnection, SmartCubeEvent, SmartCubeCommand, SmartCubeCapabil
 import type { AttachmentContext } from '../attachment/types';
 import { normalizeUuid } from '../attachment/normalize-uuid';
 import { SmartCubeProtocol, registerProtocol } from '../protocol';
-import { CubieCube } from '../cubie-cube';
+import { CubieCube, SOLVED_FACELET } from '../cubie-cube';
 import { now } from '../ble-utils';
 
 const UUID_SUFFIX = '-b5a3-f393-e0a9-e50e24dcca9e';
@@ -14,10 +14,16 @@ const CHRCT_UUID_READ = '6e400003' + UUID_SUFFIX;
 
 const WRITE_BATTERY = 50;
 const WRITE_STATE = 51;
+const WRITE_RESET = 53;
+
+const INITIAL_STATE_TIMEOUT_MS = 5000;
 
 const AXIS_PERM = [5, 2, 0, 3, 1, 4];
 const FACE_PERM = [0, 1, 2, 5, 8, 7, 6, 3];
 const FACE_OFFSET = [0, 0, 6, 2, 0, 0];
+
+/** Physical opposite faces in URFDLB axis order (U↔D, R↔L, F↔B). */
+const OPPOSITE_AXIS = [3, 4, 5, 0, 1, 2];
 
 class GoCubeConnection implements SmartCubeConnection {
     readonly deviceName: string;
@@ -27,7 +33,7 @@ class GoCubeConnection implements SmartCubeConnection {
         battery: true,
         facelets: true,
         hardware: false,
-        reset: false
+        reset: true
     };
     events$: Subject<SmartCubeEvent>;
 
@@ -38,6 +44,11 @@ class GoCubeConnection implements SmartCubeConnection {
     private prevCubie = new CubieCube();
     private moveCntFree = 100;
     private batteryLevel = 100;
+    /** Last decoded move (axis + direction bit) for short type-1 frames that omit a full pair of bytes. */
+    private lastMoveMeta: { axis: number; dirBit: number } | null = null;
+    /** First full-state (type 2) after connect: defer FACELETS until `init` finishes so subscribers never miss it. */
+    private awaitingInitialState = false;
+    private resolveInitialState: (() => void) | undefined;
 
     constructor(device: BluetoothDevice, name: string) {
         this.device = device;
@@ -52,6 +63,40 @@ class GoCubeConnection implements SmartCubeConnection {
         this.parseData(value);
     };
 
+    private applySingleMove(timestamp: number, axis: number, dirBit: number): void {
+        const power = [0, 2][dirBit];
+        const m = axis * 3 + power;
+        const moveStr = ("URFDLB".charAt(axis) + " 2'".charAt(power)).trim();
+
+        CubieCube.CubeMult(this.prevCubie, CubieCube.moveCube[m], this.curCubie);
+        const facelet = this.curCubie.toFaceCube();
+
+        this.events$.next({
+            timestamp,
+            type: "MOVE",
+            face: axis,
+            direction: power === 0 ? 0 : 1,
+            move: moveStr,
+            localTimestamp: timestamp,
+            cubeTimestamp: null
+        });
+
+        this.events$.next({
+            timestamp,
+            type: "FACELETS",
+            facelets: facelet
+        });
+
+        const tmp = this.curCubie;
+        this.curCubie = this.prevCubie;
+        this.prevCubie = tmp;
+
+        if (++this.moveCntFree > 20) {
+            this.moveCntFree = 0;
+            this.writeChrct?.writeValue(new Uint8Array([WRITE_STATE]).buffer).catch(() => {});
+        }
+    }
+
     private parseData(value: DataView): void {
         const timestamp = now();
         if (value.byteLength < 4) return;
@@ -65,41 +110,25 @@ class GoCubeConnection implements SmartCubeConnection {
         const msgLen = value.byteLength - 6;
 
         if (msgType === 1) { // Move
+            // Firmware may send a truncated type-1 frame (< 8 bytes): treat as opposite-face turn,
+            // mirroring the last full move.
+            if (value.byteLength < 8) {
+                if (this.lastMoveMeta) {
+                    const oppAxis = OPPOSITE_AXIS[this.lastMoveMeta.axis];
+                    const newDirBit = 1 - this.lastMoveMeta.dirBit;
+                    this.applySingleMove(timestamp, oppAxis, newDirBit);
+                    this.lastMoveMeta = { axis: oppAxis, dirBit: newDirBit };
+                }
+                return;
+            }
             for (let i = 0; i < msgLen; i += 2) {
                 const axis = AXIS_PERM[value.getUint8(3 + i) >> 1];
-                const power = [0, 2][value.getUint8(3 + i) & 1];
-                const m = axis * 3 + power;
-                const moveStr = ("URFDLB".charAt(axis) + " 2'".charAt(power)).trim();
-
-                CubieCube.CubeMult(this.prevCubie, CubieCube.moveCube[m], this.curCubie);
-                const facelet = this.curCubie.toFaceCube();
-
-                this.events$.next({
-                    timestamp,
-                    type: "MOVE",
-                    face: axis,
-                    direction: power === 0 ? 0 : 1,
-                    move: moveStr,
-                    localTimestamp: timestamp,
-                    cubeTimestamp: null
-                });
-
-                this.events$.next({
-                    timestamp,
-                    type: "FACELETS",
-                    facelets: facelet
-                });
-
-                const tmp = this.curCubie;
-                this.curCubie = this.prevCubie;
-                this.prevCubie = tmp;
-
-                if (++this.moveCntFree > 20) {
-                    this.moveCntFree = 0;
-                    this.writeChrct?.writeValue(new Uint8Array([WRITE_STATE]).buffer).catch(() => {});
-                }
+                const dirBit = value.getUint8(3 + i) & 1;
+                this.lastMoveMeta = { axis, dirBit };
+                this.applySingleMove(timestamp, axis, dirBit);
             }
         } else if (msgType === 2) { // Cube state
+            // Full-cube state is six 9-sticker faces in wire order; unpack with AXIS_PERM/FACE_PERM.
             const facelet: string[] = [];
             for (let a = 0; a < 6; a++) {
                 const axis = AXIS_PERM[a] * 9;
@@ -117,6 +146,18 @@ class GoCubeConnection implements SmartCubeConnection {
                 this.curCubie = this.prevCubie;
                 this.prevCubie = tmp;
             }
+            if (this.awaitingInitialState && this.resolveInitialState) {
+                const done = this.resolveInitialState;
+                this.resolveInitialState = undefined;
+                this.awaitingInitialState = false;
+                done();
+                return;
+            }
+            this.events$.next({
+                timestamp,
+                type: "FACELETS",
+                facelets: this.prevCubie.toFaceCube()
+            });
         } else if (msgType === 5) { // Battery
             this.batteryLevel = value.getUint8(3);
             this.events$.next({
@@ -141,14 +182,55 @@ class GoCubeConnection implements SmartCubeConnection {
         this.readChrct = await service.getCharacteristic(CHRCT_UUID_READ);
         await this.readChrct.startNotifications();
         this.readChrct.addEventListener('characteristicvaluechanged', this.onStateChanged);
+
+        const firstStatePromise = new Promise<void>((resolve) => {
+            this.resolveInitialState = resolve;
+        });
+        this.awaitingInitialState = true;
+
         await this.writeChrct.writeValue(new Uint8Array([WRITE_STATE]).buffer);
+
+        await Promise.race([
+            firstStatePromise,
+            new Promise<void>((resolve) => setTimeout(resolve, INITIAL_STATE_TIMEOUT_MS))
+        ]);
+        this.awaitingInitialState = false;
+        this.resolveInitialState = undefined;
+
+        queueMicrotask(() => {
+            this.events$.next({
+                timestamp: now(),
+                type: "FACELETS",
+                facelets: this.prevCubie.toFaceCube()
+            });
+        });
     }
 
     async sendCommand(command: SmartCubeCommand): Promise<void> {
-        if (command.type === "REQUEST_BATTERY" && this.writeChrct) {
+        if (!this.writeChrct) {
+            return;
+        }
+        if (command.type === "REQUEST_BATTERY") {
             await this.writeChrct.writeValue(new Uint8Array([WRITE_BATTERY]).buffer);
-        } else if (command.type === "REQUEST_FACELETS" && this.writeChrct) {
+        } else if (command.type === "REQUEST_FACELETS") {
+            const ts = now();
+            this.events$.next({
+                timestamp: ts,
+                type: "FACELETS",
+                facelets: this.prevCubie.toFaceCube()
+            });
             await this.writeChrct.writeValue(new Uint8Array([WRITE_STATE]).buffer);
+        } else if (command.type === "REQUEST_RESET") {
+            await this.writeChrct.writeValue(new Uint8Array([WRITE_RESET]).buffer);
+            this.curCubie = new CubieCube();
+            this.prevCubie = new CubieCube();
+            this.lastMoveMeta = null;
+            this.moveCntFree = 100;
+            this.events$.next({
+                timestamp: now(),
+                type: "FACELETS",
+                facelets: SOLVED_FACELET
+            });
         }
     }
 
