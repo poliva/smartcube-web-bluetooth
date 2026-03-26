@@ -21,7 +21,8 @@ export interface BuildRequestDeviceOptionsExtras {
 
 /**
  * Build Web Bluetooth `requestDevice` options for the given mode.
- * Manufacturer IDs are expressed as standard `filters` entries (not non-spec top-level fields).
+ * Manufacturer IDs appear in `filters` (OR with name filters) and in `optionalManufacturerData`
+ * so `watchAdvertisements` exposes manufacturer data when the device matched by name prefix.
  */
 export function buildRequestDeviceOptions(
     protocols: SmartCubeProtocol[],
@@ -35,11 +36,14 @@ export function buildRequestDeviceOptions(
         }
     }
     const optionalServices = mergeOptionalServiceUuids(protocolServices);
+    const cics = mergeManufacturerCompanyIds(protocols);
+    const optionalManufacturerData = cics.length > 0 ? cics : undefined;
 
     if (mode === 'any') {
         return {
             acceptAllDevices: true,
             optionalServices,
+            optionalManufacturerData,
         };
     }
 
@@ -55,7 +59,6 @@ export function buildRequestDeviceOptions(
         filters.push(f);
     }
 
-    const cics = mergeManufacturerCompanyIds(protocols);
     for (const companyIdentifier of cics) {
         filters.push({
             manufacturerData: [{ companyIdentifier }],
@@ -65,5 +68,6 @@ export function buildRequestDeviceOptions(
     return {
         filters,
         optionalServices,
+        optionalManufacturerData,
     };
 }
