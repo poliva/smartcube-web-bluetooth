@@ -6,6 +6,7 @@ import { normalizeUuid } from '../attachment/normalize-uuid';
 import { SmartCubeProtocol, registerProtocol } from '../protocol';
 import { CubieCube } from '../cubie-cube';
 import { now, findCharacteristic } from '../ble-utils';
+import { writeGattCharacteristicValue } from '../../gatt-characteristic-write';
 
 const UUID_SUFFIX = '-0000-1000-8000-00805f9b34fb';
 const SERVICE_UUID_DATA = '0000aadb' + UUID_SUFFIX;
@@ -178,7 +179,7 @@ class GiikerConnection implements SmartCubeConnection {
                         readChrct.addEventListener('characteristicvaluechanged', listener);
                     });
                     await readChrct.startNotifications();
-                    await writeChrct.writeValue(new Uint8Array([0xb5]).buffer);
+                    await writeGattCharacteristicValue(writeChrct, new Uint8Array([0xb5]).buffer);
                     const level = await batteryPromise;
                     this.events$.next({
                         timestamp: now(),

@@ -6,6 +6,7 @@ import { normalizeUuid } from '../attachment/normalize-uuid';
 import { SmartCubeProtocol, registerProtocol } from '../protocol';
 import { CubieCube, SOLVED_FACELET } from '../cubie-cube';
 import { now } from '../ble-utils';
+import { writeGattCharacteristicValue } from '../../gatt-characteristic-write';
 
 const UUID_SUFFIX = '-b5a3-f393-e0a9-e50e24dcca9e';
 const SERVICE_UUID = '6e400001' + UUID_SUFFIX;
@@ -145,7 +146,8 @@ class GoCubeConnection implements SmartCubeConnection {
 
         if (++this.moveCntFree > 20) {
             this.moveCntFree = 0;
-            this.writeChrct?.writeValue(new Uint8Array([WRITE_STATE]).buffer).catch(() => {});
+            this.writeChrct &&
+                writeGattCharacteristicValue(this.writeChrct, new Uint8Array([WRITE_STATE]).buffer).catch(() => {});
         }
     }
 
@@ -260,7 +262,7 @@ class GoCubeConnection implements SmartCubeConnection {
         this.readChrct.addEventListener('characteristicvaluechanged', this.onStateChanged);
 
         if (this.capabilities.gyroscope) {
-            await this.writeChrct.writeValue(new Uint8Array([WRITE_ENABLE_ORIENTATION]).buffer).catch(() => {});
+            await writeGattCharacteristicValue(this.writeChrct, new Uint8Array([WRITE_ENABLE_ORIENTATION]).buffer).catch(() => {});
         }
 
         const firstStatePromise = new Promise<void>((resolve) => {
@@ -268,7 +270,7 @@ class GoCubeConnection implements SmartCubeConnection {
         });
         this.awaitingInitialState = true;
 
-        await this.writeChrct.writeValue(new Uint8Array([WRITE_STATE]).buffer);
+        await writeGattCharacteristicValue(this.writeChrct, new Uint8Array([WRITE_STATE]).buffer);
 
         await Promise.race([
             firstStatePromise,
@@ -291,7 +293,7 @@ class GoCubeConnection implements SmartCubeConnection {
             return;
         }
         if (command.type === "REQUEST_BATTERY") {
-            await this.writeChrct.writeValue(new Uint8Array([WRITE_BATTERY]).buffer);
+            await writeGattCharacteristicValue(this.writeChrct, new Uint8Array([WRITE_BATTERY]).buffer);
         } else if (command.type === "REQUEST_FACELETS") {
             const ts = now();
             this.events$.next({
@@ -299,9 +301,9 @@ class GoCubeConnection implements SmartCubeConnection {
                 type: "FACELETS",
                 facelets: this.prevCubie.toFaceCube()
             });
-            await this.writeChrct.writeValue(new Uint8Array([WRITE_STATE]).buffer);
+            await writeGattCharacteristicValue(this.writeChrct, new Uint8Array([WRITE_STATE]).buffer);
         } else if (command.type === "REQUEST_RESET") {
-            await this.writeChrct.writeValue(new Uint8Array([WRITE_RESET]).buffer);
+            await writeGattCharacteristicValue(this.writeChrct, new Uint8Array([WRITE_RESET]).buffer);
             this.curCubie = new CubieCube();
             this.prevCubie = new CubieCube();
             this.lastMoveMeta = null;

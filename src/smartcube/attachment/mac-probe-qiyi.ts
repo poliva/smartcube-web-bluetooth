@@ -1,5 +1,6 @@
 import { ModeOfOperation } from 'aes-js';
 import { findCharacteristic } from '../ble-utils';
+import { writeGattCharacteristicValue } from '../../gatt-characteristic-write';
 import { isValidQiYiDecryptedPacket } from './packet-sanity';
 
 const UUID_SUFFIX = '-0000-1000-8000-00805f9b34fb';
@@ -114,7 +115,7 @@ export async function probeQiYiMac(
             return;
         }
         try {
-            void chrct.writeValue(buildEncryptedQiYiHello(mac));
+            void writeGattCharacteristicValue(chrct, buildEncryptedQiYiHello(mac)).catch(() => {});
         } catch {
             /* ignore */
         }

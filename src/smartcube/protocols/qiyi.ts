@@ -9,6 +9,7 @@ import { probeQiYiMac } from '../attachment/mac-probe-qiyi';
 import { SmartCubeProtocol, registerProtocol } from '../protocol';
 import { CubieCube } from '../cubie-cube';
 import { now, findCharacteristic, waitForAdvertisements, extractMacFromManufacturerData } from '../ble-utils';
+import { writeGattCharacteristicValue } from '../../gatt-characteristic-write';
 
 const UUID_SUFFIX = '-0000-1000-8000-00805f9b34fb';
 const SERVICE_UUID = '0000fff0' + UUID_SUFFIX;
@@ -149,7 +150,7 @@ class QiYiConnection implements SmartCubeConnection {
                 msg.push(0);
             }
             const encMsg = this.encrypter.encrypt(msg);
-            await ch.writeValue(new Uint8Array(encMsg).buffer);
+            await writeGattCharacteristicValue(ch, new Uint8Array(encMsg).buffer);
         };
         this.writeChain = this.writeChain.then(run, run);
         return this.writeChain;

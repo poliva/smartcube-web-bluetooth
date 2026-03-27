@@ -1,4 +1,5 @@
 import { findCharacteristic } from '../ble-utils';
+import { writeGattCharacteristicValue } from '../../gatt-characteristic-write';
 import { createMoyu32SessionCrypto } from './moyu32-session-crypto';
 import { isValidMoYu32DecryptedPacket } from './packet-sanity';
 
@@ -65,7 +66,7 @@ export async function probeMoyu32Mac(
         const t = Array(20).fill(0);
         t[0] = cmd;
         const enc = crypto.encrypt(t);
-        await writeChrct.writeValue(new Uint8Array(enc).buffer);
+        await writeGattCharacteristicValue(writeChrct, new Uint8Array(enc).buffer);
     };
 
     try {

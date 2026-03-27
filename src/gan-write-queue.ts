@@ -1,5 +1,5 @@
 /**
- * Serializes GATT writeValue calls to avoid overlapping operations on some stacks.
+ * Serializes GATT write operations (writeValueWithResponse / writeValueWithoutResponse) to avoid overlapping operations on some stacks.
  */
 
 export class GattWriteQueue {

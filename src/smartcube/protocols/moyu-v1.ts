@@ -1,3 +1,5 @@
+import { writeGattCharacteristicValue } from '../../gatt-characteristic-write';
+
 /**
  * MoYu BLE API v1: fragmented request/response on 0x1001 / 0x1002 and cube-state payload parsing.
  */
@@ -221,7 +223,7 @@ export class MoyuV1Client {
             v.setUint8(1, i | (nParts << 4));
             const slice = body.subarray(18 * i, 18 * (i + 1));
             frame.set(slice, 2);
-            await this.writeCharacteristic.writeValue(frame);
+            await writeGattCharacteristicValue(this.writeCharacteristic, frame);
         }
         return Date.now();
     }

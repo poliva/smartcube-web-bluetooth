@@ -2,6 +2,7 @@
 import { now, toKociembaFacelets } from './utils';
 import { GanCubeEncrypter } from './gan-cube-encrypter';
 import { GattWriteQueue } from './gan-write-queue';
+import { writeGattCharacteristicValue } from './gatt-characteristic-write';
 import { Observable, Subject } from 'rxjs';
 
 /** Command for requesting information about GAN Smart Cube hardware  */
@@ -259,7 +260,7 @@ class GanCubeClassicConnection implements GanCubeConnection, GanCubeRawConnectio
     async sendCommandMessage(message: Uint8Array): Promise<void> {
         var encryptedMessage = this.encrypter.encrypt(message);
         return this.writeQueue.enqueue(() =>
-            this.commandCharacteristic.writeValue(encryptedMessage as BufferSource)
+            writeGattCharacteristicValue(this.commandCharacteristic, encryptedMessage as BufferSource)
         );
     }
 

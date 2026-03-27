@@ -10,6 +10,7 @@ import { probeMoyu32Mac } from '../attachment/mac-probe-moyu32';
 import { SmartCubeProtocol, registerProtocol } from '../protocol';
 import { CubieCube, SOLVED_FACELET } from '../cubie-cube';
 import { now, findCharacteristic, waitForAdvertisements } from '../ble-utils';
+import { writeGattCharacteristicValue } from '../../gatt-characteristic-write';
 
 const SERVICE_UUID = '0783b03e-7735-b5a0-1760-a305d2795cb0';
 const CHRT_UUID_READ = '0783b03e-7735-b5a0-1760-a305d2795cb1';
@@ -165,7 +166,7 @@ class Moyu32Connection implements SmartCubeConnection {
     private sendRequest(req: number[]): Promise<void> {
         if (!this.writeChrct) return Promise.resolve();
         const encoded = this.encrypter ? this.encrypter.encrypt(req.slice()) : req;
-        return this.writeChrct.writeValue(new Uint8Array(encoded).buffer).then(() => {});
+        return writeGattCharacteristicValue(this.writeChrct, new Uint8Array(encoded).buffer).then(() => {});
     }
 
     private sendSimpleRequest(opcode: number): Promise<void> {
