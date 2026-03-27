@@ -105,7 +105,7 @@ function makeTimeFromTimestamp(timestamp: number): GanTimerTime {
 /**
  * Calculate ArrayBuffer checksum using CRC-16/CCIT-FALSE algorithm variation
  */
-function crc16ccit(buff: ArrayBuffer): number {
+function crc16ccit(buff: ArrayBufferLike): number {
     var dataView = new DataView(buff);
     var crc: number = 0xFFFF;
     for (let i = 0; i < dataView.byteLength; ++i) {
