@@ -23,7 +23,7 @@ export type {
 } from './types';
 
 export { connectSmartCube } from './connect';
-export { removeCachedMacForDevice } from './attachment/address-hints';
+export { getCachedMacForDevice, removeCachedMacForDevice } from './attachment/address-hints';
 
 export type {
     SmartCubeProtocol,
