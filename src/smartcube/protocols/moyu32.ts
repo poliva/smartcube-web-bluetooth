@@ -406,20 +406,6 @@ async function connectMoyu32Device(
         mac = parseMoyu32MacFromMf(mfData);
     }
 
-    if (!mac) {
-        const name = device.name || '';
-        const m32 = /^WCU_MY32_([0-9A-Fa-f]{4})$/.exec(name);
-        if (m32) {
-            const x = m32[1]!.toUpperCase();
-            mac = `CF:30:16:00:${x.slice(0, 2)}:${x.slice(2, 4)}`;
-        }
-        const m33 = /^WCU_MY33_([0-9A-Fa-f]{4})$/.exec(name);
-        if (!mac && m33) {
-            const x = m33[1]!.toUpperCase();
-            mac = `CF:30:16:02:${x.slice(0, 2)}:${x.slice(2, 4)}`;
-        }
-    }
-
     if (!mac && context?.enableAddressSearch) {
         const candidates = buildMoyu32MacCandidatesFromName(device.name);
         const timeoutMs = 2000;
