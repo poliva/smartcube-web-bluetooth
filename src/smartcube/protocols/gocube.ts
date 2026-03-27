@@ -23,7 +23,6 @@ const INITIAL_STATE_TIMEOUT_MS = 5000;
 
 /** True for classic GoCube (incl. `GoCube_*`); false for Rubik's Connected and GoCube X (same UART, no gyro). */
 function goCubeDeviceSupportsGyro(deviceName: string): boolean {
-    return true;
     if (!deviceName.startsWith('GoCube')) {
         return false;
     }
