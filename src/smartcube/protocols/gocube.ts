@@ -48,25 +48,29 @@ function gocubeChecksumValid(value: DataView): boolean {
  * MsgOrientation payload: ASCII decimals `x#y#z#w` (see public GoCube UART docs). Normalize to a unit quaternion.
  * Integer components are scaled together so normalization yields the physical orientation.
  *
- * Doc sample `9175#346#-13528#-459` yields a unit quaternion (verified numerically; adjust mapping only if hardware differs).
+ * Wire `(rx,ry,rz,rw)` normalized to `(nx,ny,nz,nw)` then mapped to `(nx, -nz, -ny, nw)`.
  */
 export function parseGoCubeOrientationPayload(payloadUtf8: string): { x: number; y: number; z: number; w: number } | null {
     const parts = payloadUtf8.split('#');
     if (parts.length !== 4) {
         return null;
     }
-    const x = Number.parseInt(parts[0]!.trim(), 10);
-    const y = Number.parseInt(parts[1]!.trim(), 10);
-    const z = Number.parseInt(parts[2]!.trim(), 10);
-    const w = Number.parseInt(parts[3]!.trim(), 10);
-    if (![x, y, z, w].every((n) => Number.isFinite(n))) {
+    const rx = Number.parseInt(parts[0]!.trim(), 10);
+    const ry = Number.parseInt(parts[1]!.trim(), 10);
+    const rz = Number.parseInt(parts[2]!.trim(), 10);
+    const rw = Number.parseInt(parts[3]!.trim(), 10);
+    if (![rx, ry, rz, rw].every((n) => Number.isFinite(n))) {
         return null;
     }
-    const len = Math.hypot(x, y, z, w);
+    const len = Math.hypot(rx, ry, rz, rw);
     if (len === 0) {
         return null;
     }
-    return { x: x / len, y: y / len, z: z / len, w: w / len };
+    const nx = rx / len;
+    const ny = ry / len;
+    const nz = rz / len;
+    const nw = rw / len;
+    return { x: nx, y: -nz, z: -ny, w: nw };
 }
 
 const AXIS_PERM = [5, 2, 0, 3, 1, 4];
