@@ -96,6 +96,7 @@ class GoCubeConnection implements SmartCubeConnection {
     private prevCubie = new CubieCube();
     private moveCntFree = 100;
     private lastBatteryLevel: number | null = null;
+    private forceNextBatteryEmission = false;
     private batteryInterval: ReturnType<typeof setInterval> | null = null;
     /** Last decoded move (axis + direction bit) for short type-1 frames that omit a full pair of bytes. */
     private lastMoveMeta: { axis: number; dirBit: number } | null = null;
@@ -163,7 +164,9 @@ class GoCubeConnection implements SmartCubeConnection {
             return;
         }
         const batteryLevel = Math.min(100, Math.max(0, Math.round(rawLevel)));
-        if (this.lastBatteryLevel === batteryLevel) {
+        const forceEmission = this.forceNextBatteryEmission;
+        this.forceNextBatteryEmission = false;
+        if (!forceEmission && this.lastBatteryLevel === batteryLevel) {
             return;
         }
         this.lastBatteryLevel = batteryLevel;
@@ -283,6 +286,7 @@ class GoCubeConnection implements SmartCubeConnection {
     private onDisconnect = (): void => {
         this.device.removeEventListener('gattserverdisconnected', this.onDisconnect);
         this.lastBatteryLevel = null;
+        this.forceNextBatteryEmission = false;
         if (this.batteryInterval) {
             clearInterval(this.batteryInterval);
             this.batteryInterval = null;
@@ -334,6 +338,7 @@ class GoCubeConnection implements SmartCubeConnection {
             return;
         }
         if (command.type === "REQUEST_BATTERY") {
+            this.forceNextBatteryEmission = true;
             await writeGattCharacteristicValue(this.writeChrct, new Uint8Array([WRITE_BATTERY]).buffer);
         } else if (command.type === "REQUEST_FACELETS") {
             const ts = now();
@@ -352,6 +357,7 @@ class GoCubeConnection implements SmartCubeConnection {
             this.lastMoveMeta = null;
             this.moveCntFree = 100;
             this.lastBatteryLevel = null;
+            this.forceNextBatteryEmission = false;
             this.events$.next({
                 timestamp: now(),
                 type: "FACELETS",
@@ -367,6 +373,7 @@ class GoCubeConnection implements SmartCubeConnection {
             this.readChrct = null;
         }
         this.lastBatteryLevel = null;
+        this.forceNextBatteryEmission = false;
         if (this.batteryInterval) {
             clearInterval(this.batteryInterval);
             this.batteryInterval = null;

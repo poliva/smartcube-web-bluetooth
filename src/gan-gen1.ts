@@ -107,6 +107,7 @@ export class GanGen1CubeConnection implements GanCubeConnection {
     private pollFailures = 0;
     private teardown = false;
     private lastBatteryLevel: number | null = null;
+    private forceNextBatteryEmission = false;
 
     private readonly onGattDisconnected: () => void;
 
@@ -211,7 +212,9 @@ export class GanGen1CubeConnection implements GanCubeConnection {
             return;
         }
         const batteryLevel = Math.min(100, Math.max(0, Math.round(rawLevel)));
-        if (this.lastBatteryLevel === batteryLevel) {
+        const forceEmission = this.forceNextBatteryEmission;
+        this.forceNextBatteryEmission = false;
+        if (!forceEmission && this.lastBatteryLevel === batteryLevel) {
             return;
         }
         this.lastBatteryLevel = batteryLevel;
@@ -330,6 +333,7 @@ export class GanGen1CubeConnection implements GanCubeConnection {
         this.teardown = true;
         this.polling = false;
         this.lastBatteryLevel = null;
+        this.forceNextBatteryEmission = false;
         this.device.removeEventListener('gattserverdisconnected', this.onGattDisconnected);
         try {
             this.chrGyroNotify.removeEventListener('characteristicvaluechanged', this.onGyroNotify);
@@ -344,6 +348,7 @@ export class GanGen1CubeConnection implements GanCubeConnection {
     async sendCubeCommand(command: GanCubeCommand): Promise<void> {
         switch (command.type) {
             case 'REQUEST_BATTERY':
+                this.forceNextBatteryEmission = true;
                 await this.readBattery();
                 break;
             case 'REQUEST_FACELETS':

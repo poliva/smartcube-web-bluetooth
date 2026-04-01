@@ -103,6 +103,7 @@ class GanSmartCubeConnection implements SmartCubeConnection {
     private ganConn: GanCubeConnection;
     private deviceMac: string;
     private lastBatteryLevel: number | null = null;
+    private forceNextBatteryEmission = false;
     events$: Subject<SmartCubeEvent>;
 
     readonly protocol: SmartCubeProtocolInfo;
@@ -118,7 +119,9 @@ class GanSmartCubeConnection implements SmartCubeConnection {
             next: (event) => {
                 if (event.type === 'BATTERY') {
                     const batteryLevel = Math.min(100, Math.max(0, Math.round(event.batteryLevel)));
-                    if (this.lastBatteryLevel === batteryLevel) {
+                    const forceEmission = this.forceNextBatteryEmission;
+                    this.forceNextBatteryEmission = false;
+                    if (!forceEmission && this.lastBatteryLevel === batteryLevel) {
                         return;
                     }
                     this.lastBatteryLevel = batteryLevel;
@@ -144,10 +147,14 @@ class GanSmartCubeConnection implements SmartCubeConnection {
     }
 
     async sendCommand(command: SmartCubeCommand): Promise<void> {
+        if (command.type === 'REQUEST_BATTERY') {
+            this.forceNextBatteryEmission = true;
+        }
         return this.ganConn.sendCubeCommand(command);
     }
 
     async disconnect(): Promise<void> {
+        this.forceNextBatteryEmission = false;
         return this.ganConn.disconnect();
     }
 }

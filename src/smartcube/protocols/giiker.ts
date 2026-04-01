@@ -125,6 +125,7 @@ class GiikerConnection implements SmartCubeConnection {
     private batteryInterval: ReturnType<typeof setInterval> | null = null;
     private onBatteryChanged: ((evt: Event) => void) | null = null;
     private lastBatteryLevel: number | null = null;
+    private forceNextBatteryEmission = false;
 
     constructor(device: BluetoothDevice, name: string) {
         this.device = device;
@@ -183,7 +184,9 @@ class GiikerConnection implements SmartCubeConnection {
             return;
         }
         const batteryLevel = Math.min(100, Math.max(0, Math.round(rawLevel)));
-        if (this.lastBatteryLevel === batteryLevel) {
+        const forceEmission = this.forceNextBatteryEmission;
+        this.forceNextBatteryEmission = false;
+        if (!forceEmission && this.lastBatteryLevel === batteryLevel) {
             return;
         }
         this.lastBatteryLevel = batteryLevel;
@@ -199,6 +202,7 @@ class GiikerConnection implements SmartCubeConnection {
         this.isReady = false;
         this.pendingValues = [];
         this.lastBatteryLevel = null;
+        this.forceNextBatteryEmission = false;
         if (this.batteryInterval) {
             clearInterval(this.batteryInterval);
             this.batteryInterval = null;
@@ -293,6 +297,7 @@ class GiikerConnection implements SmartCubeConnection {
         if (command.type === "REQUEST_BATTERY") {
             // Periodic battery polling is set up in init when available.
             if (this.rwWriteChrct) {
+                this.forceNextBatteryEmission = true;
                 await writeGattCharacteristicValue(this.rwWriteChrct, new Uint8Array([0xb5]).buffer);
             }
         } else if (command.type === "REQUEST_FACELETS") {
@@ -319,6 +324,7 @@ class GiikerConnection implements SmartCubeConnection {
             this.dataChrct = null;
         }
         this.lastBatteryLevel = null;
+        this.forceNextBatteryEmission = false;
         if (this.batteryInterval) {
             clearInterval(this.batteryInterval);
             this.batteryInterval = null;

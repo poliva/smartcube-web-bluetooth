@@ -158,6 +158,7 @@ class Moyu32Connection implements SmartCubeConnection {
     private moveCnt = -1;
     private prevMoveCnt = -1;
     private lastBatteryLevel: number | null = null;
+    private forceNextBatteryEmission = false;
     private batteryInterval: ReturnType<typeof setInterval> | null = null;
 
     constructor(device: BluetoothDevice, mac: string) {
@@ -190,7 +191,9 @@ class Moyu32Connection implements SmartCubeConnection {
             return;
         }
         const batteryLevel = Math.min(100, Math.max(0, Math.round(rawLevel)));
-        if (this.lastBatteryLevel === batteryLevel) {
+        const forceEmission = this.forceNextBatteryEmission;
+        this.forceNextBatteryEmission = false;
+        if (!forceEmission && this.lastBatteryLevel === batteryLevel) {
             return;
         }
         this.lastBatteryLevel = batteryLevel;
@@ -345,6 +348,7 @@ class Moyu32Connection implements SmartCubeConnection {
     private onDisconnect = (): void => {
         this.device.removeEventListener('gattserverdisconnected', this.onDisconnect);
         this.lastBatteryLevel = null;
+        this.forceNextBatteryEmission = false;
         if (this.batteryInterval) {
             clearInterval(this.batteryInterval);
             this.batteryInterval = null;
@@ -392,6 +396,7 @@ class Moyu32Connection implements SmartCubeConnection {
                 await this.sendSimpleRequest(163);
                 break;
             case "REQUEST_BATTERY":
+                this.forceNextBatteryEmission = true;
                 await this.sendSimpleRequest(164);
                 break;
         }
@@ -404,6 +409,7 @@ class Moyu32Connection implements SmartCubeConnection {
             this.readChrct = null;
         }
         this.lastBatteryLevel = null;
+        this.forceNextBatteryEmission = false;
         if (this.batteryInterval) {
             clearInterval(this.batteryInterval);
             this.batteryInterval = null;

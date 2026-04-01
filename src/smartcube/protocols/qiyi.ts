@@ -127,6 +127,7 @@ class QiYiConnection implements SmartCubeConnection {
     private prevCubie = new CubieCube();
     private lastTs = 0;
     private lastBatteryLevel: number | null = null;
+    private forceNextBatteryEmission = false;
     private writeChain: Promise<void> = Promise.resolve();
 
     constructor(device: BluetoothDevice, mac: string) {
@@ -235,7 +236,9 @@ class QiYiConnection implements SmartCubeConnection {
             return;
         }
         const batteryLevel = Math.min(100, Math.max(0, Math.round(rawLevel)));
-        if (this.lastBatteryLevel === batteryLevel) {
+        const forceEmission = this.forceNextBatteryEmission;
+        this.forceNextBatteryEmission = false;
+        if (!forceEmission && this.lastBatteryLevel === batteryLevel) {
             return;
         }
         this.lastBatteryLevel = batteryLevel;
@@ -340,6 +343,7 @@ class QiYiConnection implements SmartCubeConnection {
     private onDisconnect = (): void => {
         this.device.removeEventListener('gattserverdisconnected', this.onDisconnect);
         this.lastBatteryLevel = null;
+        this.forceNextBatteryEmission = false;
         this.events$.next({ timestamp: now(), type: "DISCONNECT" });
         this.events$.complete();
     };
@@ -362,6 +366,9 @@ class QiYiConnection implements SmartCubeConnection {
 
     async sendCommand(command: SmartCubeCommand): Promise<void> {
         if (command.type === "REQUEST_FACELETS" || command.type === "REQUEST_BATTERY") {
+            if (command.type === "REQUEST_BATTERY") {
+                this.forceNextBatteryEmission = true;
+            }
             await this.sendHello();
         } else if (command.type === "REQUEST_HARDWARE") {
             this.emitHardwareEvent();
@@ -375,6 +382,7 @@ class QiYiConnection implements SmartCubeConnection {
             this.cubeChrct = null;
         }
         this.lastBatteryLevel = null;
+        this.forceNextBatteryEmission = false;
         this.device.removeEventListener('gattserverdisconnected', this.onDisconnect);
         this.events$.next({ timestamp: now(), type: "DISCONNECT" });
         this.events$.complete();

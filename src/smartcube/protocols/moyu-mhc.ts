@@ -180,12 +180,12 @@ class MoyuMhcConnection implements SmartCubeConnection {
         }
     }
 
-    private emitBatteryLevel(rawLevel: number, timestamp = now()): void {
+    private emitBatteryLevel(rawLevel: number, timestamp = now(), forceEmission = false): void {
         if (!Number.isFinite(rawLevel)) {
             return;
         }
         const batteryLevel = Math.min(100, Math.max(0, Math.round(rawLevel)));
-        if (this.lastBatteryLevel === batteryLevel) {
+        if (!forceEmission && this.lastBatteryLevel === batteryLevel) {
             return;
         }
         this.lastBatteryLevel = batteryLevel;
@@ -305,7 +305,7 @@ class MoyuMhcConnection implements SmartCubeConnection {
                 });
             } else if (command.type === 'REQUEST_BATTERY') {
                 const b = await this.v1.getBatteryInfo();
-                this.emitBatteryLevel(b.value.percentage, ts);
+                this.emitBatteryLevel(b.value.percentage, ts, true);
             } else if (command.type === 'REQUEST_HARDWARE') {
                 const h = await this.v1.getHardwareInfo();
                 this.events$.next({
