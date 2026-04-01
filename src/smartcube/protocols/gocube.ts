@@ -107,7 +107,7 @@ class GoCubeConnection implements SmartCubeConnection {
             gyroscope: gyroSupported,
             battery: true,
             facelets: true,
-            hardware: false,
+            hardware: true,
             reset: true
         };
         this.events$ = new Subject<SmartCubeEvent>();
@@ -249,6 +249,15 @@ class GoCubeConnection implements SmartCubeConnection {
         }
     }
 
+    private emitHardwareEvent(): void {
+        this.events$.next({
+            timestamp: now(),
+            type: "HARDWARE",
+            hardwareName: this.deviceName,
+            gyroSupported: this.capabilities.gyroscope
+        });
+    }
+
     private onDisconnect = (): void => {
         this.device.removeEventListener('gattserverdisconnected', this.onDisconnect);
         this.events$.next({ timestamp: now(), type: "DISCONNECT" });
@@ -305,6 +314,8 @@ class GoCubeConnection implements SmartCubeConnection {
                 facelets: this.prevCubie.toFaceCube()
             });
             await writeGattCharacteristicValue(this.writeChrct, new Uint8Array([WRITE_STATE]).buffer);
+        } else if (command.type === "REQUEST_HARDWARE") {
+            this.emitHardwareEvent();
         } else if (command.type === "REQUEST_RESET") {
             await writeGattCharacteristicValue(this.writeChrct, new Uint8Array([WRITE_RESET]).buffer);
             this.curCubie = new CubieCube();

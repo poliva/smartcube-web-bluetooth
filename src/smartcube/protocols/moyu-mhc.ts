@@ -275,6 +275,7 @@ class MoyuMhcConnection implements SmartCubeConnection {
                     type: 'HARDWARE',
                     softwareVersion: `${h.major}.${h.minor}.${h.patch}`,
                     hardwareVersion: `boot:${h.bootCount}`,
+                    gyroSupported: this.capabilities.gyroscope,
                 });
             } else if (command.type === 'REQUEST_RESET') {
                 await this.v1.setCubeState(MOYU_V1_SOLVED_STICKERS, [0, 0, 0, 0, 0, 0]);

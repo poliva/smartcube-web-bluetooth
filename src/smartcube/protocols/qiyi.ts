@@ -112,7 +112,7 @@ class QiYiConnection implements SmartCubeConnection {
         gyroscope: false,
         battery: true,
         facelets: true,
-        hardware: false,
+        hardware: true,
         reset: false
     };
     events$: Subject<SmartCubeEvent>;
@@ -215,6 +215,15 @@ class QiYiConnection implements SmartCubeConnection {
                 z: ay,
                 w: aw
             }
+        });
+    }
+
+    private emitHardwareEvent(): void {
+        this.events$.next({
+            timestamp: now(),
+            type: "HARDWARE",
+            hardwareName: this.deviceName,
+            gyroSupported: this.capabilities.gyroscope
         });
     }
 
@@ -349,6 +358,8 @@ class QiYiConnection implements SmartCubeConnection {
     async sendCommand(command: SmartCubeCommand): Promise<void> {
         if (command.type === "REQUEST_FACELETS") {
             await this.sendHello();
+        } else if (command.type === "REQUEST_HARDWARE") {
+            this.emitHardwareEvent();
         }
     }
 

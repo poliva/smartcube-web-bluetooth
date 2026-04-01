@@ -106,7 +106,7 @@ class GiikerConnection implements SmartCubeConnection {
         gyroscope: false,
         battery: true,
         facelets: true,
-        hardware: false,
+        hardware: true,
         reset: true
     };
     events$: Subject<SmartCubeEvent>;
@@ -164,6 +164,15 @@ class GiikerConnection implements SmartCubeConnection {
             facelets: facelet
         });
     };
+
+    private emitHardwareEvent(): void {
+        this.events$.next({
+            timestamp: now(),
+            type: "HARDWARE",
+            hardwareName: this.deviceName,
+            gyroSupported: false
+        });
+    }
 
     private onDisconnect = (): void => {
         this.device.removeEventListener('gattserverdisconnected', this.onDisconnect);
@@ -280,6 +289,8 @@ class GiikerConnection implements SmartCubeConnection {
                     facelets: this.lastFacelet
                 });
             }
+        } else if (command.type === "REQUEST_HARDWARE") {
+            this.emitHardwareEvent();
         } else if (command.type === "REQUEST_RESET") {
             if (this.rwWriteChrct) {
                 await writeGattCharacteristicValue(this.rwWriteChrct, new Uint8Array([0xa1]).buffer);
