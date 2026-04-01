@@ -47,6 +47,8 @@ class MoyuMhcConnection implements SmartCubeConnection {
     private faceStatus = [0, 0, 0, 0, 0, 0];
     private curCubie = new CubieCube();
     private prevCubie = new CubieCube();
+    private lastBatteryLevel: number | null = null;
+    private batteryInterval: ReturnType<typeof setInterval> | null = null;
 
     constructor(device: BluetoothDevice) {
         this.device = device;
@@ -175,8 +177,41 @@ class MoyuMhcConnection implements SmartCubeConnection {
         }
     }
 
+    private emitBatteryLevel(rawLevel: number, timestamp = now()): void {
+        if (!Number.isFinite(rawLevel)) {
+            return;
+        }
+        const batteryLevel = Math.min(100, Math.max(0, Math.round(rawLevel)));
+        if (this.lastBatteryLevel === batteryLevel) {
+            return;
+        }
+        this.lastBatteryLevel = batteryLevel;
+        this.events$.next({
+            timestamp,
+            type: 'BATTERY',
+            batteryLevel,
+        });
+    }
+
+    private async pollBattery(): Promise<void> {
+        if (!this.v1) {
+            return;
+        }
+        try {
+            const b = await this.v1.getBatteryInfo();
+            this.emitBatteryLevel(b.value.percentage);
+        } catch {
+            /* ignore failed optional commands */
+        }
+    }
+
     private onDisconnect = (): void => {
         this.device.removeEventListener('gattserverdisconnected', this.onDisconnect);
+        this.lastBatteryLevel = null;
+        if (this.batteryInterval) {
+            clearInterval(this.batteryInterval);
+            this.batteryInterval = null;
+        }
         this.events$.next({ timestamp: now(), type: "DISCONNECT" });
         this.events$.complete();
     };
@@ -223,6 +258,10 @@ class MoyuMhcConnection implements SmartCubeConnection {
         this.updateCapabilities();
 
         if (this.v1) {
+            await this.pollBattery();
+            this.batteryInterval = setInterval(() => {
+                void this.pollBattery();
+            }, 60_000);
             try {
                 const st = await this.v1.getCubeState();
                 this.applyCubeStateFromDevice(st.stickers, st.angles);
@@ -263,11 +302,7 @@ class MoyuMhcConnection implements SmartCubeConnection {
                 });
             } else if (command.type === 'REQUEST_BATTERY') {
                 const b = await this.v1.getBatteryInfo();
-                this.events$.next({
-                    timestamp: ts,
-                    type: 'BATTERY',
-                    batteryLevel: Math.min(100, Math.max(0, Math.round(b.value.percentage))),
-                });
+                this.emitBatteryLevel(b.value.percentage, ts);
             } else if (command.type === 'REQUEST_HARDWARE') {
                 const h = await this.v1.getHardwareInfo();
                 this.events$.next({
@@ -305,6 +340,11 @@ class MoyuMhcConnection implements SmartCubeConnection {
         if (this.gyroChrct) {
             this.gyroChrct.removeEventListener('characteristicvaluechanged', this.onGyroEvent);
             await this.gyroChrct.stopNotifications().catch(() => {});
+        }
+        this.lastBatteryLevel = null;
+        if (this.batteryInterval) {
+            clearInterval(this.batteryInterval);
+            this.batteryInterval = null;
         }
         this.readChrct = null;
         this.turnChrct = null;

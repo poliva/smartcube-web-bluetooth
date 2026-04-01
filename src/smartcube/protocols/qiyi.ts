@@ -123,7 +123,7 @@ class QiYiConnection implements SmartCubeConnection {
     private curCubie = new CubieCube();
     private prevCubie = new CubieCube();
     private lastTs = 0;
-    private batteryLevel = 0;
+    private lastBatteryLevel: number | null = null;
     private writeChain: Promise<void> = Promise.resolve();
 
     constructor(device: BluetoothDevice, mac: string) {
@@ -227,6 +227,22 @@ class QiYiConnection implements SmartCubeConnection {
         });
     }
 
+    private emitBatteryLevel(rawLevel: number, timestamp = now()): void {
+        if (!Number.isFinite(rawLevel)) {
+            return;
+        }
+        const batteryLevel = Math.min(100, Math.max(0, Math.round(rawLevel)));
+        if (this.lastBatteryLevel === batteryLevel) {
+            return;
+        }
+        this.lastBatteryLevel = batteryLevel;
+        this.events$.next({
+            timestamp,
+            type: 'BATTERY',
+            batteryLevel,
+        });
+    }
+
     private parseCubeData(msg: number[]): void {
         const timestamp = now();
         if (msg[0] !== 0xfe) return;
@@ -236,7 +252,6 @@ class QiYiConnection implements SmartCubeConnection {
 
         if (opcode === 0x2) {
             // Hello response — always ACK
-            this.batteryLevel = msg[35]!;
             this.sendMessage(msg.slice(2, 7)).catch(() => {});
             const newFacelet = parseFacelet(msg.slice(7, 34));
 
@@ -246,13 +261,7 @@ class QiYiConnection implements SmartCubeConnection {
                 facelets: newFacelet
             });
 
-            if (this.batteryLevel > 0) {
-                this.events$.next({
-                    timestamp,
-                    type: "BATTERY",
-                    batteryLevel: this.batteryLevel
-                });
-            }
+            this.emitBatteryLevel(msg[35]!, timestamp);
 
             this.prevCubie.fromFacelet(newFacelet);
             this.lastTs = ts;
@@ -305,15 +314,7 @@ class QiYiConnection implements SmartCubeConnection {
                 this.lastTs = newMoves[newMoves.length - 1]![1];
             }
 
-            const newBatteryLevel = msg[35]!;
-            if (newBatteryLevel !== this.batteryLevel) {
-                this.batteryLevel = newBatteryLevel;
-                this.events$.next({
-                    timestamp,
-                    type: "BATTERY",
-                    batteryLevel: this.batteryLevel
-                });
-            }
+            this.emitBatteryLevel(msg[35]!, timestamp);
             return;
         }
 
@@ -335,6 +336,7 @@ class QiYiConnection implements SmartCubeConnection {
 
     private onDisconnect = (): void => {
         this.device.removeEventListener('gattserverdisconnected', this.onDisconnect);
+        this.lastBatteryLevel = null;
         this.events$.next({ timestamp: now(), type: "DISCONNECT" });
         this.events$.complete();
     };
@@ -356,7 +358,7 @@ class QiYiConnection implements SmartCubeConnection {
     }
 
     async sendCommand(command: SmartCubeCommand): Promise<void> {
-        if (command.type === "REQUEST_FACELETS") {
+        if (command.type === "REQUEST_FACELETS" || command.type === "REQUEST_BATTERY") {
             await this.sendHello();
         } else if (command.type === "REQUEST_HARDWARE") {
             this.emitHardwareEvent();
@@ -369,6 +371,7 @@ class QiYiConnection implements SmartCubeConnection {
             await this.cubeChrct.stopNotifications().catch(() => {});
             this.cubeChrct = null;
         }
+        this.lastBatteryLevel = null;
         this.device.removeEventListener('gattserverdisconnected', this.onDisconnect);
         this.events$.next({ timestamp: now(), type: "DISCONNECT" });
         this.events$.complete();

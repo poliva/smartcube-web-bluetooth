@@ -121,6 +121,7 @@ class GiikerConnection implements SmartCubeConnection {
     private rwWriteChrct: BluetoothRemoteGATTCharacteristic | null = null;
     private batteryInterval: ReturnType<typeof setInterval> | null = null;
     private onBatteryChanged: ((evt: Event) => void) | null = null;
+    private lastBatteryLevel: number | null = null;
 
     constructor(device: BluetoothDevice, name: string) {
         this.device = device;
@@ -174,10 +175,27 @@ class GiikerConnection implements SmartCubeConnection {
         });
     }
 
+    private emitBatteryLevel(rawLevel: number, timestamp = now()): void {
+        if (!Number.isFinite(rawLevel)) {
+            return;
+        }
+        const batteryLevel = Math.min(100, Math.max(0, Math.round(rawLevel)));
+        if (this.lastBatteryLevel === batteryLevel) {
+            return;
+        }
+        this.lastBatteryLevel = batteryLevel;
+        this.events$.next({
+            timestamp,
+            type: 'BATTERY',
+            batteryLevel,
+        });
+    }
+
     private onDisconnect = (): void => {
         this.device.removeEventListener('gattserverdisconnected', this.onDisconnect);
         this.isReady = false;
         this.pendingValues = [];
+        this.lastBatteryLevel = null;
         if (this.batteryInterval) {
             clearInterval(this.batteryInterval);
             this.batteryInterval = null;
@@ -221,14 +239,7 @@ class GiikerConnection implements SmartCubeConnection {
                 this.onBatteryChanged = (evt: Event) => {
                     const val = (evt.target as BluetoothRemoteGATTCharacteristic).value;
                     if (!val) return;
-                    const level = val.getUint8(1);
-                    if (level <= 100) {
-                        this.events$.next({
-                            timestamp: now(),
-                            type: "BATTERY",
-                            batteryLevel: level
-                        });
-                    }
+                    this.emitBatteryLevel(val.getUint8(1));
                 };
                 this.rwReadChrct.addEventListener('characteristicvaluechanged', this.onBatteryChanged);
                 await this.rwReadChrct.startNotifications();
@@ -238,7 +249,7 @@ class GiikerConnection implements SmartCubeConnection {
                     writeGattCharacteristicValue(this.rwWriteChrct, new Uint8Array([0xb5]).buffer).catch(() => {});
                 };
                 tick();
-                this.batteryInterval = setInterval(tick, 2000);
+                this.batteryInterval = setInterval(tick, 60_000);
             }
         } catch {
             // Battery service may not be available
@@ -304,6 +315,7 @@ class GiikerConnection implements SmartCubeConnection {
             await this.dataChrct.stopNotifications().catch(() => {});
             this.dataChrct = null;
         }
+        this.lastBatteryLevel = null;
         if (this.batteryInterval) {
             clearInterval(this.batteryInterval);
             this.batteryInterval = null;

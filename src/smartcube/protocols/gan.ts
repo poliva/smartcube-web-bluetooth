@@ -1,4 +1,4 @@
-import { Subject, map } from 'rxjs';
+import { Subject } from 'rxjs';
 import { SmartCubeConnection, SmartCubeEvent, SmartCubeCommand, SmartCubeCapabilities, MacAddressProvider } from '../types';
 import type { AttachmentContext } from '../attachment/types';
 import { normalizeUuid } from '../attachment/normalize-uuid';
@@ -97,6 +97,7 @@ function hasGanGen1Profile(serviceUuids: ReadonlySet<string>): boolean {
 class GanSmartCubeConnection implements SmartCubeConnection {
     private ganConn: GanCubeConnection;
     private deviceMac: string;
+    private lastBatteryLevel: number | null = null;
     events$: Subject<SmartCubeEvent>;
 
     readonly capabilities: SmartCubeCapabilities;
@@ -106,8 +107,23 @@ class GanSmartCubeConnection implements SmartCubeConnection {
         this.deviceMac = mac;
         this.capabilities = capabilities ?? DEFAULT_GAN_CAPABILITIES;
         this.events$ = new Subject<SmartCubeEvent>();
-        ganConn.events$.pipe(map(ganEventToSmartEvent)).subscribe({
-            next: (e) => this.events$.next(e),
+        ganConn.events$.subscribe({
+            next: (event) => {
+                if (event.type === 'BATTERY') {
+                    const batteryLevel = Math.min(100, Math.max(0, Math.round(event.batteryLevel)));
+                    if (this.lastBatteryLevel === batteryLevel) {
+                        return;
+                    }
+                    this.lastBatteryLevel = batteryLevel;
+                    this.events$.next({
+                        timestamp: event.timestamp,
+                        type: 'BATTERY',
+                        batteryLevel,
+                    });
+                    return;
+                }
+                this.events$.next(ganEventToSmartEvent(event));
+            },
             complete: () => this.events$.complete(),
         });
     }

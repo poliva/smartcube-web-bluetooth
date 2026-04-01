@@ -92,7 +92,8 @@ class GoCubeConnection implements SmartCubeConnection {
     private curCubie = new CubieCube();
     private prevCubie = new CubieCube();
     private moveCntFree = 100;
-    private batteryLevel = 100;
+    private lastBatteryLevel: number | null = null;
+    private batteryInterval: ReturnType<typeof setInterval> | null = null;
     /** Last decoded move (axis + direction bit) for short type-1 frames that omit a full pair of bytes. */
     private lastMoveMeta: { axis: number; dirBit: number } | null = null;
     /** First full-state (type 2) after connect: defer FACELETS until `init` finishes so subscribers never miss it. */
@@ -153,6 +154,29 @@ class GoCubeConnection implements SmartCubeConnection {
                 writeGattCharacteristicValue(this.writeChrct, new Uint8Array([WRITE_STATE]).buffer).catch(() => {});
         }
     }
+
+    private emitBatteryLevel(rawLevel: number, timestamp = now()): void {
+        if (!Number.isFinite(rawLevel)) {
+            return;
+        }
+        const batteryLevel = Math.min(100, Math.max(0, Math.round(rawLevel)));
+        if (this.lastBatteryLevel === batteryLevel) {
+            return;
+        }
+        this.lastBatteryLevel = batteryLevel;
+        this.events$.next({
+            timestamp,
+            type: 'BATTERY',
+            batteryLevel,
+        });
+    }
+
+    private pollBattery = (): void => {
+        if (!this.writeChrct) {
+            return;
+        }
+        writeGattCharacteristicValue(this.writeChrct, new Uint8Array([WRITE_BATTERY]).buffer).catch(() => {});
+    };
 
     private parseData(value: DataView): void {
         const timestamp = now();
@@ -240,12 +264,7 @@ class GoCubeConnection implements SmartCubeConnection {
                 facelets: this.prevCubie.toFaceCube()
             });
         } else if (msgType === 5) { // Battery
-            this.batteryLevel = value.getUint8(3);
-            this.events$.next({
-                timestamp,
-                type: "BATTERY",
-                batteryLevel: this.batteryLevel
-            });
+            this.emitBatteryLevel(value.getUint8(3), timestamp);
         }
     }
 
@@ -260,6 +279,11 @@ class GoCubeConnection implements SmartCubeConnection {
 
     private onDisconnect = (): void => {
         this.device.removeEventListener('gattserverdisconnected', this.onDisconnect);
+        this.lastBatteryLevel = null;
+        if (this.batteryInterval) {
+            clearInterval(this.batteryInterval);
+            this.batteryInterval = null;
+        }
         this.events$.next({ timestamp: now(), type: "DISCONNECT" });
         this.events$.complete();
     };
@@ -283,6 +307,8 @@ class GoCubeConnection implements SmartCubeConnection {
         this.awaitingInitialState = true;
 
         await writeGattCharacteristicValue(this.writeChrct, new Uint8Array([WRITE_STATE]).buffer);
+        this.pollBattery();
+        this.batteryInterval = setInterval(this.pollBattery, 60_000);
 
         await Promise.race([
             firstStatePromise,
@@ -322,6 +348,7 @@ class GoCubeConnection implements SmartCubeConnection {
             this.prevCubie = new CubieCube();
             this.lastMoveMeta = null;
             this.moveCntFree = 100;
+            this.lastBatteryLevel = null;
             this.events$.next({
                 timestamp: now(),
                 type: "FACELETS",
@@ -335,6 +362,11 @@ class GoCubeConnection implements SmartCubeConnection {
             this.readChrct.removeEventListener('characteristicvaluechanged', this.onStateChanged);
             await this.readChrct.stopNotifications().catch(() => {});
             this.readChrct = null;
+        }
+        this.lastBatteryLevel = null;
+        if (this.batteryInterval) {
+            clearInterval(this.batteryInterval);
+            this.batteryInterval = null;
         }
         this.writeChrct = null;
         this.device.removeEventListener('gattserverdisconnected', this.onDisconnect);

@@ -103,8 +103,10 @@ export class GanGen1CubeConnection implements GanCubeConnection {
     private polling = false;
     private prevMoveCnt = -1;
     private movePollTicks = 0;
+    private batteryPollTicks = 0;
     private pollFailures = 0;
     private teardown = false;
+    private lastBatteryLevel: number | null = null;
 
     private readonly onGattDisconnected: () => void;
 
@@ -204,16 +206,28 @@ export class GanGen1CubeConnection implements GanCubeConnection {
         }
     };
 
+    private emitBatteryLevel(rawLevel: number, timestamp = now()): void {
+        if (!Number.isFinite(rawLevel)) {
+            return;
+        }
+        const batteryLevel = Math.min(100, Math.max(0, Math.round(rawLevel)));
+        if (this.lastBatteryLevel === batteryLevel) {
+            return;
+        }
+        this.lastBatteryLevel = batteryLevel;
+        this.events$.next({
+            type: 'BATTERY',
+            batteryLevel,
+            timestamp,
+        });
+    }
+
     private async readBattery(): Promise<void> {
         try {
             const e = await this.chrBattery.readValue();
             const t = this.encrypter.decrypt(new Uint8Array(e.buffer, e.byteOffset, e.byteLength));
             if (t.length < 8) return;
-            this.events$.next({
-                type: 'BATTERY',
-                batteryLevel: Math.min(t[7]!, 100),
-                timestamp: now(),
-            });
+            this.emitBatteryLevel(t[7]!);
         } catch {
             /* ignore */
         }
@@ -298,7 +312,11 @@ export class GanGen1CubeConnection implements GanCubeConnection {
                 this.movePollTicks = 0;
                 await this.readInitialState();
             }
-            if (this.movePollTicks % 3 === 0) await this.readBattery();
+            this.batteryPollTicks += 30;
+            if (this.batteryPollTicks >= 60_000) {
+                this.batteryPollTicks = 0;
+                await this.readBattery();
+            }
             this.schedulePoll(30);
         } catch {
             this.pollFailures++;
@@ -311,6 +329,7 @@ export class GanGen1CubeConnection implements GanCubeConnection {
         if (this.teardown) return;
         this.teardown = true;
         this.polling = false;
+        this.lastBatteryLevel = null;
         this.device.removeEventListener('gattserverdisconnected', this.onGattDisconnected);
         try {
             this.chrGyroNotify.removeEventListener('characteristicvaluechanged', this.onGyroNotify);
