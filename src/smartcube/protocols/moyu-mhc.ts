@@ -1,6 +1,6 @@
 
 import { Subject } from 'rxjs';
-import { SmartCubeConnection, SmartCubeEvent, SmartCubeCommand, SmartCubeCapabilities, MacAddressProvider } from '../types';
+import { SmartCubeConnection, SmartCubeEvent, SmartCubeCommand, SmartCubeCapabilities, SmartCubeProtocolInfo, MacAddressProvider } from '../types';
 import type { AttachmentContext } from '../attachment/types';
 import { normalizeUuid } from '../attachment/normalize-uuid';
 import { SmartCubeProtocol, registerProtocol } from '../protocol';
@@ -32,9 +32,12 @@ function normalizeQuaternion(q: { w: number; x: number; y: number; z: number }):
     return { w: q.w / n, x: q.x / n, y: q.y / n, z: q.z / n };
 }
 
+const MOYU_MHC_PROTOCOL: SmartCubeProtocolInfo = { id: 'moyu-mhc', name: 'MoYu MHC' };
+
 class MoyuMhcConnection implements SmartCubeConnection {
     readonly deviceName: string;
     readonly deviceMAC: string;
+    readonly protocol: SmartCubeProtocolInfo = MOYU_MHC_PROTOCOL;
     readonly capabilities: SmartCubeCapabilities;
     events$: Subject<SmartCubeEvent>;
 

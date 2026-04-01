@@ -1,7 +1,7 @@
 
 import { Subject } from 'rxjs';
 import { ModeOfOperation } from 'aes-js';
-import { SmartCubeConnection, SmartCubeEvent, SmartCubeCommand, SmartCubeCapabilities, MacAddressProvider } from '../types';
+import { SmartCubeConnection, SmartCubeEvent, SmartCubeCommand, SmartCubeCapabilities, SmartCubeProtocolInfo, MacAddressProvider } from '../types';
 import type { AttachmentContext } from '../attachment/types';
 import { normalizeUuid } from '../attachment/normalize-uuid';
 import { getCachedMacForDevice } from '../attachment/address-hints';
@@ -131,9 +131,12 @@ function parseFacelet(faceletBits: string): string {
     return state.join('');
 }
 
+const MOYU32_PROTOCOL: SmartCubeProtocolInfo = { id: 'moyu32', name: 'MoYu32' };
+
 class Moyu32Connection implements SmartCubeConnection {
     readonly deviceName: string;
     readonly deviceMAC: string;
+    readonly protocol: SmartCubeProtocolInfo = MOYU32_PROTOCOL;
     readonly capabilities: SmartCubeCapabilities = {
         gyroscope: true,
         battery: true,

@@ -15,6 +15,7 @@ export type {
     SmartCubeFaceletsEvent,
     SmartCubeGyroEvent,
     SmartCubeBatteryEvent,
+    SmartCubeProtocolInfo,
     SmartCubeHardwareEvent,
     SmartCubeDisconnectEvent,
     SmartCubeCommand,

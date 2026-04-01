@@ -1,6 +1,6 @@
 
 import { Subject } from 'rxjs';
-import { SmartCubeConnection, SmartCubeEvent, SmartCubeCommand, SmartCubeCapabilities, MacAddressProvider } from '../types';
+import { SmartCubeConnection, SmartCubeEvent, SmartCubeCommand, SmartCubeCapabilities, SmartCubeProtocolInfo, MacAddressProvider } from '../types';
 import type { AttachmentContext } from '../attachment/types';
 import { normalizeUuid } from '../attachment/normalize-uuid';
 import { SmartCubeProtocol, registerProtocol } from '../protocol';
@@ -80,9 +80,12 @@ const FACE_OFFSET = [0, 0, 6, 2, 0, 0];
 /** Physical opposite faces in URFDLB axis order (U↔D, R↔L, F↔B). */
 const OPPOSITE_AXIS = [3, 4, 5, 0, 1, 2];
 
+const GOCUBE_PROTOCOL: SmartCubeProtocolInfo = { id: 'gocube', name: 'GoCube' };
+
 class GoCubeConnection implements SmartCubeConnection {
     readonly deviceName: string;
     readonly deviceMAC: string;
+    readonly protocol: SmartCubeProtocolInfo = GOCUBE_PROTOCOL;
     readonly capabilities: SmartCubeCapabilities;
     events$: Subject<SmartCubeEvent>;
 

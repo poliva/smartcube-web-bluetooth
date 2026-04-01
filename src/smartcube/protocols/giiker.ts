@@ -1,6 +1,6 @@
 
 import { Subject } from 'rxjs';
-import { SmartCubeConnection, SmartCubeEvent, SmartCubeCommand, SmartCubeCapabilities, MacAddressProvider } from '../types';
+import { SmartCubeConnection, SmartCubeEvent, SmartCubeCommand, SmartCubeCapabilities, SmartCubeProtocolInfo, MacAddressProvider } from '../types';
 import type { AttachmentContext } from '../attachment/types';
 import { normalizeUuid } from '../attachment/normalize-uuid';
 import { SmartCubeProtocol, registerProtocol } from '../protocol';
@@ -99,9 +99,12 @@ function parseState(value: DataView): { facelet: string; prevMoves: string[] } {
     return { facelet, prevMoves };
 }
 
+const GIIKER_PROTOCOL: SmartCubeProtocolInfo = { id: 'giiker', name: 'Giiker' };
+
 class GiikerConnection implements SmartCubeConnection {
     readonly deviceName: string;
     readonly deviceMAC: string;
+    readonly protocol: SmartCubeProtocolInfo = GIIKER_PROTOCOL;
     readonly capabilities: SmartCubeCapabilities = {
         gyroscope: false,
         battery: true,

@@ -26,6 +26,11 @@ type SmartCubeBatteryEvent = {
     batteryLevel: number;
 };
 
+type SmartCubeProtocolInfo = {
+    id: string;
+    name: string;
+};
+
 type SmartCubeHardwareEvent = {
     type: "HARDWARE";
     hardwareName?: string;
@@ -66,6 +71,7 @@ interface SmartCubeCapabilities {
 interface SmartCubeConnection {
     readonly deviceName: string;
     readonly deviceMAC: string;
+    readonly protocol: SmartCubeProtocolInfo;
     readonly capabilities: SmartCubeCapabilities;
     events$: Observable<SmartCubeEvent>;
     sendCommand(command: SmartCubeCommand): Promise<void>;
@@ -81,6 +87,7 @@ export type {
     SmartCubeFaceletsEvent,
     SmartCubeGyroEvent,
     SmartCubeBatteryEvent,
+    SmartCubeProtocolInfo,
     SmartCubeHardwareEvent,
     SmartCubeDisconnectEvent,
     SmartCubeCommand,

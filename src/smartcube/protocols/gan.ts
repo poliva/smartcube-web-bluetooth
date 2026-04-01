@@ -1,5 +1,5 @@
 import { Subject } from 'rxjs';
-import { SmartCubeConnection, SmartCubeEvent, SmartCubeCommand, SmartCubeCapabilities, MacAddressProvider } from '../types';
+import { SmartCubeConnection, SmartCubeEvent, SmartCubeCommand, SmartCubeCapabilities, SmartCubeProtocolInfo, MacAddressProvider } from '../types';
 import type { AttachmentContext } from '../attachment/types';
 import { normalizeUuid } from '../attachment/normalize-uuid';
 import { getCachedMacForDevice, macFromGanManufacturerData, waitForManufacturerData } from '../attachment/address-hints';
@@ -38,6 +38,11 @@ const GAN_GEN1_CAPABILITIES: SmartCubeCapabilities = {
     hardware: false,
     reset: false,
 };
+
+const GAN_GEN1_PROTOCOL: SmartCubeProtocolInfo = { id: 'gan-gen1', name: 'GAN Gen1' };
+const GAN_GEN2_PROTOCOL: SmartCubeProtocolInfo = { id: 'gan-gen2', name: 'GAN Gen2' };
+const GAN_GEN3_PROTOCOL: SmartCubeProtocolInfo = { id: 'gan-gen3', name: 'GAN Gen3' };
+const GAN_GEN4_PROTOCOL: SmartCubeProtocolInfo = { id: 'gan-gen4', name: 'GAN Gen4' };
 
 function ganEventToSmartEvent(event: GanCubeEvent): SmartCubeEvent {
     switch (event.type) {
@@ -100,11 +105,13 @@ class GanSmartCubeConnection implements SmartCubeConnection {
     private lastBatteryLevel: number | null = null;
     events$: Subject<SmartCubeEvent>;
 
+    readonly protocol: SmartCubeProtocolInfo;
     readonly capabilities: SmartCubeCapabilities;
 
-    constructor(ganConn: GanCubeConnection, mac: string, capabilities?: SmartCubeCapabilities) {
+    constructor(ganConn: GanCubeConnection, mac: string, protocol: SmartCubeProtocolInfo, capabilities?: SmartCubeCapabilities) {
         this.ganConn = ganConn;
         this.deviceMac = mac;
+        this.protocol = protocol;
         this.capabilities = capabilities ?? DEFAULT_GAN_CAPABILITIES;
         this.events$ = new Subject<SmartCubeEvent>();
         ganConn.events$.subscribe({
@@ -160,7 +167,7 @@ async function connectGanDevice(
 
     if (hasGanGen1Profile(serviceUuidSet)) {
         const gen1Conn = await GanGen1CubeConnection.create(device);
-        return new GanSmartCubeConnection(gen1Conn, '', GAN_GEN1_CAPABILITIES);
+        return new GanSmartCubeConnection(gen1Conn, '', GAN_GEN1_PROTOCOL, GAN_GEN1_CAPABILITIES);
     }
 
     let mac: string | null = null;
@@ -256,7 +263,11 @@ async function connectGanDevice(
         throw new Error("Can't find target BLE services - wrong or unsupported cube device model");
     }
 
-    return new GanSmartCubeConnection(ganConn, mac);
+    return new GanSmartCubeConnection(
+        ganConn,
+        mac,
+        pick === 'g2' ? GAN_GEN2_PROTOCOL : pick === 'g3' ? GAN_GEN3_PROTOCOL : GAN_GEN4_PROTOCOL,
+    );
 }
 
 const ganProtocol: SmartCubeProtocol = {

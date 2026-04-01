@@ -1,6 +1,6 @@
 import { Subject } from 'rxjs';
 import { ModeOfOperation } from 'aes-js';
-import { SmartCubeConnection, SmartCubeEvent, SmartCubeCommand, SmartCubeCapabilities, MacAddressProvider } from '../types';
+import { SmartCubeConnection, SmartCubeEvent, SmartCubeCommand, SmartCubeCapabilities, SmartCubeProtocolInfo, MacAddressProvider } from '../types';
 import type { AttachmentContext } from '../attachment/types';
 import { normalizeUuid } from '../attachment/normalize-uuid';
 import { getCachedMacForDevice } from '../attachment/address-hints';
@@ -105,9 +105,12 @@ function collectQiYiStateChangeMoves(msg: number[], headerTs: number): [number, 
     });
 }
 
+const QIYI_PROTOCOL: SmartCubeProtocolInfo = { id: 'qiyi', name: 'QiYi' };
+
 class QiYiConnection implements SmartCubeConnection {
     readonly deviceName: string;
     readonly deviceMAC: string;
+    readonly protocol: SmartCubeProtocolInfo = QIYI_PROTOCOL;
     readonly capabilities: SmartCubeCapabilities = {
         gyroscope: false,
         battery: true,
