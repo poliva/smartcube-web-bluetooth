@@ -174,9 +174,9 @@ export type MockBluetoothInstallResult = {
  */
 export function installMockBluetoothFromFixture(
   fixture: FixtureSession,
-  opts?: { deviceId?: string }
+  opts?: { deviceId?: string; maxAutoFlushNotifies?: number }
 ): MockBluetoothInstallResult {
-  const replayer = new TrafficReplayer(fixture);
+  const replayer = new TrafficReplayer(fixture, { maxAutoFlushNotifies: opts?.maxAutoFlushNotifies });
 
   const gatt = new MockGATTServer();
   const services = new Map<string, MockService>();

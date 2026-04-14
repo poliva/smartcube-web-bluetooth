@@ -12,9 +12,16 @@ export class TrafficReplayer {
   private i = 0;
   private readonly notifySinks = new Map<Key, NotifySink>();
   private readonly pendingNotifies = new Map<Key, DataView[]>();
+  private readonly maxAutoFlushNotifies: number;
 
-  constructor(private readonly fixture: FixtureSession) {
+  constructor(private readonly fixture: FixtureSession, opts?: { maxAutoFlushNotifies?: number }) {
     this.traffic = fixture.traffic;
+    this.maxAutoFlushNotifies = opts?.maxAutoFlushNotifies ?? 200;
+  }
+
+  /** Test-only introspection for asserting replay progress. */
+  debugCursor(): { index: number; length: number } {
+    return { index: this.i, length: this.traffic.length };
   }
 
   registerNotifySink(serviceUuid: string, characteristicUuid: string, sink: NotifySink): void {
@@ -167,11 +174,16 @@ export class TrafficReplayer {
   }
 
   private flushNotifiesUntilNextIo(): void {
+    let flushed = 0;
     while (this.i < this.traffic.length) {
       const next = this.traffic[this.i];
       if (next.op === 'notify') {
+        if (flushed >= this.maxAutoFlushNotifies) {
+          return;
+        }
         this.i++;
         this.emitNotify(next);
+        flushed++;
         continue;
       }
       if (next.op === 'marker' || next.op === 'discover-service' || next.op === 'discover-char') {
