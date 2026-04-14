@@ -1,0 +1,1019 @@
+{
+  "format": "smartcube-fixture",
+  "version": 1,
+  "capturedAt": "2026-04-14T11:37:22.776Z",
+  "device": {
+    "name": "QY-QYSC-S-A0E6       ",
+    "id": "",
+    "mac": "cc:a3:00:00:a0:e6"
+  },
+  "protocol": {
+    "id": "qiyi",
+    "name": "QiYi"
+  },
+  "services": [],
+  "traffic": [
+    {
+      "t": 7072,
+      "op": "discover-service",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb"
+    },
+    {
+      "t": 7082,
+      "op": "discover-service",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb"
+    },
+    {
+      "t": 7083,
+      "op": "discover-char",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff4-0000-1000-8000-00805f9b34fb"
+    },
+    {
+      "t": 7083,
+      "op": "discover-char",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff5-0000-1000-8000-00805f9b34fb"
+    },
+    {
+      "t": 7084,
+      "op": "discover-char",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb"
+    },
+    {
+      "t": 7084,
+      "op": "discover-char",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff7-0000-1000-8000-00805f9b34fb"
+    },
+    {
+      "t": 7132,
+      "op": "write",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "3852B5FA66FDC408149B113BADE5B00942D85DEA0716E80B6467FA8027C9BA2F"
+    },
+    {
+      "t": 7137,
+      "op": "write",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "3852B5FA66FDC408149B113BADE5B00942D85DEA0716E80B6467FA8027C9BA2F"
+    },
+    {
+      "t": 7313,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "AA4F6D9CD1ACDB1207D332037BE4912B9CCD2F402FA46B8A7ADC0870FE251DFB2A994B6AFA694C5926EEDB4A12A0C4F4"
+    },
+    {
+      "t": 7317,
+      "op": "write",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "94BB4867B78DE7B296FB52490BDC83B4"
+    },
+    {
+      "t": 7317,
+      "op": "marker",
+      "service": "marker",
+      "data": "connected"
+    },
+    {
+      "t": 7823,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "FF214E906D6EE4F4AA8BE2FECCC9A17D9CCD2F402FA46B8A7ADC0870FE251DFB58446C521D98E6979EE7B2D535D24B07"
+    },
+    {
+      "t": 7826,
+      "op": "write",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "F653DC4F70DA5719975791976A45797F"
+    },
+    {
+      "t": 8723,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "5C2FCF219565794CAB31ED7B34D2C1AFDC09ECADAF400930C8A54C4D422F652BFEDD15B5C7A0AE4EB6CA612425E30B2DAADD489DE230471C6D8B42A8CD6CEDDDAADD489DE230471C6D8B42A8CD6CEDDD3DEC43D6F974612A6D8B0FE123DCA44C"
+    },
+    {
+      "t": 8843,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "E5BE3DD2488FB3E477842855D64ADE3615EBB35550907C7E12FE79D87C8A0FC9DD18639C9012D06009ABB28276F83681AADD489DE230471C6D8B42A8CD6CEDDDAADD489DE230471C6D8B42A8CD6CEDDD42034A214F5446ABCFFD371C1879299D"
+    },
+    {
+      "t": 8993,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "EBBAAD516A299436417D53DBC9AB3DCC844492A18BE7AA407A2A69971471E4348FF1AA67A1C7E18EDCF19801A2338502AADD489DE230471C6D8B42A8CD6CEDDDAADD489DE230471C6D8B42A8CD6CEDDD191818FB5D8DDB6200BC956FFDF7C726"
+    },
+    {
+      "t": 9113,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "83B038EC44F4DC04E583A2AEE0659125AF1F16081C40F0A4F35D357ABFFA480D34ABB77F661145337E5815C0F4833F51AADD489DE230471C6D8B42A8CD6CEDDD7A84B1FD30334BBC6106840DD47810C4E8028103D5A29505FECECAB9E3528188"
+    },
+    {
+      "t": 9233,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "AE1335DF2C331BE93DD92367C8515D2347421058DD8528182D02282F4BE6A65FFB0EB7ACBA2D21BB8A36216DAFB72B90AADD489DE230471C6D8B42A8CD6CEDDDF5CC4ECB846C55A59B5E7DA4662D00489F673A35E8E61E4F67D644958930BDEF"
+    },
+    {
+      "t": 9355,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "43291DD668E719E5993E06D0D423D5FEB11AA39D9C5C9E6BB94AF0ED0FC76335D57CCBB5185FE4E2EC11492CD8EB0A51AADD489DE230471C6D8B42A8CD6CEDDD8F84ADD8522FE24FDF35F6F904BCDBFDF48A047B435737A91F4575AEA6133CBE"
+    },
+    {
+      "t": 9473,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "FF0FEC4F0B37B9BC2A674C181876ECD4683E5F011D1775427AFDCF97C9FCC5B1C91AF2523C0F86531DA07A1EEC77AA77EE07BFCAA20D320613D9BBADC565F11692F0FCD0D2AF8EE504BD013BD0CF178D231903F0C85985F8BD66EB0A2BCA2E2F"
+    },
+    {
+      "t": 9563,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "FA3F44EB46BC60E8515BAB4B295827FD8AC18D9075C87ECEB9D7C36AC93BBCF2237BB311B0CF3A489FAEF9EE9F3513BA2F01337CCF9FF9BE48E7E93BB07D9D714B53BBADD68BC257FD6EB9924D4CD673D7B158878E23036DF01B6BB9C2B24798"
+    },
+    {
+      "t": 9623,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "F7514099D9D0741F50D91BC6F839CDAC7D5324234F960DCF3D62303073430C1224C97B0172FBAC896012B0BE762CFA900C1BF96E326748F0CE16F12255F01D99BA83158E3E93E3CE978D2E91ECC539B9DA2764428D8BDD5CCAB59484086D9FFF"
+    },
+    {
+      "t": 9743,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "D28B2F704CB2BD1BAC0F8FB1C0A81A641C00E6AAF339C1099DE570A54E9913060C2A563B5BC610AE5D851721C1BD17B5A5ADC8C562E1E182AA8F66C5E0F2ED7C571547C7E3372967C50477DCCBE5C992B6C27DCDE27CA7131561930AE160DD0A"
+    },
+    {
+      "t": 9892,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "FDE72187F97C8B68ABD8657F3CD2F6294151D2A0B47B6B4FA1255DED738824BE8C30B9BC2544325F4133F6CE2A01586FC8E2D0B384445AAAF541DB47C897A24CAD8FF5478AC28CB1A3DDF0CB70919F500F955BFF6F03990AF980223433331B0F"
+    },
+    {
+      "t": 10014,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "8A3DBBB29C5CAB1B3D442B3309D4402E4E023CBB7B1C01EAC0E89D539788CF30625B75D0D621C75BD39DD92B8ACDBFCD9A287D90F2FE0D155D883E4C12F4C341B0EE0ECDF47DCD97D92EADC8EDD670C577241AD6BB11F625AE42735FDCE1EFD5"
+    },
+    {
+      "t": 10372,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "6CFBE10FBD016074B85C26A49802AD2BC84B982FA8E2A170CDC63063D43F6B04CD04D4118E227B50C10ADCF13EFA3F668EDB640E54A915DB99D85B71EC41824ABB6CDBF549F66EF919C4429F586E9108F15D785ED2387FA3590F96C7D956AF4A"
+    },
+    {
+      "t": 10464,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "BA364643948AA9D7E6A1E6DA2939A6F96827355D9469D6636555B5AFAA2F31F30C2A563B5BC610AE5D851721C1BD17B59E304CF4893DB802B40D309703570D76296ABE65866AFFE48250F6366DF280F9AF424609CDA3464FCA71A242AE7C96DF"
+    },
+    {
+      "t": 10614,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "E2B4A703B7C29DD576DD3DB176039FA4324016D81F78CC8B947E5C4107DBD119F885E8F8EF231DAA166A10D18968D419115304BE436669F6EE7C0E4F1C707D1C8EC5570A837D9B409028121F3C1157675F565595AE11A87665F7C5B0B47A1E61"
+    },
+    {
+      "t": 11482,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "D18E45ADCF13B5630E9883A6B713911B4EA4C44A00F63C124D484648669C7A6C625B75D0D621C75BD39DD92B8ACDBFCDDECADE9C8C578D4B8672521CB5B110E9BDCF3EE7184B52FD5472F637FCA65E587483549A6745395CF4013D65066177C7"
+    },
+    {
+      "t": 11603,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "2BB61079BC23F8AF8768EF73ACB439062BF0309AA2A2BAE758CDCB1893983ACCCD04D4118E227B50C10ADCF13EFA3F66B5CD50882CC3D50C5E12CBEE112572145286121E91370C81B2E220A41968E19FEA430F9FFF22914199151E49BB9B475D"
+    },
+    {
+      "t": 11754,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "53AE853A3D2B8E160355261127D5F46DDFDCDC2F689C2D82F861955A07FA212B0C2A563B5BC610AE5D851721C1BD17B568523D6F8E57DB4E85A25D2BF58B7A217401C712F840491DB3FFB902F43A6F91CA53250AF79C0297344E8294E022C3DD"
+    },
+    {
+      "t": 11874,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "150E97C947F2E174FC07E90CD80DAA12C865BCBC2A463A4CBCE31ABCE0C37F278C30B9BC2544325F4133F6CE2A01586F7F425E6E4F24095E28946DE5F0C4D31E323A689D2ABEFD79000F593D08CEA38630D8048D48A30BCDD91E13840ABBD26E"
+    },
+    {
+      "t": 11993,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "0D8A0C4035BA16E01EE51D02938D52FA09E74C64524D5B78F78861E2D2641EA10C2A563B5BC610AE5D851721C1BD17B5CCC85A10CB1203FD4D9F28DD36649BBEC1BE000DDFB0B272E0C1D387EDC63EAB5DBA0E62EBB918A98BC2F1F86FBA6D62"
+    },
+    {
+      "t": 12113,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "5C5FCB795505511C51C314BB04E5057A9025351D3B24087D2EFA7E19C3728F02A0E34E1B4A1412034CE201792424978922BE4EA4AA0DC6BCBED71979CF232595C6978157F9A43DCDFAE35CFF42DDF9C1C4EC045BB61B32CBE8BA2E8FBD8404C5"
+    },
+    {
+      "t": 12179,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "D21505CAFBC7CC5EA476B6209B43246AB7D3C01EDCA02AF2300CF008C64FCCA821E66F058D2C5301260E6DE0F73ADB9072C720D947EDAEA4F447D5A2E9EA29A3F98CD774FA06717BB65DA804AE39D470032B19E866EACF75F9CCB0B1EF10EE49"
+    },
+    {
+      "t": 12292,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "FFE63460FE2DBD1D1D48E3B1AEBBAF636B88F34A15453A95A41A4881E751497F86F9C3FA0511E03C10C69755E6F5A68B3178C5D301FAD63B74CDCCC65EACB5B396A7FABD7365F10ECC07A51789DE0E891148608C30CDE705EC4DA660BBE56D3C"
+    },
+    {
+      "t": 12428,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "A8A122F02A8695750207B813AB211F39D63A8EA52E1727DF91B6FBA8D8A7CEC0EB0EB5FEA6978E0EDCCB25F53C7ACF72AC69DCE53ECB57D1728DE712A4E267CBA0094840B860038F894015976E01247E2DADC0E76F2A9B26441263B091ABFC35"
+    },
+    {
+      "t": 12473,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "AEDE8848C5D297147EC95A3D04CC4D991E4B5734392093E73F094B0339C4F32D0C2A563B5BC610AE5D851721C1BD17B54FB83FC6BF3090599996DDCF8F36F06111B1B0340C029A13CCB17E85DAC41F5B3069B98F466F3A78C7F7DCAA18829C35"
+    },
+    {
+      "t": 12651,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "60A41E45561442FC09A0FAC3CC45B996C928C15A04D1926A180F144C017722DA8C30B9BC2544325F4133F6CE2A01586F4A4F73913AFAAAEF8F199BA23F47E9FB6E4E61A7D0066631D4F0730E936C4C350A8BC2E34076442106DA1FD8E5605495"
+    },
+    {
+      "t": 12787,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "827E45389816C2E3CCC82579DED89400ED9DCFF17DB74153F765E053C88F6392625B75D0D621C75BD39DD92B8ACDBFCD1A00D0472CBA887934E109A87AD40A98B12C8A985EF2A4F07C9002E9DAA03AD34637F26B6161B918B16DEDEBE491E065"
+    },
+    {
+      "t": 12879,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "8D312D1DF97CAB8AD6823703AE7AB28AE96F0C8E792BECEA45F84BE94701F287CD04D4118E227B50C10ADCF13EFA3F66FCA3DEFAF463AFE3F0C26D277E7EA2E01EF751E567016026209378DDA59900E4AB986D7BC50CF4011772818FF1121CFC"
+    },
+    {
+      "t": 13013,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "5180B94CD823D27D4027E2396C4AE7B50919F79FCF8B79DB3611E40C2AD9AA0B0C2A563B5BC610AE5D851721C1BD17B5B302F27530C2665C8CA9DA65CB02E8C57AFACA86422D9557B608A85D6B792065E10A845BD3B3E4E666DD15BDA2162CAC"
+    },
+    {
+      "t": 13150,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "9A8DE0ACC5C42140B84A36986B870EB59CCD2F402FA46B8A7ADC0870FE251DFBF885E8F8EF231DAA166A10D18968D419A89B004A68436301A6F43B8EC837B22CAF4886987489D0A82C0BCE89EB002B184E2C10115AB98527746AC679B94A43D8"
+    },
+    {
+      "t": 13154,
+      "op": "write",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "5DEBA1F408E3D85C0CBB069E861D8CBE"
+    },
+    {
+      "t": 15752,
+      "op": "marker",
+      "service": "marker",
+      "data": "probe:battery"
+    },
+    {
+      "t": 15754,
+      "op": "write",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "3852B5FA66FDC408149B113BADE5B00942D85DEA0716E80B6467FA8027C9BA2F"
+    },
+    {
+      "t": 16028,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "EECE4E7CE27E5230C0812EBCC374841C9CCD2F402FA46B8A7ADC0870FE251DFBAAD539F0A0985C87FD80F98EF9222340"
+    },
+    {
+      "t": 16033,
+      "op": "write",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "353E2A6EBB3629572B0782F3317D472C"
+    },
+    {
+      "t": 17018,
+      "op": "marker",
+      "service": "marker",
+      "data": "probe:hardware"
+    },
+    {
+      "t": 18850,
+      "op": "marker",
+      "service": "marker",
+      "data": "probe:facelets"
+    },
+    {
+      "t": 18852,
+      "op": "write",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "3852B5FA66FDC408149B113BADE5B00942D85DEA0716E80B6467FA8027C9BA2F"
+    },
+    {
+      "t": 18911,
+      "op": "notify",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "8F54792CBEE795EAD15F58E9C1C3A2159CCD2F402FA46B8A7ADC0870FE251DFBC322E4A90CCCF605135A95EB3E2B0303"
+    },
+    {
+      "t": 18913,
+      "op": "write",
+      "service": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000fff6-0000-1000-8000-00805f9b34fb",
+      "data": "95EA7878ED1E57D2A750BE150DFBB541"
+    }
+  ],
+  "events": [
+    {
+      "t": 7825,
+      "event": {
+        "timestamp": 10283,
+        "type": "FACELETS",
+        "facelets": "UUUUUUUUURRRRRRRRRFFFFFFFFFDDDDDDDDDLLLLLLLLLBBBBBBBBB"
+      }
+    },
+    {
+      "t": 8726,
+      "event": {
+        "timestamp": 11184,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 11184,
+        "cubeTimestamp": 71890
+      }
+    },
+    {
+      "t": 8726,
+      "event": {
+        "timestamp": 11184,
+        "type": "FACELETS",
+        "facelets": "UUFUUFUUFRRRRRRRRRFFDFFDFFDDDBDDBDDBLLLLLLLLLUBBUBBUBB"
+      }
+    },
+    {
+      "t": 8845,
+      "event": {
+        "timestamp": 11303,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 0,
+        "move": "U",
+        "localTimestamp": 11303,
+        "cubeTimestamp": 72027
+      }
+    },
+    {
+      "t": 8845,
+      "event": {
+        "timestamp": 11303,
+        "type": "FACELETS",
+        "facelets": "UUUUUUFFFUBBRRRRRRRRRFFDFFDDDBDDBDDBFFDLLLLLLLLLUBBUBB"
+      }
+    },
+    {
+      "t": 8995,
+      "event": {
+        "timestamp": 11454,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 11454,
+        "cubeTimestamp": 72168
+      }
+    },
+    {
+      "t": 8996,
+      "event": {
+        "timestamp": 11454,
+        "type": "FACELETS",
+        "facelets": "UUUUUUFFLBRRBRRURRRRUFFUFFFDDRDDDDDDFFDLLLLLLBLLBBBBBB"
+      }
+    },
+    {
+      "t": 9116,
+      "event": {
+        "timestamp": 11574,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 1,
+        "move": "U'",
+        "localTimestamp": 11574,
+        "cubeTimestamp": 72277
+      }
+    },
+    {
+      "t": 9116,
+      "event": {
+        "timestamp": 11574,
+        "type": "FACELETS",
+        "facelets": "UULUUFUUFRRUBRRURRFFDFFUFFFDDRDDDDDDBLLLLLLLLBRRBBBBBB"
+      }
+    },
+    {
+      "t": 9236,
+      "event": {
+        "timestamp": 11694,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 11694,
+        "cubeTimestamp": 72419
+      }
+    },
+    {
+      "t": 9236,
+      "event": {
+        "timestamp": 11694,
+        "type": "FACELETS",
+        "facelets": "UUBUUBUUBURRRRRRBUFFLFFFFFFDDDDDUDDFBLLLLLLLLDRRDBBRBB"
+      }
+    },
+    {
+      "t": 9355,
+      "event": {
+        "timestamp": 11814,
+        "type": "MOVE",
+        "face": 2,
+        "direction": 0,
+        "move": "F",
+        "localTimestamp": 11814,
+        "cubeTimestamp": 72499
+      }
+    },
+    {
+      "t": 9356,
+      "event": {
+        "timestamp": 11814,
+        "type": "FACELETS",
+        "facelets": "UUBUUBLLLURRURRBBUFFFFFFFFLRRUDDUDDFBLDLLDLLDDRRDBBRBB"
+      }
+    },
+    {
+      "t": 9474,
+      "event": {
+        "timestamp": 11932,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 11932,
+        "cubeTimestamp": 72606
+      }
+    },
+    {
+      "t": 9474,
+      "event": {
+        "timestamp": 11932,
+        "type": "FACELETS",
+        "facelets": "UUFUUFLLLBUUBRRURRFFUFFUFFFRRRDDDDDDBLDLLDLLDLRRBBBBBB"
+      }
+    },
+    {
+      "t": 9566,
+      "event": {
+        "timestamp": 12024,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 12024,
+        "cubeTimestamp": 72674
+      }
+    },
+    {
+      "t": 9566,
+      "event": {
+        "timestamp": 12024,
+        "type": "FACELETS",
+        "facelets": "UUUUUULLFUBBRRURRUFFRFFDFFDRRBDDBDDLBLDLLDLLDLRRFBBFBB"
+      }
+    },
+    {
+      "t": 9624,
+      "event": {
+        "timestamp": 12082,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 1,
+        "move": "U'",
+        "localTimestamp": 12082,
+        "cubeTimestamp": 72785
+      }
+    },
+    {
+      "t": 9624,
+      "event": {
+        "timestamp": 12082,
+        "type": "FACELETS",
+        "facelets": "UUFUULUULFFRRRURRUBLDFFDFFDRRBDDBDDLLRRLLDLLDUBBFBBFBB"
+      }
+    },
+    {
+      "t": 9745,
+      "event": {
+        "timestamp": 12204,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 12204,
+        "cubeTimestamp": 72886
+      }
+    },
+    {
+      "t": 9746,
+      "event": {
+        "timestamp": 12204,
+        "type": "FACELETS",
+        "facelets": "UUFUUFUUURUUFRRFRRBLFFFLFFLRRDDDDDDDLRRLLDLLDLBBBBBBBB"
+      }
+    },
+    {
+      "t": 9894,
+      "event": {
+        "timestamp": 12353,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 1,
+        "move": "U'",
+        "localTimestamp": 12353,
+        "cubeTimestamp": 73053
+      }
+    },
+    {
+      "t": 9895,
+      "event": {
+        "timestamp": 12353,
+        "type": "FACELETS",
+        "facelets": "FFUUUUUUUBLFFRRFRRLRRFFLFFLRRDDDDDDDLBBLLDLLDRUUBBBBBB"
+      }
+    },
+    {
+      "t": 10016,
+      "event": {
+        "timestamp": 12475,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 12475,
+        "cubeTimestamp": 73135
+      }
+    },
+    {
+      "t": 10017,
+      "event": {
+        "timestamp": 12475,
+        "type": "FACELETS",
+        "facelets": "FFRUULUULFFBRRLRRFLRDFFDFFDRRBDDBDDRLBBLLDLLDUUUUBBUBB"
+      }
+    },
+    {
+      "t": 10374,
+      "event": {
+        "timestamp": 12832,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 0,
+        "move": "U",
+        "localTimestamp": 12832,
+        "cubeTimestamp": 73561
+      }
+    },
+    {
+      "t": 10374,
+      "event": {
+        "timestamp": 12832,
+        "type": "FACELETS",
+        "facelets": "UUFUUFLLRUUURRLRRFFFBFFDFFDRRBDDBDDRLRDLLDLLDLBBUBBUBB"
+      }
+    },
+    {
+      "t": 10466,
+      "event": {
+        "timestamp": 12925,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 12925,
+        "cubeTimestamp": 73618
+      }
+    },
+    {
+      "t": 10467,
+      "event": {
+        "timestamp": 12925,
+        "type": "FACELETS",
+        "facelets": "UUUUUULLLULFURRURRFFFFFFFFRRRBDDDDDDLRDLLDLLDRBBBBBBBB"
+      }
+    },
+    {
+      "t": 10617,
+      "event": {
+        "timestamp": 13075,
+        "type": "MOVE",
+        "face": 2,
+        "direction": 1,
+        "move": "F'",
+        "localTimestamp": 13075,
+        "cubeTimestamp": 73804
+      }
+    },
+    {
+      "t": 10617,
+      "event": {
+        "timestamp": 13075,
+        "type": "FACELETS",
+        "facelets": "UUUUUUUUUBLFRRRRRRFFRFFFFFFDDDDDDDDDLRLLLLLLLRBBBBBBBB"
+      }
+    },
+    {
+      "t": 11484,
+      "event": {
+        "timestamp": 13942,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 13942,
+        "cubeTimestamp": 74645
+      }
+    },
+    {
+      "t": 11484,
+      "event": {
+        "timestamp": 13942,
+        "type": "FACELETS",
+        "facelets": "UURUUFUUFRRBRRLRRFFFDFFDFFDDDBDDBDDRLRLLLLLLLUBBUBBUBB"
+      }
+    },
+    {
+      "t": 11605,
+      "event": {
+        "timestamp": 14064,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 0,
+        "move": "U",
+        "localTimestamp": 14064,
+        "cubeTimestamp": 74783
+      }
+    },
+    {
+      "t": 11606,
+      "event": {
+        "timestamp": 14064,
+        "type": "FACELETS",
+        "facelets": "UUUUUUFFRUBBRRLRRFRRBFFDFFDDDBDDBDDRFFDLLLLLLLRLUBBUBB"
+      }
+    },
+    {
+      "t": 11756,
+      "event": {
+        "timestamp": 14214,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 14214,
+        "cubeTimestamp": 74921
+      }
+    },
+    {
+      "t": 11757,
+      "event": {
+        "timestamp": 14214,
+        "type": "FACELETS",
+        "facelets": "UUUUUUFFLBLFBRRURRRRUFFUFFRDDBDDDDDDFFDLLLLLLRRLBBBBBB"
+      }
+    },
+    {
+      "t": 11875,
+      "event": {
+        "timestamp": 14334,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 1,
+        "move": "U'",
+        "localTimestamp": 14334,
+        "cubeTimestamp": 75006
+      }
+    },
+    {
+      "t": 11876,
+      "event": {
+        "timestamp": 14334,
+        "type": "FACELETS",
+        "facelets": "UULUUFUUFRRUBRRURRFFDFFUFFRDDBDDDDDDRRLLLLLLLBLFBBBBBB"
+      }
+    },
+    {
+      "t": 11996,
+      "event": {
+        "timestamp": 14454,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 14454,
+        "cubeTimestamp": 75149
+      }
+    },
+    {
+      "t": 11997,
+      "event": {
+        "timestamp": 14454,
+        "type": "FACELETS",
+        "facelets": "UUBUUBUUBURRRRRRBUFFLFFFFFFDDDDDUDDRRRLLLLLLLDLFDBBBBB"
+      }
+    },
+    {
+      "t": 12116,
+      "event": {
+        "timestamp": 14574,
+        "type": "MOVE",
+        "face": 2,
+        "direction": 0,
+        "move": "F",
+        "localTimestamp": 14574,
+        "cubeTimestamp": 75233
+      }
+    },
+    {
+      "t": 12117,
+      "event": {
+        "timestamp": 14574,
+        "type": "FACELETS",
+        "facelets": "UUBUUBLLLURRURRBBUFFFFFFFFLRRUDDUDDRRRDLLDLLDDLFDBBBBB"
+      }
+    },
+    {
+      "t": 12179,
+      "event": {
+        "timestamp": 14638,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 14638,
+        "cubeTimestamp": 75341
+      }
+    },
+    {
+      "t": 12179,
+      "event": {
+        "timestamp": 14638,
+        "type": "FACELETS",
+        "facelets": "UUFUUFLLLBUUBRRURRFFUFFUFFRRRBDDDDDDRRDLLDLLDLLFBBBBBB"
+      }
+    },
+    {
+      "t": 12293,
+      "event": {
+        "timestamp": 14751,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 14751,
+        "cubeTimestamp": 75415
+      }
+    },
+    {
+      "t": 12293,
+      "event": {
+        "timestamp": 14751,
+        "type": "FACELETS",
+        "facelets": "UUUUUULLRUBBRRURRUFFBFFDFFDRRBDDBDDLRRDLLDLLDLLFFBBFBB"
+      }
+    },
+    {
+      "t": 12431,
+      "event": {
+        "timestamp": 14889,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 1,
+        "move": "U'",
+        "localTimestamp": 14889,
+        "cubeTimestamp": 75508
+      }
+    },
+    {
+      "t": 12432,
+      "event": {
+        "timestamp": 14889,
+        "type": "FACELETS",
+        "facelets": "UURUULUULFFBRRURRURRDFFDFFDRRBDDBDDLLLFLLDLLDUBBFBBFBB"
+      }
+    },
+    {
+      "t": 12474,
+      "event": {
+        "timestamp": 14932,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 14932,
+        "cubeTimestamp": 75623
+      }
+    },
+    {
+      "t": 12474,
+      "event": {
+        "timestamp": 14932,
+        "type": "FACELETS",
+        "facelets": "UUFUUFUUUBUUFRRFRRRRRFFLFFLRRDDDDDDDLLFLLDLLDLBBBBBBBB"
+      }
+    },
+    {
+      "t": 12653,
+      "event": {
+        "timestamp": 15112,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 1,
+        "move": "U'",
+        "localTimestamp": 15112,
+        "cubeTimestamp": 75767
+      }
+    },
+    {
+      "t": 12654,
+      "event": {
+        "timestamp": 15112,
+        "type": "FACELETS",
+        "facelets": "FFUUUUUUURRRFRRFRRLLFFFLFFLRRDDDDDDDLBBLLDLLDBUUBBBBBB"
+      }
+    },
+    {
+      "t": 12789,
+      "event": {
+        "timestamp": 15247,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 15247,
+        "cubeTimestamp": 75885
+      }
+    },
+    {
+      "t": 12789,
+      "event": {
+        "timestamp": 15247,
+        "type": "FACELETS",
+        "facelets": "FFFUULUULFFRRRRRRRLLDFFDFFDRRBDDBDDBLBBLLDLLDUUUUBBUBB"
+      }
+    },
+    {
+      "t": 12880,
+      "event": {
+        "timestamp": 15339,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 0,
+        "move": "U",
+        "localTimestamp": 15339,
+        "cubeTimestamp": 75985
+      }
+    },
+    {
+      "t": 12881,
+      "event": {
+        "timestamp": 15339,
+        "type": "FACELETS",
+        "facelets": "UUFUUFLLFUUURRRRRRFFRFFDFFDRRBDDBDDBLLDLLDLLDLBBUBBUBB"
+      }
+    },
+    {
+      "t": 13016,
+      "event": {
+        "timestamp": 15474,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 15474,
+        "cubeTimestamp": 76161
+      }
+    },
+    {
+      "t": 13017,
+      "event": {
+        "timestamp": 15474,
+        "type": "FACELETS",
+        "facelets": "UUUUUULLLURRURRURRFFFFFFFFFRRRDDDDDDLLDLLDLLDBBBBBBBBB"
+      }
+    },
+    {
+      "t": 13153,
+      "event": {
+        "timestamp": 15611,
+        "type": "MOVE",
+        "face": 2,
+        "direction": 1,
+        "move": "F'",
+        "localTimestamp": 15611,
+        "cubeTimestamp": 76278
+      }
+    },
+    {
+      "t": 13153,
+      "event": {
+        "timestamp": 15611,
+        "type": "FACELETS",
+        "facelets": "UUUUUUUUURRRRRRRRRFFFFFFFFFDDDDDDDDDLLLLLLLLLBBBBBBBBB"
+      }
+    },
+    {
+      "t": 16031,
+      "event": {
+        "timestamp": 18489,
+        "type": "FACELETS",
+        "facelets": "UUUUUUUUURRRRRRRRRFFFFFFFFFDDDDDDDDDLLLLLLLLLBBBBBBBBB"
+      }
+    },
+    {
+      "t": 16032,
+      "event": {
+        "timestamp": 18489,
+        "type": "BATTERY",
+        "batteryLevel": 86
+      }
+    },
+    {
+      "t": 17020,
+      "event": {
+        "timestamp": 19479,
+        "type": "HARDWARE",
+        "hardwareName": "QY-QYSC-S-A0E6       ",
+        "gyroSupported": false
+      }
+    },
+    {
+      "t": 18912,
+      "event": {
+        "timestamp": 21370,
+        "type": "FACELETS",
+        "facelets": "UUUUUUUUURRRRRRRRRFFFFFFFFFDDDDDDDDDLLLLLLLLLBBBBBBBBB"
+      }
+    }
+  ]
+}

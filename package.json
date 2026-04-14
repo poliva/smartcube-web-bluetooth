@@ -16,7 +16,9 @@
     "compile:bundles": "rollup -c",
     "compile:types": "tsc -p tsconfig.types.json",
     "build": "npm run clean && npm run compile:types && npm run compile:bundles",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "keywords": [
     "GAN",
@@ -53,7 +55,10 @@
     "@types/aes-js": "^3.1.4",
     "@types/node": "^22.19.15",
     "rollup": "^4.60.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "happy-dom": "^18.0.1",
+    "vitest": "^3.2.4",
+    "vitest-mock-extended": "^2.0.2"
   },
   "files": [
     "dist",

@@ -1,0 +1,6755 @@
+{
+  "format": "smartcube-fixture",
+  "version": 1,
+  "capturedAt": "2026-04-14T11:34:36.489Z",
+  "device": {
+    "name": "GAN12uiFp-753",
+    "id": "",
+    "mac": "F7:09:2E:CB:57:53"
+  },
+  "protocol": {
+    "id": "gan-gen2",
+    "name": "GAN Gen2"
+  },
+  "services": [],
+  "traffic": [
+    {
+      "t": 3420,
+      "op": "discover-service",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179"
+    },
+    {
+      "t": 3427,
+      "op": "discover-service",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179"
+    },
+    {
+      "t": 3429,
+      "op": "discover-service",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179"
+    },
+    {
+      "t": 3431,
+      "op": "discover-char",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4a4a-cd67-11e9-a32f-2a2ae2dbcce4"
+    },
+    {
+      "t": 3431,
+      "op": "discover-char",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4"
+    },
+    {
+      "t": 3481,
+      "op": "write",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4a4a-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "D67D17DE5B3D91DCD302D722AC158E79EA7D3662"
+    },
+    {
+      "t": 3511,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "43D6B6FD4597754B5D7494F2A27078D38AEBCFDC"
+    },
+    {
+      "t": 3539,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "280A841EAF526A2A5A5F8F006E9A36AE4085D972"
+    },
+    {
+      "t": 3542,
+      "op": "marker",
+      "service": "marker",
+      "data": "connected"
+    },
+    {
+      "t": 3599,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "573F46A40E80E21C2907E1C47145EC3E24E2B9EA"
+    },
+    {
+      "t": 3659,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "50FBF6025314DED5CD3A76229F9802992D9A60C6"
+    },
+    {
+      "t": 3750,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "31CFADDEEB42EFE3C7F2D5224F0ED6DA910B1C99"
+    },
+    {
+      "t": 3839,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "D4845F30E5946B265EE9D35FE173F4C19E2ABE9B"
+    },
+    {
+      "t": 3899,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "EBC4D4867D78677C55A9EEBBEFD6C484E0CE9F2C"
+    },
+    {
+      "t": 3989,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "32CBC73306F39360BE4AA003C30E44592DAE52C0"
+    },
+    {
+      "t": 4079,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "A61C457BE62A916CFE95B423EE1FEB4FFD4EE0F0"
+    },
+    {
+      "t": 4140,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "1AFFDE3C8A16EAE99772DD68E716FFEBBF7C09D2"
+    },
+    {
+      "t": 4229,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "5421FB16B4902B825E8AD277E229F938677A9788"
+    },
+    {
+      "t": 4320,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "36B44916C6C75AE37BD4C97F4873720AD0A86317"
+    },
+    {
+      "t": 4386,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "3F6CA860F9CDD39441F30B047C8C208F3AD3678B"
+    },
+    {
+      "t": 4471,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "DA8A916A9CDE52E36F3CF5FEDAF50A7B6F1E503B"
+    },
+    {
+      "t": 4560,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "040DA6A9F931EC6F993BE3D7997F7378A09244ED"
+    },
+    {
+      "t": 4618,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "F4FD6CEE510153F494EE7BD35C6C7FF1728D04AA"
+    },
+    {
+      "t": 4709,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "56B93AC3D8E9BE8B13086FE3AF97C74EA6D3AAB6"
+    },
+    {
+      "t": 4800,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "56FA9D6CC2BF1FB2C1011722C1FB225831B25A38"
+    },
+    {
+      "t": 4859,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "4A949E7DF97C5B4E7974C1FB1C077B17F83F5327"
+    },
+    {
+      "t": 4950,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "EE0C271040420086D735F85189726896142AD67A"
+    },
+    {
+      "t": 5040,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "F360A69AC06786BE912BB048FACBA4D5FC1224E0"
+    },
+    {
+      "t": 5100,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "21309A70E33E84A07DF19B15AE3F20F2F063BDA8"
+    },
+    {
+      "t": 5190,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "34D27C8783EDC6398AA7DFBEF02464C9A2DA25C0"
+    },
+    {
+      "t": 5279,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "C1259DEC51AD4E26BFA4EFABB68D0B997582DE12"
+    },
+    {
+      "t": 5340,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "E123906DA590855C49BE2EF24C540F623F256A86"
+    },
+    {
+      "t": 5429,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "2D9DFC23E20208A566F3A08FA5193544D96D1F25"
+    },
+    {
+      "t": 5519,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "15E76394D440E9C3FFDD7067C69A788394A2872D"
+    },
+    {
+      "t": 5579,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "72421C3F12F4487206A0747E95F14E6D0E2CD31D"
+    },
+    {
+      "t": 5670,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "ADE7741F66FB958B374674BA2D8D59B64404C74F"
+    },
+    {
+      "t": 5760,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "04A7D192375F8629CEFE8BD1CB1C285C71B037F4"
+    },
+    {
+      "t": 5820,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "B4B5ABDF8B58643FFFB231A4DA64333E3856CA57"
+    },
+    {
+      "t": 5917,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "59806B2220BDDABDE3B856971C500C9D7B20FD66"
+    },
+    {
+      "t": 5999,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "192E385A615F9C98E58A04F01A97E0BAF8DF38D2"
+    },
+    {
+      "t": 6060,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "FAF96049442E1F4B5D622BD49542F84A69406FC8"
+    },
+    {
+      "t": 6063,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "B848670B83D654A5E971FF509C92678A039D4E9E"
+    },
+    {
+      "t": 6149,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "DFA149332B6EF7D480206D958B74B417FED32C9F"
+    },
+    {
+      "t": 6240,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "DB58375510DE13154123C0F84C644003D0F3FDD9"
+    },
+    {
+      "t": 6248,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "436FB53AE28C82BD9B1D3C8E2C25394DAC07537F"
+    },
+    {
+      "t": 6299,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "A370371270E224AE2B967EF89EECAB85015AF939"
+    },
+    {
+      "t": 6391,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "1D1A8E641BE602E61533E13CB3D3F864AB754E49"
+    },
+    {
+      "t": 6397,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "59E47116DC88799B0CB9BD5608ACD2C369E9E909"
+    },
+    {
+      "t": 6478,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "594D37563AA80C06B459886AB142FB11DF0E7D63"
+    },
+    {
+      "t": 6538,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "E0E8E1ED7FFF86D080BB09C5E3B8605F3A0CF779"
+    },
+    {
+      "t": 6568,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "2888B52BD2048858D36DF450B4E1AEC6ECA4BEFF"
+    },
+    {
+      "t": 6634,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "8DBB531129DEABC1EFE7D29F9681F8B063A87139"
+    },
+    {
+      "t": 6719,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "F6F6B1CFFDFF5925AC2C13C66B3B0627E18CC3CB"
+    },
+    {
+      "t": 6748,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "8CE135B5C421E28BEEBC0FFEE2D847614E662723"
+    },
+    {
+      "t": 6809,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "D8CB8CB96FB45DE298B0D429D640BEF8B5ADB506"
+    },
+    {
+      "t": 6869,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "01DDDB7034F0CE6018FBC6C6A1B917D78110EF6E"
+    },
+    {
+      "t": 6871,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "B1C5D1CD1F97A2D988CCF748D2B2FEBB71D4EE73"
+    },
+    {
+      "t": 6959,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "502E36491BA421EBD89963AB053209E5A47CF4DB"
+    },
+    {
+      "t": 6988,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "6ECF995AED4185C63B7F910B288D178CD4E8D5CC"
+    },
+    {
+      "t": 7049,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "4BBFAA20054B7C5DEC241BD733A6B596CEF8D92B"
+    },
+    {
+      "t": 7078,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "C2B4E93E70AE44A68E924D0F9CC088E00DC8CEC7"
+    },
+    {
+      "t": 7109,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "AB4BE05B194C8D420BB026DB3FE19C8F2B9C2CE7"
+    },
+    {
+      "t": 7198,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "29E666B7ED0CBF5903B0690D9488D78D5C0601E3"
+    },
+    {
+      "t": 7201,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "5338784187EBF9284561A67C54C8831BA07716DA"
+    },
+    {
+      "t": 7289,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "C7CACF16BAB70AF09433E5FD97C863FF2D2F910E"
+    },
+    {
+      "t": 7318,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "CC5514948335BF1FCB58A0EC38B031E6B2F70DE0"
+    },
+    {
+      "t": 7348,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "165803E0A581FAE0D6ADA18B5EE0254D509E419D"
+    },
+    {
+      "t": 7442,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "4C5AFBD6129F754757DA667D523AED22CB44F0C5"
+    },
+    {
+      "t": 7499,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "384C6B53CEC8C9FAB101A7D49CC3B8B7448F4B13"
+    },
+    {
+      "t": 7528,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "E3F3FBE19D4BE550C832124798609C1B56819D72"
+    },
+    {
+      "t": 7589,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "2F8A21D8E4B4DA5BB5E50DA08D5B6B4C8C4D19E6"
+    },
+    {
+      "t": 7618,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "EC618FD9AD7572793CE2D5704DE7D06256C8B625"
+    },
+    {
+      "t": 7679,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "756CD237BB3959FC86F55AF745D0EC037398481B"
+    },
+    {
+      "t": 7770,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "9F90653B2878CF4BBB56118E3378D4447AA52E63"
+    },
+    {
+      "t": 7773,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "FFCB3D61A165D086C4C9EF82D8AB65ED07933559"
+    },
+    {
+      "t": 7829,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "33B023C691F1233AD03C83280DD4A0EAEDE219EC"
+    },
+    {
+      "t": 7920,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "3C2237C85EAE3DA5AC8EF4F613AF319D737B59CA"
+    },
+    {
+      "t": 7923,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "5E4886BA9520264420E8CC763B146F5A7F6FFA4D"
+    },
+    {
+      "t": 8009,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "6F5AF29FEE590F3615C2796EC5812C0681DB00A7"
+    },
+    {
+      "t": 8038,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "7DFCD284971940E02C08D7003741E53CF86EE9E1"
+    },
+    {
+      "t": 8071,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "14A1DCABE71E372F1370CEE3673C676A7D1381BF"
+    },
+    {
+      "t": 8160,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "CCD347652C8B8B531319C008C736E952BB35EF36"
+    },
+    {
+      "t": 8250,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "ABA613E0DDAD2D4DFE50F05C6823735908AE8F43"
+    },
+    {
+      "t": 8310,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "1850F9BC7D410980F9CFD6AB847A05BFBCCAA163"
+    },
+    {
+      "t": 8399,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "4A8A07F0B7A7B0DC83945DCA7BCCA5A2084B4500"
+    },
+    {
+      "t": 8489,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "C2B272C0D7A14C93E1DF6C96C41B85C05F0A9D35"
+    },
+    {
+      "t": 8549,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "F170A8EE26F12B17798DE51E860EF681DA131B7B"
+    },
+    {
+      "t": 8609,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "4247554D6E876F635D9FD88467DA4887C2BEB545"
+    },
+    {
+      "t": 8639,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "295B40D5BB00B51AADA98B84EC9B1278EBD4893A"
+    },
+    {
+      "t": 8731,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "098D240CCA0CD42DD0912B5AE10BFC09D3557BD1"
+    },
+    {
+      "t": 8733,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "F5358017A009D2453E39104F8E774B6517FE788F"
+    },
+    {
+      "t": 8789,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "18E5FF8938B3D1730EA5A4CD4C97803AF912F0B6"
+    },
+    {
+      "t": 8882,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "00BD5908700646713C7AA3C95F9D571A255C072F"
+    },
+    {
+      "t": 8883,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "0C1F1C51A6E896D9ACA682894EF7349BBCF13499"
+    },
+    {
+      "t": 8969,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "561D78145FE46221D993A93381F82D2A842B16E4"
+    },
+    {
+      "t": 8973,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "A16EFADB799CEF205776C3C46F2FCBD40684D3FB"
+    },
+    {
+      "t": 9029,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "B54381FF91C6327202973C44F69075577E30775C"
+    },
+    {
+      "t": 9119,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "A6F158EEA8792CDBC60961B6EBEB51C83960B2B4"
+    },
+    {
+      "t": 9122,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "03F732E08A654C77F296CEF3A17BCCB13AD6F83A"
+    },
+    {
+      "t": 9180,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "1B9F15404E7C6DDF51B39CC8583D75C0BC1E60AE"
+    },
+    {
+      "t": 9208,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "1759A3242B2E0E222BC09B82EDF9FE89A4D91399"
+    },
+    {
+      "t": 9269,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "52181C05037A8197AD55A2948CC60704303273AC"
+    },
+    {
+      "t": 9299,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "D20C4884CD8C3386D799F84BF7820AD901E03410"
+    },
+    {
+      "t": 9359,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "1000540AAB628998A43D06CCD95162FB045410AE"
+    },
+    {
+      "t": 9388,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "F8B548E7C2026267B05CEBB8C36C6E66291AE91C"
+    },
+    {
+      "t": 9449,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "58CE898011FFBA089562A1A8B1769D3ACBCFB778"
+    },
+    {
+      "t": 9509,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "8D20BD38AF0DF3B4DF8FFA4366B5BD55DFBA6D94"
+    },
+    {
+      "t": 9511,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "AE349B33C9874E2025EFCA279A170430997AEFAF"
+    },
+    {
+      "t": 9599,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "9F3FB5F80929160D2EA07090C89B81D5E174841A"
+    },
+    {
+      "t": 9628,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "26BED7458F847FDB4FB392209E2D6CE1CA5176F3"
+    },
+    {
+      "t": 9689,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "3471155925822B5CC619B2E527901047434F602A"
+    },
+    {
+      "t": 9749,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "92D8AC0E1B3FCC0A549F8C02FAF895D2C96ACCCC"
+    },
+    {
+      "t": 9809,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "85F773375DCA94776096B13CDBF8C17B74F22DBF"
+    },
+    {
+      "t": 9839,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "26EACE137CE1CE2D83A5C43997313BDCDE712598"
+    },
+    {
+      "t": 9899,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "0AD0F462B219D7BF272ABF00A075F781D02DD035"
+    },
+    {
+      "t": 9928,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "3409A5D456B8EC4CBF89F720B99B7A1E978FC5E1"
+    },
+    {
+      "t": 9989,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "A5072B1F12752B976A1EBC0F700CAA8B92454EC1"
+    },
+    {
+      "t": 10022,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "93513E5393A97C8C1D585078DD79A7FEC5ED0918"
+    },
+    {
+      "t": 10079,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "87B032C89A8E57F97CDF27836D1CF10F0E989424"
+    },
+    {
+      "t": 10171,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "ADC7C94E55200FEB1184399E51230A9048893904"
+    },
+    {
+      "t": 10175,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "FB0C1255C179F06506EC2ECDE18C143867543EDE"
+    },
+    {
+      "t": 10230,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "C9574BBFB584634CD5B53F483A573C6680F34C4A"
+    },
+    {
+      "t": 10319,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "A4A251580D7FDA5681D9AD66A976388FA6243D51"
+    },
+    {
+      "t": 10321,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "A5D9E9BD8AC51CD2151B39FAB53976789A2CC9B0"
+    },
+    {
+      "t": 10410,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "2F7450FB40477F413BDA4B1914E01613ADC93259"
+    },
+    {
+      "t": 10469,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "62FDABA053AD0FACBF59A97A179431CF66491916"
+    },
+    {
+      "t": 10559,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "51D82CA6B7FCA4182B2A3A8AD4284231AC64F045"
+    },
+    {
+      "t": 10651,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "5771BE0008D415208FC64B63A8312930FCA597AF"
+    },
+    {
+      "t": 10709,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "CEF3FF16139534C9F4C2273BE0FF86E13F4B82D6"
+    },
+    {
+      "t": 10800,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "1057FC72D2BE768FF8B56B3A058C19BA7015CF8D"
+    },
+    {
+      "t": 10890,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "7943DEB97F472AF4432458CA9BCECD7367B6C87F"
+    },
+    {
+      "t": 10980,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "9A7E789E6BD12BF930C3D5B4088CDE0ACBE2C3FD"
+    },
+    {
+      "t": 11039,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "CBE75BD059FDB6C10C893F587F6F94822F9F0B28"
+    },
+    {
+      "t": 11130,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "B20A239C9B9F7CC9DFBA7BD3705B3415CB3DF1EB"
+    },
+    {
+      "t": 11219,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "51BC01DD638E4233013F08CAA0B1F567FD342A50"
+    },
+    {
+      "t": 11279,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "7A9A3B3A71A049ED9963EEA56D1C4712EE70240E"
+    },
+    {
+      "t": 11369,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "AE3F93552660B3CD64C35787B06A630C3A407161"
+    },
+    {
+      "t": 11461,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "8D26A090CB02B3F1BB28B609533F855C61532F9C"
+    },
+    {
+      "t": 11519,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "2B239ABC825B03DC8E7898829023DE304FA2A886"
+    },
+    {
+      "t": 11610,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "94BF26ED7A5702A3C49D2FAB91A7C7E4AF08C059"
+    },
+    {
+      "t": 11701,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "210E857820F09CF8F754AE36DFC1FDCBFF98B20C"
+    },
+    {
+      "t": 11759,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "5FFBB2DC6FC05A6AFD4E9BC7867957CCDAB45D20"
+    },
+    {
+      "t": 11851,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "9ABCFC74706590075BCD665F3AD66A477D414C21"
+    },
+    {
+      "t": 11938,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "7287866DBE2700FB9AB8F6CADF55FA3721304832"
+    },
+    {
+      "t": 12002,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "F66C26C2926854D9FBD4042E1110CC69659DAB7D"
+    },
+    {
+      "t": 12089,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "16A5255861EF1559B74B0F48B10C0A5DB1E65B48"
+    },
+    {
+      "t": 12179,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "B1B70A8E4BF97DDB5772D60AFA76AF3E0B909215"
+    },
+    {
+      "t": 12238,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "729A03D6C64AFAD525A23045903D08E1270DB53B"
+    },
+    {
+      "t": 12329,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "EBEC4131E0CA4FC7610544AA615D8ED0EA504F64"
+    },
+    {
+      "t": 12418,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "AD8F3D28D24BA4B68FFCA6B67C4BBED5701ECAC0"
+    },
+    {
+      "t": 12478,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "033A8626A802F96902525F085D9F255368E4CA91"
+    },
+    {
+      "t": 12568,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "C29D4D6401BEF72F48C8CF095184DC4DD0F71E35"
+    },
+    {
+      "t": 12659,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "8E12E6999A105BD58B78EA66A1BC3C7D7FC6AB87"
+    },
+    {
+      "t": 12719,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "1297180B8D5BD31AA83B5972BBE168221EFAC9CC"
+    },
+    {
+      "t": 12809,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "55FE103C775D2765CE848DF0AC943EB78D14AD2E"
+    },
+    {
+      "t": 12899,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "763661A67C650EBE5A5DA3BA80ED59D8B5BB2D3C"
+    },
+    {
+      "t": 12958,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "AD54C6BE1D156D56A46ADC3A5CE3F08615F99B72"
+    },
+    {
+      "t": 13079,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "44A49604CA4BB31D1D9C7A19DF2C91DFCB865E0C"
+    },
+    {
+      "t": 13138,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "38B1541024D409066EF884CA3B19D284A25882BC"
+    },
+    {
+      "t": 13198,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "4262BDB5794F82A9ADD0EF7C5196062C32E6EE9F"
+    },
+    {
+      "t": 13289,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "7C8E29A950DAB04E41F43C762F5C1CEE0B00910E"
+    },
+    {
+      "t": 13379,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "DC3FDF5E59AF312554599F0553C254E71087FBB8"
+    },
+    {
+      "t": 13439,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "4608133F7B51F45F6BA35E02019DC317C7CA224F"
+    },
+    {
+      "t": 13529,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "EDD066BF075774272127D9209D1221367777AD9B"
+    },
+    {
+      "t": 13619,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "6D5430705689C47220C6AC08FB185BEECC59C82D"
+    },
+    {
+      "t": 13678,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "65F0C66A7E42BF87C5356CB20E391444DF464F6A"
+    },
+    {
+      "t": 13769,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "2B60F2862102DF816AA39C854A4BC2DD599E61C6"
+    },
+    {
+      "t": 13859,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "B2E6B7DD06AE3ADA9F4C0DEFB2EC3723C7395D63"
+    },
+    {
+      "t": 13919,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "E009C44F19D2654613FB662490F05FC7B903A3F6"
+    },
+    {
+      "t": 14010,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "B9C829AF3217725BAD399BAD21489582221F6090"
+    },
+    {
+      "t": 14098,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "A68BEBDE4F6278A2D7E2DF18932CC52450CF21ED"
+    },
+    {
+      "t": 14159,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "3218F71BD548318E5DDA5F9136E9DB1C88F53681"
+    },
+    {
+      "t": 14249,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "634D6DAD82FBC427F0BCC6523DB50329DDF63450"
+    },
+    {
+      "t": 14339,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "B0C600BB808BAC1BB7FCC1E4F71B99C65885E925"
+    },
+    {
+      "t": 14398,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "0BFB1510652FA1611FCE983B7B260073371B210A"
+    },
+    {
+      "t": 14489,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "FC4EDB3A332EC6650F543AF6E693664F812BB827"
+    },
+    {
+      "t": 14578,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "6E42B854AB380CF4C7D0B07243A052808F87C0BC"
+    },
+    {
+      "t": 14639,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "06645FD8493F0E52CE18B669CC5C0B3BFD22EA08"
+    },
+    {
+      "t": 14729,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "90CBE7DE84C2BA5B557E2EB435E865063FCC75FD"
+    },
+    {
+      "t": 14818,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "1DAE30CFBC2B11BF083E69E3815E48A0E7706453"
+    },
+    {
+      "t": 14879,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "F57D29F5557A083EA1E658D089CD123834E3B9B0"
+    },
+    {
+      "t": 14969,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "A8E419355E0E28659871F019ECF378156C9038AA"
+    },
+    {
+      "t": 15059,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "DF7F4728DC4BA33DE92038ED5DA5A71D772BA4A7"
+    },
+    {
+      "t": 15119,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "47E21E1538353187DF09210C893242D957DFEAF0"
+    },
+    {
+      "t": 15208,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "C34FC815157A5F163A05DE494C93B2DD967A1E94"
+    },
+    {
+      "t": 15299,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "A26B04484E5E72B845B7DA5A0BD22FA12C653610"
+    },
+    {
+      "t": 15389,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "6595233FCF36C51505B23087335A059FF07D7DD3"
+    },
+    {
+      "t": 15449,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "8B2DF45967F38374E30BA9DBDC6469C2CD914BAF"
+    },
+    {
+      "t": 15538,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "83216E52B442D01D4AED45DB48977FACC51A381C"
+    },
+    {
+      "t": 15629,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "33DDC0E222EA29231711E0764ABC3980596C37F4"
+    },
+    {
+      "t": 15691,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "1CB265BCF8C599EB25FE032BDFEB3096D97BF851"
+    },
+    {
+      "t": 15780,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "CC4CDFA0820BAC53FFBDDFE3D0F81802B7A7291F"
+    },
+    {
+      "t": 15869,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "7EC98F5C954A75AE6F9860A4D8F07BB1BBE62BF2"
+    },
+    {
+      "t": 15928,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "CF62A5253A603E9725E0EC23BAE329302676A54B"
+    },
+    {
+      "t": 16020,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "BDE2A4598F7AFB81FDD11EF1EF49C4683CC7AA70"
+    },
+    {
+      "t": 16109,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "3831B1C861368EF2567AA5ED3012D946C3CAAF79"
+    },
+    {
+      "t": 16169,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "93818FC996C4C56C07FC14F4223012CAC274E0B7"
+    },
+    {
+      "t": 16259,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "5CDEA8FEE2D2FBCA1009EA8516836DBCE9B104BF"
+    },
+    {
+      "t": 16349,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "4A3575382D905E7A823C4590713492A71E6A05F0"
+    },
+    {
+      "t": 16408,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "A413733AD2204E458077E8487C535C4CA1943657"
+    },
+    {
+      "t": 16498,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "14DA72FDE8435101060212A7DC20BEBB76EB1CC0"
+    },
+    {
+      "t": 16588,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "2D64407D1F40AD7AE7D1ABC184D233D5E68D3201"
+    },
+    {
+      "t": 16648,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "4BB0C8E5FF939FA75D357656ADC996E3C67B3DCF"
+    },
+    {
+      "t": 16739,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "B086F387B6DEB63A199B724BA38237C23319C065"
+    },
+    {
+      "t": 16830,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "B205FB0DBBBA8BFABDE104E6D1FC92F2044AC73F"
+    },
+    {
+      "t": 16847,
+      "op": "marker",
+      "service": "marker",
+      "data": "probe:battery"
+    },
+    {
+      "t": 16848,
+      "op": "write",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4a4a-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "F4C9FBE234D42E5B959E22E5A7A45826C0CF5E36"
+    },
+    {
+      "t": 16889,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "50C5A7B329E78DAC530A928830429D3A925C72AE"
+    },
+    {
+      "t": 16891,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "575876F0B982C7A4B8448F7240EAD94AFFAD2407"
+    },
+    {
+      "t": 16979,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "6FDB61D375F1EC7A1761211342524B3D02604DDA"
+    },
+    {
+      "t": 17071,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "DC9F95AE3B34AE276B3B5B02005309A2A2D233FF"
+    },
+    {
+      "t": 17129,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "5FEC80D667D9AA0AB9F0CF2219E4A2C3EF03CBB7"
+    },
+    {
+      "t": 17219,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "985C39AF63A2B4DF0B352BE991365BE2273E6BA2"
+    },
+    {
+      "t": 17309,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "96064A3AC2E6A3A982227CD688B2BC777BC11FFC"
+    },
+    {
+      "t": 17368,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "45BC7D75F2188B3D867FB1FA6FE5BBFDEB3C3AD0"
+    },
+    {
+      "t": 17459,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "4B15DE95BFC9ABF58C5CFB94F12FC48125E7C2B9"
+    },
+    {
+      "t": 17550,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "2221BDA2408E4D522856D1A2E8DE4B71474AD949"
+    },
+    {
+      "t": 17609,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "C016A721889E1B28C0BB15B8974D5F9ABDCE7998"
+    },
+    {
+      "t": 17699,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "469C3448367EB1347152BAEB5A4E4E9E69F9AA93"
+    },
+    {
+      "t": 17789,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "C1B4200B9763639AD782F88ECB2E46F56B4A4B41"
+    },
+    {
+      "t": 17849,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "C794DC3378C8F215999722040945E57315F1134C"
+    },
+    {
+      "t": 17939,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "0982CF6CE6FDB118625B1E40FF8D4951178FCE70"
+    },
+    {
+      "t": 18029,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "1B929A602F5FF80635C5D5FEED54A41987EBE68A"
+    },
+    {
+      "t": 18089,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "BBB67C099FCE9E0114EF538368E64F43469A5F24"
+    },
+    {
+      "t": 18178,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "B75953927DB6AF5DA5860EA7897917789711CC0A"
+    },
+    {
+      "t": 18269,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "E0363C8BAEE5D8D173FF7533AA8D72DB2E0733F8"
+    },
+    {
+      "t": 18329,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "F7A9B1495596FA7C12C43BA9C9926F0F5E46C8FF"
+    },
+    {
+      "t": 18419,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "233600178FE44B5F1F17F192183F76DFFAA54C20"
+    },
+    {
+      "t": 18508,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "5ADF84D41E3CB7785E79DFFCED8BB59EE04B4AC5"
+    },
+    {
+      "t": 18547,
+      "op": "marker",
+      "service": "marker",
+      "data": "probe:hardware"
+    },
+    {
+      "t": 18548,
+      "op": "write",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4a4a-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "19F7A9B68ADC3FE2D515E8A1A661B652C0F8D684"
+    },
+    {
+      "t": 18571,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "5D9660C2797CEACEDB30D5DAD3052B1078F79091"
+    },
+    {
+      "t": 18600,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "B1B85533F4A6DDF48F8852B6EC57B22C7F4AE855"
+    },
+    {
+      "t": 18659,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "27B1E0D814E43B9D75BF0A65AB15078D6E5F90E0"
+    },
+    {
+      "t": 18749,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "966023BD82A11485ADA256BC8F933D6345800DD8"
+    },
+    {
+      "t": 18809,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "92044D0CE720C84ED0A202A4EE5C189BCFF5CF08"
+    },
+    {
+      "t": 18899,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "04D041B6118D505B6EAB88FDCF1E600A625D6A07"
+    },
+    {
+      "t": 18989,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "88F064993DE7B0E68CE7941286D509C3E9F9F364"
+    },
+    {
+      "t": 19049,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "EE1D31AE87852F419CD4065B3A50A195E22BDB5D"
+    },
+    {
+      "t": 19138,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "CDDAB667B2D9ED54AA77140BB39FBCAD37C27886"
+    },
+    {
+      "t": 19228,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "BD5ED22B97A16BD88BAE0BB651425C7B9FA48A8D"
+    },
+    {
+      "t": 19318,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "0C51B5812DB7389D4A7B1966D980FE3D96C45662"
+    },
+    {
+      "t": 19379,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "09907C80AF1F4BE5C533E44D3E6EC8D718BA0B94"
+    },
+    {
+      "t": 19469,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "7AA13BB3D2381942EDAE4ADD7F5BA044D9B1E110"
+    },
+    {
+      "t": 19559,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "4957100733619A12C77904E36172E8BAF7B9171A"
+    },
+    {
+      "t": 19618,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "1107DF2EAD339FF9B777B2DBAF6BDED536828AE6"
+    },
+    {
+      "t": 19709,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "4E4B94DECD535FC9ABF755FF434C9A3AD7D8F6F1"
+    },
+    {
+      "t": 19800,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "16AAB53D7B5B7237C75E40BD596F6C382AC3D401"
+    },
+    {
+      "t": 19858,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "9B0620687B7B8D03101586C31E872FCA54E57D02"
+    },
+    {
+      "t": 19979,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "1C5D3DEA893351917595D92851F02E53F5307D27"
+    },
+    {
+      "t": 20014,
+      "op": "marker",
+      "service": "marker",
+      "data": "probe:facelets"
+    },
+    {
+      "t": 20015,
+      "op": "write",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4a4a-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "D67D17DE5B3D91DCD302D722AC158E79EA7D3662"
+    },
+    {
+      "t": 20039,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "E54DDA8D6A4A62BDBCBEB4AF92C65A3C10A4E21B"
+    },
+    {
+      "t": 20069,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "FC93872492B6BE9C73C9AA221613200822F92CD1"
+    },
+    {
+      "t": 20102,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "0C5A04B849930C4B66DB45B23CC504390033E72D"
+    },
+    {
+      "t": 20189,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "1DFD9748D382377D30A77D16190E1E600C1D264E"
+    },
+    {
+      "t": 20279,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "F0E2494EB3FB9CEF0F2CDEED13353CC614AB42DD"
+    },
+    {
+      "t": 20339,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "397F977A4926924FA14F983AB655DE1CF4BA45C4"
+    },
+    {
+      "t": 20429,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "CB321376F97E40C289803669F17E5540E55CDDCF"
+    },
+    {
+      "t": 20518,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "C4E5228B4830A3BAD7B59868CAD9AFF0FC88AA3D"
+    },
+    {
+      "t": 20578,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "BD3AB8C7487363E8E85F1833FF1DD5FAE4F162B2"
+    },
+    {
+      "t": 20668,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "0555288AE57142259CA5191522B559BA376DBEC6"
+    },
+    {
+      "t": 20758,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "FC67B2083C0F5E9DC8AA3CFBC215DBF060EB2C90"
+    },
+    {
+      "t": 20819,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "EB288635C7E5B70FB6449F5695A473882F04C451"
+    },
+    {
+      "t": 20909,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "AAF008F3A0E2597A122C31A9B35AA0A6755E0D96"
+    },
+    {
+      "t": 20998,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "7942419E1902DAC1A5CD8117FAA2997A6519ADF8"
+    },
+    {
+      "t": 21058,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "D7CD5DE8AB5A8D68D86348DE4E533647F35ED6F9"
+    },
+    {
+      "t": 21148,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "597DFC02E48B498BAE5231150A5E27B3FEE2891B"
+    },
+    {
+      "t": 21239,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "27299E1B276CB19006779B0A069788AAAEACD685"
+    },
+    {
+      "t": 21298,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "F659EFF79584603C1925736B9DDC031B81AA1F3A"
+    },
+    {
+      "t": 21389,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "7B12FF89AB277DA6F574468B7EE0EC85F9BFA9AD"
+    },
+    {
+      "t": 21479,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "7124DDEAA390394A826410808575BD4A21016B2B"
+    },
+    {
+      "t": 21539,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "98A9C3C510EAF13CE185B893B190893F0EC03803"
+    },
+    {
+      "t": 21628,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "5CDC90460EAB5BCD4E0CD17FFDF202BA0DE53E4D"
+    },
+    {
+      "t": 21719,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "E70AB6C96AC93D0E8AF07E2AE71B0182641D4195"
+    },
+    {
+      "t": 21778,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "71779DE16A04581ADDF2F3D0C341C754FB48FCB8"
+    },
+    {
+      "t": 21868,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "12B2BCEB542DBDBB6E4F1B8A2F5194FDA0FEFA0E"
+    },
+    {
+      "t": 21959,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "4F69305B7FE914D67924B08697E5DB931DF36B09"
+    },
+    {
+      "t": 22019,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "D9A22F82EA313F8DF58B6F55097EA021670EB5DB"
+    },
+    {
+      "t": 22108,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "4EF91CE717503E517D7355CB09E0A5A944B53106"
+    },
+    {
+      "t": 22198,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "324D9764D7CE51425E1EBD195E67E149EF75A6C8"
+    },
+    {
+      "t": 22259,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "F00A8061B4601D6E65EDA24D8AB859462D3D38D9"
+    },
+    {
+      "t": 22349,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "72211EAD12AC24186C34F724918E3B708EC332F1"
+    },
+    {
+      "t": 22440,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "A3F173B3E7D50E638B7201F75D0C1B55151837F2"
+    },
+    {
+      "t": 22500,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "2ADEB2D781EB967DA4DA2B5405C6ED410B3344B2"
+    },
+    {
+      "t": 22588,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "ED4EC13C8959E802DB72334259EE705D7D1460EB"
+    },
+    {
+      "t": 22679,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "26A6D6BA29E33688F917EA9A1953A2E8DF8D4AB1"
+    },
+    {
+      "t": 22739,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "8E1DBD5FD17340C12B9FAFEBF718E37284C49975"
+    },
+    {
+      "t": 22829,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dc4179",
+      "characteristic": "28be4cb6-cd67-11e9-a32f-2a2ae2dbcce4",
+      "data": "A1DF98888201AF9E67AB4EE18BF5BE946A1B6EF1"
+    }
+  ],
+  "events": [
+    {
+      "t": 3600,
+      "event": {
+        "timestamp": 27030,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.36768700216681416,
+          "y": -0.16034424878688924,
+          "z": -0.0815759758293405,
+          "w": 0.9123508407849361
+        },
+        "velocity": {
+          "x": 5,
+          "y": -1,
+          "z": 3
+        }
+      }
+    },
+    {
+      "t": 3660,
+      "event": {
+        "timestamp": 27089,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.32007812738425856,
+          "y": -0.14862514114810632,
+          "z": -0.03140354625080111,
+          "w": 0.9351176488540299
+        },
+        "velocity": {
+          "x": 2,
+          "y": 0,
+          "z": 2
+        }
+      }
+    },
+    {
+      "t": 3752,
+      "event": {
+        "timestamp": 27182,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.2999969481490524,
+          "y": -0.1368755149998474,
+          "z": -0.011291848506118961,
+          "w": 0.9439680166020692
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 3842,
+      "event": {
+        "timestamp": 27271,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.2953581347087008,
+          "y": -0.13422040467543564,
+          "z": -0.008606219672231208,
+          "w": 0.945860164189581
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 3901,
+      "event": {
+        "timestamp": 27331,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.29496139408551286,
+          "y": -0.1336405529953917,
+          "z": -0.00967436750389111,
+          "w": 0.9460432752464369
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 3992,
+      "event": {
+        "timestamp": 27422,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.29154332102420116,
+          "y": -0.13144322031311992,
+          "z": -0.009643848994415113,
+          "w": 0.9474166081728569
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 4080,
+      "event": {
+        "timestamp": 27510,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.28852198858607747,
+          "y": -0.1293069246498001,
+          "z": -0.011261329996642965,
+          "w": 0.9486068300424207
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 4142,
+      "event": {
+        "timestamp": 27572,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.24506363109225746,
+          "y": -0.11450544755394147,
+          "z": -0.0015259254737998596,
+          "w": 0.9627063814203314
+        },
+        "velocity": {
+          "x": -5,
+          "y": 1,
+          "z": 1
+        }
+      }
+    },
+    {
+      "t": 4230,
+      "event": {
+        "timestamp": 27660,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.12756736960966827,
+          "y": -0.06479079561754204,
+          "z": 0.03384502700888089,
+          "w": 0.989104892117069
+        },
+        "velocity": {
+          "x": -1,
+          "y": -5,
+          "z": 3
+        }
+      }
+    },
+    {
+      "t": 4322,
+      "event": {
+        "timestamp": 27751,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.06805627613147373,
+          "y": -0.003814813684499649,
+          "z": 0.051179540391247294,
+          "w": 0.9963377788628803
+        },
+        "velocity": {
+          "x": 0,
+          "y": 2,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 4387,
+      "event": {
+        "timestamp": 27817,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.0728476821192053,
+          "y": 0.03534043397320475,
+          "z": 0.048402356028931545,
+          "w": 0.9955137791070284
+        },
+        "velocity": {
+          "x": 0,
+          "y": 2,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 4472,
+      "event": {
+        "timestamp": 27902,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.09994811853389081,
+          "y": 0.040131839960936305,
+          "z": 0.04489272743919187,
+          "w": 0.9931638538773766
+        },
+        "velocity": {
+          "x": -2,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 4561,
+      "event": {
+        "timestamp": 27990,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.12689596240119633,
+          "y": 0.03653065584276864,
+          "z": 0.046357615894039736,
+          "w": 0.9901425214392529
+        },
+        "velocity": {
+          "x": 5,
+          "y": -2,
+          "z": -1
+        }
+      }
+    },
+    {
+      "t": 4620,
+      "event": {
+        "timestamp": 28049,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.22901089510788294,
+          "y": 0.0036927396465956603,
+          "z": 0.020966216010010072,
+          "w": 0.9731742301705985
+        },
+        "velocity": {
+          "x": -4,
+          "y": 0,
+          "z": -1
+        }
+      }
+    },
+    {
+      "t": 4710,
+      "event": {
+        "timestamp": 28139,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3109225745414594,
+          "y": -0.056459242530594804,
+          "z": -0.016235847041230506,
+          "w": 0.9486068300424207
+        },
+        "velocity": {
+          "x": 4,
+          "y": -4,
+          "z": -4
+        }
+      }
+    },
+    {
+      "t": 4801,
+      "event": {
+        "timestamp": 28231,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3492843409527879,
+          "y": -0.10617389446699423,
+          "z": -0.03460798974578082,
+          "w": 0.9302957243568224
+        },
+        "velocity": {
+          "x": 2,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 4860,
+      "event": {
+        "timestamp": 28290,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.2197027497177038,
+          "y": -0.07776116214484084,
+          "z": 0.022095400860621967,
+          "w": 0.9721976378673666
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 3
+        }
+      }
+    },
+    {
+      "t": 4952,
+      "event": {
+        "timestamp": 28382,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.09146397289956358,
+          "y": -0.06543168431653798,
+          "z": 0.06640827661976989,
+          "w": 0.9914242988372448
+        },
+        "velocity": {
+          "x": -4,
+          "y": 1,
+          "z": 1
+        }
+      }
+    },
+    {
+      "t": 5042,
+      "event": {
+        "timestamp": 28472,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.01867732779931028,
+          "y": 0.0173650318918424,
+          "z": 0.08862575151829585,
+          "w": 0.9957274086733604
+        },
+        "velocity": {
+          "x": 5,
+          "y": 5,
+          "z": 1
+        }
+      }
+    },
+    {
+      "t": 5102,
+      "event": {
+        "timestamp": 28532,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.012756736960966826,
+          "y": 0.034546952726828825,
+          "z": 0.10260322885830256,
+          "w": 0.9940183721427045
+        },
+        "velocity": {
+          "x": -5,
+          "y": 0,
+          "z": -1
+        }
+      }
+    },
+    {
+      "t": 5192,
+      "event": {
+        "timestamp": 28622,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.1467940305795465,
+          "y": -0.04837183751945555,
+          "z": 0.05255287331766716,
+          "w": 0.9865718558305613
+        },
+        "velocity": {
+          "x": -3,
+          "y": 3,
+          "z": 5
+        }
+      }
+    },
+    {
+      "t": 5280,
+      "event": {
+        "timestamp": 28710,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3203833124790185,
+          "y": -0.18512527848139898,
+          "z": -0.0119632557145909,
+          "w": 0.9289223914304026
+        },
+        "velocity": {
+          "x": 2,
+          "y": 5,
+          "z": -4
+        }
+      }
+    },
+    {
+      "t": 5342,
+      "event": {
+        "timestamp": 28772,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.4035462508011109,
+          "y": -0.2544328135013886,
+          "z": -0.06161687063203833,
+          "w": 0.8766747032074953
+        },
+        "velocity": {
+          "x": -5,
+          "y": -3,
+          "z": -2
+        }
+      }
+    },
+    {
+      "t": 5430,
+      "event": {
+        "timestamp": 28859,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.41569261757255777,
+          "y": -0.271858882412183,
+          "z": -0.07101657155064546,
+          "w": 0.8649861140781884
+        },
+        "velocity": {
+          "x": 3,
+          "y": 2,
+          "z": 1
+        }
+      }
+    },
+    {
+      "t": 5522,
+      "event": {
+        "timestamp": 28951,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.33494064149906916,
+          "y": -0.21127964110232855,
+          "z": -0.03857539597766045,
+          "w": 0.9174169133579516
+        },
+        "velocity": {
+          "x": -2,
+          "y": 3,
+          "z": 3
+        }
+      }
+    },
+    {
+      "t": 5580,
+      "event": {
+        "timestamp": 29010,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.23279519028290657,
+          "y": -0.17020172734763633,
+          "z": -0.0023194067201757866,
+          "w": 0.9574877162999359
+        },
+        "velocity": {
+          "x": -4,
+          "y": 1,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 5672,
+      "event": {
+        "timestamp": 29102,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.11993774224066897,
+          "y": -0.1260414441358684,
+          "z": -0.003997924741355632,
+          "w": 0.9847102267525254
+        },
+        "velocity": {
+          "x": 4,
+          "y": 4,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 5762,
+      "event": {
+        "timestamp": 29191,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.08490249336222419,
+          "y": -0.12411877803888058,
+          "z": -0.009582811975463118,
+          "w": 0.988555558946501
+        },
+        "velocity": {
+          "x": 1,
+          "y": 2,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 5821,
+      "event": {
+        "timestamp": 29251,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.16891994994964446,
+          "y": -0.08551286355174413,
+          "z": -0.007080294198431349,
+          "w": 0.9818720053712576
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 5918,
+      "event": {
+        "timestamp": 29348,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.1814630573442793,
+          "y": -0.08890041810357982,
+          "z": 0.002197332682271798,
+          "w": 0.9793389690847499
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 6001,
+      "event": {
+        "timestamp": 29431,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.18399609363078706,
+          "y": -0.10153508102664266,
+          "z": -0.0035401470992156743,
+          "w": 0.977629932554094
+        },
+        "velocity": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 6062,
+      "event": {
+        "timestamp": 29491,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 29491,
+        "cubeTimestamp": 6688
+      }
+    },
+    {
+      "t": 6064,
+      "event": {
+        "timestamp": 29494,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.0923490096743675,
+          "y": -0.07760856959746086,
+          "z": 0.05224768822290719,
+          "w": 0.9913022247993408
+        },
+        "velocity": {
+          "x": -5,
+          "y": 4,
+          "z": -5
+        }
+      }
+    },
+    {
+      "t": 6150,
+      "event": {
+        "timestamp": 29580,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.02740562150944548,
+          "y": 0.0003662221137119663,
+          "z": 0.0521866512039552,
+          "w": 0.9982299264503922
+        },
+        "velocity": {
+          "x": -1,
+          "y": 3,
+          "z": -3
+        }
+      }
+    },
+    {
+      "t": 6244,
+      "event": {
+        "timestamp": 29674,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.046357615894039736,
+          "y": -0.014557329020050662,
+          "z": 0.08774071474349193,
+          "w": 0.9949339274269845
+        },
+        "velocity": {
+          "x": 3,
+          "y": -4,
+          "z": 3
+        }
+      }
+    },
+    {
+      "t": 6248,
+      "event": {
+        "timestamp": 29678,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 0,
+        "move": "U",
+        "localTimestamp": 29678,
+        "cubeTimestamp": 6870
+      }
+    },
+    {
+      "t": 6300,
+      "event": {
+        "timestamp": 29730,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.013061922055726798,
+          "y": 0.010589922788171027,
+          "z": 0.10126041444135868,
+          "w": 0.9946897793511765
+        },
+        "velocity": {
+          "x": -2,
+          "y": 2,
+          "z": 1
+        }
+      }
+    },
+    {
+      "t": 6393,
+      "event": {
+        "timestamp": 29823,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.04379406109805597,
+          "y": -0.04153569139683218,
+          "z": 0.08319345683156834,
+          "w": 0.9946897793511765
+        },
+        "velocity": {
+          "x": 2,
+          "y": -3,
+          "z": -2
+        }
+      }
+    },
+    {
+      "t": 6398,
+      "event": {
+        "timestamp": 29828,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 29828,
+        "cubeTimestamp": 7016
+      }
+    },
+    {
+      "t": 6479,
+      "event": {
+        "timestamp": 29909,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.14691610461745047,
+          "y": -0.08978545487838374,
+          "z": 0.026337473677785578,
+          "w": 0.9846797082430494
+        },
+        "velocity": {
+          "x": -3,
+          "y": -1,
+          "z": -2
+        }
+      }
+    },
+    {
+      "t": 6539,
+      "event": {
+        "timestamp": 29969,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.20386364329966125,
+          "y": -0.10458693197424238,
+          "z": -0.017120883816034424,
+          "w": 0.9732352671895504
+        },
+        "velocity": {
+          "x": -1,
+          "y": 2,
+          "z": -1
+        }
+      }
+    },
+    {
+      "t": 6570,
+      "event": {
+        "timestamp": 30000,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 1,
+        "move": "U'",
+        "localTimestamp": 30000,
+        "cubeTimestamp": 7184
+      }
+    },
+    {
+      "t": 6635,
+      "event": {
+        "timestamp": 30064,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.21842097231971191,
+          "y": -0.07629627368999298,
+          "z": -0.04428235724967192,
+          "w": 0.9718314157536546
+        },
+        "velocity": {
+          "x": -2,
+          "y": -1,
+          "z": -2
+        }
+      }
+    },
+    {
+      "t": 6719,
+      "event": {
+        "timestamp": 30149,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3142490920743431,
+          "y": -0.097842341380047,
+          "z": -0.10602130191961424,
+          "w": 0.9382915738395337
+        },
+        "velocity": {
+          "x": -1,
+          "y": -2,
+          "z": -5
+        }
+      }
+    },
+    {
+      "t": 6748,
+      "event": {
+        "timestamp": 30178,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 30178,
+        "cubeTimestamp": 7364
+      }
+    },
+    {
+      "t": 6810,
+      "event": {
+        "timestamp": 30239,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3867305520798364,
+          "y": -0.1142002624591815,
+          "z": -0.1791131321146275,
+          "w": 0.8973662526322215
+        },
+        "velocity": {
+          "x": -4,
+          "y": 2,
+          "z": -3
+        }
+      }
+    },
+    {
+      "t": 6870,
+      "event": {
+        "timestamp": 30300,
+        "type": "MOVE",
+        "face": 2,
+        "direction": 0,
+        "move": "F",
+        "localTimestamp": 30300,
+        "cubeTimestamp": 7488
+      }
+    },
+    {
+      "t": 6871,
+      "event": {
+        "timestamp": 30301,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.37678151799066134,
+          "y": -0.11230811487166967,
+          "z": -0.21390423291726432,
+          "w": 0.8942228461561937
+        },
+        "velocity": {
+          "x": -2,
+          "y": -1,
+          "z": -5
+        }
+      }
+    },
+    {
+      "t": 6960,
+      "event": {
+        "timestamp": 30390,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3752250740073855,
+          "y": -0.10776085695974609,
+          "z": -0.20197149571214942,
+          "w": 0.8981902523880734
+        },
+        "velocity": {
+          "x": 4,
+          "y": 0,
+          "z": 5
+        }
+      }
+    },
+    {
+      "t": 6989,
+      "event": {
+        "timestamp": 30419,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 30419,
+        "cubeTimestamp": 7608
+      }
+    },
+    {
+      "t": 7050,
+      "event": {
+        "timestamp": 30480,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.17694631794183172,
+          "y": -0.05185094759971923,
+          "z": -0.05679494613483078,
+          "w": 0.9812005981627857
+        },
+        "velocity": {
+          "x": -3,
+          "y": 5,
+          "z": 1
+        }
+      }
+    },
+    {
+      "t": 7079,
+      "event": {
+        "timestamp": 30509,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 30509,
+        "cubeTimestamp": 7686
+      }
+    },
+    {
+      "t": 7109,
+      "event": {
+        "timestamp": 30539,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.016449476607562488,
+          "y": 0.03430280465102085,
+          "z": 0.04522843104342784,
+          "w": 0.9982299264503922
+        },
+        "velocity": {
+          "x": 0,
+          "y": 2,
+          "z": 5
+        }
+      }
+    },
+    {
+      "t": 7201,
+      "event": {
+        "timestamp": 30630,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.13638721884823146,
+          "y": 0.07791375469222084,
+          "z": 0.10403759880367443,
+          "w": 0.9820856349375896
+        },
+        "velocity": {
+          "x": 0,
+          "y": -4,
+          "z": -3
+        }
+      }
+    },
+    {
+      "t": 7201,
+      "event": {
+        "timestamp": 30631,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 1,
+        "move": "U'",
+        "localTimestamp": 30631,
+        "cubeTimestamp": 7808
+      }
+    },
+    {
+      "t": 7290,
+      "event": {
+        "timestamp": 30719,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.10455641346476638,
+          "y": 0.06149479659413434,
+          "z": 0.10303048799096652,
+          "w": 0.9872432630390332
+        },
+        "velocity": {
+          "x": -2,
+          "y": -2,
+          "z": -1
+        }
+      }
+    },
+    {
+      "t": 7319,
+      "event": {
+        "timestamp": 30749,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 30749,
+        "cubeTimestamp": 7940
+      }
+    },
+    {
+      "t": 7349,
+      "event": {
+        "timestamp": 30778,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.08771019623401594,
+          "y": 0.010315256202887051,
+          "z": 0.02859584337900937,
+          "w": 0.9956663716544084
+        },
+        "velocity": {
+          "x": -2,
+          "y": 4,
+          "z": 3
+        }
+      }
+    },
+    {
+      "t": 7443,
+      "event": {
+        "timestamp": 30873,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.17987609485152745,
+          "y": -0.06253242591631825,
+          "z": -0.03610339671010468,
+          "w": 0.9810174871059297
+        },
+        "velocity": {
+          "x": -2,
+          "y": 0,
+          "z": -2
+        }
+      }
+    },
+    {
+      "t": 7500,
+      "event": {
+        "timestamp": 30930,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 1,
+        "move": "U'",
+        "localTimestamp": 30930,
+        "cubeTimestamp": 8110
+      }
+    },
+    {
+      "t": 7529,
+      "event": {
+        "timestamp": 30959,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.21466719565416426,
+          "y": -0.06695760979033784,
+          "z": -0.06152531510361034,
+          "w": 0.9724112674336985
+        },
+        "velocity": {
+          "x": -2,
+          "y": 1,
+          "z": -1
+        }
+      }
+    },
+    {
+      "t": 7590,
+      "event": {
+        "timestamp": 31020,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.19974364452040164,
+          "y": -0.06698812829981383,
+          "z": -0.026642658772545548,
+          "w": 0.9771721549119541
+        },
+        "velocity": {
+          "x": 1,
+          "y": 4,
+          "z": 5
+        }
+      }
+    },
+    {
+      "t": 7619,
+      "event": {
+        "timestamp": 31049,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 31049,
+        "cubeTimestamp": 8220
+      }
+    },
+    {
+      "t": 7680,
+      "event": {
+        "timestamp": 31110,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.032898953215124975,
+          "y": 0.05316324350718711,
+          "z": 0.039155247657704395,
+          "w": 0.9972533341471602
+        },
+        "velocity": {
+          "x": 3,
+          "y": 5,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 7773,
+      "event": {
+        "timestamp": 31202,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.0029297769096957305,
+          "y": 0.05792413098544267,
+          "z": 0.05511642811365093,
+          "w": 0.9967650379955443
+        },
+        "velocity": {
+          "x": -1,
+          "y": -1,
+          "z": 5
+        }
+      }
+    },
+    {
+      "t": 7774,
+      "event": {
+        "timestamp": 31203,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 0,
+        "move": "U",
+        "localTimestamp": 31203,
+        "cubeTimestamp": 8386
+      }
+    },
+    {
+      "t": 7830,
+      "event": {
+        "timestamp": 31260,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.0024414807580797754,
+          "y": 0.04257332071901608,
+          "z": 0.08560441908017212,
+          "w": 0.9953917050691244
+        },
+        "velocity": {
+          "x": 0,
+          "y": -2,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 7922,
+      "event": {
+        "timestamp": 31352,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 31352,
+        "cubeTimestamp": 8518
+      }
+    },
+    {
+      "t": 7923,
+      "event": {
+        "timestamp": 31353,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.09964293343913083,
+          "y": -0.045075838496047856,
+          "z": 0.04467909787285989,
+          "w": 0.9929807428205206
+        },
+        "velocity": {
+          "x": 3,
+          "y": 1,
+          "z": -4
+        }
+      }
+    },
+    {
+      "t": 8012,
+      "event": {
+        "timestamp": 31442,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.1805169835505234,
+          "y": -0.20969267860957672,
+          "z": 0.0045167394024475845,
+          "w": 0.9609363078707236
+        },
+        "velocity": {
+          "x": -1,
+          "y": 0,
+          "z": -1
+        }
+      }
+    },
+    {
+      "t": 8039,
+      "event": {
+        "timestamp": 31469,
+        "type": "MOVE",
+        "face": 2,
+        "direction": 1,
+        "move": "F'",
+        "localTimestamp": 31469,
+        "cubeTimestamp": 8632
+      }
+    },
+    {
+      "t": 8072,
+      "event": {
+        "timestamp": 31501,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.0859096041749321,
+          "y": -0.09155552842799158,
+          "z": 0.04202398754844813,
+          "w": 0.9911801507614368
+        },
+        "velocity": {
+          "x": -5,
+          "y": -5,
+          "z": 1
+        }
+      }
+    },
+    {
+      "t": 8162,
+      "event": {
+        "timestamp": 31592,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.14322336497085483,
+          "y": -0.028992584002197334,
+          "z": 0.02151554918057802,
+          "w": 0.989013336588641
+        },
+        "velocity": {
+          "x": -4,
+          "y": 3,
+          "z": -2
+        }
+      }
+    },
+    {
+      "t": 8251,
+      "event": {
+        "timestamp": 31681,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.18631550035096286,
+          "y": -0.042603839228492084,
+          "z": 0.018707846308786278,
+          "w": 0.9813531907101657
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 8312,
+      "event": {
+        "timestamp": 31742,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.16583758049256875,
+          "y": -0.04364146855067599,
+          "z": 0.02835169530320139,
+          "w": 0.9847712637714774
+        },
+        "velocity": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 8401,
+      "event": {
+        "timestamp": 31830,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.13849299600207526,
+          "y": -0.029297769096957305,
+          "z": 0.04361095004119999,
+          "w": 0.988952299569689
+        },
+        "velocity": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 8490,
+      "event": {
+        "timestamp": 31920,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.12775048066652425,
+          "y": -0.0173955504013184,
+          "z": 0.04480117191076388,
+          "w": 0.9906308175908689
+        },
+        "velocity": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 8550,
+      "event": {
+        "timestamp": 31979,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.1511276589251381,
+          "y": -0.018555253761406293,
+          "z": 0.03173924985503708,
+          "w": 0.9878231147190771
+        },
+        "velocity": {
+          "x": -1,
+          "y": 0,
+          "z": -1
+        }
+      }
+    },
+    {
+      "t": 8612,
+      "event": {
+        "timestamp": 32041,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 32041,
+        "cubeTimestamp": 9206
+      }
+    },
+    {
+      "t": 8640,
+      "event": {
+        "timestamp": 32069,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.005829035309915464,
+          "y": 0.05124057741019929,
+          "z": 0.07342753379924924,
+          "w": 0.9959410382396924
+        },
+        "velocity": {
+          "x": 2,
+          "y": -4,
+          "z": 4
+        }
+      }
+    },
+    {
+      "t": 8732,
+      "event": {
+        "timestamp": 32162,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.03360087893307291,
+          "y": 0.11386455885494552,
+          "z": 0.07354960783715324,
+          "w": 0.9901730399487289
+        },
+        "velocity": {
+          "x": 0,
+          "y": -2,
+          "z": 1
+        }
+      }
+    },
+    {
+      "t": 8733,
+      "event": {
+        "timestamp": 32163,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 0,
+        "move": "U",
+        "localTimestamp": 32163,
+        "cubeTimestamp": 9344
+      }
+    },
+    {
+      "t": 8790,
+      "event": {
+        "timestamp": 32220,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.010650959807123021,
+          "y": 0.07657094027527696,
+          "z": 0.11059907834101383,
+          "w": 0.9908444471572009
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 8883,
+      "event": {
+        "timestamp": 32313,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 32313,
+        "cubeTimestamp": 9472
+      }
+    },
+    {
+      "t": 8884,
+      "event": {
+        "timestamp": 32313,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.0881679738761559,
+          "y": 0.0249946592608417,
+          "z": 0.032685323648792994,
+          "w": 0.9952391125217445
+        },
+        "velocity": {
+          "x": 3,
+          "y": 4,
+          "z": -5
+        }
+      }
+    },
+    {
+      "t": 8971,
+      "event": {
+        "timestamp": 32400,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.1868648335215308,
+          "y": -0.05047761467329936,
+          "z": -0.0042115543076876125,
+          "w": 0.9810480056154057
+        },
+        "velocity": {
+          "x": 3,
+          "y": -1,
+          "z": -4
+        }
+      }
+    },
+    {
+      "t": 8974,
+      "event": {
+        "timestamp": 32403,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 1,
+        "move": "U'",
+        "localTimestamp": 32403,
+        "cubeTimestamp": 9576
+      }
+    },
+    {
+      "t": 9030,
+      "event": {
+        "timestamp": 32459,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.2456740012817774,
+          "y": -0.04812768944364757,
+          "z": -0.05383465071565905,
+          "w": 0.966643269142735
+        },
+        "velocity": {
+          "x": 5,
+          "y": -1,
+          "z": -3
+        }
+      }
+    },
+    {
+      "t": 9121,
+      "event": {
+        "timestamp": 32551,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 32551,
+        "cubeTimestamp": 9710
+      }
+    },
+    {
+      "t": 9123,
+      "event": {
+        "timestamp": 32553,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.38001647999511706,
+          "y": -0.10623493148594623,
+          "z": -0.16476943266090885,
+          "w": 0.9039582506790368
+        },
+        "velocity": {
+          "x": 4,
+          "y": 0,
+          "z": 3
+        }
+      }
+    },
+    {
+      "t": 9182,
+      "event": {
+        "timestamp": 32612,
+        "type": "MOVE",
+        "face": 2,
+        "direction": 0,
+        "move": "F",
+        "localTimestamp": 32612,
+        "cubeTimestamp": 9790
+      }
+    },
+    {
+      "t": 9209,
+      "event": {
+        "timestamp": 32639,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.40049439985351115,
+          "y": -0.09814752647480697,
+          "z": -0.23450422681356242,
+          "w": 0.880306405835139
+        },
+        "velocity": {
+          "x": -1,
+          "y": -1,
+          "z": -2
+        }
+      }
+    },
+    {
+      "t": 9271,
+      "event": {
+        "timestamp": 32701,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3705862605670339,
+          "y": -0.0935697500534074,
+          "z": -0.18958098086489455,
+          "w": 0.9043855098117008
+        },
+        "velocity": {
+          "x": 4,
+          "y": 0,
+          "z": 5
+        }
+      }
+    },
+    {
+      "t": 9300,
+      "event": {
+        "timestamp": 32729,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 32729,
+        "cubeTimestamp": 9904
+      }
+    },
+    {
+      "t": 9362,
+      "event": {
+        "timestamp": 32791,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.17639698477126378,
+          "y": -0.027558214056825465,
+          "z": -0.05578783532212287,
+          "w": 0.9823297830133976
+        },
+        "velocity": {
+          "x": -4,
+          "y": 0,
+          "z": -4
+        }
+      }
+    },
+    {
+      "t": 9389,
+      "event": {
+        "timestamp": 32819,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 32819,
+        "cubeTimestamp": 9990
+      }
+    },
+    {
+      "t": 9450,
+      "event": {
+        "timestamp": 32880,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.011474959562974944,
+          "y": 0.06183050019837031,
+          "z": 0.02838221381267739,
+          "w": 0.9975890377513962
+        },
+        "velocity": {
+          "x": -3,
+          "y": 3,
+          "z": 5
+        }
+      }
+    },
+    {
+      "t": 9510,
+      "event": {
+        "timestamp": 32940,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 1,
+        "move": "U'",
+        "localTimestamp": 32940,
+        "cubeTimestamp": 10092
+      }
+    },
+    {
+      "t": 9511,
+      "event": {
+        "timestamp": 32941,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.04699850459303568,
+          "y": 0.10711996826075014,
+          "z": 0.06970427564317759,
+          "w": 0.9906613361003449
+        },
+        "velocity": {
+          "x": -2,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 9600,
+      "event": {
+        "timestamp": 33030,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.0016174810022278512,
+          "y": 0.055085909604174935,
+          "z": 0.059450056459242534,
+          "w": 0.9967040009765923
+        },
+        "velocity": {
+          "x": 0,
+          "y": -4,
+          "z": -4
+        }
+      }
+    },
+    {
+      "t": 9629,
+      "event": {
+        "timestamp": 33059,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 33059,
+        "cubeTimestamp": 10220
+      }
+    },
+    {
+      "t": 9690,
+      "event": {
+        "timestamp": 33120,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.18301950132755515,
+          "y": -0.058320871608630635,
+          "z": -0.03131199072237312,
+          "w": 0.9808648945585497
+        },
+        "velocity": {
+          "x": 4,
+          "y": 3,
+          "z": -5
+        }
+      }
+    },
+    {
+      "t": 9750,
+      "event": {
+        "timestamp": 33180,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.22116763817255164,
+          "y": -0.10638752403332621,
+          "z": -0.0598162785729545,
+          "w": 0.967558824427015
+        },
+        "velocity": {
+          "x": 0,
+          "y": -3,
+          "z": 1
+        }
+      }
+    },
+    {
+      "t": 9810,
+      "event": {
+        "timestamp": 33240,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 1,
+        "move": "U'",
+        "localTimestamp": 33240,
+        "cubeTimestamp": 10394
+      }
+    },
+    {
+      "t": 9840,
+      "event": {
+        "timestamp": 33270,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.25052644428846094,
+          "y": -0.11236915189062166,
+          "z": -0.07266457106234932,
+          "w": 0.9588000122074037
+        },
+        "velocity": {
+          "x": 1,
+          "y": -2,
+          "z": 2
+        }
+      }
+    },
+    {
+      "t": 9900,
+      "event": {
+        "timestamp": 33330,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 33330,
+        "cubeTimestamp": 10480
+      }
+    },
+    {
+      "t": 9929,
+      "event": {
+        "timestamp": 33359,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.12588885158848842,
+          "y": -0.018433179723502304,
+          "z": -0.013183996093630787,
+          "w": 0.9917600024414808
+        },
+        "velocity": {
+          "x": -2,
+          "y": 0,
+          "z": 3
+        }
+      }
+    },
+    {
+      "t": 9990,
+      "event": {
+        "timestamp": 33419,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.025818659016693626,
+          "y": 0.07580797753837702,
+          "z": 0.03109836115604114,
+          "w": 0.9962767418439283
+        },
+        "velocity": {
+          "x": 1,
+          "y": 0,
+          "z": 4
+        }
+      }
+    },
+    {
+      "t": 10023,
+      "event": {
+        "timestamp": 33453,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 0,
+        "move": "U",
+        "localTimestamp": 33453,
+        "cubeTimestamp": 10620
+      }
+    },
+    {
+      "t": 10080,
+      "event": {
+        "timestamp": 33509,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.0073854792931913205,
+          "y": 0.04776146732993561,
+          "z": 0.08749656666768395,
+          "w": 0.9949644459364605
+        },
+        "velocity": {
+          "x": -1,
+          "y": -1,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 10174,
+      "event": {
+        "timestamp": 33603,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.09726248970000305,
+          "y": -0.015259254737998596,
+          "z": 0.045167394024475845,
+          "w": 0.9941099276711325
+        },
+        "velocity": {
+          "x": 4,
+          "y": -5,
+          "z": -4
+        }
+      }
+    },
+    {
+      "t": 10176,
+      "event": {
+        "timestamp": 33605,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 33605,
+        "cubeTimestamp": 10760
+      }
+    },
+    {
+      "t": 10232,
+      "event": {
+        "timestamp": 33661,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.1718192083498642,
+          "y": -0.1400494399853511,
+          "z": 0.0097964415417951,
+          "w": 0.9750663777581103
+        },
+        "velocity": {
+          "x": -5,
+          "y": 5,
+          "z": -2
+        }
+      }
+    },
+    {
+      "t": 10321,
+      "event": {
+        "timestamp": 33750,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.15683462019714958,
+          "y": -0.15179906613361002,
+          "z": 0.010467848750267038,
+          "w": 0.9757988219855342
+        },
+        "velocity": {
+          "x": 2,
+          "y": -1,
+          "z": 3
+        }
+      }
+    },
+    {
+      "t": 10321,
+      "event": {
+        "timestamp": 33751,
+        "type": "MOVE",
+        "face": 2,
+        "direction": 1,
+        "move": "F'",
+        "localTimestamp": 33751,
+        "cubeTimestamp": 10918
+      }
+    },
+    {
+      "t": 10413,
+      "event": {
+        "timestamp": 33843,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.06714072084719383,
+          "y": -0.0902127140110477,
+          "z": 0.05386516922513505,
+          "w": 0.9921872615741447
+        },
+        "velocity": {
+          "x": -2,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 10470,
+      "event": {
+        "timestamp": 33900,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.09741508224738304,
+          "y": -0.03762932218390454,
+          "z": 0.03353984191412091,
+          "w": 0.9939573351237525
+        },
+        "velocity": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 10561,
+      "event": {
+        "timestamp": 33990,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.1434980315561388,
+          "y": -0.05160679952391125,
+          "z": 0.008941923276467178,
+          "w": 0.9882503738517411
+        },
+        "velocity": {
+          "x": -3,
+          "y": 1,
+          "z": -1
+        }
+      }
+    },
+    {
+      "t": 10652,
+      "event": {
+        "timestamp": 34082,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.16559343241676078,
+          "y": -0.07803582873012482,
+          "z": 0.0038758507034516434,
+          "w": 0.9830622272408216
+        },
+        "velocity": {
+          "x": -2,
+          "y": -2,
+          "z": -1
+        }
+      }
+    },
+    {
+      "t": 10710,
+      "event": {
+        "timestamp": 34140,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.19882808923612172,
+          "y": -0.06826990569780572,
+          "z": -0.008056886501663259,
+          "w": 0.977599414044618
+        },
+        "velocity": {
+          "x": -1,
+          "y": 1,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 10801,
+      "event": {
+        "timestamp": 34231,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.2020935697500534,
+          "y": -0.0641193884090701,
+          "z": -0.009826960051271096,
+          "w": 0.9772026734214301
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 10892,
+      "event": {
+        "timestamp": 34322,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.20035401470992156,
+          "y": -0.05301065095980712,
+          "z": -0.008636738181707206,
+          "w": 0.978240302743614
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 10983,
+      "event": {
+        "timestamp": 34412,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.2021546067690054,
+          "y": -0.049073763237403485,
+          "z": -0.011597033600878933,
+          "w": 0.978026673177282
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 11040,
+      "event": {
+        "timestamp": 34470,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.17310098574785607,
+          "y": -0.03283791619617298,
+          "z": -0.006225775933103427,
+          "w": 0.9843134861293374
+        },
+        "velocity": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 11132,
+      "event": {
+        "timestamp": 34561,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.16806543168431654,
+          "y": -0.03631702627643666,
+          "z": -0.00793481246375927,
+          "w": 0.9850459303567614
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 11220,
+      "event": {
+        "timestamp": 34650,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.16321298867763298,
+          "y": -0.030182805871761222,
+          "z": -0.007293923764763329,
+          "w": 0.9860835596789452
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 11280,
+      "event": {
+        "timestamp": 34710,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.16428113650929288,
+          "y": -0.048615985595263526,
+          "z": -0.009521774956511124,
+          "w": 0.9851374858851893
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 11370,
+      "event": {
+        "timestamp": 34800,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.17297891170995208,
+          "y": -0.056459242530594804,
+          "z": -0.014130069887386701,
+          "w": 0.9831843012787256
+        },
+        "velocity": {
+          "x": -1,
+          "y": -1,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 11462,
+      "event": {
+        "timestamp": 34892,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.20612201300088503,
+          "y": -0.06384472182378613,
+          "z": -0.030732139042329173,
+          "w": 0.9759514145329142
+        },
+        "velocity": {
+          "x": -2,
+          "y": 0,
+          "z": -1
+        }
+      }
+    },
+    {
+      "t": 11520,
+      "event": {
+        "timestamp": 34950,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.23950926236762596,
+          "y": -0.06909390545365765,
+          "z": -0.052003540147099216,
+          "w": 0.9670094912564471
+        },
+        "velocity": {
+          "x": -2,
+          "y": 0,
+          "z": -1
+        }
+      }
+    },
+    {
+      "t": 11612,
+      "event": {
+        "timestamp": 35042,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.25308999908444474,
+          "y": -0.0694906460768456,
+          "z": -0.061922055726798306,
+          "w": 0.9629200109866635
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 11702,
+      "event": {
+        "timestamp": 35132,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.27338480788598285,
+          "y": -0.07956175420392468,
+          "z": -0.05844294564653462,
+          "w": 0.956816309091464
+        },
+        "velocity": {
+          "x": -2,
+          "y": -1,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 11761,
+      "event": {
+        "timestamp": 35190,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.29392376476332893,
+          "y": -0.08505508590960417,
+          "z": -0.0717795342875454,
+          "w": 0.9493087557603687
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 11852,
+      "event": {
+        "timestamp": 35282,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3098239082003235,
+          "y": -0.09625537888729514,
+          "z": -0.07861568041016877,
+          "w": 0.9426252021851252
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 11941,
+      "event": {
+        "timestamp": 35371,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3270668660542619,
+          "y": -0.08951078829309976,
+          "z": -0.08740501113925596,
+          "w": 0.9366435743278299
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 12003,
+      "event": {
+        "timestamp": 35433,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3196813867610706,
+          "y": -0.08728293710135197,
+          "z": -0.0826136051515244,
+          "w": 0.9398480178228096
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 12090,
+      "event": {
+        "timestamp": 35520,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.31604968413342693,
+          "y": -0.06976531266212958,
+          "z": -0.08014160588396863,
+          "w": 0.9427472762230292
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 12180,
+      "event": {
+        "timestamp": 35610,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3197119052705466,
+          "y": -0.07104709006012147,
+          "z": -0.08423108615375226,
+          "w": 0.9410687582018494
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 12240,
+      "event": {
+        "timestamp": 35669,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3093050935392315,
+          "y": -0.07003997924741355,
+          "z": -0.0825525681325724,
+          "w": 0.9447614978484451
+        },
+        "velocity": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 12330,
+      "event": {
+        "timestamp": 35760,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.293130283516953,
+          "y": -0.07055879390850552,
+          "z": -0.0738853114413892,
+          "w": 0.9505600146488845
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 12418,
+      "event": {
+        "timestamp": 35848,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.28669087801751764,
+          "y": -0.07748649555955688,
+          "z": -0.06973479415265359,
+          "w": 0.9522995696890164
+        },
+        "velocity": {
+          "x": 0,
+          "y": -1,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 12478,
+      "event": {
+        "timestamp": 35908,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.2954496902371288,
+          "y": -0.07852412488174078,
+          "z": -0.07998901333658864,
+          "w": 0.9487289040803247
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 12569,
+      "event": {
+        "timestamp": 35998,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.30487990966521195,
+          "y": -0.0739158299508652,
+          "z": -0.08316293832209234,
+          "w": 0.945860164189581
+        },
+        "velocity": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 12660,
+      "event": {
+        "timestamp": 36090,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3196508682515946,
+          "y": -0.06854457228308969,
+          "z": -0.09015167699209571,
+          "w": 0.9407330545976135
+        },
+        "velocity": {
+          "x": -1,
+          "y": 1,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 12720,
+      "event": {
+        "timestamp": 36150,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3289590136417737,
+          "y": -0.04718161564989166,
+          "z": -0.0988189336832789,
+          "w": 0.9379558702352977
+        },
+        "velocity": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 12810,
+      "event": {
+        "timestamp": 36240,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3315530869472335,
+          "y": -0.044404431287575916,
+          "z": -0.10156559953611866,
+          "w": 0.9368877224036378
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 12900,
+      "event": {
+        "timestamp": 36329,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.33988464003418073,
+          "y": -0.033417767876216926,
+          "z": -0.11514633625293741,
+          "w": 0.9327677236243782
+        },
+        "velocity": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 12959,
+      "event": {
+        "timestamp": 36389,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3447676015503403,
+          "y": -0.01651051362651448,
+          "z": -0.12665181432538836,
+          "w": 0.9299295022431104
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 13080,
+      "event": {
+        "timestamp": 36509,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3428449354533525,
+          "y": -0.004150517288735618,
+          "z": -0.130283516953032,
+          "w": 0.9302652058473464
+        },
+        "velocity": {
+          "x": 0,
+          "y": 1,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 13139,
+      "event": {
+        "timestamp": 36568,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.34101382488479265,
+          "y": 0.00988799707022309,
+          "z": -0.13183996093630787,
+          "w": 0.9306924649800103
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 13199,
+      "event": {
+        "timestamp": 36629,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3422040467543565,
+          "y": 0.009125034333323161,
+          "z": -0.13214514603106783,
+          "w": 0.9302041688283944
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 13290,
+      "event": {
+        "timestamp": 36720,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.336527603991821,
+          "y": 0.01043733024079104,
+          "z": -0.1271706289864803,
+          "w": 0.9329508346812342
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 13380,
+      "event": {
+        "timestamp": 36810,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.32975249488814967,
+          "y": -0.015381328775902585,
+          "z": -0.12161626026184881,
+          "w": 0.9360637226477859
+        },
+        "velocity": {
+          "x": 0,
+          "y": -2,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 13440,
+      "event": {
+        "timestamp": 36869,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3292947172460097,
+          "y": -0.03744621112704855,
+          "z": -0.11789300210577715,
+          "w": 0.9360637226477859
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 13530,
+      "event": {
+        "timestamp": 36960,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.33072908719138155,
+          "y": -0.04251228370006409,
+          "z": -0.11481063264870144,
+          "w": 0.93572801904355
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 13620,
+      "event": {
+        "timestamp": 37049,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3337199011200293,
+          "y": -0.041566209906308174,
+          "z": -0.11664174321726127,
+          "w": 0.934476760155034
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 13680,
+      "event": {
+        "timestamp": 37109,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.33484908597064117,
+          "y": -0.03744621112704855,
+          "z": -0.11514633625293741,
+          "w": 0.934446241645558
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 13770,
+      "event": {
+        "timestamp": 37200,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3351237525559252,
+          "y": -0.03491317484054079,
+          "z": -0.11340678121280556,
+          "w": 0.93465987121189
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 13860,
+      "event": {
+        "timestamp": 37290,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3359782708212531,
+          "y": -0.027253028962065492,
+          "z": -0.11227759636219367,
+          "w": 0.934720908230842
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 13920,
+      "event": {
+        "timestamp": 37350,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.326059755241554,
+          "y": -0.005829035309915464,
+          "z": -0.10531937620166631,
+          "w": 0.9394207586901455
+        },
+        "velocity": {
+          "x": 1,
+          "y": 2,
+          "z": 1
+        }
+      }
+    },
+    {
+      "t": 14011,
+      "event": {
+        "timestamp": 37440,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.2960600604266488,
+          "y": 0.012115848261970886,
+          "z": -0.08383434553056429,
+          "w": 0.9513840144047365
+        },
+        "velocity": {
+          "x": 3,
+          "y": 0,
+          "z": 2
+        }
+      }
+    },
+    {
+      "t": 14099,
+      "event": {
+        "timestamp": 37529,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.21778008362071596,
+          "y": 0.05172887356181524,
+          "z": -0.04354991302224799,
+          "w": 0.9736320078127384
+        },
+        "velocity": {
+          "x": 5,
+          "y": 1,
+          "z": 3
+        }
+      }
+    },
+    {
+      "t": 14160,
+      "event": {
+        "timestamp": 37589,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.14426099429303874,
+          "y": 0.06106753746147038,
+          "z": -0.006530961027863399,
+          "w": 0.9876094851527452
+        },
+        "velocity": {
+          "x": 5,
+          "y": 0,
+          "z": 3
+        }
+      }
+    },
+    {
+      "t": 14250,
+      "event": {
+        "timestamp": 37680,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.07290871913815729,
+          "y": 0.09500411999877927,
+          "z": 0.027436140018921477,
+          "w": 0.9924008911404767
+        },
+        "velocity": {
+          "x": 4,
+          "y": 1,
+          "z": 2
+        }
+      }
+    },
+    {
+      "t": 14340,
+      "event": {
+        "timestamp": 37770,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.032227546006653035,
+          "y": 0.11249122592852565,
+          "z": 0.04354991302224799,
+          "w": 0.9921567430646687
+        },
+        "velocity": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 14399,
+      "event": {
+        "timestamp": 37828,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.05380413220618305,
+          "y": 0.08120975371562852,
+          "z": 0.027130954924161503,
+          "w": 0.9948423718985565
+        },
+        "velocity": {
+          "x": -2,
+          "y": -3,
+          "z": -2
+        }
+      }
+    },
+    {
+      "t": 14489,
+      "event": {
+        "timestamp": 37919,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.18182927945799127,
+          "y": 0.03128147221289712,
+          "z": -0.03234962004455703,
+          "w": 0.9822687459944456
+        },
+        "velocity": {
+          "x": -2,
+          "y": -3,
+          "z": 3
+        }
+      }
+    },
+    {
+      "t": 14579,
+      "event": {
+        "timestamp": 38009,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.32312997833185825,
+          "y": -0.040345469527268286,
+          "z": -0.08734397412030397,
+          "w": 0.9414349803155614
+        },
+        "velocity": {
+          "x": -4,
+          "y": -1,
+          "z": -2
+        }
+      }
+    },
+    {
+      "t": 14640,
+      "event": {
+        "timestamp": 38070,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3632923368022706,
+          "y": -0.05032502212591937,
+          "z": -0.11004974517044587,
+          "w": 0.923764763328959
+        },
+        "velocity": {
+          "x": -2,
+          "y": -1,
+          "z": -1
+        }
+      }
+    },
+    {
+      "t": 14730,
+      "event": {
+        "timestamp": 38160,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3728751487777337,
+          "y": -0.05285805841242714,
+          "z": -0.11880855739005707,
+          "w": 0.9186986907559435
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 14819,
+      "event": {
+        "timestamp": 38249,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.37232581560716577,
+          "y": -0.046662800988799706,
+          "z": -0.12088381603442488,
+          "w": 0.9189733573412274
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 14880,
+      "event": {
+        "timestamp": 38310,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3681142612994781,
+          "y": -0.0424207281716361,
+          "z": -0.12039551988280893,
+          "w": 0.9209570604571673
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 14970,
+      "event": {
+        "timestamp": 38400,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.36481826227607045,
+          "y": -0.0380565813165685,
+          "z": -0.11996826075014497,
+          "w": 0.9225135044404431
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 15060,
+      "event": {
+        "timestamp": 38490,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.358775597399823,
+          "y": -0.03375347148045289,
+          "z": -0.11502426221503342,
+          "w": 0.9256569109164708
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 15120,
+      "event": {
+        "timestamp": 38550,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.35242774742881555,
+          "y": -0.030030213324381237,
+          "z": -0.11215552232428969,
+          "w": 0.9285866878261666
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 15210,
+      "event": {
+        "timestamp": 38639,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.34324167607654044,
+          "y": -0.023895992919705802,
+          "z": -0.10559404278695028,
+          "w": 0.9329508346812342
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 15300,
+      "event": {
+        "timestamp": 38730,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.336802270577105,
+          "y": -0.02044740134891812,
+          "z": -0.10492263557847835,
+          "w": 0.9354533524582659
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 15390,
+      "event": {
+        "timestamp": 38820,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3324076052125614,
+          "y": -0.01651051362651448,
+          "z": -0.10251167332987457,
+          "w": 0.9373760185552538
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 15450,
+      "event": {
+        "timestamp": 38880,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3304239020966216,
+          "y": -0.014404736472670675,
+          "z": -0.10339671010467849,
+          "w": 0.9380169072542497
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 15539,
+      "event": {
+        "timestamp": 38969,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3304239020966216,
+          "y": -0.013946958830530718,
+          "z": -0.10351878414258248,
+          "w": 0.9380169072542497
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 15630,
+      "event": {
+        "timestamp": 39060,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.32917264320810574,
+          "y": -0.014374217963194678,
+          "z": -0.10470900601214636,
+          "w": 0.9383220923490097
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 15691,
+      "event": {
+        "timestamp": 39121,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3295388653218177,
+          "y": -0.012878810998870815,
+          "z": -0.10467848750267036,
+          "w": 0.9382000183111057
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 15782,
+      "event": {
+        "timestamp": 39211,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.32914212469862975,
+          "y": -0.010742515335551012,
+          "z": -0.10522782067323833,
+          "w": 0.9383220923490097
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 15870,
+      "event": {
+        "timestamp": 39300,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.32853175450910976,
+          "y": -0.009918515579699088,
+          "z": -0.10568559831537827,
+          "w": 0.9384746848963896
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 15930,
+      "event": {
+        "timestamp": 39359,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.32993560594500565,
+          "y": -0.008606219672231208,
+          "z": -0.10477004303109837,
+          "w": 0.9381084627826777
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 16021,
+      "event": {
+        "timestamp": 39451,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.33094271675771353,
+          "y": -0.00933866389965514,
+          "z": -0.10480056154057436,
+          "w": 0.9377422406689657
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 16110,
+      "event": {
+        "timestamp": 39540,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3309732352671895,
+          "y": -0.00784325693533128,
+          "z": -0.10498367259743034,
+          "w": 0.9377422406689657
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 16170,
+      "event": {
+        "timestamp": 39600,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.33106479079561757,
+          "y": -0.006378368480483413,
+          "z": -0.10452589495529038,
+          "w": 0.9377422406689657
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 16260,
+      "event": {
+        "timestamp": 39690,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3304544206060976,
+          "y": -0.00521866512039552,
+          "z": -0.10446485793633839,
+          "w": 0.9379863887447737
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 16350,
+      "event": {
+        "timestamp": 39780,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.32990508743552965,
+          "y": -0.005188146610919523,
+          "z": -0.10419019135105441,
+          "w": 0.9382000183111057
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 16409,
+      "event": {
+        "timestamp": 39839,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3297219763786737,
+          "y": -0.00598162785729545,
+          "z": -0.1044343394268624,
+          "w": 0.9382305368205817
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 16500,
+      "event": {
+        "timestamp": 39929,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3289284951322977,
+          "y": -0.005523850215155492,
+          "z": -0.10431226538895841,
+          "w": 0.9385357219153416
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 16589,
+      "event": {
+        "timestamp": 40018,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3283791619617298,
+          "y": -0.005676442762535478,
+          "z": -0.10498367259743034,
+          "w": 0.9386577959532456
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 16648,
+      "event": {
+        "timestamp": 40078,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.32786034730063784,
+          "y": -0.004760887478255562,
+          "z": -0.10431226538895841,
+          "w": 0.9389324625385296
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 16741,
+      "event": {
+        "timestamp": 40170,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3274941251869259,
+          "y": -0.005035554063539537,
+          "z": -0.10370189519943845,
+          "w": 0.9391155735953856
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 16831,
+      "event": {
+        "timestamp": 40261,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3274025696584979,
+          "y": -0.005066072573015534,
+          "z": -0.10367137668996246,
+          "w": 0.9391460921048616
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 16891,
+      "event": {
+        "timestamp": 40320,
+        "type": "BATTERY",
+        "batteryLevel": 100
+      }
+    },
+    {
+      "t": 16892,
+      "event": {
+        "timestamp": 40321,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3273110141300699,
+          "y": -0.004547257911923582,
+          "z": -0.10388500625629445,
+          "w": 0.9391460921048616
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 16981,
+      "event": {
+        "timestamp": 40410,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.32657856990264594,
+          "y": -0.00466933194982757,
+          "z": -0.10385448774681845,
+          "w": 0.9394207586901455
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 17072,
+      "event": {
+        "timestamp": 40502,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.326303903317362,
+          "y": -0.004974517044587542,
+          "z": -0.10348826563310648,
+          "w": 0.9395428327280496
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 17130,
+      "event": {
+        "timestamp": 40560,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.32581560716574604,
+          "y": -0.004882961516159551,
+          "z": -0.10370189519943845,
+          "w": 0.9396954252754296
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 17220,
+      "event": {
+        "timestamp": 40650,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.326273384807886,
+          "y": -0.005493331705679495,
+          "z": -0.1033661915952025,
+          "w": 0.9395733512375256
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 17310,
+      "event": {
+        "timestamp": 40740,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.325907162694174,
+          "y": -0.00598162785729545,
+          "z": -0.10455641346476638,
+          "w": 0.9395733512375256
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 17369,
+      "event": {
+        "timestamp": 40799,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.32508316293832207,
+          "y": -0.0016479995117038484,
+          "z": -0.10269478438673055,
+          "w": 0.9400616473891416
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 17460,
+      "event": {
+        "timestamp": 40890,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.32151249732963044,
+          "y": -0.0012512588885158849,
+          "z": -0.1032441175572985,
+          "w": 0.9412518692587054
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 17551,
+      "event": {
+        "timestamp": 40981,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.32233649708548234,
+          "y": -0.0014954069643238624,
+          "z": -0.10272530289620654,
+          "w": 0.9410077211828974
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 17610,
+      "event": {
+        "timestamp": 41040,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.32218390453810236,
+          "y": -0.00347911008026368,
+          "z": -0.10312204351939451,
+          "w": 0.9410077211828974
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 17700,
+      "event": {
+        "timestamp": 41130,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3205664235358745,
+          "y": -0.003326517532883694,
+          "z": -0.10208441419721061,
+          "w": 0.9416791283913694
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 17790,
+      "event": {
+        "timestamp": 41220,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3198644978179266,
+          "y": -0.004272591326639607,
+          "z": -0.10284737693411054,
+          "w": 0.9418317209387493
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 17850,
+      "event": {
+        "timestamp": 41280,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3192541276284066,
+          "y": -0.001892147587511826,
+          "z": -0.10281685842463455,
+          "w": 0.9420453505050813
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 17940,
+      "event": {
+        "timestamp": 41370,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.32010864589373456,
+          "y": -0.0008239997558519242,
+          "z": -0.10269478438673055,
+          "w": 0.9417706839197973
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 18030,
+      "event": {
+        "timestamp": 41460,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.32129886776329847,
+          "y": -0.0008239997558519242,
+          "z": -0.10190130314035463,
+          "w": 0.9414654988250374
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 18090,
+      "event": {
+        "timestamp": 41519,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.32129886776329847,
+          "y": 0.0003051850947599719,
+          "z": -0.10174871059297463,
+          "w": 0.9414654988250374
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 18180,
+      "event": {
+        "timestamp": 41609,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3212683492538224,
+          "y": 0.0012512588885158849,
+          "z": -0.10165715506454664,
+          "w": 0.9414960173345134
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 18270,
+      "event": {
+        "timestamp": 41700,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.32111575670644243,
+          "y": 0.0011291848506118961,
+          "z": -0.10141300698873867,
+          "w": 0.9415875728629414
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 18330,
+      "event": {
+        "timestamp": 41760,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3207495345927305,
+          "y": 0.0007324442274239326,
+          "z": -0.10135196996978668,
+          "w": 0.9417096469008454
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 18420,
+      "event": {
+        "timestamp": 41850,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.31998657185583057,
+          "y": 0.00021362956633198035,
+          "z": -0.10126041444135868,
+          "w": 0.9419843134861293
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 18509,
+      "event": {
+        "timestamp": 41938,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3195287942136906,
+          "y": 0.0003051850947599719,
+          "z": -0.10089419232764672,
+          "w": 0.9421674245429853
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 18571,
+      "event": {
+        "timestamp": 42001,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.31934568315683465,
+          "y": 0,
+          "z": -0.10061952574236274,
+          "w": 0.9422589800714133
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 18601,
+      "event": {
+        "timestamp": 42030,
+        "type": "HARDWARE",
+        "hardwareName": "uiFp 753",
+        "softwareVersion": "8.62",
+        "hardwareVersion": "0.5",
+        "gyroSupported": true
+      }
+    },
+    {
+      "t": 18660,
+      "event": {
+        "timestamp": 42089,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.31897946104312264,
+          "y": 0.000793481246375927,
+          "z": -0.10019226660969878,
+          "w": 0.9424420911282693
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 18750,
+      "event": {
+        "timestamp": 42180,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3183385723441267,
+          "y": 0.0006714072084719382,
+          "z": -0.09979552598651081,
+          "w": 0.9426862392040772
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 18811,
+      "event": {
+        "timestamp": 42240,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3173619800408948,
+          "y": 0.0009155552842799158,
+          "z": -0.09878841517380291,
+          "w": 0.9431134983367412
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 18903,
+      "event": {
+        "timestamp": 42333,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.31449324015015107,
+          "y": 0.0015564439832758568,
+          "z": -0.09741508224738304,
+          "w": 0.9442121646778772
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 18991,
+      "event": {
+        "timestamp": 42421,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3127231666005432,
+          "y": 0.0022888882106997894,
+          "z": -0.09546189764091922,
+          "w": 0.9450056459242531
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 19050,
+      "event": {
+        "timestamp": 42480,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3114719077120273,
+          "y": 0.0018616290780358287,
+          "z": -0.09475997192297128,
+          "w": 0.945493942075869
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 19139,
+      "event": {
+        "timestamp": 42569,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.31046479689931944,
+          "y": 0.0013733329264198737,
+          "z": -0.09411908322397534,
+          "w": 0.945890682699057
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 19229,
+      "event": {
+        "timestamp": 42659,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3097933896908475,
+          "y": 0.0012207403790398877,
+          "z": -0.09326456495864742,
+          "w": 0.9461958677938169
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 19319,
+      "event": {
+        "timestamp": 42749,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3086336863307596,
+          "y": 0.0007629627368999298,
+          "z": -0.09305093539231545,
+          "w": 0.9465926084170049
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 19380,
+      "event": {
+        "timestamp": 42810,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.30823694570757165,
+          "y": 0.0006714072084719382,
+          "z": -0.09295937986388744,
+          "w": 0.9467452009643849
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 19470,
+      "event": {
+        "timestamp": 42900,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3077791680654317,
+          "y": 0.000793481246375927,
+          "z": -0.09295937986388744,
+          "w": 0.9468977935117648
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 19560,
+      "event": {
+        "timestamp": 42990,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3075350199896237,
+          "y": 0.0018311105685598315,
+          "z": -0.09222693563646352,
+          "w": 0.9470198675496688
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 19619,
+      "event": {
+        "timestamp": 43049,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.30695516830957975,
+          "y": 0.0023194067201757866,
+          "z": -0.09173863948484756,
+          "w": 0.9472640156254768
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 19710,
+      "event": {
+        "timestamp": 43140,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.30695516830957975,
+          "y": 0.0010071108127079073,
+          "z": -0.09329508346812342,
+          "w": 0.9471114230780968
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 19801,
+      "event": {
+        "timestamp": 43231,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3079927976317637,
+          "y": 0.00173955504013184,
+          "z": -0.0935087130344554,
+          "w": 0.9467452009643849
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 19859,
+      "event": {
+        "timestamp": 43289,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3066499832148198,
+          "y": 0.001892147587511826,
+          "z": -0.09326456495864742,
+          "w": 0.9472334971160008
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 19980,
+      "event": {
+        "timestamp": 43410,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3067720572527238,
+          "y": 0.00015259254737998596,
+          "z": -0.09317300943021943,
+          "w": 0.9472029786065248
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 20040,
+      "event": {
+        "timestamp": 43470,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3078402050843837,
+          "y": 0.00009155552842799158,
+          "z": -0.0946073793755913,
+          "w": 0.9466841639454329
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 20069,
+      "event": {
+        "timestamp": 43499,
+        "type": "FACELETS",
+        "facelets": "UUUUUUUUURRRRRRRRRFFFFFFFFFDDDDDDDDDLLLLLLLLLBBBBBBBBB"
+      }
+    },
+    {
+      "t": 20102,
+      "event": {
+        "timestamp": 43532,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.30698568681905575,
+          "y": 0.0016479995117038484,
+          "z": -0.0944547868282113,
+          "w": 0.9469893490401928
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 20190,
+      "event": {
+        "timestamp": 43620,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3071687978759117,
+          "y": 0.0003967406231879635,
+          "z": -0.09411908322397534,
+          "w": 0.9469588305307168
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 20280,
+      "event": {
+        "timestamp": 43710,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.30689413129062776,
+          "y": 0.0005798516800439467,
+          "z": -0.09411908322397534,
+          "w": 0.9470503860591448
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 20340,
+      "event": {
+        "timestamp": 43770,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3064058351390118,
+          "y": 0.0007019257179479354,
+          "z": -0.09372234260078738,
+          "w": 0.9472640156254768
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 20430,
+      "event": {
+        "timestamp": 43860,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3064363536484878,
+          "y": 0.0004882961516159551,
+          "z": -0.0934171575060274,
+          "w": 0.9472640156254768
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 20519,
+      "event": {
+        "timestamp": 43949,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3064363536484878,
+          "y": 0.0006103701895199438,
+          "z": -0.09402752769554736,
+          "w": 0.9472029786065248
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 20579,
+      "event": {
+        "timestamp": 44009,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3066805017242958,
+          "y": 0.0015564439832758568,
+          "z": -0.09414960173345134,
+          "w": 0.9471114230780968
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 20669,
+      "event": {
+        "timestamp": 44099,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3066499832148198,
+          "y": 0.001586962492751854,
+          "z": -0.09421063875240333,
+          "w": 0.9471114230780968
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 20759,
+      "event": {
+        "timestamp": 44189,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.30707724234748374,
+          "y": 0.0018311105685598315,
+          "z": -0.09436323129978332,
+          "w": 0.9469588305307168
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 20820,
+      "event": {
+        "timestamp": 44250,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.3059480574968719,
+          "y": 0.0021668141727958007,
+          "z": -0.0935697500534074,
+          "w": 0.9474166081728569
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 20910,
+      "event": {
+        "timestamp": 44340,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.30152287362285224,
+          "y": 0.0023194067201757866,
+          "z": -0.08761864070558793,
+          "w": 0.9494003112887967
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 20999,
+      "event": {
+        "timestamp": 44429,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.29099398785363323,
+          "y": 0.0034180730613116855,
+          "z": -0.07696768089846492,
+          "w": 0.9536118655964843
+        },
+        "velocity": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 21059,
+      "event": {
+        "timestamp": 44489,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.27454451124607077,
+          "y": 0.0042115543076876125,
+          "z": -0.06427198095645009,
+          "w": 0.9593798638874478
+        },
+        "velocity": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 21149,
+      "event": {
+        "timestamp": 44578,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.2541276284066286,
+          "y": 0.0061037018951994385,
+          "z": -0.04934842982268746,
+          "w": 0.9658803064058351
+        },
+        "velocity": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 21240,
+      "event": {
+        "timestamp": 44670,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.23996704000976593,
+          "y": 0.009552293465987122,
+          "z": -0.04171880245368816,
+          "w": 0.9698171941282387
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 21299,
+      "event": {
+        "timestamp": 44729,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.24301889095736565,
+          "y": 0.006317331461531419,
+          "z": -0.04660176396984771,
+          "w": 0.9688711203344829
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 21390,
+      "event": {
+        "timestamp": 44820,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.24906155583361309,
+          "y": 0.0038453321939756462,
+          "z": -0.05084383678701132,
+          "w": 0.9671315652943511
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 21480,
+      "event": {
+        "timestamp": 44909,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.25510422070986055,
+          "y": 0.003021332438123722,
+          "z": -0.05578783532212287,
+          "w": 0.9652699362163152
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 21540,
+      "event": {
+        "timestamp": 44970,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.25598925748466445,
+          "y": 0.0043641468550675985,
+          "z": -0.05694753868221076,
+          "w": 0.9649647511215552
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 21629,
+      "event": {
+        "timestamp": 45059,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.2562639240699484,
+          "y": 0.0057985168004394665,
+          "z": -0.05783257545701468,
+          "w": 0.9648426770836512
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 21720,
+      "event": {
+        "timestamp": 45150,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.2569048127689444,
+          "y": 0.006134220404675436,
+          "z": -0.0586870937223426,
+          "w": 0.9646290475173193
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 21779,
+      "event": {
+        "timestamp": 45209,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.2574846644489883,
+          "y": 0.006073183385723441,
+          "z": -0.0597857600634785,
+          "w": 0.9643848994415113
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 21869,
+      "event": {
+        "timestamp": 45298,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.2582781456953642,
+          "y": 0.006225775933103427,
+          "z": -0.0608233893856624,
+          "w": 0.9641102328562273
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 21960,
+      "event": {
+        "timestamp": 45390,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.25800347911008026,
+          "y": 0.006500442518387402,
+          "z": -0.06149479659413434,
+          "w": 0.9641407513657033
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 22020,
+      "event": {
+        "timestamp": 45450,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.25803399761955625,
+          "y": 0.006622516556291391,
+          "z": -0.061861018707846306,
+          "w": 0.9641102328562273
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 22109,
+      "event": {
+        "timestamp": 45539,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.25724051637318035,
+          "y": 0.007080294198431349,
+          "z": -0.06176946317941832,
+          "w": 0.9643238624225593
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 22199,
+      "event": {
+        "timestamp": 45629,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.2576982940153203,
+          "y": 0.007415997802667318,
+          "z": -0.061861018707846306,
+          "w": 0.9642017883846553
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 22260,
+      "event": {
+        "timestamp": 45690,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.25736259041108434,
+          "y": 0.007232886745811335,
+          "z": -0.062318796349986265,
+          "w": 0.9642628254036073
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 22351,
+      "event": {
+        "timestamp": 45780,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.2576067384868923,
+          "y": 0.007599108859523301,
+          "z": -0.06283761101107822,
+          "w": 0.9641407513657033
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 22441,
+      "event": {
+        "timestamp": 45871,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.2570268868068484,
+          "y": 0.008056886501663259,
+          "z": -0.06256294442579424,
+          "w": 0.9643238624225593
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 22501,
+      "event": {
+        "timestamp": 45930,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.25601977599414044,
+          "y": 0.008056886501663259,
+          "z": -0.062013611255226295,
+          "w": 0.9646290475173193
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 22589,
+      "event": {
+        "timestamp": 46018,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.2565385906552324,
+          "y": 0.008117923520615253,
+          "z": -0.06204412976470229,
+          "w": 0.9644764549699393
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 22680,
+      "event": {
+        "timestamp": 46110,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.25598925748466445,
+          "y": 0.009186071352275156,
+          "z": -0.062013611255226295,
+          "w": 0.9646290475173193
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 22740,
+      "event": {
+        "timestamp": 46170,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.2561418500320444,
+          "y": 0.008789330729087191,
+          "z": -0.06213568529313029,
+          "w": 0.9645680104983673
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    },
+    {
+      "t": 22831,
+      "event": {
+        "timestamp": 46260,
+        "type": "GYRO",
+        "quaternion": {
+          "x": -0.25580614642780847,
+          "y": 0.009399700918607135,
+          "z": -0.062013611255226295,
+          "w": 0.9646900845362713
+        },
+        "velocity": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      }
+    }
+  ]
+}
