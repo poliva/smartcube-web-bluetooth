@@ -1,0 +1,5236 @@
+{
+  "format": "smartcube-fixture",
+  "version": 1,
+  "capturedAt": "2026-04-14T11:43:52.448Z",
+  "device": {
+    "name": "GoCube",
+    "id": ""
+  },
+  "protocol": {
+    "id": "gocube",
+    "name": "GoCube"
+  },
+  "services": [],
+  "traffic": [
+    {
+      "t": 17029,
+      "op": "discover-service",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e"
+    },
+    {
+      "t": 17030,
+      "op": "discover-service",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e"
+    },
+    {
+      "t": 17031,
+      "op": "discover-char",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400002-b5a3-f393-e0a9-e50e24dcca9e"
+    },
+    {
+      "t": 17031,
+      "op": "discover-char",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e"
+    },
+    {
+      "t": 17087,
+      "op": "write",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400002-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "38"
+    },
+    {
+      "t": 17121,
+      "op": "write",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400002-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "33"
+    },
+    {
+      "t": 17122,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033130373238232D32303430232D3131353432232D33383736D60D0A"
+    },
+    {
+      "t": 17178,
+      "op": "write",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400002-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "32"
+    },
+    {
+      "t": 17210,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033130373232232D32303135232D3131353436232D33383935D70D0A"
+    },
+    {
+      "t": 17211,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A4002000000000000000000010101010101010101020202020202020202030303030303030303040404040404040404050505050505050505030006000306050D0A"
+    },
+    {
+      "t": 17212,
+      "op": "marker",
+      "service": "marker",
+      "data": "connected"
+    },
+    {
+      "t": 17239,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A0505063A0D0A"
+    },
+    {
+      "t": 17240,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033130373132232D31393839232D3131353533232D33393137E20D0A"
+    },
+    {
+      "t": 17298,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033130363837232D31393235232D3131353639232D33393638F00D0A"
+    },
+    {
+      "t": 17391,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033130363632232D31383539232D3131353835232D34303232DB0D0A"
+    },
+    {
+      "t": 17449,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033130363333232D31373839232D3131363032232D34303739DD0D0A"
+    },
+    {
+      "t": 17539,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033130363038232D31373233232D3131363135232D34313334CF0D0A"
+    },
+    {
+      "t": 17600,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033130353834232D31363633232D3131363239232D34313833DE0D0A"
+    },
+    {
+      "t": 17660,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033130353536232D31353937232D3131363432232D34323430D80D0A"
+    },
+    {
+      "t": 17721,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033130353234232D31353233232D3131363630232D34323938D50D0A"
+    },
+    {
+      "t": 17809,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033130343637232D31343437232D3131363937232D34333633E30D0A"
+    },
+    {
+      "t": 17868,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033130343131232D31333936232D3131373433232D34333931D40D0A"
+    },
+    {
+      "t": 17928,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033130323133232D31333531232D3131383932232D34343638D50D0A"
+    },
+    {
+      "t": 17990,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033130313830232D31333035232D3131383938232D34353338DB0D0A"
+    },
+    {
+      "t": 18079,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033130363439232D31333035232D3131343432232D34363335D40D0A"
+    },
+    {
+      "t": 18138,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033131303936232D32393831232D3130373231232D34353333D80D0A"
+    },
+    {
+      "t": 18200,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033131323235232D33303138232D3131313139232D32393538D50D0A"
+    },
+    {
+      "t": 18262,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033131313537232D32363631232D3131343834232D32303133CF0D0A"
+    },
+    {
+      "t": 18348,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033131303334232D32333635232D3131373139232D31363830D40D0A"
+    },
+    {
+      "t": 18410,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033130383834232D32303539232D3131393236232D31363037DF0D0A"
+    },
+    {
+      "t": 18470,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033130363937232D31363436232D3132313639232D31353134DF0D0A"
+    },
+    {
+      "t": 18528,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033130353835232D31333336232D3132323231232D32303831CC0D0A"
+    },
+    {
+      "t": 18622,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1B033130343633232D383838232D3132333332232D32323736AA0D0A"
+    },
+    {
+      "t": 18680,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1B033130333634232D383334232D3132333735232D32353033A10D0A"
+    },
+    {
+      "t": 18740,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1B033130343931232D363636232D3132313734232D32393633AC0D0A"
+    },
+    {
+      "t": 18798,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A060108063F0D0A"
+    },
+    {
+      "t": 18800,
+      "op": "write",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400002-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "33"
+    },
+    {
+      "t": 18830,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1B033130343631232D313434232D3131353239232D35303132970D0A"
+    },
+    {
+      "t": 18860,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A4002000200000000000202010101030303010101020202020201010102030000000303030303040404040404040404050505050505050505030006000606080D0A"
+    },
+    {
+      "t": 18890,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1B033130323336232D323234232D3131303433232D36333832980D0A"
+    },
+    {
+      "t": 18948,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1B033130343735232D353034232D3130393530232D363133339E0D0A"
+    },
+    {
+      "t": 18977,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A060104093E0D0A"
+    },
+    {
+      "t": 19009,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1B033130373431232D333639232D3130383330232D35383930A90D0A"
+    },
+    {
+      "t": 19099,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033130373135232D31323331232D3131343431232D34353035C70D0A"
+    },
+    {
+      "t": 19101,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A060109033D0D0A"
+    },
+    {
+      "t": 19160,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033130373534232D31313339232D3131363138232D33393439E20D0A"
+    },
+    {
+      "t": 19220,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033130373535232D31333339232D3131373237232D33353339E10D0A"
+    },
+    {
+      "t": 19279,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033130343338232D32353038232D3131373934232D33363237E00D0A"
+    },
+    {
+      "t": 19307,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A060105063C0D0A"
+    },
+    {
+      "t": 19368,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033130323137232D32363730232D3131373737232D34313537DB0D0A"
+    },
+    {
+      "t": 19461,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033130303132232D32383936232D3132303030232D33383536CF0D0A"
+    },
+    {
+      "t": 19490,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033130303039232D33323836232D3132303536232D33333434D20D0A"
+    },
+    {
+      "t": 19548,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A060109003A0D0A"
+    },
+    {
+      "t": 19550,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1B0339353236232D34313638232D3132343633232D32303132A60D0A"
+    },
+    {
+      "t": 19641,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1B0338353439232D34393137232D3132393836232D31323639C30D0A"
+    },
+    {
+      "t": 19698,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1B0338323131232D34333839232D3133333637232D31343539B30D0A"
+    },
+    {
+      "t": 19727,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A06010203360D0A"
+    },
+    {
+      "t": 19759,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1B0338303037232D34353034232D3133343532232D31343637A50D0A"
+    },
+    {
+      "t": 19818,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1B0338353432232D34333032232D3133303737232D323234319F0D0A"
+    },
+    {
+      "t": 19879,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A060108033C0D0A"
+    },
+    {
+      "t": 19908,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1B0339343230232D31323733232D3132343431232D34373238A50D0A"
+    },
+    {
+      "t": 19972,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A0339353732232D383035232D3131363430232D36333035750D0A"
+    },
+    {
+      "t": 20030,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A060108063F0D0A"
+    },
+    {
+      "t": 20031,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A19033839333823343433232D3130343230232D38383739570D0A"
+    },
+    {
+      "t": 20119,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A18033836353723383531232D39363435232D393934302E0D0A"
+    },
+    {
+      "t": 20179,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A19033833343723383131232D39303835232D31303730374E0D0A"
+    },
+    {
+      "t": 20180,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A06010503390D0A"
+    },
+    {
+      "t": 20239,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03383833362331303638232D39333032232D3130303838810D0A"
+    },
+    {
+      "t": 20298,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A060109033D0D0A"
+    },
+    {
+      "t": 20300,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A0339383235232D323432232D3130333231232D383032346C0D0A"
+    },
+    {
+      "t": 20389,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1C033130313631232D31343031232D3131353734232D35333235C90D0A"
+    },
+    {
+      "t": 20448,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1B0339393835232D31363832232D3132323130232D33393838BA0D0A"
+    },
+    {
+      "t": 20477,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A06010500360D0A"
+    },
+    {
+      "t": 20509,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1B0339383436232D32313231232D3132333538232D33363532AC0D0A"
+    },
+    {
+      "t": 20568,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A0339393231232D383933232D3131383336232D353331307C0D0A"
+    },
+    {
+      "t": 20597,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A060108063F0D0A"
+    },
+    {
+      "t": 20694,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A19033933313923353339232D3130313038232D38383433510D0A"
+    },
+    {
+      "t": 20720,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A19033932383123373339232D3130303234232D38393634520D0A"
+    },
+    {
+      "t": 20749,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A06010403380D0A"
+    },
+    {
+      "t": 20779,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A19033936323723383834232D3130313331232D383435304C0D0A"
+    },
+    {
+      "t": 20839,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A19033938303023393230232D3130353838232D37363438540D0A"
+    },
+    {
+      "t": 20929,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A19033938383423333538232D3131343435232D363232304F0D0A"
+    },
+    {
+      "t": 20930,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A060109033D0D0A"
+    },
+    {
+      "t": 20990,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A180339353631233233232D3132333335232D34383932170D0A"
+    },
+    {
+      "t": 21048,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A19033932343723353031232D3132353631232D343839344D0D0A"
+    },
+    {
+      "t": 21108,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A06010300340D0A"
+    },
+    {
+      "t": 21139,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03393234342331303636232D3132313435232D353738327D0D0A"
+    },
+    {
+      "t": 21199,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03393235302331343839232D3131373833232D363339348A0D0A"
+    },
+    {
+      "t": 21259,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03393530352331343539232D3131343931232D36353537870D0A"
+    },
+    {
+      "t": 21347,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03393531352331353433232D3131363030232D36333236740D0A"
+    },
+    {
+      "t": 21409,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03393332312331343036232D3131373239232D363430397B0D0A"
+    },
+    {
+      "t": 21437,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A060108063F0D0A"
+    },
+    {
+      "t": 21469,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03393032312332303538232D3131313832232D37353430720D0A"
+    },
+    {
+      "t": 21529,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03383930332332313532232D3130363232232D38343133730D0A"
+    },
+    {
+      "t": 21588,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03393138332331343638232D3130393236232D37383531890D0A"
+    },
+    {
+      "t": 21648,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A060104063B0D0A"
+    },
+    {
+      "t": 21679,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03393531302332303336232D3130393436232D37323837800D0A"
+    },
+    {
+      "t": 21738,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03393431312331373934232D3131333032232D363932367C0D0A"
+    },
+    {
+      "t": 21799,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03393232382331333136232D3131373539232D36353038840D0A"
+    },
+    {
+      "t": 21800,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A060109033D0D0A"
+    },
+    {
+      "t": 21858,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03393237382331343239232D3131393438232D36303532880D0A"
+    },
+    {
+      "t": 21949,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A19033931353323343732232D3132313233232D363034343F0D0A"
+    },
+    {
+      "t": 21950,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A06010503390D0A"
+    },
+    {
+      "t": 22009,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A19033838383623343735232D3132303437232D363537335A0D0A"
+    },
+    {
+      "t": 22068,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A0338363733232D373639232D3132373832232D35333231840D0A"
+    },
+    {
+      "t": 22131,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A060109003A0D0A"
+    },
+    {
+      "t": 22133,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1B0338323135232D31383334232D3133333333232D34333436A60D0A"
+    },
+    {
+      "t": 22220,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1B0337373330232D32323435232D3133363736232D33393539B70D0A"
+    },
+    {
+      "t": 22281,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A06010203360D0A"
+    },
+    {
+      "t": 22282,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1B0337323834232D32323138232D3133383236232D34323835B10D0A"
+    },
+    {
+      "t": 22338,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1B0337383032232D31373536232D3133353034232D34363033A60D0A"
+    },
+    {
+      "t": 22398,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A060108033C0D0A"
+    },
+    {
+      "t": 22400,
+      "op": "write",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400002-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "33"
+    },
+    {
+      "t": 22430,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03373738382331343932232D3131383835232D37393630950D0A"
+    },
+    {
+      "t": 22459,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A4002000505010000000000010101020204010101020502020201010505030003030303030404040002020404040200050404030303050505030303000306050D0A"
+    },
+    {
+      "t": 22463,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A060108063F0D0A"
+    },
+    {
+      "t": 22490,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03373033362333343437232D39363932232D3130353932870D0A"
+    },
+    {
+      "t": 22548,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03363639362334303236232D39303037232D3131313934810D0A"
+    },
+    {
+      "t": 22577,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A06010500360D0A"
+    },
+    {
+      "t": 22608,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03373133382333373730232D39303338232D3130393834880D0A"
+    },
+    {
+      "t": 22699,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03373836312332373037232D3130323039232D39373034800D0A"
+    },
+    {
+      "t": 22701,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A060109033D0D0A"
+    },
+    {
+      "t": 22759,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03383231392331343530232D3131373136232D37373833810D0A"
+    },
+    {
+      "t": 22818,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03383238312331313831232D3132323437232D36383936850D0A"
+    },
+    {
+      "t": 22878,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A060105093F0D0A"
+    },
+    {
+      "t": 22880,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A19033830343323363734232D3132333739232D373030384E0D0A"
+    },
+    {
+      "t": 22968,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03373933372331323330232D3132343530232D363932387F0D0A"
+    },
+    {
+      "t": 22998,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A060108063F0D0A"
+    },
+    {
+      "t": 23028,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03373233362333333333232D3130383339232D393330337C0D0A"
+    },
+    {
+      "t": 23088,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1B03363939322333343636232D3130313138232D3130323130A70D0A"
+    },
+    {
+      "t": 23148,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1B03373136322333343332232D3130313238232D31303039329F0D0A"
+    },
+    {
+      "t": 23208,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A06010400350D0A"
+    },
+    {
+      "t": 23238,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03373331352333393838232D39383933232D3130303131860D0A"
+    },
+    {
+      "t": 23298,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03373432342334303138232D3130313934232D393630387E0D0A"
+    },
+    {
+      "t": 23360,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03373534332333323432232D3131333237232D383437337C0D0A"
+    },
+    {
+      "t": 23418,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03373036372334303133232D3131343237232D383431397B0D0A"
+    },
+    {
+      "t": 23447,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A060109033D0D0A"
+    },
+    {
+      "t": 23509,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03373537362333303036232D3132333534232D36393630800D0A"
+    },
+    {
+      "t": 23568,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03373632312332393537232D3132323931232D373034337E0D0A"
+    },
+    {
+      "t": 23659,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03373532342332303634232D3132393434232D363235327B0D0A"
+    },
+    {
+      "t": 23718,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03373431322332333235232D3133303636232D36303335720D0A"
+    },
+    {
+      "t": 23778,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03373434372332353735232D3132383433232D36333632860D0A"
+    },
+    {
+      "t": 23839,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A06010300340D0A"
+    },
+    {
+      "t": 23840,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03373630312332383532232D3132313035232D373432306F0D0A"
+    },
+    {
+      "t": 23901,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03373538362333353634232D3131343138232D383137378C0D0A"
+    },
+    {
+      "t": 23988,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03373636382333383637232D3131303232232D38353031810D0A"
+    },
+    {
+      "t": 24048,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03373934342333363434232D3131323034232D38303939850D0A"
+    },
+    {
+      "t": 24110,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03373538342333373831232D3131373230232D37363337870D0A"
+    },
+    {
+      "t": 24169,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03373330382333343834232D3132313731232D373333367E0D0A"
+    },
+    {
+      "t": 24260,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03363939342333363736232D3132333130232D37333138860D0A"
+    },
+    {
+      "t": 24320,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03373031352333343739232D3131383935232D38303433850D0A"
+    },
+    {
+      "t": 24378,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03373034342333363936232D3131313839232D383839308E0D0A"
+    },
+    {
+      "t": 24438,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03373232392333353034232D3130343034232D39373332780D0A"
+    },
+    {
+      "t": 24529,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03373233362333383034232D3130323730232D39373537810D0A"
+    },
+    {
+      "t": 24588,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1B03373032322333393639232D3130303438232D3130303734AA0D0A"
+    },
+    {
+      "t": 24649,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1B03363832342334323435232D3130303433232D31303130329A0D0A"
+    },
+    {
+      "t": 24741,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03363337302334363039232D3130333534232D39393233810D0A"
+    },
+    {
+      "t": 24798,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03363135302334373336232D3130383037232D39353130790D0A"
+    },
+    {
+      "t": 24859,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03363035322335303630232D3130393533232D39323336780D0A"
+    },
+    {
+      "t": 24919,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03363134382335343431232D3130373830232D39313539830D0A"
+    },
+    {
+      "t": 25007,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03363137302335363130232D3130373036232D39313239770D0A"
+    },
+    {
+      "t": 25067,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03363032392335373433232D3130373031232D393134367B0D0A"
+    },
+    {
+      "t": 25129,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353934332335373736232D3130363937232D39313836970D0A"
+    },
+    {
+      "t": 25188,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353930312335373536232D3130363739232D393234378D0D0A"
+    },
+    {
+      "t": 25278,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353833382335383139232D3130363431232D393239318A0D0A"
+    },
+    {
+      "t": 25340,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353930312335393139232D3130353631232D39323830810D0A"
+    },
+    {
+      "t": 25398,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353835322335393832232D3130353138232D393331398B0D0A"
+    },
+    {
+      "t": 25460,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353834352335393932232D3130353336232D39323937930D0A"
+    },
+    {
+      "t": 25550,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353832392336303131232D3130343830232D393335377F0D0A"
+    },
+    {
+      "t": 25607,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353830312336303037232D3130343733232D393338357D0D0A"
+    },
+    {
+      "t": 25667,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353633312335393432232D3130353537232D39343336850D0A"
+    },
+    {
+      "t": 25729,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353535372335383634232D3130363134232D393436358B0D0A"
+    },
+    {
+      "t": 25818,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353534352335383437232D3130363133232D39343833880D0A"
+    },
+    {
+      "t": 25878,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353536352335383137232D3130363235232D393437378D0D0A"
+    },
+    {
+      "t": 25939,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353630382335383430232D3130353938232D393436378F0D0A"
+    },
+    {
+      "t": 26030,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353638312335383336232D3130353834232D39343431880D0A"
+    },
+    {
+      "t": 26088,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353636332335383432232D3130353833232D39343530840D0A"
+    },
+    {
+      "t": 26150,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353536352335383138232D3130363035232D393439388F0D0A"
+    },
+    {
+      "t": 26209,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353537362335383130232D3130363036232D39343935870D0A"
+    },
+    {
+      "t": 26298,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353539322335373937232D3130363233232D39343735900D0A"
+    },
+    {
+      "t": 26359,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353632342335373739232D3130363231232D39343730850D0A"
+    },
+    {
+      "t": 26418,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353632362335373735232D3130363333232D393435378B0D0A"
+    },
+    {
+      "t": 26508,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353632382335373639232D3130363131232D393438348C0D0A"
+    },
+    {
+      "t": 26570,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353631372335373833232D3130363134232D393437398D0D0A"
+    },
+    {
+      "t": 26631,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353632322335373739232D3130363032232D39343932860D0A"
+    },
+    {
+      "t": 26718,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353631322335373932232D3130363131232D393438307D0D0A"
+    },
+    {
+      "t": 26780,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353634302335373639232D3130363138232D39343639900D0A"
+    },
+    {
+      "t": 26838,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353632392335373837232D3130363136232D39343638940D0A"
+    },
+    {
+      "t": 26881,
+      "op": "marker",
+      "service": "marker",
+      "data": "probe:battery"
+    },
+    {
+      "t": 26883,
+      "op": "write",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400002-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "32"
+    },
+    {
+      "t": 26900,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353632382335373839232D3130363133232D393437308B0D0A"
+    },
+    {
+      "t": 26929,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A0505063A0D0A"
+    },
+    {
+      "t": 26988,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353634332335373737232D3130363133232D393436388C0D0A"
+    },
+    {
+      "t": 27048,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353634372335373736232D3130363131232D393436398E0D0A"
+    },
+    {
+      "t": 27110,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353634332335373833232D3130363032232D39343737870D0A"
+    },
+    {
+      "t": 27169,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353635362335373733232D3130363036232D39343731880D0A"
+    },
+    {
+      "t": 27259,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353634342335373838232D3130363138232D39343536910D0A"
+    },
+    {
+      "t": 27318,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353636312335373737232D3130363130232D39343631820D0A"
+    },
+    {
+      "t": 27378,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353636342335373738232D3130353936232D39343734970D0A"
+    },
+    {
+      "t": 27438,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353636352335373830232D3130363032232D39343635850D0A"
+    },
+    {
+      "t": 27529,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353634382335383030232D3130353939232D39343637900D0A"
+    },
+    {
+      "t": 27588,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353637312335373830232D3130363037232D39343536870D0A"
+    },
+    {
+      "t": 27649,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353635362335383035232D3130363039232D393434378A0D0A"
+    },
+    {
+      "t": 27710,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353636372335383030232D3130363031232D393435337C0D0A"
+    },
+    {
+      "t": 27798,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353636362335383033232D3130353934232D39343630870D0A"
+    },
+    {
+      "t": 27859,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353636382335383033232D3130363036232D39343435860D0A"
+    },
+    {
+      "t": 27915,
+      "op": "marker",
+      "service": "marker",
+      "data": "probe:hardware"
+    },
+    {
+      "t": 27935,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353635332335383139232D3130363033232D39343438870D0A"
+    },
+    {
+      "t": 28008,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353637312335383035232D3130363033232D393434357F0D0A"
+    },
+    {
+      "t": 28068,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353635332335383233232D3130353932232D39343537890D0A"
+    },
+    {
+      "t": 28130,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353636302335383138232D3130363133232D393433337F0D0A"
+    },
+    {
+      "t": 28188,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353636372335383135232D3130363033232D39343432820D0A"
+    },
+    {
+      "t": 28278,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353636312335383233232D3130353933232D39343531830D0A"
+    },
+    {
+      "t": 28338,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353638302335383037232D3130353939232D393434338D0D0A"
+    },
+    {
+      "t": 28399,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353636352335383233232D3130353835232D393435388F0D0A"
+    },
+    {
+      "t": 28458,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353637362335383139232D3130353839232D39343530920D0A"
+    },
+    {
+      "t": 28547,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353636372335383430232D3130353838232D393434338D0D0A"
+    },
+    {
+      "t": 28607,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353637312335383433232D3130353933232D39343333860D0A"
+    },
+    {
+      "t": 28669,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353638392335383237232D3130353831232D39343435910D0A"
+    },
+    {
+      "t": 28729,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353638342335383333232D3130353835232D39343431890D0A"
+    },
+    {
+      "t": 28819,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353638372335383332232D3130353936232D39343237910D0A"
+    },
+    {
+      "t": 28878,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353638332335383338232D3130363033232D39343138880D0A"
+    },
+    {
+      "t": 28938,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353638392335383335232D3130353837232D39343334940D0A"
+    },
+    {
+      "t": 28999,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353638302335383438232D3130353736232D393434348E0D0A"
+    },
+    {
+      "t": 29089,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353639342335383338232D3130353830232D39343338900D0A"
+    },
+    {
+      "t": 29148,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353730322335383332232D3130353832232D393433337D0D0A"
+    },
+    {
+      "t": 29208,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353639322335383433232D3130353932232D39343231850D0A"
+    },
+    {
+      "t": 29297,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353639332335383435232D3130353931232D39343231870D0A"
+    },
+    {
+      "t": 29331,
+      "op": "marker",
+      "service": "marker",
+      "data": "probe:facelets"
+    },
+    {
+      "t": 29332,
+      "op": "write",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400002-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "33"
+    },
+    {
+      "t": 29359,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353730322335383339232D3130353733232D39343430820D0A"
+    },
+    {
+      "t": 29387,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A4002000000000000000000010101010101010101020202020202020202030303030303030303040404040404040404050505050505050505030000000306FF0D0A"
+    },
+    {
+      "t": 29418,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353730362335383337232D3130353838232D393432328A0D0A"
+    },
+    {
+      "t": 29479,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353639352335383439232D3130353833232D39343237940D0A"
+    },
+    {
+      "t": 29568,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353731322335383334232D3130353837232D39343230810D0A"
+    },
+    {
+      "t": 29629,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353639382335383530232D3130353832232D393432358C0D0A"
+    },
+    {
+      "t": 29689,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353639312335383539232D3130353835232D393432318D0D0A"
+    },
+    {
+      "t": 29748,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353639392335383532232D3130353736232D393433308E0D0A"
+    },
+    {
+      "t": 29838,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353731342335383431232D3130353735232D39343238860D0A"
+    },
+    {
+      "t": 29899,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353731322335383733232D3130353735232D39343130800D0A"
+    },
+    {
+      "t": 29958,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353733342335383633232D3130353538232D39343232870D0A"
+    },
+    {
+      "t": 30019,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353731362335383830232D3130353438232D39343333870D0A"
+    },
+    {
+      "t": 30108,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353639372335383935232D3130353436232D39343338980D0A"
+    },
+    {
+      "t": 30168,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353639342335383935232D3130353339232D39343437970D0A"
+    },
+    {
+      "t": 30230,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353639382335383934232D3130353536232D39343237970D0A"
+    },
+    {
+      "t": 30318,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353730342335383937232D3130353538232D39343138900D0A"
+    },
+    {
+      "t": 30378,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353731332335393033232D3130353533232D393431367D0D0A"
+    },
+    {
+      "t": 30437,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353735312335383736232D3130353436232D393431378B0D0A"
+    },
+    {
+      "t": 30498,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353733372335383931232D3130353334232D393432398C0D0A"
+    },
+    {
+      "t": 30588,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353734382335383834232D3130353534232D393430358C0D0A"
+    },
+    {
+      "t": 30648,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353736322335383735232D3130353430232D39343137860D0A"
+    },
+    {
+      "t": 30708,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353736332335383736232D3130353539232D39333935970D0A"
+    },
+    {
+      "t": 30768,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353735352335383836232D3130353530232D39343034870D0A"
+    },
+    {
+      "t": 30860,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353737302335383734232D3130353532232D393430307F0D0A"
+    },
+    {
+      "t": 30918,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353737332335383733232D3130353431232D39343131810D0A"
+    },
+    {
+      "t": 30978,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353736342335383833232D3130353437232D39343033890D0A"
+    },
+    {
+      "t": 31038,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353736362335383834232D3130353435232D393430348B0D0A"
+    },
+    {
+      "t": 31129,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353736382335383834232D3130353433232D393430358C0D0A"
+    },
+    {
+      "t": 31187,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353736382335383836232D3130353438232D393339389E0D0A"
+    },
+    {
+      "t": 31247,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353737322335383834232D3130353531232D393339338C0D0A"
+    },
+    {
+      "t": 31308,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353737352335383834232D3130353532232D393339318E0D0A"
+    },
+    {
+      "t": 31400,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353738322335383830232D3130353430232D393430327E0D0A"
+    },
+    {
+      "t": 31458,
+      "op": "notify",
+      "service": "6e400001-b5a3-f393-e0a9-e50e24dcca9e",
+      "characteristic": "6e400003-b5a3-f393-e0a9-e50e24dcca9e",
+      "data": "2A1A03353738332335383831232D3130353434232D39333936900D0A"
+    }
+  ],
+  "events": [
+    {
+      "t": 17240,
+      "event": {
+        "timestamp": 20656,
+        "type": "BATTERY",
+        "batteryLevel": 6
+      }
+    },
+    {
+      "t": 17240,
+      "event": {
+        "timestamp": 20657,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6549290462529351,
+          "y": 0.7063475794772367,
+          "z": 0.1216069709668678,
+          "w": -0.23948441693173514
+        }
+      }
+    },
+    {
+      "t": 17299,
+      "event": {
+        "timestamp": 20715,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6534168979332191,
+          "y": 0.7073435100766737,
+          "z": 0.11769697094801598,
+          "w": -0.24260861336193634
+        }
+      }
+    },
+    {
+      "t": 17392,
+      "event": {
+        "timestamp": 20808,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6518658802721259,
+          "y": 0.7082973384873924,
+          "z": 0.11365772570117069,
+          "w": -0.24590176050032736
+        }
+      }
+    },
+    {
+      "t": 17450,
+      "event": {
+        "timestamp": 20866,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6501134750660564,
+          "y": 0.7093592154346268,
+          "z": 0.1093814546123554,
+          "w": -0.24939460780536482
+        }
+      }
+    },
+    {
+      "t": 17541,
+      "event": {
+        "timestamp": 20957,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6485961986727292,
+          "y": 0.7101663694931891,
+          "z": 0.10534796854384544,
+          "w": -0.2527617538945195
+        }
+      }
+    },
+    {
+      "t": 17603,
+      "event": {
+        "timestamp": 21020,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6471031673998138,
+          "y": 0.7109942114221877,
+          "z": 0.10167541264039023,
+          "w": -0.2557475953546316
+        }
+      }
+    },
+    {
+      "t": 17661,
+      "event": {
+        "timestamp": 21077,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.64542074448058,
+          "y": 0.7118215524102797,
+          "z": 0.0976446503349267,
+          "w": -0.2592444066500246
+        }
+      }
+    },
+    {
+      "t": 17723,
+      "event": {
+        "timestamp": 21139,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.643453117751129,
+          "y": 0.71290985870184,
+          "z": 0.09311850041191272,
+          "w": -0.26278615546316536
+        }
+      }
+    },
+    {
+      "t": 17810,
+      "event": {
+        "timestamp": 21227,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6399621110074274,
+          "y": 0.7151654545193349,
+          "z": 0.08847092525343914,
+          "w": -0.2667578762133759
+        }
+      }
+    },
+    {
+      "t": 17869,
+      "event": {
+        "timestamp": 21285,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6365272841628135,
+          "y": 0.7179656034889942,
+          "z": 0.08535127160611733,
+          "w": -0.26846521033127596
+        }
+      }
+    },
+    {
+      "t": 17929,
+      "event": {
+        "timestamp": 21345,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6244255666279113,
+          "y": 0.7270800781689142,
+          "z": 0.08260050333049133,
+          "w": -0.27317472159928596
+        }
+      }
+    },
+    {
+      "t": 17992,
+      "event": {
+        "timestamp": 21408,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6224335149564083,
+          "y": 0.727476813452981,
+          "z": 0.07979132976602288,
+          "w": -0.2774659421288979
+        }
+      }
+    },
+    {
+      "t": 18080,
+      "event": {
+        "timestamp": 21496,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.651090564619538,
+          "y": 0.6995753817613628,
+          "z": 0.07978901181599182,
+          "w": -0.2833885592085227
+        }
+      }
+    },
+    {
+      "t": 18139,
+      "event": {
+        "timestamp": 21556,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6784349334455314,
+          "y": 0.655506571870002,
+          "z": 0.1822651889510751,
+          "w": -0.27715803472499945
+        }
+      }
+    },
+    {
+      "t": 18202,
+      "event": {
+        "timestamp": 21619,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6863282334272951,
+          "y": 0.6798470937619683,
+          "z": 0.1845290519807195,
+          "w": -0.18086048235883642
+        }
+      }
+    },
+    {
+      "t": 18264,
+      "event": {
+        "timestamp": 21680,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6821665415476611,
+          "y": 0.7021601293477943,
+          "z": 0.16270011356622088,
+          "w": -0.12307979278797543
+        }
+      }
+    },
+    {
+      "t": 18350,
+      "event": {
+        "timestamp": 21766,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6746387705649676,
+          "y": 0.7165209128376704,
+          "z": 0.14460038901451408,
+          "w": -0.10271824674181126
+        }
+      }
+    },
+    {
+      "t": 18411,
+      "event": {
+        "timestamp": 21828,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.665451179616979,
+          "y": 0.7291593870003759,
+          "z": 0.1258879069121058,
+          "w": -0.0982524848993463
+        }
+      }
+    },
+    {
+      "t": 18470,
+      "event": {
+        "timestamp": 21887,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6540191388237756,
+          "y": 0.7440178461574763,
+          "z": 0.10063714148863556,
+          "w": -0.09256660523316783
+        }
+      }
+    },
+    {
+      "t": 18529,
+      "event": {
+        "timestamp": 21945,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6471730549614594,
+          "y": 0.7471990462620686,
+          "z": 0.08168381685673215,
+          "w": -0.12723355005902665
+        }
+      }
+    },
+    {
+      "t": 18624,
+      "event": {
+        "timestamp": 22040,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6397010030252333,
+          "y": 0.7539704453127379,
+          "z": 0.0542917414399701,
+          "w": -0.1391531571141576
+        }
+      }
+    },
+    {
+      "t": 18681,
+      "event": {
+        "timestamp": 22097,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6336572403365524,
+          "y": 0.756610222806333,
+          "z": 0.05099094350064499,
+          "w": -0.15303397072195973
+        }
+      }
+    },
+    {
+      "t": 18742,
+      "event": {
+        "timestamp": 22158,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6414501082023889,
+          "y": 0.7443535999671987,
+          "z": 0.040721167864149366,
+          "w": -0.18116639696918105
+        }
+      }
+    },
+    {
+      "t": 18799,
+      "event": {
+        "timestamp": 22215,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 22215,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 18799,
+      "event": {
+        "timestamp": 22215,
+        "type": "FACELETS",
+        "facelets": "UUFUUFUUFRRRRRRRRRFFDFFDFFDDDBDDBDDBLLLLLLLLLUBBUBBUBB"
+      }
+    },
+    {
+      "t": 18830,
+      "event": {
+        "timestamp": 22247,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.639614673601206,
+          "y": 0.7049151679522325,
+          "z": 0.008804561036093459,
+          "w": -0.30644763828403065
+        }
+      }
+    },
+    {
+      "t": 18860,
+      "event": {
+        "timestamp": 22277,
+        "type": "FACELETS",
+        "facelets": "UUFUUFUUFRRRRRRRRRFFDFFDFFDDDBDDBDDBLLLLLLLLLUBBUBBUBB"
+      }
+    },
+    {
+      "t": 18891,
+      "event": {
+        "timestamp": 22307,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6258430376451832,
+          "y": 0.6751841212109964,
+          "z": 0.013695666318143907,
+          "w": -0.39020420733211797
+        }
+      }
+    },
+    {
+      "t": 18949,
+      "event": {
+        "timestamp": 22365,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6404651799967064,
+          "y": 0.6695077537913064,
+          "z": 0.03081569935258616,
+          "w": -0.37498548438375184
+        }
+      }
+    },
+    {
+      "t": 18978,
+      "event": {
+        "timestamp": 22394,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 0,
+        "move": "U",
+        "localTimestamp": 22394,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 18978,
+      "event": {
+        "timestamp": 22394,
+        "type": "FACELETS",
+        "facelets": "UUUUUUFFFUBBRRRRRRRRRFFDFFDDDBDDBDDBFFDLLLLLLLLLUBBUBB"
+      }
+    },
+    {
+      "t": 19009,
+      "event": {
+        "timestamp": 22425,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.656740791387657,
+          "y": 0.6621825501097034,
+          "z": 0.022561898521743357,
+          "w": -0.3601343693579089
+        }
+      }
+    },
+    {
+      "t": 19100,
+      "event": {
+        "timestamp": 22516,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6551120626788963,
+          "y": 0.699499496883738,
+          "z": 0.07526299105531697,
+          "w": -0.27543442299285376
+        }
+      }
+    },
+    {
+      "t": 19102,
+      "event": {
+        "timestamp": 22518,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 22518,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 19102,
+      "event": {
+        "timestamp": 22518,
+        "type": "FACELETS",
+        "facelets": "UUUUUUFFLBRRBRRURRRRUFFUFFFDDRDDDDDDFFDLLLLLLBLLBBBBBB"
+      }
+    },
+    {
+      "t": 19161,
+      "event": {
+        "timestamp": 22578,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.657496179825807,
+          "y": 0.7103208682551818,
+          "z": 0.06963810199196524,
+          "w": -0.2414406187587978
+        }
+      }
+    },
+    {
+      "t": 19222,
+      "event": {
+        "timestamp": 22638,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6575676015226438,
+          "y": 0.7169963052585815,
+          "z": 0.08186731924117342,
+          "w": -0.21637673098918053
+        }
+      }
+    },
+    {
+      "t": 19280,
+      "event": {
+        "timestamp": 22696,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6382033422270689,
+          "y": 0.7211123029532526,
+          "z": 0.15334489196258752,
+          "w": -0.22176312725211522
+        }
+      }
+    },
+    {
+      "t": 19308,
+      "event": {
+        "timestamp": 22724,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 1,
+        "move": "U'",
+        "localTimestamp": 22724,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 19308,
+      "event": {
+        "timestamp": 22724,
+        "type": "FACELETS",
+        "facelets": "UULUUFUUFRRUBRRURRFFDFFUFFFDDRDDDDDDBLLLLLLLLBRRBBBBBB"
+      }
+    },
+    {
+      "t": 19369,
+      "event": {
+        "timestamp": 22785,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6246921850560632,
+          "y": 0.7200743724581831,
+          "z": 0.16325028228439745,
+          "w": -0.2541690724555207
+        }
+      }
+    },
+    {
+      "t": 19463,
+      "event": {
+        "timestamp": 22879,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6121564666571293,
+          "y": 0.733707311215097,
+          "z": 0.17706803110657676,
+          "w": -0.2357646160037845
+        }
+      }
+    },
+    {
+      "t": 19490,
+      "event": {
+        "timestamp": 22907,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6119597104768346,
+          "y": 0.7371152232499468,
+          "z": 0.20090914263431697,
+          "w": -0.2044553173977955
+        }
+      }
+    },
+    {
+      "t": 19549,
+      "event": {
+        "timestamp": 22966,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 22966,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 19550,
+      "event": {
+        "timestamp": 22966,
+        "type": "FACELETS",
+        "facelets": "UUBUUBUUBURRRRRRBUFFLFFFFFFDDDDDUDDFBLLLLLLLLDRRDBBRBB"
+      }
+    },
+    {
+      "t": 19550,
+      "event": {
+        "timestamp": 22966,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.582445983480528,
+          "y": 0.7620222855466954,
+          "z": 0.254843046309767,
+          "w": -0.12301924404396623
+        }
+      }
+    },
+    {
+      "t": 19643,
+      "event": {
+        "timestamp": 23060,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.5226924684512365,
+          "y": 0.7939740782907658,
+          "z": 0.3006291808836975,
+          "w": -0.07758764094801955
+        }
+      }
+    },
+    {
+      "t": 19701,
+      "event": {
+        "timestamp": 23117,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.5020453124352107,
+          "y": 0.8172987079918963,
+          "z": 0.2683567015318645,
+          "w": -0.08920766177602878
+        }
+      }
+    },
+    {
+      "t": 19728,
+      "event": {
+        "timestamp": 23145,
+        "type": "MOVE",
+        "face": 2,
+        "direction": 0,
+        "move": "F",
+        "localTimestamp": 23145,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 19728,
+      "event": {
+        "timestamp": 23145,
+        "type": "FACELETS",
+        "facelets": "UUBUUBLLLURRURRBBUFFFFFFFFLRRUDDUDDFBLDLLDLLDDRRDBBRBB"
+      }
+    },
+    {
+      "t": 19760,
+      "event": {
+        "timestamp": 23176,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.4895563554881286,
+          "y": 0.822469351071101,
+          "z": 0.2753792712774486,
+          "w": -0.08969391451243719
+        }
+      }
+    },
+    {
+      "t": 19819,
+      "event": {
+        "timestamp": 23235,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.5222702122351582,
+          "y": 0.7995466594941658,
+          "z": 0.2630304908728226,
+          "w": -0.1370179753709892
+        }
+      }
+    },
+    {
+      "t": 19880,
+      "event": {
+        "timestamp": 23296,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 23296,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 19880,
+      "event": {
+        "timestamp": 23296,
+        "type": "FACELETS",
+        "facelets": "UUFUUFLLLBUUBRRURRFFUFFUFFFRRRDDDDDDBLDLLDLLDLRRBBBBBB"
+      }
+    },
+    {
+      "t": 19909,
+      "event": {
+        "timestamp": 23325,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.5759670240215465,
+          "y": 0.7606800154832336,
+          "z": 0.0778350341379436,
+          "w": -0.2890840859420246
+        }
+      }
+    },
+    {
+      "t": 19974,
+      "event": {
+        "timestamp": 23390,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.585234024188737,
+          "y": 0.7116719642244984,
+          "z": 0.049217863505216605,
+          "w": -0.3854889806216033
+        }
+      }
+    },
+    {
+      "t": 20031,
+      "event": {
+        "timestamp": 23447,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 23447,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 20031,
+      "event": {
+        "timestamp": 23447,
+        "type": "FACELETS",
+        "facelets": "UUUUUULLFUBBRRURRUFFRFFDFFDRRBDDBDDLBLDLLDLLDLRRFBBFBB"
+      }
+    },
+    {
+      "t": 20032,
+      "event": {
+        "timestamp": 23448,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.546488193403172,
+          "y": 0.6371008027815006,
+          "z": -0.02708595543495247,
+          "w": -0.5428808088192845
+        }
+      }
+    },
+    {
+      "t": 20122,
+      "event": {
+        "timestamp": 23538,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.5293069226711772,
+          "y": 0.5897152904197186,
+          "z": -0.05203190379960399,
+          "w": -0.607752201842613
+        }
+      }
+    },
+    {
+      "t": 20180,
+      "event": {
+        "timestamp": 23596,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.510343599533559,
+          "y": 0.5554656285806138,
+          "z": -0.0495853191831456,
+          "w": -0.654636266946905
+        }
+      }
+    },
+    {
+      "t": 20181,
+      "event": {
+        "timestamp": 23597,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 1,
+        "move": "U'",
+        "localTimestamp": 23597,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 20181,
+      "event": {
+        "timestamp": 23597,
+        "type": "FACELETS",
+        "facelets": "UUFUULUULFFRRRURRUBLDFFDFFDRRBDDBDDLLRRLLDLLDUBBFBBFBB"
+      }
+    },
+    {
+      "t": 20241,
+      "event": {
+        "timestamp": 23657,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.5402382334899848,
+          "y": 0.5687297473883927,
+          "z": -0.06529814773283202,
+          "w": -0.6167862493715444
+        }
+      }
+    },
+    {
+      "t": 20299,
+      "event": {
+        "timestamp": 23716,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 23716,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 20300,
+      "event": {
+        "timestamp": 23716,
+        "type": "FACELETS",
+        "facelets": "UUFUUFUUURUUFRRFRRBLFFFLFFLRRDDDDDDDLRRLLDLLDLBBBBBBBB"
+      }
+    },
+    {
+      "t": 20301,
+      "event": {
+        "timestamp": 23717,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6007216146816049,
+          "y": 0.6310481206238009,
+          "z": 0.014796400076635968,
+          "w": -0.4906046041939133
+        }
+      }
+    },
+    {
+      "t": 20391,
+      "event": {
+        "timestamp": 23807,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6212363276286358,
+          "y": 0.7076261446682246,
+          "z": 0.08565614555729935,
+          "w": -0.32556672026596645
+        }
+      }
+    },
+    {
+      "t": 20449,
+      "event": {
+        "timestamp": 23865,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6104806389712376,
+          "y": 0.7465166351365861,
+          "z": 0.10283709912364765,
+          "w": -0.2438254169471503
+        }
+      }
+    },
+    {
+      "t": 20478,
+      "event": {
+        "timestamp": 23894,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 1,
+        "move": "U'",
+        "localTimestamp": 23894,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 20478,
+      "event": {
+        "timestamp": 23894,
+        "type": "FACELETS",
+        "facelets": "FFUUUUUUUBLFFRRFRRLRRFFLFFLRRDDDDDDDLBBLLDLLDRUUBBBBBB"
+      }
+    },
+    {
+      "t": 20509,
+      "event": {
+        "timestamp": 23926,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.602002427736267,
+          "y": 0.7555906969291882,
+          "z": 0.12968181487188932,
+          "w": -0.2232899518680527
+        }
+      }
+    },
+    {
+      "t": 20569,
+      "event": {
+        "timestamp": 23985,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.6065755240591874,
+          "y": 0.723659701921635,
+          "z": 0.054598522627240624,
+          "w": -0.324656388746526
+        }
+      }
+    },
+    {
+      "t": 20598,
+      "event": {
+        "timestamp": 24014,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 24014,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 20598,
+      "event": {
+        "timestamp": 24014,
+        "type": "FACELETS",
+        "facelets": "FFRUULUULFFBRRLRRFLRDFFDFFDRRBDDBDDRLBBLLDLLDUUUUBBUBB"
+      }
+    },
+    {
+      "t": 20696,
+      "event": {
+        "timestamp": 24112,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.56977539191927,
+          "y": 0.6180158452108575,
+          "z": -0.03295513856041276,
+          "w": -0.5406721526711132
+        }
+      }
+    },
+    {
+      "t": 20720,
+      "event": {
+        "timestamp": 24137,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.5674389160874183,
+          "y": 0.612865822094632,
+          "z": -0.04518234662090314,
+          "w": -0.5480575847222947
+        }
+      }
+    },
+    {
+      "t": 20750,
+      "event": {
+        "timestamp": 24166,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 0,
+        "move": "U",
+        "localTimestamp": 24166,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 20750,
+      "event": {
+        "timestamp": 24166,
+        "type": "FACELETS",
+        "facelets": "UUFUUFLLRUUURRLRRFFFBFFDFFDRRBDDBDDRLRDLLDLLDLBBUBBUBB"
+      }
+    },
+    {
+      "t": 20779,
+      "event": {
+        "timestamp": 24196,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.5886116844132141,
+          "y": 0.619427129405866,
+          "z": -0.054049312249016435,
+          "w": -0.5166478376744218
+        }
+      }
+    },
+    {
+      "t": 20840,
+      "event": {
+        "timestamp": 24256,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.5992073504309632,
+          "y": 0.6473885128941875,
+          "z": -0.05625211861188634,
+          "w": -0.4676263077648986
+        }
+      }
+    },
+    {
+      "t": 20930,
+      "event": {
+        "timestamp": 24346,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.604327601907107,
+          "y": 0.699770275579405,
+          "z": -0.02188883867692678,
+          "w": -0.38030328650973344
+        }
+      }
+    },
+    {
+      "t": 20930,
+      "event": {
+        "timestamp": 24347,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 24347,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 20931,
+      "event": {
+        "timestamp": 24347,
+        "type": "FACELETS",
+        "facelets": "UUUUUULLLULFURRURRFFFFFFFFRRRBDDDDDDLRDLLDLLDRBBBBBBBB"
+      }
+    },
+    {
+      "t": 20992,
+      "event": {
+        "timestamp": 24408,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.5845797234611407,
+          "y": 0.7541879394303077,
+          "z": -0.0014062685534574038,
+          "w": -0.2991072071092878
+        }
+      }
+    },
+    {
+      "t": 21048,
+      "event": {
+        "timestamp": 24465,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.5653907938051554,
+          "y": 0.7680192236386458,
+          "z": -0.03063272279619151,
+          "w": -0.2992346214861502
+        }
+      }
+    },
+    {
+      "t": 21108,
+      "event": {
+        "timestamp": 24525,
+        "type": "MOVE",
+        "face": 2,
+        "direction": 1,
+        "move": "F'",
+        "localTimestamp": 24525,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 21108,
+      "event": {
+        "timestamp": 24525,
+        "type": "FACELETS",
+        "facelets": "UUUUUUUUUBLFRRRRRRFFRFFFFFFDDDDDDDDDLRLLLLLLLRBBBBBBBB"
+      }
+    },
+    {
+      "t": 21139,
+      "event": {
+        "timestamp": 24556,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.5651730583488381,
+          "y": 0.742538597322224,
+          "z": -0.06517465168756614,
+          "w": -0.3535082889845286
+        }
+      }
+    },
+    {
+      "t": 21203,
+      "event": {
+        "timestamp": 24619,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.5655594453243913,
+          "y": 0.7204310210007895,
+          "z": -0.09103978530681284,
+          "w": -0.390939145232882
+        }
+      }
+    },
+    {
+      "t": 21261,
+      "event": {
+        "timestamp": 24678,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.5811406697423931,
+          "y": 0.7025657481335971,
+          "z": -0.08920402284630738,
+          "w": -0.40089840836411067
+        }
+      }
+    },
+    {
+      "t": 21348,
+      "event": {
+        "timestamp": 24765,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.5817702192116553,
+          "y": 0.709252185271172,
+          "z": -0.09434276912701883,
+          "w": -0.3867870106918478
+        }
+      }
+    },
+    {
+      "t": 21411,
+      "event": {
+        "timestamp": 24827,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.5698998006101744,
+          "y": 0.71712850137933,
+          "z": -0.08596493076471465,
+          "w": -0.39185579037770707
+        }
+      }
+    },
+    {
+      "t": 21438,
+      "event": {
+        "timestamp": 24854,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 24854,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 21438,
+      "event": {
+        "timestamp": 24854,
+        "type": "FACELETS",
+        "facelets": "UURUUFUUFRRBRRLRRFFFDFFDFFDDDBDDBDDRLRLLLLLLLUBBUBBUBB"
+      }
+    },
+    {
+      "t": 21470,
+      "event": {
+        "timestamp": 24886,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.5515574266667561,
+          "y": 0.6836841974268559,
+          "z": -0.12582919677199692,
+          "w": -0.4610068725271413
+        }
+      }
+    },
+    {
+      "t": 21530,
+      "event": {
+        "timestamp": 24947,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.5443453380050765,
+          "y": 0.649448071469159,
+          "z": -0.13157712764089907,
+          "w": -0.5143858619158382
+        }
+      }
+    },
+    {
+      "t": 21589,
+      "event": {
+        "timestamp": 25006,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.561466902491051,
+          "y": 0.6680373926404468,
+          "z": -0.08975644265020831,
+          "w": -0.48002577060407725
+        }
+      }
+    },
+    {
+      "t": 21650,
+      "event": {
+        "timestamp": 25066,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 0,
+        "move": "U",
+        "localTimestamp": 25066,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 21650,
+      "event": {
+        "timestamp": 25066,
+        "type": "FACELETS",
+        "facelets": "UUUUUUFFRUBBRRLRRFRRBFFDFFDDDBDDBDDRFFDLLLLLLLRLUBBUBB"
+      }
+    },
+    {
+      "t": 21680,
+      "event": {
+        "timestamp": 25096,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.5814576261951605,
+          "y": 0.6692571163335675,
+          "z": -0.12448451387311743,
+          "w": -0.4455396132580583
+        }
+      }
+    },
+    {
+      "t": 21739,
+      "event": {
+        "timestamp": 25156,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.5754160454541168,
+          "y": 0.6910373122646296,
+          "z": -0.10969040330939174,
+          "w": -0.4234758825645748
+        }
+      }
+    },
+    {
+      "t": 21800,
+      "event": {
+        "timestamp": 25216,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.5641995260415824,
+          "y": 0.7189447579890516,
+          "z": -0.08046018381780694,
+          "w": -0.3978988421628325
+        }
+      }
+    },
+    {
+      "t": 21800,
+      "event": {
+        "timestamp": 25217,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 25217,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 21801,
+      "event": {
+        "timestamp": 25217,
+        "type": "FACELETS",
+        "facelets": "UUUUUUFFLBLFBRRURRRRUFFUFFRDDBDDDDDDFFDLLLLLLRRLBBBBBB"
+      }
+    },
+    {
+      "t": 21859,
+      "event": {
+        "timestamp": 25276,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.567268453982438,
+          "y": 0.7305155732035103,
+          "z": -0.0873708364670084,
+          "w": -0.370026803567764
+        }
+      }
+    },
+    {
+      "t": 21950,
+      "event": {
+        "timestamp": 25366,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.559633617684456,
+          "y": 0.741225647021595,
+          "z": -0.028859069982198535,
+          "w": -0.36954283680594907
+        }
+      }
+    },
+    {
+      "t": 21950,
+      "event": {
+        "timestamp": 25367,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 1,
+        "move": "U'",
+        "localTimestamp": 25367,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 21951,
+      "event": {
+        "timestamp": 25367,
+        "type": "FACELETS",
+        "facelets": "UULUUFUUFRRUBRRURRFFDFFUFFRDDBDDDDDDRRLLLLLLLBLFBBBBBB"
+      }
+    },
+    {
+      "t": 22009,
+      "event": {
+        "timestamp": 25426,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.5432844068627456,
+          "y": 0.7365459429974675,
+          "z": -0.02904119888136441,
+          "w": -0.40186905315201743
+        }
+      }
+    },
+    {
+      "t": 22069,
+      "event": {
+        "timestamp": 25486,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.5302778809532653,
+          "y": 0.7815071917842312,
+          "z": 0.04701760526381426,
+          "w": -0.325332480635573
+        }
+      }
+    },
+    {
+      "t": 22132,
+      "event": {
+        "timestamp": 25548,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 25548,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 22132,
+      "event": {
+        "timestamp": 25548,
+        "type": "FACELETS",
+        "facelets": "UUBUUBUUBURRRRRRBUFFLFFFFFFDDDDDUDDRRRLLLLLLLDLFDBBBBB"
+      }
+    },
+    {
+      "t": 22133,
+      "event": {
+        "timestamp": 25549,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.5022737606545379,
+          "y": 0.8151936763002987,
+          "z": 0.1121326934924434,
+          "w": -0.2657190217656265
+        }
+      }
+    },
+    {
+      "t": 22223,
+      "event": {
+        "timestamp": 25639,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.472626359985764,
+          "y": 0.8361756920006868,
+          "z": 0.13726341244088489,
+          "w": -0.2420605121841707
+        }
+      }
+    },
+    {
+      "t": 22282,
+      "event": {
+        "timestamp": 25698,
+        "type": "MOVE",
+        "face": 2,
+        "direction": 0,
+        "move": "F",
+        "localTimestamp": 25698,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 22282,
+      "event": {
+        "timestamp": 25698,
+        "type": "FACELETS",
+        "facelets": "UUBUUBLLLURRURRBBUFFFFFFFFLRRUDDUDDRRRDLLDLLDDLFDBBBBB"
+      }
+    },
+    {
+      "t": 22283,
+      "event": {
+        "timestamp": 25699,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.44536035039450383,
+          "y": 0.8453531307735324,
+          "z": 0.1356135718252347,
+          "w": -0.26199465972548724
+        }
+      }
+    },
+    {
+      "t": 22339,
+      "event": {
+        "timestamp": 25756,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.4770278737215705,
+          "y": 0.825658088533208,
+          "z": 0.10736489954563931,
+          "w": -0.28143543998210574
+        }
+      }
+    },
+    {
+      "t": 22399,
+      "event": {
+        "timestamp": 25815,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 25815,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 22399,
+      "event": {
+        "timestamp": 25815,
+        "type": "FACELETS",
+        "facelets": "UUFUUFLLLBUUBRRURRFFUFFUFFRRRBDDDDDDRRDLLDLLDLLFBBBBBB"
+      }
+    },
+    {
+      "t": 22431,
+      "event": {
+        "timestamp": 25847,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.4761777031746342,
+          "y": 0.7266784799987837,
+          "z": -0.09122459336627559,
+          "w": -0.48669421125707346
+        }
+      }
+    },
+    {
+      "t": 22460,
+      "event": {
+        "timestamp": 25876,
+        "type": "FACELETS",
+        "facelets": "UUFUUFLLLBUUBRRURRFFUFFUFFRRRBDDDDDDRRDLLDLLDLLFBBBBBB"
+      }
+    },
+    {
+      "t": 22463,
+      "event": {
+        "timestamp": 25880,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 25880,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 22464,
+      "event": {
+        "timestamp": 25880,
+        "type": "FACELETS",
+        "facelets": "UUUUUULLRUBBRRURRUFFBFFDFFDRRBDDBDDLRRDLLDLLDLLFFBBFBB"
+      }
+    },
+    {
+      "t": 22491,
+      "event": {
+        "timestamp": 25907,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.430183595557909,
+          "y": 0.5925724002483307,
+          "z": -0.2107508319909199,
+          "w": -0.6475987271389102
+        }
+      }
+    },
+    {
+      "t": 22549,
+      "event": {
+        "timestamp": 25965,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.4094231584212609,
+          "y": 0.5507279551822427,
+          "z": -0.24616750833393017,
+          "w": -0.68445084160209
+        }
+      }
+    },
+    {
+      "t": 22577,
+      "event": {
+        "timestamp": 25994,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 1,
+        "move": "U'",
+        "localTimestamp": 25994,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 22578,
+      "event": {
+        "timestamp": 25994,
+        "type": "FACELETS",
+        "facelets": "UURUULUULFFBRRURRURRDFFDFFDRRBDDBDDLLLFLLDLLDUBBFBBFBB"
+      }
+    },
+    {
+      "t": 22608,
+      "event": {
+        "timestamp": 26024,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.4364319764965872,
+          "y": 0.5526018777775504,
+          "z": -0.2305055409627534,
+          "w": -0.6715843135105791
+        }
+      }
+    },
+    {
+      "t": 22700,
+      "event": {
+        "timestamp": 26116,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.48062256803188624,
+          "y": 0.6241795950944571,
+          "z": -0.1655063340112347,
+          "w": -0.5933038290524646
+        }
+      }
+    },
+    {
+      "t": 22701,
+      "event": {
+        "timestamp": 26117,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 26117,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 22701,
+      "event": {
+        "timestamp": 26117,
+        "type": "FACELETS",
+        "facelets": "UUFUUFUUUBUUFRRFRRRRRFFLFFLRRDDDDDDDLLFLLDLLDLBBBBBBBB"
+      }
+    },
+    {
+      "t": 22759,
+      "event": {
+        "timestamp": 26175,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.5025297654997546,
+          "y": 0.7163448999385721,
+          "z": -0.0886565470221005,
+          "w": -0.47587165894690225
+        }
+      }
+    },
+    {
+      "t": 22819,
+      "event": {
+        "timestamp": 26235,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.5063022935622371,
+          "y": 0.7487844691772393,
+          "z": -0.07220661860850164,
+          "w": -0.4216230668283042
+        }
+      }
+    },
+    {
+      "t": 22879,
+      "event": {
+        "timestamp": 26296,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 1,
+        "move": "U'",
+        "localTimestamp": 26296,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 22880,
+      "event": {
+        "timestamp": 26296,
+        "type": "FACELETS",
+        "facelets": "FFUUUUUUURRRFRRFRRLLFFFLFFLRRDDDDDDDLBBLLDLLDBUUBBBBBB"
+      }
+    },
+    {
+      "t": 22880,
+      "event": {
+        "timestamp": 26297,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.4917672021683541,
+          "y": 0.7568800442175875,
+          "z": -0.041209883658021966,
+          "w": -0.42848496242643613
+        }
+      }
+    },
+    {
+      "t": 22969,
+      "event": {
+        "timestamp": 26385,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.48527458203543233,
+          "y": 0.7612030422503632,
+          "z": -0.0752031921259395,
+          "w": -0.42358350816951934
+        }
+      }
+    },
+    {
+      "t": 22998,
+      "event": {
+        "timestamp": 26415,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 26415,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 22999,
+      "event": {
+        "timestamp": 26415,
+        "type": "FACELETS",
+        "facelets": "FFFUULUULFFRRRRRRRLLDFFDFFDRRBDDBDDBLBBLLDLLDUUUUBBUBB"
+      }
+    },
+    {
+      "t": 23028,
+      "event": {
+        "timestamp": 26445,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.442423342826176,
+          "y": 0.6627178845899561,
+          "z": -0.20378620807623615,
+          "w": -0.5688038085008176
+        }
+      }
+    },
+    {
+      "t": 23089,
+      "event": {
+        "timestamp": 26505,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.4274879775826439,
+          "y": 0.618610319962985,
+          "z": -0.21190980124448566,
+          "w": -0.624235161773283
+        }
+      }
+    },
+    {
+      "t": 23150,
+      "event": {
+        "timestamp": 26566,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.43789932684316474,
+          "y": 0.6192466325422469,
+          "z": -0.2098394987050742,
+          "w": -0.6170455189194665
+        }
+      }
+    },
+    {
+      "t": 23209,
+      "event": {
+        "timestamp": 26626,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 0,
+        "move": "U",
+        "localTimestamp": 26626,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 23210,
+      "event": {
+        "timestamp": 26626,
+        "type": "FACELETS",
+        "facelets": "UUFUUFLLFUUURRRRRRFFRFFDFFDRRBDDBDDBLLDLLDLLDLBBUBBUBB"
+      }
+    },
+    {
+      "t": 23239,
+      "event": {
+        "timestamp": 26655,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.4472480214629075,
+          "y": 0.6048700856230409,
+          "z": -0.2438311838132707,
+          "w": -0.6120847495372751
+        }
+      }
+    },
+    {
+      "t": 23300,
+      "event": {
+        "timestamp": 26716,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.45392390157819595,
+          "y": 0.6232893659332072,
+          "z": -0.24567163746513893,
+          "w": -0.5874597045209196
+        }
+      }
+    },
+    {
+      "t": 23361,
+      "event": {
+        "timestamp": 26777,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.46119241589605425,
+          "y": 0.6925528960432993,
+          "z": -0.19822163758915656,
+          "w": -0.5180542675178667
+        }
+      }
+    },
+    {
+      "t": 23419,
+      "event": {
+        "timestamp": 26836,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.4320869300328943,
+          "y": 0.6986638388971109,
+          "z": -0.2453608108422251,
+          "w": -0.5147502283779449
+        }
+      }
+    },
+    {
+      "t": 23448,
+      "event": {
+        "timestamp": 26865,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 26865,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 23449,
+      "event": {
+        "timestamp": 26865,
+        "type": "FACELETS",
+        "facelets": "UUUUUULLLURRURRURRFFFFFFFFFRRRDDDDDDLLDLLDLLDBBBBBBBBB"
+      }
+    },
+    {
+      "t": 23510,
+      "event": {
+        "timestamp": 26926,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.46321472061031477,
+          "y": 0.7553530436140218,
+          "z": -0.18379401401195963,
+          "w": -0.4255510104867728
+        }
+      }
+    },
+    {
+      "t": 23569,
+      "event": {
+        "timestamp": 26985,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.46596500270117674,
+          "y": 0.7514992583913087,
+          "z": -0.18079760044447968,
+          "w": -0.43062478861361864
+        }
+      }
+    },
+    {
+      "t": 23660,
+      "event": {
+        "timestamp": 27076,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.46002621563932344,
+          "y": 0.7914113949010371,
+          "z": -0.1261953892981876,
+          "w": -0.3822546385136962
+        }
+      }
+    },
+    {
+      "t": 23719,
+      "event": {
+        "timestamp": 27136,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.4531956523444837,
+          "y": 0.7989010244917734,
+          "z": -0.1421586470184734,
+          "w": -0.3690010472070911
+        }
+      }
+    },
+    {
+      "t": 23779,
+      "event": {
+        "timestamp": 27196,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.4553176514109974,
+          "y": 0.78523493985114,
+          "z": -0.15743829090685085,
+          "w": -0.3889795754366544
+        }
+      }
+    },
+    {
+      "t": 23840,
+      "event": {
+        "timestamp": 27256,
+        "type": "MOVE",
+        "face": 2,
+        "direction": 1,
+        "move": "F'",
+        "localTimestamp": 27256,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 23840,
+      "event": {
+        "timestamp": 27256,
+        "type": "FACELETS",
+        "facelets": "UUUUUUUUURRRRRRRRRFFFFFFFFFDDDDDDDDDLLLLLLLLLBBBBBBBBB"
+      }
+    },
+    {
+      "t": 23841,
+      "event": {
+        "timestamp": 27257,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.4647417148918678,
+          "y": 0.740126096403902,
+          "z": -0.17437749912795775,
+          "w": -0.4536749801996657
+        }
+      }
+    },
+    {
+      "t": 23902,
+      "event": {
+        "timestamp": 27318,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.46383584023791535,
+          "y": 0.6981383632792667,
+          "z": -0.2179160209079792,
+          "w": -0.4999717460618816
+        }
+      }
+    },
+    {
+      "t": 23989,
+      "event": {
+        "timestamp": 27406,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.4688322223750746,
+          "y": 0.6739004636173803,
+          "z": -0.236433777246272,
+          "w": -0.5197630050091953
+        }
+      }
+    },
+    {
+      "t": 24049,
+      "event": {
+        "timestamp": 27466,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.4857018995229436,
+          "y": 0.6850206548659441,
+          "z": -0.22279679278217604,
+          "w": -0.49517871151011084
+        }
+      }
+    },
+    {
+      "t": 24111,
+      "event": {
+        "timestamp": 27527,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.463703462730341,
+          "y": 0.7165881570674574,
+          "z": -0.231179165688742,
+          "w": -0.466944006444042
+        }
+      }
+    },
+    {
+      "t": 24171,
+      "event": {
+        "timestamp": 27588,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.44682811918565946,
+          "y": 0.7441632510411413,
+          "z": -0.21301986415473967,
+          "w": -0.448540104316639
+        }
+      }
+    },
+    {
+      "t": 24263,
+      "event": {
+        "timestamp": 27679,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.4276110623624341,
+          "y": 0.7526297079899291,
+          "z": -0.22474953749561163,
+          "w": -0.4474203251884891
+        }
+      }
+    },
+    {
+      "t": 24321,
+      "event": {
+        "timestamp": 27737,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.42891399247197903,
+          "y": 0.727288943756834,
+          "z": -0.21271443760655953,
+          "w": -0.4917683879475591
+        }
+      }
+    },
+    {
+      "t": 24379,
+      "event": {
+        "timestamp": 27796,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.43067936757332353,
+          "y": 0.6841100857152068,
+          "z": -0.22597827123097725,
+          "w": -0.5435462205745096
+        }
+      }
+    },
+    {
+      "t": 24439,
+      "event": {
+        "timestamp": 27855,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.4420009818886735,
+          "y": 0.6361292316461141,
+          "z": -0.2142442164252195,
+          "w": -0.5950412997289487
+        }
+      }
+    },
+    {
+      "t": 24530,
+      "event": {
+        "timestamp": 27947,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.4424202450488389,
+          "y": 0.6279237032409585,
+          "z": -0.2325824505480629,
+          "w": -0.5965580888531676
+        }
+      }
+    },
+    {
+      "t": 24589,
+      "event": {
+        "timestamp": 28006,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.42933020473727024,
+          "y": 0.6143420531472645,
+          "z": -0.24266755662236195,
+          "w": -0.6159317121223669
+        }
+      }
+    },
+    {
+      "t": 24650,
+      "event": {
+        "timestamp": 28066,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.41723211615369193,
+          "y": 0.6140477934542099,
+          "z": -0.25954723520990947,
+          "w": -0.6176551637433464
+        }
+      }
+    },
+    {
+      "t": 24744,
+      "event": {
+        "timestamp": 28160,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.38947969753024797,
+          "y": 0.6330726512132163,
+          "z": -0.28180720972008055,
+          "w": -0.6067201002500237
+        }
+      }
+    },
+    {
+      "t": 24799,
+      "event": {
+        "timestamp": 28215,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.37603353776208537,
+          "y": 0.6607795841617653,
+          "z": -0.28957639590914414,
+          "w": -0.5814762510760052
+        }
+      }
+    },
+    {
+      "t": 24860,
+      "event": {
+        "timestamp": 28276,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.37002854924577666,
+          "y": 0.6696831956194632,
+          "z": -0.3093761498981543,
+          "w": -0.5647031858615322
+        }
+      }
+    },
+    {
+      "t": 24920,
+      "event": {
+        "timestamp": 28337,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3759010472162552,
+          "y": 0.6591108147350734,
+          "z": -0.33267364962648743,
+          "w": -0.5599996245045025
+        }
+      }
+    },
+    {
+      "t": 25008,
+      "event": {
+        "timestamp": 28424,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.37724616357144025,
+          "y": 0.6545862929004601,
+          "z": -0.34300664143205506,
+          "w": -0.5581653528757987
+        }
+      }
+    },
+    {
+      "t": 25068,
+      "event": {
+        "timestamp": 28484,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3686295990983321,
+          "y": 0.6542884955964923,
+          "z": -0.351142774526741,
+          "w": -0.5592115298313726
+        }
+      }
+    },
+    {
+      "t": 25130,
+      "event": {
+        "timestamp": 28546,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.36337253015823856,
+          "y": 0.6540460971062894,
+          "z": -0.3531616581177833,
+          "w": -0.5616591051713915
+        }
+      }
+    },
+    {
+      "t": 25190,
+      "event": {
+        "timestamp": 28606,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.36079673231559406,
+          "y": 0.6529314191489967,
+          "z": -0.35193119661219446,
+          "w": -0.5653766113747328
+        }
+      }
+    },
+    {
+      "t": 25279,
+      "event": {
+        "timestamp": 28696,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3569480257725377,
+          "y": 0.6506138989800572,
+          "z": -0.3557863244211026,
+          "w": -0.5680719608517725
+        }
+      }
+    },
+    {
+      "t": 25342,
+      "event": {
+        "timestamp": 28758,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.36079127263541183,
+          "y": 0.6457069361638,
+          "z": -0.3618918052413155,
+          "w": -0.5673856990436573
+        }
+      }
+    },
+    {
+      "t": 25399,
+      "event": {
+        "timestamp": 28815,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.35780017337259407,
+          "y": 0.6430865043631142,
+          "z": -0.3657485709355533,
+          "w": -0.5697778222247444
+        }
+      }
+    },
+    {
+      "t": 25461,
+      "event": {
+        "timestamp": 28878,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.35736731927431203,
+          "y": 0.6441782850084091,
+          "z": -0.36635500035785756,
+          "w": -0.568424973018525
+        }
+      }
+    },
+    {
+      "t": 25550,
+      "event": {
+        "timestamp": 28967,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.35639998188116717,
+          "y": 0.640774028154852,
+          "z": -0.3675279277899633,
+          "w": -0.5721109333439838
+        }
+      }
+    },
+    {
+      "t": 25608,
+      "event": {
+        "timestamp": 29024,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.35468507774551755,
+          "y": 0.6403407721476996,
+          "z": -0.3672803416682165,
+          "w": -0.5738182131773284
+        }
+      }
+    },
+    {
+      "t": 25668,
+      "event": {
+        "timestamp": 29084,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34428689555429004,
+          "y": 0.645469145154793,
+          "z": -0.36330185284737904,
+          "w": -0.5769297010211828
+        }
+      }
+    },
+    {
+      "t": 25730,
+      "event": {
+        "timestamp": 29147,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.339758564998296,
+          "y": 0.6489468074306125,
+          "z": -0.35852874305380744,
+          "w": -0.5786962061739916
+        }
+      }
+    },
+    {
+      "t": 25819,
+      "event": {
+        "timestamp": 29235,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3390327819046899,
+          "y": 0.6489007960963884,
+          "z": -0.35749768724918335,
+          "w": -0.5798102562312307
+        }
+      }
+    },
+    {
+      "t": 25879,
+      "event": {
+        "timestamp": 29295,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3402471165309277,
+          "y": 0.6496182593245475,
+          "z": -0.3556545331285546,
+          "w": -0.5794289170464693
+        }
+      }
+    },
+    {
+      "t": 25940,
+      "event": {
+        "timestamp": 29357,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34288507524581063,
+          "y": 0.6479843130269438,
+          "z": -0.3570700498280196,
+          "w": -0.5788325619386749
+        }
+      }
+    },
+    {
+      "t": 26031,
+      "event": {
+        "timestamp": 29448,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3473554390307682,
+          "y": 0.6471413424928095,
+          "z": -0.3568326601273655,
+          "w": -0.5772544798256438
+        }
+      }
+    },
+    {
+      "t": 26089,
+      "event": {
+        "timestamp": 29506,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3462453263776806,
+          "y": 0.6470623854944364,
+          "z": -0.3571896868618064,
+          "w": -0.5777888635474274
+        }
+      }
+    },
+    {
+      "t": 26152,
+      "event": {
+        "timestamp": 29568,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34025633182197484,
+          "y": 0.6484130096984804,
+          "z": -0.3557253079137915,
+          "w": -0.5807285965220337
+        }
+      }
+    },
+    {
+      "t": 26210,
+      "event": {
+        "timestamp": 29626,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3409328732022789,
+          "y": 0.6484817168549802,
+          "z": -0.35524031443781207,
+          "w": -0.5805519424418288
+        }
+      }
+    },
+    {
+      "t": 26299,
+      "event": {
+        "timestamp": 29715,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34190522260667916,
+          "y": 0.6495098676235251,
+          "z": -0.35443930176160926,
+          "w": -0.5793190243559165
+        }
+      }
+    },
+    {
+      "t": 26360,
+      "event": {
+        "timestamp": 29777,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34385319382990104,
+          "y": 0.6493714032125496,
+          "z": -0.35332994437108783,
+          "w": -0.5789988879034784
+        }
+      }
+    },
+    {
+      "t": 26419,
+      "event": {
+        "timestamp": 29835,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3439849379259319,
+          "y": 0.6501229727988684,
+          "z": -0.3530950971422426,
+          "w": -0.5782199711989936
+        }
+      }
+    },
+    {
+      "t": 26509,
+      "event": {
+        "timestamp": 29925,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34410896951851666,
+          "y": 0.6487811434898685,
+          "z": -0.3527300364520829,
+          "w": -0.5798737503400163
+        }
+      }
+    },
+    {
+      "t": 26571,
+      "event": {
+        "timestamp": 29988,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3434319791480497,
+          "y": 0.6489562091289655,
+          "z": -0.3535814732798952,
+          "w": -0.5795605715407447
+        }
+      }
+    },
+    {
+      "t": 26631,
+      "event": {
+        "timestamp": 30047,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34373641595450366,
+          "y": 0.6482201141852807,
+          "z": -0.3533356008184057,
+          "w": -0.5803532657844448
+        }
+      }
+    },
+    {
+      "t": 26718,
+      "event": {
+        "timestamp": 30135,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34312414607201314,
+          "y": 0.6487687658535516,
+          "z": -0.35412955346562724,
+          "w": -0.579618122730343
+        }
+      }
+    },
+    {
+      "t": 26780,
+      "event": {
+        "timestamp": 30197,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34484298416172293,
+          "y": 0.6492097173455983,
+          "z": -0.3527303502888262,
+          "w": -0.578957130678609
+        }
+      }
+    },
+    {
+      "t": 26838,
+      "event": {
+        "timestamp": 30255,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34415585160863355,
+          "y": 0.6490599610369965,
+          "z": -0.35381593769038233,
+          "w": -0.5788714874809988
+        }
+      }
+    },
+    {
+      "t": 26901,
+      "event": {
+        "timestamp": 30317,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34410366190883995,
+          "y": 0.6488934193032193,
+          "z": -0.35394742338135654,
+          "w": -0.5790088269859123
+        }
+      }
+    },
+    {
+      "t": 26929,
+      "event": {
+        "timestamp": 30345,
+        "type": "BATTERY",
+        "batteryLevel": 6
+      }
+    },
+    {
+      "t": 26989,
+      "event": {
+        "timestamp": 30405,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3450256857464399,
+          "y": 0.6489026409404512,
+          "z": -0.35321874651022206,
+          "w": -0.5788947709812675
+        }
+      }
+    },
+    {
+      "t": 27048,
+      "event": {
+        "timestamp": 30465,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34526373920610237,
+          "y": 0.6487681134612985,
+          "z": -0.3531509399069324,
+          "w": -0.5789449878772062
+        }
+      }
+    },
+    {
+      "t": 27111,
+      "event": {
+        "timestamp": 30527,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3450214938588422,
+          "y": 0.6482222005832793,
+          "z": -0.35358130409103034,
+          "w": -0.5794380112174814
+        }
+      }
+    },
+    {
+      "t": 27170,
+      "event": {
+        "timestamp": 30587,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3458147361872316,
+          "y": 0.6484637715703285,
+          "z": -0.3529682588417411,
+          "w": -0.5790684876996588
+        }
+      }
+    },
+    {
+      "t": 27260,
+      "event": {
+        "timestamp": 30676,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3450754959850431,
+          "y": 0.6491870333751218,
+          "z": -0.353879690071125,
+          "w": -0.5781420783193777
+        }
+      }
+    },
+    {
+      "t": 27319,
+      "event": {
+        "timestamp": 30735,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3461215233289682,
+          "y": 0.648710362572046,
+          "z": -0.35321392691599524,
+          "w": -0.578458882214338
+        }
+      }
+    },
+    {
+      "t": 27379,
+      "event": {
+        "timestamp": 30796,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34630831287490244,
+          "y": 0.64786067853504,
+          "z": -0.35327850137556255,
+          "w": -0.5792593496074905
+        }
+      }
+    },
+    {
+      "t": 27439,
+      "event": {
+        "timestamp": 30855,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3463751640071117,
+          "y": 0.6482382151462309,
+          "z": -0.3534066104079622,
+          "w": -0.5787186102960834
+        }
+      }
+    },
+    {
+      "t": 27530,
+      "event": {
+        "timestamp": 30946,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34532699288198565,
+          "y": 0.6480383848364316,
+          "z": -0.35462049552328556,
+          "w": -0.5788262467446456
+        }
+      }
+    },
+    {
+      "t": 27589,
+      "event": {
+        "timestamp": 31005,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34673957731455896,
+          "y": 0.6485393575340376,
+          "z": -0.35340411865246885,
+          "w": -0.5781642467089525
+        }
+      }
+    },
+    {
+      "t": 27650,
+      "event": {
+        "timestamp": 31067,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34582759386473194,
+          "y": 0.6486713124665737,
+          "z": -0.35493797425473284,
+          "w": -0.5776225741230768
+        }
+      }
+    },
+    {
+      "t": 27711,
+      "event": {
+        "timestamp": 31128,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34649353484319445,
+          "y": 0.6481697481688202,
+          "z": -0.3546254635769415,
+          "w": -0.5779783633091083
+        }
+      }
+    },
+    {
+      "t": 27799,
+      "event": {
+        "timestamp": 31215,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3464275347147534,
+          "y": 0.6477326690377864,
+          "z": -0.35480391527527605,
+          "w": -0.5783982489236794
+        }
+      }
+    },
+    {
+      "t": 27860,
+      "event": {
+        "timestamp": 31276,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3465540326280489,
+          "y": 0.6484742537143766,
+          "z": -0.35480823065288775,
+          "w": -0.5774881507007625
+        }
+      }
+    },
+    {
+      "t": 27917,
+      "event": {
+        "timestamp": 31333,
+        "type": "HARDWARE",
+        "hardwareName": "GoCube",
+        "gyroSupported": true
+      }
+    },
+    {
+      "t": 27936,
+      "event": {
+        "timestamp": 31352,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34563096302885915,
+          "y": 0.6482796923748441,
+          "z": -0.35578039516450227,
+          "w": -0.5776616555274476
+        }
+      }
+    },
+    {
+      "t": 28009,
+      "event": {
+        "timestamp": 31426,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34674160338124776,
+          "y": 0.6482985753220543,
+          "z": -0.3549347571201099,
+          "w": -0.5774950527130814
+        }
+      }
+    },
+    {
+      "t": 28069,
+      "event": {
+        "timestamp": 31485,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.345641579016212,
+          "y": 0.6476270307694529,
+          "z": -0.35603589503120514,
+          "w": -0.5782296856105283
+        }
+      }
+    },
+    {
+      "t": 28131,
+      "event": {
+        "timestamp": 31547,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34606121569067877,
+          "y": 0.648895350198794,
+          "z": -0.3557215817823974,
+          "w": -0.5767483122986171
+        }
+      }
+    },
+    {
+      "t": 28189,
+      "event": {
+        "timestamp": 31606,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.346487843322315,
+          "y": 0.6482813839326815,
+          "z": -0.35553675823526765,
+          "w": -0.5772963149195868
+        }
+      }
+    },
+    {
+      "t": 28279,
+      "event": {
+        "timestamp": 31696,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34613185620147674,
+          "y": 0.6476902937188206,
+          "z": -0.3560370603535063,
+          "w": -0.5778647187705629
+        }
+      }
+    },
+    {
+      "t": 28339,
+      "event": {
+        "timestamp": 31756,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3472900728187794,
+          "y": 0.6480506129940568,
+          "z": -0.3550551853624387,
+          "w": -0.5773697460612207
+        }
+      }
+    },
+    {
+      "t": 28400,
+      "event": {
+        "timestamp": 31817,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3463710922267265,
+          "y": 0.647191175855234,
+          "z": -0.35603157458715423,
+          "w": -0.5782838111704112
+        }
+      }
+    },
+    {
+      "t": 28458,
+      "event": {
+        "timestamp": 31875,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3470361231590685,
+          "y": 0.6474216892409049,
+          "z": -0.355779281300673,
+          "w": -0.5777821289381955
+        }
+      }
+    },
+    {
+      "t": 28548,
+      "event": {
+        "timestamp": 31964,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3464927686605855,
+          "y": 0.6473734664863735,
+          "z": -0.35707036685685883,
+          "w": -0.5773656633954312
+        }
+      }
+    },
+    {
+      "t": 28608,
+      "event": {
+        "timestamp": 32024,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3467389278918701,
+          "y": 0.6476821483263234,
+          "z": -0.35725543214110334,
+          "w": -0.5767568871105644
+        }
+      }
+    },
+    {
+      "t": 28669,
+      "event": {
+        "timestamp": 32086,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34784585904493953,
+          "y": 0.6469602802873098,
+          "z": -0.3562836738714823,
+          "w": -0.5775011669325811
+        }
+      }
+    },
+    {
+      "t": 28730,
+      "event": {
+        "timestamp": 32147,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3475257101288868,
+          "y": 0.6471779805971616,
+          "z": -0.3566357261051718,
+          "w": -0.5772326230342751
+        }
+      }
+    },
+    {
+      "t": 28821,
+      "event": {
+        "timestamp": 32237,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34771479605556743,
+          "y": 0.6478610829971501,
+          "z": -0.35658039222719695,
+          "w": -0.5763860352410469
+        }
+      }
+    },
+    {
+      "t": 28879,
+      "event": {
+        "timestamp": 32296,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34746806642754574,
+          "y": 0.648285044577031,
+          "z": -0.356945024072499,
+          "w": -0.5758321748398074
+        }
+      }
+    },
+    {
+      "t": 28939,
+      "event": {
+        "timestamp": 32356,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3478376438379489,
+          "y": 0.6473118536319854,
+          "z": -0.35676439651862046,
+          "w": -0.5768149643113394
+        }
+      }
+    },
+    {
+      "t": 29000,
+      "event": {
+        "timestamp": 32416,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3472837651219476,
+          "y": 0.6466325880157954,
+          "z": -0.35755553845654037,
+          "w": -0.5774204010231818
+        }
+      }
+    },
+    {
+      "t": 29090,
+      "event": {
+        "timestamp": 32506,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3481308264702969,
+          "y": 0.6468605802697123,
+          "z": -0.3569349780354045,
+          "w": -0.5770387671630949
+        }
+      }
+    },
+    {
+      "t": 29148,
+      "event": {
+        "timestamp": 32565,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34864007069905,
+          "y": 0.6470202083720356,
+          "z": -0.35658872190755164,
+          "w": -0.5767663603830478
+        }
+      }
+    },
+    {
+      "t": 29208,
+      "event": {
+        "timestamp": 32624,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34802865095350904,
+          "y": 0.6476316709240281,
+          "z": -0.35726131544647804,
+          "w": -0.5760326634984203
+        }
+      }
+    },
+    {
+      "t": 29298,
+      "event": {
+        "timestamp": 32714,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3480809599513085,
+          "y": 0.647554092191166,
+          "z": -0.35737453204205133,
+          "w": -0.5760180438611061
+        }
+      }
+    },
+    {
+      "t": 29331,
+      "event": {
+        "timestamp": 32748,
+        "type": "FACELETS",
+        "facelets": "UUUUUUUUURRRRRRRRRFFFFFFFFFDDDDDDDDDLLLLLLLLLBBBBBBBBB"
+      }
+    },
+    {
+      "t": 29359,
+      "event": {
+        "timestamp": 32776,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3486248134569645,
+          "y": 0.6464416262154482,
+          "z": -0.3570011023807815,
+          "w": -0.5771691054075315
+        }
+      }
+    },
+    {
+      "t": 29388,
+      "event": {
+        "timestamp": 32804,
+        "type": "FACELETS",
+        "facelets": "UUUUUUUUURRRRRRRRRFFFFFFFFFDDDDDDDDDLLLLLLLLLBBBBBBBBB"
+      }
+    },
+    {
+      "t": 29418,
+      "event": {
+        "timestamp": 32835,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34886925991653617,
+          "y": 0.6473585215556055,
+          "z": -0.3568787013902596,
+          "w": -0.5760683783620055
+        }
+      }
+    },
+    {
+      "t": 29480,
+      "event": {
+        "timestamp": 32897,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3481946216525565,
+          "y": 0.6470489343194039,
+          "z": -0.35761024443297684,
+          "w": -0.5763706230585866
+        }
+      }
+    },
+    {
+      "t": 29569,
+      "event": {
+        "timestamp": 32986,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34925266225018164,
+          "y": 0.6473280698954259,
+          "z": -0.35671219040048313,
+          "w": -0.5759734030806567
+        }
+      }
+    },
+    {
+      "t": 29631,
+      "event": {
+        "timestamp": 33047,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3483865022030846,
+          "y": 0.6470035040914428,
+          "z": -0.3576800698294217,
+          "w": -0.5762623347251794
+        }
+      }
+    },
+    {
+      "t": 29690,
+      "event": {
+        "timestamp": 33106,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34794955015280143,
+          "y": 0.6471702668015118,
+          "z": -0.3582211235890465,
+          "w": -0.5760029365646709
+        }
+      }
+    },
+    {
+      "t": 29749,
+      "event": {
+        "timestamp": 33165,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3484462581237973,
+          "y": 0.6466340807014004,
+          "z": -0.3578009304334904,
+          "w": -0.5765657508523265
+        }
+      }
+    },
+    {
+      "t": 29838,
+      "event": {
+        "timestamp": 33255,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34937402418955754,
+          "y": 0.6465926331474573,
+          "z": -0.3571392501384679,
+          "w": -0.576461025561629
+        }
+      }
+    },
+    {
+      "t": 29899,
+      "event": {
+        "timestamp": 33316,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3492433079518387,
+          "y": 0.6465770275894073,
+          "z": -0.3590871757004812,
+          "w": -0.5753465559920872
+        }
+      }
+    },
+    {
+      "t": 29959,
+      "event": {
+        "timestamp": 33375,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.35058766274962466,
+          "y": 0.6455361952058837,
+          "z": -0.35847496803296985,
+          "w": -0.5760789951913086
+        }
+      }
+    },
+    {
+      "t": 30020,
+      "event": {
+        "timestamp": 33436,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34949372220910135,
+          "y": 0.6449369807315607,
+          "z": -0.3595211837980259,
+          "w": -0.5767624705385677
+        }
+      }
+    },
+    {
+      "t": 30109,
+      "event": {
+        "timestamp": 33525,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3483242267899855,
+          "y": 0.644800297652657,
+          "z": -0.3604302820654668,
+          "w": -0.5770553014646099
+        }
+      }
+    },
+    {
+      "t": 30169,
+      "event": {
+        "timestamp": 33585,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3481484825131768,
+          "y": 0.6443865221647999,
+          "z": -0.360438234003368,
+          "w": -0.5776183200389852
+        }
+      }
+    },
+    {
+      "t": 30231,
+      "event": {
+        "timestamp": 33647,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34838334266234106,
+          "y": 0.645407961590676,
+          "z": -0.3603670448669425,
+          "w": -0.5763793912386608
+        }
+      }
+    },
+    {
+      "t": 30319,
+      "event": {
+        "timestamp": 33736,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3487655703874127,
+          "y": 0.6455587118075566,
+          "z": -0.36056636896468663,
+          "w": -0.5758545129573375
+        }
+      }
+    },
+    {
+      "t": 30379,
+      "event": {
+        "timestamp": 33796,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.34929606364920734,
+          "y": 0.6452164116383835,
+          "z": -0.3609127715248155,
+          "w": -0.5756995860880336
+        }
+      }
+    },
+    {
+      "t": 30438,
+      "event": {
+        "timestamp": 33854,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.35162680625909315,
+          "y": 0.644801999445035,
+          "z": -0.3592695380939717,
+          "w": -0.5757728455124118
+        }
+      }
+    },
+    {
+      "t": 30498,
+      "event": {
+        "timestamp": 33914,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3507781211609718,
+          "y": 0.6440817026860165,
+          "z": -0.36019416276090027,
+          "w": -0.5765185470501661
+        }
+      }
+    },
+    {
+      "t": 30588,
+      "event": {
+        "timestamp": 34005,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3514417259629648,
+          "y": 0.6452880960008925,
+          "z": -0.35975697904768356,
+          "w": -0.5750364357483793
+        }
+      }
+    },
+    {
+      "t": 30650,
+      "event": {
+        "timestamp": 34066,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.35230702137227704,
+          "y": 0.64444915051437,
+          "z": -0.3592162010694425,
+          "w": -0.5757853558248409
+        }
+      }
+    },
+    {
+      "t": 30710,
+      "event": {
+        "timestamp": 34126,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.35236138514079385,
+          "y": 0.6455984497139757,
+          "z": -0.3592704319082604,
+          "w": -0.5744291538083911
+        }
+      }
+    },
+    {
+      "t": 30769,
+      "event": {
+        "timestamp": 34185,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.35186916709821775,
+          "y": 0.6450425217873497,
+          "z": -0.3598786998332076,
+          "w": -0.5749743957240034
+        }
+      }
+    },
+    {
+      "t": 30861,
+      "event": {
+        "timestamp": 34277,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3527871180444762,
+          "y": 0.6451663205555135,
+          "z": -0.35914584599536453,
+          "w": -0.5747311801764431
+        }
+      }
+    },
+    {
+      "t": 30919,
+      "event": {
+        "timestamp": 34335,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.35297200755303987,
+          "y": 0.6444964371412771,
+          "z": -0.3590861944152092,
+          "w": -0.5754061255987628
+        }
+      }
+    },
+    {
+      "t": 30978,
+      "event": {
+        "timestamp": 34395,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3524284875646965,
+          "y": 0.6448756520376222,
+          "z": -0.3597045094280204,
+          "w": -0.5749280132843236
+        }
+      }
+    },
+    {
+      "t": 31038,
+      "event": {
+        "timestamp": 34455,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3525432283329385,
+          "y": 0.6447395669044115,
+          "z": -0.35975795274211064,
+          "w": -0.5749768503716534
+        }
+      }
+    },
+    {
+      "t": 31130,
+      "event": {
+        "timestamp": 34546,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3526657088945061,
+          "y": 0.6446176437022847,
+          "z": -0.3597581538029255,
+          "w": -0.575038313480033
+        }
+      }
+    },
+    {
+      "t": 31188,
+      "event": {
+        "timestamp": 34604,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.35266743993457517,
+          "y": 0.6449265181050449,
+          "z": -0.3598822037889926,
+          "w": -0.5746131415577561
+        }
+      }
+    },
+    {
+      "t": 31248,
+      "event": {
+        "timestamp": 34664,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3529173106248801,
+          "y": 0.6451196369374756,
+          "z": -0.3597653249682596,
+          "w": -0.5743160600657482
+        }
+      }
+    },
+    {
+      "t": 31309,
+      "event": {
+        "timestamp": 34726,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3530887435353826,
+          "y": 0.6451588609152135,
+          "z": -0.35975310250427556,
+          "w": -0.5741742667603079
+        }
+      }
+    },
+    {
+      "t": 31401,
+      "event": {
+        "timestamp": 34817,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.3535250147912765,
+          "y": 0.6444402725527594,
+          "z": -0.3595169641945185,
+          "w": -0.5748602886661331
+        }
+      }
+    },
+    {
+      "t": 31459,
+      "event": {
+        "timestamp": 34876,
+        "type": "GYRO",
+        "quaternion": {
+          "x": 0.35358954506054324,
+          "y": 0.6446910190417375,
+          "z": -0.35958155187637125,
+          "w": -0.5744989391991812
+        }
+      }
+    }
+  ]
+}

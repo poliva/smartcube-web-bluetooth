@@ -1,0 +1,38 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`decoded cube states (snapshots) > matches snapshot for GAN gen2 decoded moves and final facelets > gan-gen2 final facelets 1`] = `"UUUUUUUUURRRRRRRRRFFFFFFFFFDDDDDDDDDLLLLLLLLLBBBBBBBBB"`;
+
+exports[`decoded cube states (snapshots) > matches snapshot for GAN gen2 decoded moves and final facelets > gan-gen2 moves 1`] = `
+[
+  "R",
+  "U",
+  "R'",
+  "U'",
+  "R'",
+  "F",
+  "R",
+  "R",
+  "U'",
+  "R'",
+  "U'",
+  "R",
+  "U",
+  "R'",
+  "F'",
+  "R",
+  "U",
+  "R'",
+  "U'",
+  "R'",
+  "F",
+  "R",
+  "R",
+  "U'",
+  "R'",
+  "U'",
+  "R",
+  "U",
+  "R'",
+  "F'",
+]
+`;

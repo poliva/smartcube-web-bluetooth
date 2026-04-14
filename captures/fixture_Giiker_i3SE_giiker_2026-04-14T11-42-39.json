@@ -1,0 +1,977 @@
+{
+  "format": "smartcube-fixture",
+  "version": 1,
+  "capturedAt": "2026-04-14T11:42:39.201Z",
+  "device": {
+    "name": "Giiker i3SE",
+    "id": ""
+  },
+  "protocol": {
+    "id": "giiker",
+    "name": "Giiker"
+  },
+  "services": [],
+  "traffic": [
+    {
+      "t": 33300,
+      "op": "discover-service",
+      "service": "0000aaaa-0000-1000-8000-00805f9b34fb"
+    },
+    {
+      "t": 33303,
+      "op": "discover-service",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb"
+    },
+    {
+      "t": 33303,
+      "op": "discover-service",
+      "service": "0000180a-0000-1000-8000-00805f9b34fb"
+    },
+    {
+      "t": 33308,
+      "op": "discover-service",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb"
+    },
+    {
+      "t": 33308,
+      "op": "discover-char",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb"
+    },
+    {
+      "t": 33422,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "DA6D6A39FC105890D5DEF0A1494BA457554FA77A"
+    },
+    {
+      "t": 33545,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "DA6D6A39FC105890D5DEF0A1494BA457554FA77A"
+    },
+    {
+      "t": 33545,
+      "op": "read",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "DA6D6A39FC105890D5DEF0A1494BA457554FA77A"
+    },
+    {
+      "t": 33548,
+      "op": "discover-service",
+      "service": "0000aaaa-0000-1000-8000-00805f9b34fb"
+    },
+    {
+      "t": 33550,
+      "op": "discover-char",
+      "service": "0000aaaa-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aaab-0000-1000-8000-00805f9b34fb"
+    },
+    {
+      "t": 33550,
+      "op": "discover-char",
+      "service": "0000aaaa-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aaac-0000-1000-8000-00805f9b34fb"
+    },
+    {
+      "t": 33659,
+      "op": "write",
+      "service": "0000aaaa-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aaac-0000-1000-8000-00805f9b34fb",
+      "data": "B5"
+    },
+    {
+      "t": 33659,
+      "op": "marker",
+      "service": "marker",
+      "data": "connected"
+    },
+    {
+      "t": 33779,
+      "op": "notify",
+      "service": "0000aaaa-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aaab-0000-1000-8000-00805f9b34fb",
+      "data": "B555035500000F540F575565B51F"
+    },
+    {
+      "t": 36240,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "FAB8BFCAF93B79DC230517F64C0608BC4079A737"
+    },
+    {
+      "t": 36419,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "E7EBE6100A904AA0EE77110D2D8EBD52E38FA791"
+    },
+    {
+      "t": 36539,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "4059C319CA4440C5D21E1154E97999B70C6DA7A8"
+    },
+    {
+      "t": 36719,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "B627E0F163A6684C9A8BDDFA5D9D64B32439A76D"
+    },
+    {
+      "t": 36900,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "3086BB6F4CE1CDE0A2ABF8513C67BF57A873A7FE"
+    },
+    {
+      "t": 37020,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "3A034662B3E983DA7F91A87AB602797619EEA705"
+    },
+    {
+      "t": 37199,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "154374FEA389E9BE27D7A9B7BFD208CDD2B7A7FA"
+    },
+    {
+      "t": 37259,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "1266D5F5C11F4B75BB48C6264F2994978F2AA789"
+    },
+    {
+      "t": 37379,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "3C30740FCF331EA23EB611492BED31A2FA4BA702"
+    },
+    {
+      "t": 37560,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "C01FAF7CF79177194C7FA192EA8C7E5EA73DA7AA"
+    },
+    {
+      "t": 37740,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "58251EB6E07F36E782A73DE0A88A8C701371A777"
+    },
+    {
+      "t": 37859,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "23B3BDF51210912C6ACE8550C849C8D74BFEA731"
+    },
+    {
+      "t": 37980,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "1666C105C31F3A85BB48BE16537990777F2AA798"
+    },
+    {
+      "t": 38159,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "240A2F9D70F6DCCD4CF0E60CF1CE0C2DB6BCA7AD"
+    },
+    {
+      "t": 38400,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "936CCF51859907CA24CB890AD840254E0992A76E"
+    },
+    {
+      "t": 39360,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "77EAA266FE1996097F2D0035074E40A5BDE4A7F5"
+    },
+    {
+      "t": 39539,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "E522EDDA2739D89F031191AC6DD61F7E0EC1A70A"
+    },
+    {
+      "t": 39660,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "FCF6A47A9B24F66EF6C70D092C9283AD5944A7F9"
+    },
+    {
+      "t": 39779,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "D33A40FE523E77C8FD8694F1AB408BFBE609A782"
+    },
+    {
+      "t": 39959,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "A6422BCA4559E7AF0021A0DC6BE6017E20B3A70A"
+    },
+    {
+      "t": 40080,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "3B7A79E9EC105690E6EB5491440BAC77735FA7A7"
+    },
+    {
+      "t": 40200,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "9FB35911E8743C77C023A5AA238D046B2C04A771"
+    },
+    {
+      "t": 40260,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "50D1ED9ACA8F8221276241D9E9349F1CE7A7A738"
+    },
+    {
+      "t": 40379,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "BCCA444987A1E87D2D1D93AE578E890D2B79A79D"
+    },
+    {
+      "t": 40500,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "EF2F24EDA0D97B3BE050893C6C216DE87B17A7AE"
+    },
+    {
+      "t": 40679,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "CC0DB9F848C1C0C3108AA84EA15710DC00E3A765"
+    },
+    {
+      "t": 40800,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "427383CE8379C9AE2107FAF7BBA2EECDD299A7FA"
+    },
+    {
+      "t": 41040,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "882F5AC63D14D35FF23BE97ED9E6523E936EA709"
+    },
+    {
+      "t": 41220,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "6A04F3034D6322C14A2F332481E9DCF1BE21A7F2"
+    },
+    {
+      "t": 41700,
+      "op": "notify",
+      "service": "0000aadb-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aadc-0000-1000-8000-00805f9b34fb",
+      "data": "2B79C359CB6440D5C92E1194E9B937971C7FA78A"
+    },
+    {
+      "t": 44398,
+      "op": "marker",
+      "service": "marker",
+      "data": "probe:battery"
+    },
+    {
+      "t": 44400,
+      "op": "write",
+      "service": "0000aaaa-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aaac-0000-1000-8000-00805f9b34fb",
+      "data": "B5"
+    },
+    {
+      "t": 44760,
+      "op": "notify",
+      "service": "0000aaaa-0000-1000-8000-00805f9b34fb",
+      "characteristic": "0000aaab-0000-1000-8000-00805f9b34fb",
+      "data": "B555035500000F540F5755FEB31F"
+    },
+    {
+      "t": 49682,
+      "op": "marker",
+      "service": "marker",
+      "data": "probe:hardware"
+    },
+    {
+      "t": 51885,
+      "op": "marker",
+      "service": "marker",
+      "data": "probe:facelets"
+    }
+  ],
+  "events": [
+    {
+      "t": 33779,
+      "event": {
+        "timestamp": 36474,
+        "type": "BATTERY",
+        "batteryLevel": 85
+      }
+    },
+    {
+      "t": 36242,
+      "event": {
+        "timestamp": 38937,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 38937,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 36242,
+      "event": {
+        "timestamp": 38937,
+        "type": "FACELETS",
+        "facelets": "UUFUUFUUFRRRRRRRRRFFDFFDFFDDDBDDBDDBLLLLLLLLLUBBUBBUBB"
+      }
+    },
+    {
+      "t": 36421,
+      "event": {
+        "timestamp": 39116,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 0,
+        "move": "U",
+        "localTimestamp": 39116,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 36422,
+      "event": {
+        "timestamp": 39116,
+        "type": "FACELETS",
+        "facelets": "UUUUUUFFFUBBRRRRRRRRRFFDFFDDDBDDBDDBFFDLLLLLLLLLUBBUBB"
+      }
+    },
+    {
+      "t": 36541,
+      "event": {
+        "timestamp": 39236,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 39236,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 36542,
+      "event": {
+        "timestamp": 39236,
+        "type": "FACELETS",
+        "facelets": "UUUUUUFFLBRRBRRURRRRUFFUFFFDDRDDDDDDFFDLLLLLLBLLBBBBBB"
+      }
+    },
+    {
+      "t": 36721,
+      "event": {
+        "timestamp": 39415,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 1,
+        "move": "U'",
+        "localTimestamp": 39415,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 36721,
+      "event": {
+        "timestamp": 39415,
+        "type": "FACELETS",
+        "facelets": "UULUUFUUFRRUBRRURRFFDFFUFFFDDRDDDDDDBLLLLLLLLBRRBBBBBB"
+      }
+    },
+    {
+      "t": 36902,
+      "event": {
+        "timestamp": 39597,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 39597,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 36903,
+      "event": {
+        "timestamp": 39597,
+        "type": "FACELETS",
+        "facelets": "UUBUUBUUBURRRRRRBUFFLFFFFFFDDDDDUDDFBLLLLLLLLDRRDBBRBB"
+      }
+    },
+    {
+      "t": 37022,
+      "event": {
+        "timestamp": 39717,
+        "type": "MOVE",
+        "face": 2,
+        "direction": 0,
+        "move": "F",
+        "localTimestamp": 39717,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 37023,
+      "event": {
+        "timestamp": 39717,
+        "type": "FACELETS",
+        "facelets": "UUBUUBLLLURRURRBBUFFFFFFFFLRRUDDUDDFBLDLLDLLDDRRDBBRBB"
+      }
+    },
+    {
+      "t": 37202,
+      "event": {
+        "timestamp": 39896,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 39896,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 37202,
+      "event": {
+        "timestamp": 39896,
+        "type": "FACELETS",
+        "facelets": "UUFUUFLLLBUUBRRURRFFUFFUFFFRRRDDDDDDBLDLLDLLDLRRBBBBBB"
+      }
+    },
+    {
+      "t": 37260,
+      "event": {
+        "timestamp": 39955,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 39955,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 37260,
+      "event": {
+        "timestamp": 39955,
+        "type": "FACELETS",
+        "facelets": "UUUUUULLFUBBRRURRUFFRFFDFFDRRBDDBDDLBLDLLDLLDLRRFBBFBB"
+      }
+    },
+    {
+      "t": 37380,
+      "event": {
+        "timestamp": 40075,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 1,
+        "move": "U'",
+        "localTimestamp": 40075,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 37380,
+      "event": {
+        "timestamp": 40075,
+        "type": "FACELETS",
+        "facelets": "UUFUULUULFFRRRURRUBLDFFDFFDRRBDDBDDLLRRLLDLLDUBBFBBFBB"
+      }
+    },
+    {
+      "t": 37562,
+      "event": {
+        "timestamp": 40257,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 40257,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 37562,
+      "event": {
+        "timestamp": 40257,
+        "type": "FACELETS",
+        "facelets": "UUFUUFUUURUUFRRFRRBLFFFLFFLRRDDDDDDDLRRLLDLLDLBBBBBBBB"
+      }
+    },
+    {
+      "t": 37742,
+      "event": {
+        "timestamp": 40437,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 1,
+        "move": "U'",
+        "localTimestamp": 40437,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 37743,
+      "event": {
+        "timestamp": 40437,
+        "type": "FACELETS",
+        "facelets": "FFUUUUUUUBLFFRRFRRLRRFFLFFLRRDDDDDDDLBBLLDLLDRUUBBBBBB"
+      }
+    },
+    {
+      "t": 37859,
+      "event": {
+        "timestamp": 40554,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 40554,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 37859,
+      "event": {
+        "timestamp": 40554,
+        "type": "FACELETS",
+        "facelets": "FFRUULUULFFBRRLRRFLRDFFDFFDRRBDDBDDRLBBLLDLLDUUUUBBUBB"
+      }
+    },
+    {
+      "t": 37981,
+      "event": {
+        "timestamp": 40676,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 0,
+        "move": "U",
+        "localTimestamp": 40676,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 37982,
+      "event": {
+        "timestamp": 40676,
+        "type": "FACELETS",
+        "facelets": "UUFUUFLLRUUURRLRRFFFBFFDFFDRRBDDBDDRLRDLLDLLDLBBUBBUBB"
+      }
+    },
+    {
+      "t": 38161,
+      "event": {
+        "timestamp": 40856,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 40856,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 38162,
+      "event": {
+        "timestamp": 40856,
+        "type": "FACELETS",
+        "facelets": "UUUUUULLLULFURRURRFFFFFFFFRRRBDDDDDDLRDLLDLLDRBBBBBBBB"
+      }
+    },
+    {
+      "t": 38401,
+      "event": {
+        "timestamp": 41096,
+        "type": "MOVE",
+        "face": 2,
+        "direction": 1,
+        "move": "F'",
+        "localTimestamp": 41096,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 38402,
+      "event": {
+        "timestamp": 41096,
+        "type": "FACELETS",
+        "facelets": "UUUUUUUUUBLFRRRRRRFFRFFFFFFDDDDDDDDDLRLLLLLLLRBBBBBBBB"
+      }
+    },
+    {
+      "t": 39362,
+      "event": {
+        "timestamp": 42057,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 42057,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 39363,
+      "event": {
+        "timestamp": 42057,
+        "type": "FACELETS",
+        "facelets": "UURUUFUUFRRBRRLRRFFFDFFDFFDDDBDDBDDRLRLLLLLLLUBBUBBUBB"
+      }
+    },
+    {
+      "t": 39540,
+      "event": {
+        "timestamp": 42235,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 0,
+        "move": "U",
+        "localTimestamp": 42235,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 39540,
+      "event": {
+        "timestamp": 42235,
+        "type": "FACELETS",
+        "facelets": "UUUUUUFFRUBBRRLRRFRRBFFDFFDDDBDDBDDRFFDLLLLLLLRLUBBUBB"
+      }
+    },
+    {
+      "t": 39661,
+      "event": {
+        "timestamp": 42356,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 42356,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 39662,
+      "event": {
+        "timestamp": 42356,
+        "type": "FACELETS",
+        "facelets": "UUUUUUFFLBLFBRRURRRRUFFUFFRDDBDDDDDDFFDLLLLLLRRLBBBBBB"
+      }
+    },
+    {
+      "t": 39781,
+      "event": {
+        "timestamp": 42475,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 1,
+        "move": "U'",
+        "localTimestamp": 42475,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 39781,
+      "event": {
+        "timestamp": 42475,
+        "type": "FACELETS",
+        "facelets": "UULUUFUUFRRUBRRURRFFDFFUFFRDDBDDDDDDRRLLLLLLLBLFBBBBBB"
+      }
+    },
+    {
+      "t": 39960,
+      "event": {
+        "timestamp": 42655,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 42655,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 39961,
+      "event": {
+        "timestamp": 42655,
+        "type": "FACELETS",
+        "facelets": "UUBUUBUUBURRRRRRBUFFLFFFFFFDDDDDUDDRRRLLLLLLLDLFDBBBBB"
+      }
+    },
+    {
+      "t": 40082,
+      "event": {
+        "timestamp": 42776,
+        "type": "MOVE",
+        "face": 2,
+        "direction": 0,
+        "move": "F",
+        "localTimestamp": 42776,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 40082,
+      "event": {
+        "timestamp": 42776,
+        "type": "FACELETS",
+        "facelets": "UUBUUBLLLURRURRBBUFFFFFFFFLRRUDDUDDRRRDLLDLLDDLFDBBBBB"
+      }
+    },
+    {
+      "t": 40202,
+      "event": {
+        "timestamp": 42897,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 42897,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 40202,
+      "event": {
+        "timestamp": 42897,
+        "type": "FACELETS",
+        "facelets": "UUFUUFLLLBUUBRRURRFFUFFUFFRRRBDDDDDDRRDLLDLLDLLFBBBBBB"
+      }
+    },
+    {
+      "t": 40261,
+      "event": {
+        "timestamp": 42956,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 42956,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 40261,
+      "event": {
+        "timestamp": 42956,
+        "type": "FACELETS",
+        "facelets": "UUUUUULLRUBBRRURRUFFBFFDFFDRRBDDBDDLRRDLLDLLDLLFFBBFBB"
+      }
+    },
+    {
+      "t": 40380,
+      "event": {
+        "timestamp": 43075,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 1,
+        "move": "U'",
+        "localTimestamp": 43075,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 40381,
+      "event": {
+        "timestamp": 43075,
+        "type": "FACELETS",
+        "facelets": "UURUULUULFFBRRURRURRDFFDFFDRRBDDBDDLLLFLLDLLDUBBFBBFBB"
+      }
+    },
+    {
+      "t": 40502,
+      "event": {
+        "timestamp": 43197,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 43197,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 40503,
+      "event": {
+        "timestamp": 43197,
+        "type": "FACELETS",
+        "facelets": "UUFUUFUUUBUUFRRFRRRRRFFLFFLRRDDDDDDDLLFLLDLLDLBBBBBBBB"
+      }
+    },
+    {
+      "t": 40682,
+      "event": {
+        "timestamp": 43376,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 1,
+        "move": "U'",
+        "localTimestamp": 43376,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 40682,
+      "event": {
+        "timestamp": 43376,
+        "type": "FACELETS",
+        "facelets": "FFUUUUUUURRRFRRFRRLLFFFLFFLRRDDDDDDDLBBLLDLLDBUUBBBBBB"
+      }
+    },
+    {
+      "t": 40802,
+      "event": {
+        "timestamp": 43496,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 0,
+        "move": "R",
+        "localTimestamp": 43496,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 40802,
+      "event": {
+        "timestamp": 43496,
+        "type": "FACELETS",
+        "facelets": "FFFUULUULFFRRRRRRRLLDFFDFFDRRBDDBDDBLBBLLDLLDUUUUBBUBB"
+      }
+    },
+    {
+      "t": 41042,
+      "event": {
+        "timestamp": 43737,
+        "type": "MOVE",
+        "face": 0,
+        "direction": 0,
+        "move": "U",
+        "localTimestamp": 43737,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 41043,
+      "event": {
+        "timestamp": 43737,
+        "type": "FACELETS",
+        "facelets": "UUFUUFLLFUUURRRRRRFFRFFDFFDRRBDDBDDBLLDLLDLLDLBBUBBUBB"
+      }
+    },
+    {
+      "t": 41222,
+      "event": {
+        "timestamp": 43917,
+        "type": "MOVE",
+        "face": 1,
+        "direction": 1,
+        "move": "R'",
+        "localTimestamp": 43917,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 41223,
+      "event": {
+        "timestamp": 43917,
+        "type": "FACELETS",
+        "facelets": "UUUUUULLLURRURRURRFFFFFFFFFRRRDDDDDDLLDLLDLLDBBBBBBBBB"
+      }
+    },
+    {
+      "t": 41702,
+      "event": {
+        "timestamp": 44396,
+        "type": "MOVE",
+        "face": 2,
+        "direction": 1,
+        "move": "F'",
+        "localTimestamp": 44396,
+        "cubeTimestamp": null
+      }
+    },
+    {
+      "t": 41702,
+      "event": {
+        "timestamp": 44396,
+        "type": "FACELETS",
+        "facelets": "UUUUUUUUURRRRRRRRRFFFFFFFFFDDDDDDDDDLLLLLLLLLBBBBBBBBB"
+      }
+    },
+    {
+      "t": 44762,
+      "event": {
+        "timestamp": 47456,
+        "type": "BATTERY",
+        "batteryLevel": 85
+      }
+    },
+    {
+      "t": 49684,
+      "event": {
+        "timestamp": 52379,
+        "type": "HARDWARE",
+        "hardwareName": "Giiker i3SE",
+        "gyroSupported": false
+      }
+    },
+    {
+      "t": 51885,
+      "event": {
+        "timestamp": 54580,
+        "type": "FACELETS",
+        "facelets": "UUUUUUUUURRRRRRRRRFFFFFFFFFDDDDDDDDDLLLLLLLLLBBBBBBBBB"
+      }
+    }
+  ]
+}
