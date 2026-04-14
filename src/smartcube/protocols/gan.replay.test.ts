@@ -110,7 +110,15 @@ describe('ganProtocol.connect (capture replay)', () => {
     // This test intentionally avoids strict MOVE ordering assertions, because GAN gen4 fixtures
     // may include notify traffic that is consumed during init before external subscribers attach.
     // Driver-level correctness is covered by the unit decode test above.
-    expect(events.length).toBeGreaterThanOrEqual(0);
+    expect(
+      events.some((e) =>
+        e.type === 'MOVE' ||
+        e.type === 'FACELETS' ||
+        e.type === 'GYRO' ||
+        e.type === 'BATTERY' ||
+        e.type === 'HARDWARE'
+      )
+    ).toBe(true);
 
     await conn.disconnect();
   }, 20_000);

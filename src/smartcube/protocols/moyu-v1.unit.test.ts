@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import {
   MOYU_V1_SOLVED_STICKERS,
   MoyuV1Client,
@@ -39,16 +39,18 @@ describe('moyu-v1 helpers', () => {
 
 describe('MoyuV1Client.onReadNotification', () => {
   it('resolves a matching waiter when the final part arrives', async () => {
+    vi.useFakeTimers();
     const client = new MoyuV1Client({} as BluetoothRemoteGATTCharacteristic);
 
     const resolved: { value: DataView }[] = [];
+    const timeout = setTimeout(() => {}, 10_000);
     (client as any).waiters.push({
       command: 3,
       id: 1,
       sentAt: 123,
       resolve: (v: { sentAt: number; receivedAt: number; value: DataView }) => resolved.push({ value: v.value }),
       reject: () => {},
-      timeout: setTimeout(() => {}, 10_000),
+      timeout,
     });
 
     // Build a merged response payload:
@@ -68,6 +70,9 @@ describe('MoyuV1Client.onReadNotification', () => {
     expect(out.getUint8(0)).toBe(0xaa);
     expect(out.getUint8(1)).toBe(0xbb);
     expect(out.getUint8(2)).toBe(0xcc);
+
+    clearTimeout(timeout);
+    vi.useRealTimers();
   });
 });
 

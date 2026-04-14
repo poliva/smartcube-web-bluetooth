@@ -29,7 +29,7 @@ describe('CubieCube.fromFacelet', () => {
     expect(c.fromFacelet(bad)).toBe(-1);
   });
 
-  it('returns -1 for an empty string', () => {
+  it('throws for an empty string', () => {
     const c = new CubieCube();
     // Current implementation derives the center colors from fixed indices; empty input throws.
     expect(() => c.fromFacelet('')).toThrow();

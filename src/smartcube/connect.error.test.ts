@@ -5,6 +5,7 @@ import { registerProtocol, getRegisteredProtocols, type SmartCubeProtocol } from
 import type { SmartCubeCapabilities, SmartCubeCommand, SmartCubeConnection, SmartCubeEvent } from './types';
 import { FIXTURES, loadFixture } from '../test/fixtures';
 import { installMockBluetoothFromFixture } from '../test/bluetooth-mock';
+import * as addressHints from './attachment/address-hints';
 
 function clearProtocolRegistry(): SmartCubeProtocol[] {
   const reg = getRegisteredProtocols();
@@ -34,7 +35,10 @@ describe('connectSmartCube (error paths)', () => {
     const prev = clearProtocolRegistry();
     try {
       const fixture = await loadFixture(FIXTURES.ganGen2_small);
-      installMockBluetoothFromFixture(fixture, { deviceId: 'timeout-test' });
+      const { device } = installMockBluetoothFromFixture(fixture, { deviceId: 'timeout-test' });
+      const disconnectSpy = vi.spyOn(device.gatt!, 'disconnect');
+      const removeCachedMacSpy = vi.spyOn(addressHints, 'removeCachedMacForDevice');
+      const setCachedMacSpy = vi.spyOn(addressHints, 'setCachedMacForDevice');
 
       const caps: SmartCubeCapabilities = {
         gyroscope: false,
@@ -80,6 +84,10 @@ describe('connectSmartCube (error paths)', () => {
       );
       await vi.advanceTimersByTimeAsync(10_001);
       await expectation;
+
+      expect(removeCachedMacSpy).toHaveBeenCalledTimes(1);
+      expect(setCachedMacSpy).not.toHaveBeenCalled();
+      expect(disconnectSpy).toHaveBeenCalled();
     } finally {
       restoreProtocolRegistry(prev);
       vi.useRealTimers();
@@ -91,7 +99,10 @@ describe('connectSmartCube (error paths)', () => {
     const prev = clearProtocolRegistry();
     try {
       const fixture = await loadFixture(FIXTURES.ganGen2_small);
-      installMockBluetoothFromFixture(fixture, { deviceId: 'abort-test' });
+      const { device } = installMockBluetoothFromFixture(fixture, { deviceId: 'abort-test' });
+      const disconnectSpy = vi.spyOn(device.gatt!, 'disconnect');
+      const removeCachedMacSpy = vi.spyOn(addressHints, 'removeCachedMacForDevice');
+      const setCachedMacSpy = vi.spyOn(addressHints, 'setCachedMacForDevice');
 
       const controller = new AbortController();
 
@@ -128,6 +139,10 @@ describe('connectSmartCube (error paths)', () => {
       await vi.runAllTimersAsync();
 
       await expectation;
+
+      expect(removeCachedMacSpy).not.toHaveBeenCalled();
+      expect(setCachedMacSpy).not.toHaveBeenCalled();
+      expect(disconnectSpy).toHaveBeenCalled();
     } finally {
       restoreProtocolRegistry(prev);
       vi.useRealTimers();

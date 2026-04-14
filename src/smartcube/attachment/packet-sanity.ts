@@ -112,8 +112,8 @@ export function isValidQiYiDecryptedPacket(e: Uint8Array): boolean {
             if (![2, 3].includes(sub) || cmd < 7 || cmd > 100) {
                 return false;
             }
-            const n = (e[3]! << 24) | (e[4]! << 16) | (e[5]! << 8) | e[6]!;
-            if (n === 0 || n === 4294967295) {
+            const n = (((e[3]! << 24) | (e[4]! << 16) | (e[5]! << 8) | e[6]!) >>> 0);
+            if (n === 0 || n === 0xffffffff) {
                 return false;
             }
             return true;

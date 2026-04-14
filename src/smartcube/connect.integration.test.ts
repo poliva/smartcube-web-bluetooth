@@ -69,11 +69,12 @@ describe('connectSmartCube (capture replay)', () => {
         'connectSmartCube(Giiker)'
       );
 
-      const fixtureFacelets = fixture.events
-        .map((e) => e.event)
-        .filter((e) => e.type === 'FACELETS')
-        .map((e) => e.facelets as string);
-      expect(fixtureFacelets.length).toBeGreaterThan(0);
+      const expectedLastFacelets =
+        [...fixture.events]
+          .reverse()
+          .map((e) => e.event)
+          .find((e) => e.type === 'FACELETS')?.facelets ?? null;
+      expect(expectedLastFacelets).not.toBeNull();
 
       const events: SmartCubeEvent[] = [];
       const sub = conn.events$.subscribe({ next: (e) => events.push(e) });
@@ -81,9 +82,7 @@ describe('connectSmartCube (capture replay)', () => {
       await replayer.drainNotificationsAsync();
       sub.unsubscribe();
 
-      const observedFacelets = events.filter((e) => e.type === 'FACELETS').map((e) => (e as any).facelets as string);
-      expect(observedFacelets.length).toBeGreaterThan(0);
-      expect(fixtureFacelets).toContain(observedFacelets[0]);
+      expect(lastFacelets(events)).toBe(expectedLastFacelets);
 
       const disconnectEvents: SmartCubeEvent[] = [];
       const sub2 = conn.events$.subscribe({ next: (e) => disconnectEvents.push(e) });
