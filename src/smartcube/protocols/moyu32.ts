@@ -17,7 +17,9 @@ const CHRT_UUID_READ = '0783b03e-7735-b5a0-1760-a305d2795cb1';
 const CHRT_UUID_WRITE = '0783b03e-7735-b5a0-1760-a305d2795cb2';
 
 /** Opcode 172 + payload to enable gyro notifications (MoYu WCU). */
-const ENABLE_GYRO_PAYLOAD = [172, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const ENABLE_GYRO_PAYLOAD = Object.freeze([
+    172, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+]) as readonly number[];
 
 const BASE_KEY = [21, 119, 58, 92, 103, 14, 45, 31, 23, 103, 42, 19, 155, 103, 82, 87];
 const BASE_IV = [17, 35, 38, 37, 134, 42, 44, 59, 85, 6, 127, 49, 126, 103, 33, 87];
@@ -138,7 +140,7 @@ class Moyu32Connection implements SmartCubeConnection {
     readonly deviceMAC: string;
     readonly protocol: SmartCubeProtocolInfo = MOYU32_PROTOCOL;
     readonly capabilities: SmartCubeCapabilities = {
-        gyroscope: true,
+        gyroscope: false,
         battery: true,
         facelets: true,
         hardware: true,
@@ -217,6 +219,9 @@ class Moyu32Connection implements SmartCubeConnection {
         const decoded = this.encrypter ? this.encrypter.decrypt(raw) : raw;
 
         if ((decoded[0] | 0) === 171) {
+            if (!this.capabilities.gyroscope) {
+                this.capabilities.gyroscope = true;
+            }
             this.parseGyroData(decoded, timestamp);
             return;
         }
@@ -238,7 +243,7 @@ class Moyu32Connection implements SmartCubeConnection {
                 hardwareName: devName.trim(),
                 softwareVersion,
                 hardwareVersion,
-                gyroSupported: true
+                gyroSupported: this.capabilities.gyroscope
             });
         } else if (msgType === 163) { // Facelets state
             const seq = parseInt(bits.slice(152, 160), 2);
@@ -383,8 +388,16 @@ class Moyu32Connection implements SmartCubeConnection {
         await this.sendSimpleRequest(161); // Request cube info
         await this.sendSimpleRequest(163); // Request cube status (facelets)
         await this.sendSimpleRequest(164); // Request battery level
+
+        // Some MoYu32 variants require an extra request burst before
+        // gyro enable + steady-state status updates begin.
+        await this.sendSimpleRequest(161);
+        await this.sendSimpleRequest(163);
+        await this.sendSimpleRequest(164);
+
         this.batteryInterval = setInterval(this.pollBattery, 60_000);
-        await this.sendRequest(ENABLE_GYRO_PAYLOAD.slice());
+        await this.sendRequest(Array.from(ENABLE_GYRO_PAYLOAD));
+        await this.sendSimpleRequest(163); // Refresh cube status after enabling gyro notifications
     }
 
     async sendCommand(command: SmartCubeCommand): Promise<void> {
