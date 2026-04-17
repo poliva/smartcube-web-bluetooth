@@ -69,10 +69,17 @@ export async function probeMoyu32Mac(
         await writeGattCharacteristicValue(writeChrct, new Uint8Array(enc).buffer);
     };
 
-    try {
+    const sendInitBurst = async (): Promise<void> => {
         await sendCmd(161);
         await sendCmd(163);
         await sendCmd(164);
+    };
+
+    try {
+        await sendInitBurst();
+        // Some MoYu32 variants do not begin steady-state status updates until
+        // they receive the same startup request burst a second time.
+        await sendInitBurst();
     } catch {
         stopped = true;
         readChrct.removeEventListener('characteristicvaluechanged', onNotify);
