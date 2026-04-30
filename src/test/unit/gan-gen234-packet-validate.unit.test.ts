@@ -109,13 +109,14 @@ describe('isValidGanGen2Packet', () => {
     expect(isValidGanGen2Packet(e)).toBe(false);
   });
 
-  it('returns false for type 4 packet when parity bit-sum is odd', () => {
+  it('accepts type 4 packet with odd EO bit-sum (the 12th EO bit, not transmitted, carries the parity)', () => {
     const e = bytes16();
     // i=4 => 0x40
     e[0] = 0x40;
-    // parity bits are at offsets 91..101; set only the first to 1 => odd
+    // Transmitted EO bits are at offsets 91..101. Setting only the first to 1
+    // gives an odd sum, which is valid: it just means EO[11] = 1.
     setBit(e, 91, 1);
-    expect(isValidGanGen2Packet(e)).toBe(false);
+    expect(isValidGanGen2Packet(e)).toBe(true);
   });
 });
 

@@ -49,9 +49,9 @@ export function isValidGanGen2Packet(e: Uint8Array | number[]): boolean {
             let x = 0;
             for (let j = 0; j < 11; j++) x += t.getBitWord(47 + 4 * j, 4);
             if (x > 66) return false;
-            let n = 0;
-            for (let j = 0; j < 11; j++) n += t.getBitWord(91 + j, 1);
-            if (n % 2 !== 0) return false;
+            // The cube transmits 11 of 12 EOs; the 12th is reconstructed from the
+            // EO parity invariant. The 11-bit window can sum to either parity, so
+            // there is nothing to validate here without knowing the 12th bit.
         } else if (i === 9) {
             if (t.getBitWord(8, 8) > 100) return false;
         } else if (i === 5) {
