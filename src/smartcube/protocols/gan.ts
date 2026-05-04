@@ -113,10 +113,21 @@ class GanSmartCubeConnection implements SmartCubeConnection {
         this.ganConn = ganConn;
         this.deviceMac = mac;
         this.protocol = protocol;
-        this.capabilities = capabilities ?? DEFAULT_GAN_CAPABILITIES;
+        const base = capabilities ? { ...capabilities } : { ...DEFAULT_GAN_CAPABILITIES };
+        if (!capabilities && ganConn.deviceName?.startsWith('AiCube')) {
+            base.gyroscope = false;
+        }
+        this.capabilities = base;
         this.events$ = new Subject<SmartCubeEvent>();
         ganConn.events$.subscribe({
             next: (event) => {
+                if (
+                    event.type === 'HARDWARE' &&
+                    this.protocol.id === 'gan-gen2' &&
+                    typeof event.gyroSupported === 'boolean'
+                ) {
+                    this.capabilities.gyroscope = event.gyroSupported;
+                }
                 if (event.type === 'BATTERY') {
                     const batteryLevel = Math.min(100, Math.max(0, Math.round(event.batteryLevel)));
                     const forceEmission = this.forceNextBatteryEmission;

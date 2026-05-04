@@ -81,6 +81,7 @@ describe('ganProtocol.connect (capture replay)', () => {
     const expectedLast = fixtureExpectedLastFacelets(fixture);
     expect(moves(events).slice(0, expectedMoves.length)).toEqual(expectedMoves);
     expect(lastFacelets(events)).toBe(expectedLast);
+    expect(conn.capabilities.gyroscope).toBe(false);
 
     await conn.disconnect();
   }, 20_000);
