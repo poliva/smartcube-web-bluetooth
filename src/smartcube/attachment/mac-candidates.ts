@@ -55,6 +55,17 @@ export function buildMoyu32MacCandidatesFromName(deviceName: string | null | und
     }
     const t = deviceName.trim();
 
+    const my22 = /^WCU_MY22_([0-9A-Fa-f]{4})$/.exec(t);
+    if (my22) {
+        const x = my22[1]!.toUpperCase();
+        const a = `${x.slice(0, 2)}:${x.slice(2, 4)}`;
+        // Weipo V5 AI observed at CF:30:16:01:<name suffix>.
+        // Candidates are validated by the encrypted MoYu32 probe before use.
+        for (const mid of ['01', '00', '02'] as const) {
+            pushUnique(out, seen, `CF:30:16:${mid}:${a}`);
+        }
+    }
+
     const my32 = /^WCU_MY32_([0-9A-Fa-f]{4})$/.exec(t);
     if (my32) {
         const x = my32[1]!.toUpperCase();

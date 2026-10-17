@@ -37,13 +37,14 @@ If you are upgrading from the original [gan-web-bluetooth](https://afedotov.gith
 
 Via the generic Smart Cube API (`connectSmartCube`) this library supports:
 
-- GAN Smart Cubes (Gen1 / Gen2 / Gen3 / Gen4), including GAN 251 UI (2×2)
+- All GAN 2x2 and 3x3 Smart Cubes (Gen1 / Gen2 / Gen3 / Gen4), including GAN 251 UI (2×2)
 - Giiker / Mi Smart / Hi- cubes
 - GoCube / Rubik’s Connected
-- MoYu smart cubes:
+- All MoYu 2x2 and 3x3 smart cubes:
   - MoYu AI 2023 (GAN Gen2 protocol)
   - MoYu MHC smart cubes
   - MoYu WRM smart cubes (`WCU_MY3`)
+  - MoYu Weipo V5 AI 2x2 (`WCU_MY22`)
 - QiYi Smart Cubes and XMD Tornado V4
 
 
@@ -99,6 +100,19 @@ existing commands. Connecting does not reset the cube's state.
 The firmware reports moves on the U/R/F axes: physical D/L/B turns share the
 opposite-face codes. Gyroscope data describes orientation and does not resolve
 these faces. Use U/R/F scrambles when working directly with reported moves.
+
+### MoYu Weipo V5 AI (2×2)
+
+`WCU_MY22_` devices use the MoYu32 driver with 24-character URFDLB facelets.
+MY22 turn packets contain six timing entries and six 3-bit move codes, ordered
+F/F′, U/U′, R/R′.
+Notifications carry history for recovering up to six turns after dropped packets.
+
+The firmware uses U/R/F axis codes for opposite-face turns too.
+The driver preserves the reported U/R/F notation and updates its 24-sticker
+state in that frame. Use U/R/F scrambles when comparing moves or intermediate
+states in a fixed face orientation. An explicit facelet request after the
+complete sequence reported solved, matching the computed state.
 
 ### GAN-specific Smart Cube API (legacy)
 

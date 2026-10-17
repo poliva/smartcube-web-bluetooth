@@ -1,0 +1,1633 @@
+{
+  "format": "smartcube-fixture",
+  "version": 1,
+  "capturedAt": "2026-10-16",
+  "device": {
+    "name": "WCU_MY22_1037",
+    "id": "",
+    "mac": "CF:30:16:01:10:37"
+  },
+  "protocol": {
+    "id": "moyu32",
+    "name": "MoYu32"
+  },
+  "scenario": "MY22 initialization and orientation",
+  "notes": "Reconstructed from user-provided traffic-log.txt, starting after MAC probing. Full service/characteristic UUIDs inferred from the prior raw GATT export; wall-clock capture time unavailable. No decoded events were exported. User reports starting solved and turning faces; this trace contains no opcode 165 move packets.",
+  "services": [],
+  "traffic": [
+    {
+      "t": 13507,
+      "op": "discover-service",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0"
+    },
+    {
+      "t": 13507,
+      "op": "discover-char",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1"
+    },
+    {
+      "t": 13507,
+      "op": "discover-char",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb2"
+    },
+    {
+      "t": 13566,
+      "op": "write",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb2",
+      "data": "BBA28A68A1B41102FC2CA8714D34B4689E53DC70"
+    },
+    {
+      "t": 13566,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "50D5F653CE55D0875F6100D8CE44E93277FE383C"
+    },
+    {
+      "t": 13625,
+      "op": "write",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb2",
+      "data": "EC7B65E7EE00F5C5EA99A275ADF21BE0AA3074B2"
+    },
+    {
+      "t": 13625,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "DFDE77C654D803DC1E14A922722691E9AF381E85"
+    },
+    {
+      "t": 13626,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "149C4D169CCAEF7B181F151CF9FC227B707FBC19"
+    },
+    {
+      "t": 13684,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "665308B628F2BAD126198E50CC2CD68BA06ABC4D"
+    },
+    {
+      "t": 13686,
+      "op": "write",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb2",
+      "data": "C4A6081B4309377725BA4716EF1A84BEBEE14A09"
+    },
+    {
+      "t": 13686,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "774C1428BA65381DD75139B7A25B9DEB5397A8E1"
+    },
+    {
+      "t": 13716,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "3E0FE131C5C87C47FDEE4DE215A43F97EE933C14"
+    },
+    {
+      "t": 13748,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "66A61526921B5E83112E92BDF5F7FBBC53A123FA"
+    },
+    {
+      "t": 13749,
+      "op": "write",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb2",
+      "data": "BBA28A68A1B41102FC2CA8714D34B4689E53DC70"
+    },
+    {
+      "t": 13776,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "B4D9890120BCD113E9D19E964330808366E9AE1A"
+    },
+    {
+      "t": 13807,
+      "op": "write",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb2",
+      "data": "EC7B65E7EE00F5C5EA99A275ADF21BE0AA3074B2"
+    },
+    {
+      "t": 13807,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "DFDE77C654D803DC1E14A922722691E9AF381E85"
+    },
+    {
+      "t": 13836,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "8DB941271608E04328C6543B1FAEB8A463392191"
+    },
+    {
+      "t": 13866,
+      "op": "write",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb2",
+      "data": "C4A6081B4309377725BA4716EF1A84BEBEE14A09"
+    },
+    {
+      "t": 13866,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "665308B628F2BAD126198E50CC2CD68BA06ABC4D"
+    },
+    {
+      "t": 13866,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "CB8449B3B03C70EE9C6FC9D9106AC875484CD5CE"
+    },
+    {
+      "t": 13925,
+      "op": "write",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb2",
+      "data": "844C54034A0A0C26A1AD91E27DDF39F784E07624"
+    },
+    {
+      "t": 13926,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "66A61526921B5E83112E92BDF5F7FBBC53A123FA"
+    },
+    {
+      "t": 13926,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "CD7C66FF23728A9A64BB36E6805E55A359CF9ABA"
+    },
+    {
+      "t": 13985,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "D199D207EAE0C9552DF6D9F8BBAD9C30DEE2BA20"
+    },
+    {
+      "t": 13988,
+      "op": "write",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb2",
+      "data": "EC7B65E7EE00F5C5EA99A275ADF21BE0AA3074B2"
+    },
+    {
+      "t": 13988,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "23A46A211531DD7D56585507BA947335A3CA8D44"
+    },
+    {
+      "t": 14045,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "7892A12DD0B0182061A04922F4C74FA8075BAE9D"
+    },
+    {
+      "t": 14048,
+      "op": "write",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb2",
+      "data": "EC7B65E7EE00F5C5EA99A275ADF21BE0AA3074B2"
+    },
+    {
+      "t": 14048,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "665308B628F2BAD126198E50CC2CD68BA06ABC4D"
+    },
+    {
+      "t": 14077,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "78F5707387485568A2DAD38371791D10353E31A0"
+    },
+    {
+      "t": 14107,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "665308B628F2BAD126198E50CC2CD68BA06ABC4D"
+    },
+    {
+      "t": 14137,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "DED3A4DD816FAF9BDB80586C332555793305BDE8"
+    },
+    {
+      "t": 14195,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "254E30C6D41BEB7CE9D5560FBE3135BF4E9C6433"
+    },
+    {
+      "t": 14225,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "135939C09225066DE8C182FC0E41D1DE43A333D2"
+    },
+    {
+      "t": 14286,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "B647B16F62443C87449AA89AB60BED172E2F37F5"
+    },
+    {
+      "t": 14350,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "FD65A3D17F9A2876B9D8168A03A4DD6D5D2738B5"
+    },
+    {
+      "t": 14374,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "D61ADC2A7F16D8E8B434E056B681470F3CBDC234"
+    },
+    {
+      "t": 14435,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "7760FB6537CED581CFFBE4E290347C867EDC034B"
+    },
+    {
+      "t": 14494,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "B4C939A4F94C4BC9636C44D3A55D50A32C657682"
+    },
+    {
+      "t": 14525,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "AF1FE4494069B9992068272AED8D6E31745F8938"
+    },
+    {
+      "t": 14584,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "B3A14F24BE611335DE34E8B7981CB014170B46EC"
+    },
+    {
+      "t": 14644,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "14A4D17FC6616C853D1F93EB1B1F717F580CD843"
+    },
+    {
+      "t": 14675,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "A4E258CA95143C819DD5A9FBCD5DEE98A50BF389"
+    },
+    {
+      "t": 14736,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "32646D1BB094DB12FC81722BD6C6F7A2055823FD"
+    },
+    {
+      "t": 14795,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "1C6DB4250CFF0DF5E252C970EB002C85AD5D666F"
+    },
+    {
+      "t": 14825,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "660ED8D8DF977402CAFEEE3B70902BDD665C4C90"
+    },
+    {
+      "t": 14885,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "6EF3F06E71A8D88CF8F426711A67432842A3FCF9"
+    },
+    {
+      "t": 14945,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "BE9B3900B5165C2964F4ED8C8CB66BA8F62A916F"
+    },
+    {
+      "t": 14975,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "E8C9135D3ABA16D7B38809F2A063BB245C5260A0"
+    },
+    {
+      "t": 15038,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "13D6922CAB2F7F77DB07CA745C2C98C58EF62D9E"
+    },
+    {
+      "t": 15096,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "E2401B79E1E0F88102ACAF51E2395C70E5577A13"
+    },
+    {
+      "t": 15124,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "750CD3D791425B9804BC9012A92F7711E98E9EF7"
+    },
+    {
+      "t": 15185,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "522B643018DBF6CABDF72FFAD87ACBD0FE748C0A"
+    },
+    {
+      "t": 15244,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "40321170E034BF5C9729836815783B364127FE61"
+    },
+    {
+      "t": 15274,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "13625F93735414F245C86BC37B1080F0062AACDC"
+    },
+    {
+      "t": 15336,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "2CD83C21D5A3A9DCF59B7D2A5269C1FFBED57CFC"
+    },
+    {
+      "t": 15394,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "96FCC42E9FD559C2784AD73C94B7A8D8E43F238A"
+    },
+    {
+      "t": 15424,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "029FA36A1C8FEC8122E9F095C45E877A66F3426A"
+    },
+    {
+      "t": 15484,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "697238BF62BAC45EBC09CB667F70F9D5FA252406"
+    },
+    {
+      "t": 15544,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "9ADE993AD68442AD76CE72568B245F0FB1ACFCC2"
+    },
+    {
+      "t": 15575,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "43C184F793D13F9D186EB2973D8E597138641EBF"
+    },
+    {
+      "t": 15635,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "030410C420C0799DC100D25300F47D1C6B2D1219"
+    },
+    {
+      "t": 15695,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "EA623FFE904DFBAB6FD807504E7B89DA37D77296"
+    },
+    {
+      "t": 15725,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "DD5A6B2659610BE232BEF34409EF865F7D32DA07"
+    },
+    {
+      "t": 15784,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "4013629B428DCD2C6A725158F02B2F5469BF7DFD"
+    },
+    {
+      "t": 15845,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "6F246DB22CE133A5D45B8A6E007663AC64BC03D9"
+    },
+    {
+      "t": 15875,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "4FA1E91FD890A3192D86A07642D4AC887B2993EB"
+    },
+    {
+      "t": 15935,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "266389B37BD11B5BEE630BE646CC9201429421C5"
+    },
+    {
+      "t": 15995,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "0D02D0639F0E849105727282A979DDD4F090BC65"
+    },
+    {
+      "t": 16025,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "F639E82DF002F23F066027D4C4A468924C3911FA"
+    },
+    {
+      "t": 16086,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "BA2E0DF34512FA1E963F7ACCF0B4859B1BAB043E"
+    },
+    {
+      "t": 16146,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "95BC4A9CEBA0CBBA534D0899FEF434A6A32B11EF"
+    },
+    {
+      "t": 16174,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "921E4411886D49786593FD942F0CD9995649FBD0"
+    },
+    {
+      "t": 16236,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "703A1B90609552501CA98A6CFBE5513CF06E767F"
+    },
+    {
+      "t": 16296,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "820C42FE768E8AB878794194A05DA6F02B6F7612"
+    },
+    {
+      "t": 16324,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "83A5733BBF1E771825C5D63FE4DEE3D3CBDC7E70"
+    },
+    {
+      "t": 16386,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "7F79C6BCC37137521F0366B3117693D79FE6AAC9"
+    },
+    {
+      "t": 16446,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "C2C0387FEC1789D4334173552CDF214EA957A2F2"
+    },
+    {
+      "t": 16474,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "A815CE807040A52F48143CD7EB763E6DA8B7CFA9"
+    },
+    {
+      "t": 16534,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "B19847CF231B4C35D6E263B3175E1AAA63731B89"
+    },
+    {
+      "t": 16595,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "0BE03A7714A7ADBF7698E2AE5AF4A40CB42C7B2E"
+    },
+    {
+      "t": 16625,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "69E651CC052861092890DC69E3B54C55B7EDB793"
+    },
+    {
+      "t": 16684,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "0203160D1A533008F88F1C55D591CF7E455D3FEA"
+    },
+    {
+      "t": 16744,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "933C12FF8C4012A18D15D64B44319E1FEBD14147"
+    },
+    {
+      "t": 16774,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "DD708A217FC8D9E2C45DB9913DBC0CFAF5A8F87C"
+    },
+    {
+      "t": 16835,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "FE16C4AC2C1FFA92BDE31EDE5E8114718C99D27E"
+    },
+    {
+      "t": 16895,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "FF9A742BC1A229525BB58520548E6BBF223B7390"
+    },
+    {
+      "t": 16924,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "2F941F75DFBCBC8FFEF70A46156FA65BE11B5A8F"
+    },
+    {
+      "t": 16987,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "6E0BE7727D03AC514CB7889477D250B2A5295D13"
+    },
+    {
+      "t": 17045,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "EEDCBE4FB9FBAB5981A182E13096B0EA55DD7EA5"
+    },
+    {
+      "t": 17075,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "27EE885E7A89319D29371C6E8424A9C447A5960D"
+    },
+    {
+      "t": 17135,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "67AC2AA11143AB7B314180D783370A2D2782FF11"
+    },
+    {
+      "t": 17194,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "627DE3F408A841E89AB2F50CAB9A78F65E40A98C"
+    },
+    {
+      "t": 17225,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "C3CBCA4EE64136CDAED8CB53DC7A76F0A512A4E3"
+    },
+    {
+      "t": 17284,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "01BCE0C073D338777019694A90BA7B872212550C"
+    },
+    {
+      "t": 17345,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "E0868B474A0D1CCF73A3BD39F8A12F3F28E560D5"
+    },
+    {
+      "t": 17375,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "B67EDF9750C403ADEA726D73D28F978BC403A2F8"
+    },
+    {
+      "t": 17435,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "C1AEC6962A23B028B3818075F6649778CB661AAD"
+    },
+    {
+      "t": 17496,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "01EB511052514969E73DB06B2C1C7891A3300927"
+    },
+    {
+      "t": 17525,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "9936B11533E79971C235B8D494D4CF7D4E705BB2"
+    },
+    {
+      "t": 17585,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "A6C12FDC864B803BCA7689F44F6059784E648310"
+    },
+    {
+      "t": 17645,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "5F2AFC4E9593F6E0CB18AC154860D2B6155C9C8C"
+    },
+    {
+      "t": 17676,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "4FDAD264B3FC05DBD82F6C2CAED51A47532084A5"
+    },
+    {
+      "t": 17737,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "5F9945F4D0BD7A3FDB0C42DE142777E7227131AF"
+    },
+    {
+      "t": 17797,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "27BA0666C1932EC16D9A83719028FEDD98D922F3"
+    },
+    {
+      "t": 17825,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "8AAB6AB8074BA20893C7A457AB80300D0CEFB65E"
+    },
+    {
+      "t": 17886,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "4F6718AB84E67936DBB29453BC4E7385E5ED725C"
+    },
+    {
+      "t": 17945,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "09C174EA766F6D90EDDD5D564B9F038C81A5B0A4"
+    },
+    {
+      "t": 17974,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "A48A0FC3E65E4B2FD175227472AAAD501B07C41B"
+    },
+    {
+      "t": 18036,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "99A34B986A9BD9A50349E0ADFDB1E38C1488F499"
+    },
+    {
+      "t": 18096,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "BFF5C18A4EBF15D5ACC157ADA677B5D0765982F0"
+    },
+    {
+      "t": 18124,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "002807C3AAABA2AB7760C6CCA719CE75115D8DFF"
+    },
+    {
+      "t": 18188,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "39E2F5113667142EF6D92B5BAB00E1C6B02FFE92"
+    },
+    {
+      "t": 18244,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "B6C3370D47FF9B994A85A370289843AF2D5B8DA5"
+    },
+    {
+      "t": 18274,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "5DDFC5E352141F58A7647F38EBB7C50827079B5E"
+    },
+    {
+      "t": 18337,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "5438E57C7ECD375349D4042542D969AA49DEAA22"
+    },
+    {
+      "t": 18395,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "466BB0B1F7786AE3E9574836A5761600B4B52B97"
+    },
+    {
+      "t": 18424,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "CE3068DB96D3E36B1251896412FD8703BC5099B1"
+    },
+    {
+      "t": 18487,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "178427EB4C85F36E70C1726ED3AC21559D00F078"
+    },
+    {
+      "t": 18545,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "843140CCAEAECC171124B23992B50AFC7DCF87EF"
+    },
+    {
+      "t": 18574,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "50E011AA389AC4CE8087EA00574EA30F855D0D90"
+    },
+    {
+      "t": 18634,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "14CC8B6DA749616DA0FC5B21DB0A31C3DC247C77"
+    },
+    {
+      "t": 18694,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "5A3C10C56908CC4DB074256AC29F0093654C67C7"
+    },
+    {
+      "t": 18724,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "C7FD4160143A595D72FB3DEA11A3D55DA9223FF4"
+    },
+    {
+      "t": 18788,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "477871F760E8E564AC473DF596116561B48115BE"
+    },
+    {
+      "t": 18844,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "9382DC9E3A8AB889651EE8C51EA7C014B95FB970"
+    },
+    {
+      "t": 18874,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "7C83ABDA52E4A5FD93F6FD8FC777EDEB00D36ABC"
+    },
+    {
+      "t": 18937,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "B69D3F75076235677ABEAEAAB758927A85C7EB92"
+    },
+    {
+      "t": 18996,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "BE630C886503793C54091C46178EDAC4F21F7492"
+    },
+    {
+      "t": 19025,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "C7547E0EF5E918EBD5A46B8A1CE0FA93B4EF895A"
+    },
+    {
+      "t": 19085,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "F22AAB463029889AFF30F033703C3282875B6199"
+    },
+    {
+      "t": 19145,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "A55819F8DB68F9E40C6743C50ECA184B348ABC0A"
+    },
+    {
+      "t": 19176,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "35BC623FE6A425EAB2703262A8E58AC1F15ED4B3"
+    },
+    {
+      "t": 19239,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "0767B6B36F3272F075F1E1E48FA965D65EB2E00B"
+    },
+    {
+      "t": 19296,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "0474FE9F368F603414B6FE0CD3D14974F9A91E88"
+    },
+    {
+      "t": 19325,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "E86934EB8ABF7E33A35F2DA6FC363D3DE16018F6"
+    },
+    {
+      "t": 19388,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "34F378CD3933D91F93014C770E03E58B6DAEA502"
+    },
+    {
+      "t": 19445,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "7D3C569DF536E08A962ED98782F8E9EF1335C360"
+    },
+    {
+      "t": 19476,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "14FE334B78962047DB5A13A7842FAA7A0FC87191"
+    },
+    {
+      "t": 19537,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "2BD52782345A044F5679301A562DF3DD36370FF9"
+    },
+    {
+      "t": 19596,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "0F7835555DC4C6D84975767579916E081BA21ADB"
+    },
+    {
+      "t": 19625,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "B4FB263A523536EB545629DE0EE91DDB9FD010B0"
+    },
+    {
+      "t": 19689,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "B9778F1C13030BA3ADA28E79AA4B4DED5073E16D"
+    },
+    {
+      "t": 19744,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "141AD7472AC8E72A2E2E03604DA004A4C8F812EE"
+    },
+    {
+      "t": 19781,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "B7BCC89558CF3553E489BB78CD701F2E4F9FC112"
+    },
+    {
+      "t": 19834,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "DB1622C1FC71D07A91E17A92F1CF237CEE081661"
+    },
+    {
+      "t": 19895,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "EF945C524A83C32B1A7DCE12594FF539E19AF281"
+    },
+    {
+      "t": 19924,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "CFD475576EE72D096F3C006E03CB5E2A2615F373"
+    },
+    {
+      "t": 19989,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "B2A5E614A36906899034877CC56065F7DF4BD38F"
+    },
+    {
+      "t": 20044,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "2781656ED6B7502009351F812E7DC6447CAC0774"
+    },
+    {
+      "t": 20074,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "3A07372373073BB3064A16CA9155E24710339A0F"
+    },
+    {
+      "t": 20135,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "AB2FAEF556A3A2D8A661D06AFCC5664B43E8B663"
+    },
+    {
+      "t": 20195,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "C300E7CF887081D0E0ED6ED6927669BB0CBB42AC"
+    },
+    {
+      "t": 20227,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "2861CF7D7DBD07567A57AED6AB130F60C8DB03A4"
+    },
+    {
+      "t": 20288,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "0ECD66A453F49B566B0641E43AD45E776A602C80"
+    },
+    {
+      "t": 20345,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "274E49653711557F23DD38B8852F0CCC3F16C748"
+    },
+    {
+      "t": 20375,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "2F2AE51D6A3AB0B2E85682AC500C84DADE2E2BE9"
+    },
+    {
+      "t": 20439,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "3E5FAA8F3EAADFD63474AF4E22693B666074A68C"
+    },
+    {
+      "t": 20495,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "2216481741BBE3102A8977E0FB83E34DF45FDB9E"
+    },
+    {
+      "t": 20524,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "E72EF1459079818F3A222DC8E55B317EA4251AE9"
+    },
+    {
+      "t": 20588,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "F96C7AE1273AEF4C6380A9E482523DD2A8E269B6"
+    },
+    {
+      "t": 20645,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "1B72D9E5E5B1E96796EF3DF3A378C8B6BD2B0F9A"
+    },
+    {
+      "t": 20674,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "5160034CD18776ADB7277589458518C7ED3A20F1"
+    },
+    {
+      "t": 20735,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "5AB41EDE56456E19225CECA7D52E71D8A38D04BB"
+    },
+    {
+      "t": 20794,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "C0C9F2B3CA2F55C822B36550C0D261DB4CF3CBA0"
+    },
+    {
+      "t": 20825,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "C34D68F219BDA220B183A9C2059739BAE7E12EB3"
+    },
+    {
+      "t": 20890,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "43C3EB8CE94513E42A39FF403B15C8DC92FDE4FC"
+    },
+    {
+      "t": 20945,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "58302039DDF70C960E63045E1D0F4E9206B26370"
+    },
+    {
+      "t": 20974,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "682E70CFAE86B089B171EEA2CC617B1EDC9C03F5"
+    },
+    {
+      "t": 21039,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "56058C2AF9F1B0AFE3481EEA2B9D999221BACBB7"
+    },
+    {
+      "t": 21095,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "349FAC904AC93A011A8C3CDE6AC9DBB574E1377B"
+    },
+    {
+      "t": 21124,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "251672CA3C9753CEA8FA5A6373D74EEB8A7EB12A"
+    },
+    {
+      "t": 21185,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "74E7EC91F5C48071324AD795607B3FEAD06628E4"
+    },
+    {
+      "t": 21246,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "CE89B5DEB3A03322C2D7F893A3977DFA94B21A75"
+    },
+    {
+      "t": 21274,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "BD108A887CC58A9A7A8695C15296294FBF328F04"
+    },
+    {
+      "t": 21334,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "6F9CD5DEA51042A6508DCABAA1DC5E9E993E2459"
+    },
+    {
+      "t": 21395,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "E1B77F747CE6D3ABD53C18710565AC3BB39D3D2E"
+    },
+    {
+      "t": 21424,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "C5EDC22E48A5EC1F27C9246AC7777BAE527252B7"
+    },
+    {
+      "t": 21485,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "3090410980D8C34552A84297E3ED17022988F42C"
+    },
+    {
+      "t": 21544,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "79A05D26B5D0C7FD644F0068B89FD4BBDC8B9CAD"
+    },
+    {
+      "t": 21575,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "5CE19E185647DA28ABA4C3645D94E1F0FCB736E7"
+    },
+    {
+      "t": 21634,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "7C251A01F7050B6EC75113B50DA3E53F61DC8FA3"
+    },
+    {
+      "t": 21697,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "B5AC9BDFA789BF66CF8FE5245D7E2B4AEDED65D9"
+    },
+    {
+      "t": 21727,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "221AA1BC3351786B84FC1FEF68A90296CF3D0F5D"
+    },
+    {
+      "t": 21785,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "0CABD14E5AF14404DE067C4172174444C8B29EF4"
+    },
+    {
+      "t": 21845,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "448BD6D5048A06D4C3F8003D36FA94940372F2C6"
+    },
+    {
+      "t": 21875,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "DC97E84A95672C0434D768FB342CE23E3058A055"
+    },
+    {
+      "t": 21943,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "B10576010322B0F3F69856436C3B085D40CAD68B"
+    },
+    {
+      "t": 21995,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "17D8037BAFF584C9AC63394C5613B2919669DCE2"
+    },
+    {
+      "t": 22025,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "ECDF96CC99A4433746816FD8B865A82359F92216"
+    },
+    {
+      "t": 22085,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "4E42724D51C530C55D07B151C50E771958EF8C89"
+    },
+    {
+      "t": 22146,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "AE4E9E1E534BD1008F157665589ED6771F4CAF0D"
+    },
+    {
+      "t": 22174,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "0F2592CF890A26B2EB8C02A8D92A9F96D363BE5A"
+    },
+    {
+      "t": 22237,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "0C422533CEE73B643B7BAD83662CB57270A07007"
+    },
+    {
+      "t": 22295,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "896D438579E463D1F536FC978BCA2646C17C5253"
+    },
+    {
+      "t": 22327,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "43B68C22D952002EB66C77F3102F219B18461160"
+    },
+    {
+      "t": 22385,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "00C12A3150A17C7B4E1FA60C83D05A42673F88B0"
+    },
+    {
+      "t": 22445,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "D6C9244A4A562F782A02BDADACAC67D6E1972DA0"
+    },
+    {
+      "t": 22474,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "9BBAD808411D5EC93F65E71AD803A4C7FDB90BE0"
+    },
+    {
+      "t": 22535,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "57F7E76254B2A8CD3D820F07B181DA30A66FEB44"
+    },
+    {
+      "t": 22598,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "91E6E7AEDB9F5BC311BE00D54664382CAB87E508"
+    },
+    {
+      "t": 22627,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "3B157CF3AC52C32E48216B02F1245C3F6DC91248"
+    },
+    {
+      "t": 22686,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "4D9F2AA490E212F05DE68AA1B4BC9098B3D9D01F"
+    },
+    {
+      "t": 22746,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "D1C83753DCE14C57B7CB6A014124FACB1ED8919A"
+    },
+    {
+      "t": 22774,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "E8C0D6D0BC2506C5C675EF0273456C6717077E40"
+    },
+    {
+      "t": 22835,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "AE6DB9B3040AA5171BACEB5AC95A3F23BBA38D0C"
+    },
+    {
+      "t": 22895,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "21D7EDB6A3E9BE714E1752BC0C00E13AE753AEF7"
+    },
+    {
+      "t": 22925,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "E95D6F312C83C1FEB2427F14EAC28FD5F2706B8C"
+    },
+    {
+      "t": 22984,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "2D06821BF33D424466BFE1257C072A2FBE784D40"
+    },
+    {
+      "t": 23044,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "8EA7FC10E35D2B01AA0C145CF5523F276A915F07"
+    },
+    {
+      "t": 23074,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "CB3A68082AC848389D59AEBA081A4B1C52ABA67F"
+    },
+    {
+      "t": 23135,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "4DE440AD69750C66D4C0A8CB19190A7A242E872B"
+    },
+    {
+      "t": 23196,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "D2843BEDF909B8FB42ABAF141C620BCA0503AD90"
+    },
+    {
+      "t": 23224,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "CAD8B02AE1F765FFDA07ED105081F1DBF7CDC8BB"
+    },
+    {
+      "t": 23293,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "19985CDAB0566E2D16F02F6F81668E8C61830770"
+    },
+    {
+      "t": 23346,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "4DD97C50A4E5335F2230EB9DE8F6816750594A42"
+    },
+    {
+      "t": 23374,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "3E77E543A8672E63F9FD1A8CFE85570B9A038036"
+    },
+    {
+      "t": 23440,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "1348D87672AA438738BF0A966F446D621E684495"
+    },
+    {
+      "t": 23494,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "01EA38FB039A50F86F864EE40F7DDBDEED908DDB"
+    },
+    {
+      "t": 23524,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "879F2D8F4F8120901961137D4F8C46ED7AE285C8"
+    },
+    {
+      "t": 23585,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "9AA295F77DD9EF8BC84D4D183BC98A92646BB2B4"
+    },
+    {
+      "t": 23646,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "9A1B539B274EE733435F8202566B19ECEF5A0491"
+    },
+    {
+      "t": 23675,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "39C53CC5ED2B6EAE1F2FAD86C75287DCFD78160E"
+    },
+    {
+      "t": 23735,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "BDB3B245E2F465D9AB239779F880FB9BC012507E"
+    },
+    {
+      "t": 23806,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "6336B3DB2D636C454C5F6249311378EEF76A7606"
+    },
+    {
+      "t": 23824,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "26BACC3BEDC3552875DB29EC9FBCECD0ED3F113C"
+    },
+    {
+      "t": 23884,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "10DCA4C5548EEF57BE11DCFD6DC38E6F15932A78"
+    },
+    {
+      "t": 23946,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "D767D7B169F18F829090024222E40F7DF67A54CC"
+    },
+    {
+      "t": 23975,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "117F7008C90EC9931EC996AF1999C06E3D710A8F"
+    },
+    {
+      "t": 24035,
+      "op": "notify",
+      "service": "0783b03e-7735-b5a0-1760-a305d2795cb0",
+      "characteristic": "0783b03e-7735-b5a0-1760-a305d2795cb1",
+      "data": "8F47A349533F4D5C580DEBF5E34B9E136CEB3955"
+    }
+  ],
+  "events": []
+}

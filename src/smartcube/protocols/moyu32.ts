@@ -9,6 +9,8 @@ import { buildMoyu32MacCandidatesFromName } from '../attachment/mac-candidates';
 import { probeMoyu32Mac } from '../attachment/mac-probe-moyu32';
 import { SmartCubeProtocol, registerProtocol } from '../protocol';
 import { CubieCube, SOLVED_FACELET } from '../cubie-cube';
+import { parse2x2Facelets, to2x2Facelets } from '../facelets-2x2';
+import { decodeMoyuMoveHistory } from './moyu32-move-history';
 import { now, findCharacteristic, waitForAdvertisements } from '../ble-utils';
 import { writeGattCharacteristicValue } from '../../gatt-characteristic-write';
 
@@ -118,14 +120,16 @@ class Moyu32Encrypter {
     }
 }
 
-function parseFacelet(faceletBits: string): string {
+function parseFacelet(faceletBits: string, cubeSize: 2 | 3 = 3): string {
     const state: string[] = [];
     const faces = [2, 5, 0, 3, 4, 1]; // parse in order URFDLB instead of FBUDLR
     for (let i = 0; i < 6; i++) {
-        const face = faceletBits.slice(faces[i] * 24, 24 + faces[i] * 24);
-        for (let j = 0; j < 8; j++) {
+        const stickersPerFace = cubeSize === 2 ? 4 : 8;
+        const faceBits = stickersPerFace * 3;
+        const face = faceletBits.slice(faces[i] * faceBits, (faces[i] + 1) * faceBits);
+        for (let j = 0; j < stickersPerFace; j++) {
             state.push("FBUDLR".charAt(parseInt(face.slice(j * 3, 3 + j * 3), 2)));
-            if (j === 3) {
+            if (cubeSize === 3 && j === 3) {
                 state.push("FBUDLR".charAt(faces[i]));
             }
         }
@@ -161,11 +165,13 @@ class Moyu32Connection implements SmartCubeConnection {
     private prevMoveCnt = -1;
     private lastBatteryLevel: number | null = null;
     private forceNextBatteryEmission = false;
+    private readonly cubeSize: 2 | 3;
     private batteryInterval: ReturnType<typeof setInterval> | null = null;
 
     constructor(device: BluetoothDevice, mac: string) {
         this.device = device;
         this.deviceName = device.name || 'WCU_MY3';
+        this.cubeSize = this.deviceName.startsWith('WCU_MY22_') ? 2 : 3;
         this.deviceMAC = mac;
         this.events$ = new Subject<SmartCubeEvent>();
     }
@@ -246,9 +252,18 @@ class Moyu32Connection implements SmartCubeConnection {
                 gyroSupported: this.capabilities.gyroscope
             });
         } else if (msgType === 163) { // Facelets state
-            const seq = parseInt(bits.slice(152, 160), 2);
-            this.latestFacelet = parseFacelet(bits.slice(8, 152));
-            this.prevCubie.fromFacelet(this.latestFacelet);
+            // MY22 packs four stickers per face (72 bits), followed by the move counter.
+            const stateEnd = this.cubeSize === 2 ? 80 : 152;
+            const seq = parseInt(bits.slice(stateEnd, stateEnd + 8), 2);
+            const facelets = parseFacelet(bits.slice(8, stateEnd), this.cubeSize);
+            if (this.cubeSize === 2) {
+                const cubie = parse2x2Facelets(facelets);
+                if (!cubie) return;
+                this.prevCubie = cubie;
+            } else {
+                this.prevCubie.fromFacelet(facelets);
+            }
+            this.latestFacelet = facelets;
             this.moveCnt = seq;
             this.prevMoveCnt = seq;
 
@@ -260,24 +275,22 @@ class Moyu32Connection implements SmartCubeConnection {
         } else if (msgType === 164) { // Battery
             this.emitBatteryLevel(parseInt(bits.slice(8, 16), 2), timestamp);
         } else if (msgType === 165) { // Move
-            this.moveCnt = parseInt(bits.slice(88, 96), 2);
+            const history = decodeMoyuMoveHistory(bits, this.cubeSize);
+            if (!history) return;
+            this.moveCnt = history.sequence;
             if (this.moveCnt === this.prevMoveCnt || this.prevMoveCnt === -1) return;
 
-            const prevMoves: string[] = [];
-            const timeOffs: number[] = [];
-            let invalidMove = false;
-            for (let i = 0; i < 5; i++) {
-                const m = parseInt(bits.slice(96 + i * 5, 101 + i * 5), 2);
-                timeOffs[i] = parseInt(bits.slice(8 + i * 16, 24 + i * 16), 2);
-                prevMoves[i] = "FBUDLR".charAt(m >> 1) + " '".charAt(m & 1);
-                if (m >= 12) {
-                    prevMoves[i] = "U ";
-                    invalidMove = true;
-                }
-            }
+            // MY22: 0/1 = F/F', 2/3 = U/U', 4/5 = R/R'.
+            // Confirmed by a capture of the known sequence R R' U U' F F'.
+            const faces = this.cubeSize === 2 ? 'FUR' : 'FBUDLR';
+            const rawDelta = (this.moveCnt - this.prevMoveCnt) & 0xff;
+            const prevMoves = history.codes.map(m => faces.charAt(m >> 1) + " '".charAt(m & 1));
+            const timeOffs = history.timeOffsets;
+            const invalidMove = history.codes.some((m, i) =>
+                (this.cubeSize === 3 || i < Math.min(rawDelta, history.codes.length)) && m >= faces.length * 2
+            );
 
             if (!invalidMove) {
-                const rawDelta = (this.moveCnt - this.prevMoveCnt) & 0xff;
                 if (rawDelta > prevMoves.length) {
                     console.warn('[Moyu32] lost move events', rawDelta - prevMoves.length);
                 }
@@ -315,7 +328,7 @@ class Moyu32Connection implements SmartCubeConnection {
                     this.events$.next({
                         timestamp,
                         type: "FACELETS",
-                        facelets: this.curCubie.toFaceCube()
+                        facelets: this.cubeSize === 2 ? to2x2Facelets(this.curCubie) : this.curCubie.toFaceCube()
                     });
 
                     const tmp = this.curCubie;

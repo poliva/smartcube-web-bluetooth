@@ -10,17 +10,20 @@ import {
 import type { ConnectSmartCubeOptions, DeviceSelectionMode } from './attachment/types';
 import type { MacAddressProvider, SmartCubeConnection, SmartCubeEvent } from './types';
 import { CubieCube } from './cubie-cube';
+import { parse2x2Facelets } from './facelets-2x2';
 import { getRegisteredProtocols } from './protocol';
 
 /**
  * MoYu-style payloads always yield 54-char FACELETS from {U,F,R,B,L,D} even when AES decrypt is wrong;
- * event-type checks are insufficient. A legal 3×3 state requires consistent sticker counts + geometry.
+ * event-type checks are insufficient. Validate sticker counts and geometry for the reported size.
  */
 function isMacCacheProofEvent(e: SmartCubeEvent): boolean {
     if (e.type !== 'FACELETS') {
         return false;
     }
-    return new CubieCube().fromFacelet(e.facelets) !== -1;
+    return e.facelets.length === 24
+        ? parse2x2Facelets(e.facelets) !== null
+        : e.facelets.length === 54 && new CubieCube().fromFacelet(e.facelets) !== -1;
 }
 
 const MAC_VERIFY_TIMEOUT_MS = 10_000;

@@ -39,6 +39,25 @@ describe('buildMoyu32MacCandidatesFromName', () => {
     ]);
   });
 
+  it('prioritizes the observed Weipo V5 AI address for WCU_MY22_1037', () => {
+    expect(buildMoyu32MacCandidatesFromName('WCU_MY22_1037')).toEqual([
+      'CF:30:16:01:10:37',
+      'CF:30:16:00:10:37',
+      'CF:30:16:02:10:37',
+    ]);
+  });
+
+  it('normalizes MY22 suffixes and rejects malformed names', () => {
+    expect(buildMoyu32MacCandidatesFromName(' WCU_MY22_0a3f ')).toEqual([
+      'CF:30:16:01:0A:3F',
+      'CF:30:16:00:0A:3F',
+      'CF:30:16:02:0A:3F',
+    ]);
+    for (const name of ['WCU_MY22_103', 'WCU_MY22_10370', 'WCU_MY22_10ZZ']) {
+      expect(buildMoyu32MacCandidatesFromName(name)).toEqual([]);
+    }
+  });
+
   it('builds three candidates for WCU_MY33_XXXX with mid variants 02/01/00 (stable ordering)', () => {
     expect(buildMoyu32MacCandidatesFromName('WCU_MY33_1a2b')).toEqual([
       'CF:30:16:02:1A:2B',
