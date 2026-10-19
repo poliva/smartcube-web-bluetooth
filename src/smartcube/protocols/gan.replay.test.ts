@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { FIXTURES, loadFixture } from '../../test/fixtures';
 import { installMockBluetoothFromFixture } from '../../test/bluetooth-mock';
 import { serviceUuidsFromFixture } from '../../test/helpers/fixture-replay';
-import { collectEvents, fixtureExpectedLastFacelets, fixtureExpectedMoves, lastFacelets, moves } from '../../test/helpers/events';
+import { collectEvents, fixtureExpectedLastFacelets, fixtureExpectedMoves, lastFacelets, moves, normalizeEvent } from '../../test/helpers/events';
 import { ganProtocol } from './gan';
 import * as def from '../../gan-cube-definitions';
 import { GanGen4CubeEncrypter } from '../../gan-cube-encrypter';
@@ -12,6 +12,40 @@ import { hexToDataView } from '../../test/bluetooth-mock/hex';
 import { GanGen4ProtocolDriver } from '../../gan-cube-protocol';
 
 describe('ganProtocol.connect (capture replay)', () => {
+  it('replays GAN 16 UI battery probes, hardware, gyro, facelets and moves', async () => {
+    const fixture = await loadFixture(FIXTURES.gan16);
+    const { device, replayer } = installMockBluetoothFromFixture(fixture);
+    const conn = await ganProtocol.connect(device, async () => fixture.device.mac!);
+    const { events, unsubscribe } = collectEvents(conn);
+    try {
+      // Replay the recorded verification probe and subsequent manual probes.
+      for (const type of ['REQUEST_FACELETS', 'REQUEST_HARDWARE', 'REQUEST_HARDWARE',
+        'REQUEST_FACELETS', 'REQUEST_FACELETS', 'REQUEST_BATTERY', 'REQUEST_BATTERY'] as const) {
+        await conn.sendCommand({ type });
+      }
+      await replayer.drainNotificationsAsync();
+      // Notification decoding is asynchronous, including the last packet.
+      await Promise.resolve();
+
+      expect(conn.protocol.id).toBe('gan-gen4');
+      expect(moves(events)).toEqual(fixtureExpectedMoves(fixture));
+      expect(lastFacelets(events)).toBe(fixtureExpectedLastFacelets(fixture));
+      const metadata = (items: typeof events) => items
+        .filter(e => e.type === 'BATTERY' || e.type === 'HARDWARE')
+        .map(normalizeEvent);
+      expect(metadata(events)).toEqual(metadata(fixture.events.map(e => e.event)));
+      expect(events.filter(e => e.type === 'BATTERY')).toEqual([
+        expect.objectContaining({ batteryLevel: 100 }),
+        expect.objectContaining({ batteryLevel: 100 }),
+      ]);
+      expect(events.some(e => e.type === 'GYRO')).toBe(true);
+      expect(replayer.debugCursor().index).toBe(fixture.traffic.length);
+    } finally {
+      unsubscribe();
+      await conn.disconnect();
+    }
+  });
+
   it('decrypts and validates the first GAN gen4 notify payload using fixture MAC salt', async () => {
     const fixture = await loadFixture(FIXTURES.ganGen4);
     const firstNotify = fixture.traffic.find((e) => e.op === 'notify' && e.data)?.data;

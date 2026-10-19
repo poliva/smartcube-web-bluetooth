@@ -31,5 +31,6 @@ export const FIXTURES = {
   moyu32_my33_noGyro: 'fixture_WCU_MY33_AF9E_moyu32_2026-04-14T11-53-23.json',
   qiyi: 'fixture_QY-QYSC-S-A0E6________qiyi_2026-04-14T11-37-22.json',
   ganGen4: 'fixture_GANi4_A26E_gan-gen4_2026-04-14T11-38-02.json',
+  gan16: 'fixture_GAN16ui_FF89_gan-gen4_2026-10-19T17-09-34.json',
 } as const;
 
