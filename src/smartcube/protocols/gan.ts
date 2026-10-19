@@ -50,6 +50,7 @@ function ganEventToSmartEvent(event: GanCubeEvent): SmartCubeEvent {
             return {
                 timestamp: event.timestamp,
                 type: "MOVE",
+                serial: event.serial,
                 face: event.face,
                 direction: event.direction,
                 move: event.move,
@@ -60,6 +61,8 @@ function ganEventToSmartEvent(event: GanCubeEvent): SmartCubeEvent {
             return {
                 timestamp: event.timestamp,
                 type: "FACELETS",
+                source: "device",
+                serial: event.serial,
                 facelets: event.facelets
             };
         case "GYRO":

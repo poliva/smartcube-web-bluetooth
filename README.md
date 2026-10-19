@@ -100,6 +100,9 @@ existing commands. Connecting does not reset the cube's state.
 The firmware reports moves on the U/R/F axes: physical D/L/B turns share the
 opposite-face codes. Gyroscope data describes orientation and does not resolve
 these faces. Use U/R/F scrambles when working directly with reported moves.
+`FACELETS` includes `source: "device"` and the device `serial`. For physical
+sticker alignment, explicitly request facelets; accumulated axis aliases alone
+are not a reliable physical state, even modulo whole-cube rotation.
 
 ### MoYu Weipo V5 AI (2×2)
 
@@ -112,7 +115,14 @@ The firmware uses U/R/F axis codes for opposite-face turns too.
 The driver preserves the reported U/R/F notation and updates its 24-sticker
 state in that frame. Use U/R/F scrambles when comparing moves or intermediate
 states in a fixed face orientation. An explicit facelet request after the
-complete sequence reported solved, matching the computed state.
+complete sequence reported solved, matching the computed state. This does not
+validate intermediate physical layouts: a mixed sequence of opposite-face
+aliases can diverge from physical stickers even modulo whole-cube rotation.
+`FACELETS.source` distinguishes `"device"` snapshots from `"moves"` states
+computed by the driver; `serial` identifies the represented move counter.
+Use `REQUEST_FACELETS` and wait for `source: "device"` before physical alignment
+or accepting physical recovery. `REQUEST_RESET` assumes solved and is not a
+state refresh.
 
 ### GAN-specific Smart Cube API (legacy)
 

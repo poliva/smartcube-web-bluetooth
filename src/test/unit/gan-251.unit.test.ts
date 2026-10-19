@@ -95,7 +95,7 @@ describe('GAN 251 UI', () => {
                 if ('sendCubeCommand' in conn) await conn.sendCubeCommand({ type: 'REQUEST_FACELETS' });
                 else await conn.sendCommand({ type: 'REQUEST_FACELETS' });
                 await vi.waitFor(() => expect(events).toEqual(expect.arrayContaining([
-                    expect.objectContaining({ type: 'FACELETS', facelets: 'UUUURRRRFFFFDDDDLLLLBBBB' }),
+                    expect.objectContaining({ type: 'FACELETS', facelets: 'UUUURRRRFFFFDDDDLLLLBBBB', ...(legacy ? {} : { source: 'device', serial: 0 }) }),
                     expect.objectContaining({ type: 'MOVE', face: 1, direction: 0, move: 'R', cubeTimestamp: 1100 }),
                 ])));
                 expect(replayer.debugCursor().index).toBe(fixture.traffic.length);

@@ -3,6 +3,8 @@ import { Observable } from 'rxjs';
 
 type SmartCubeMoveEvent = {
     type: "MOVE";
+    /** Device move counter, when available. */
+    serial?: number;
     face: number;
     direction: number;
     move: string;
@@ -12,6 +14,9 @@ type SmartCubeMoveEvent = {
 
 type SmartCubeFaceletsEvent = {
     type: "FACELETS";
+    /** Device snapshot versus a state computed from move aliases. */
+    source?: "device" | "moves";
+    serial?: number;
     /** URFDLB face order, row-major: 24 characters for 2x2, 54 for 3x3. */
     facelets: string;
 };

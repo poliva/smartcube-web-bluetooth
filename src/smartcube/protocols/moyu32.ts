@@ -270,6 +270,8 @@ class Moyu32Connection implements SmartCubeConnection {
             this.events$.next({
                 timestamp,
                 type: "FACELETS",
+                source: "device",
+                serial: seq,
                 facelets: this.latestFacelet
             });
         } else if (msgType === 164) { // Battery
@@ -318,6 +320,7 @@ class Moyu32Connection implements SmartCubeConnection {
                     this.events$.next({
                         timestamp,
                         type: "MOVE",
+                        serial: (history.sequence - i) & 0xff,
                         face,
                         direction,
                         move: moveNotation,
@@ -328,6 +331,8 @@ class Moyu32Connection implements SmartCubeConnection {
                     this.events$.next({
                         timestamp,
                         type: "FACELETS",
+                        source: "moves",
+                        serial: (history.sequence - i) & 0xff,
                         facelets: this.cubeSize === 2 ? to2x2Facelets(this.curCubie) : this.curCubie.toFaceCube()
                     });
 

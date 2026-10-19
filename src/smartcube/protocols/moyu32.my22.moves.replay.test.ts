@@ -59,6 +59,10 @@ describe('MY22 real move captures', () => {
             if (event.type !== 'MOVE') return [];
             const next = events[i + 1];
             expect(next?.type).toBe('FACELETS');
+            if (next.type === 'FACELETS') {
+                expect(next.source).toBe('moves');
+                expect(next.serial).toBe(event.serial);
+            }
             return next.type === 'FACELETS' ? [next.facelets] : [];
         });
         expect(statesAfterMoves).toEqual([
@@ -67,7 +71,7 @@ describe('MY22 real move captures', () => {
             EXPECTED_STATES[4], SOLVED,
         ]);
         // The explicit state request at the end independently reports solved.
-        expect(events.filter(e => e.type === 'FACELETS').at(-1)?.facelets).toBe(SOLVED);
+        expect(events.filter(e => e.type === 'FACELETS').at(-1)).toMatchObject({ facelets: SOLVED, source: 'device' });
     });
 
     it('replays the user-confirmed R R\' U U\' F F\' with correct intermediate states', async () => {
