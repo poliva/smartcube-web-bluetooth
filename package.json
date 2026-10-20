@@ -13,7 +13,7 @@
   },
   "scripts": {
     "clean": "rimraf dist/",
-    "compile:bundles": "rollup -c",
+    "compile:bundles": "rollup -c --forceExit",
     "compile:types": "tsc -p tsconfig.types.json",
     "build": "npm run clean && npm run compile:types && npm run compile:bundles",
     "prepare": "npm run build",
