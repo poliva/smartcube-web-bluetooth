@@ -163,6 +163,9 @@ class Moyu32Connection implements SmartCubeConnection {
     private deviceTimeOffset = 0;
     private moveCnt = -1;
     private prevMoveCnt = -1;
+    // A requested MY22 snapshot may overtake its turn notification. Keep the
+    // state counter separate from the last turn emitted to subscribers.
+    private stateMoveCnt = -1;
     private lastBatteryLevel: number | null = null;
     private forceNextBatteryEmission = false;
     private readonly cubeSize: 2 | 3;
@@ -265,7 +268,8 @@ class Moyu32Connection implements SmartCubeConnection {
             }
             this.latestFacelet = facelets;
             this.moveCnt = seq;
-            this.prevMoveCnt = seq;
+            this.stateMoveCnt = seq;
+            if (this.cubeSize === 3 || this.prevMoveCnt === -1) this.prevMoveCnt = seq;
 
             this.events$.next({
                 timestamp,
@@ -286,6 +290,9 @@ class Moyu32Connection implements SmartCubeConnection {
             // Confirmed by a capture of the known sequence R R' U U' F F'.
             const faces = this.cubeSize === 2 ? 'FUR' : 'FBUDLR';
             const rawDelta = (this.moveCnt - this.prevMoveCnt) & 0xff;
+            // Ignore old/repeated telemetry rather than replaying almost a
+            // full counter cycle after an out-of-order notification.
+            if (this.cubeSize === 2 && rawDelta >= 128) return;
             const prevMoves = history.codes.map(m => faces.charAt(m >> 1) + " '".charAt(m & 1));
             const timeOffs = history.timeOffsets;
             const invalidMove = history.codes.some((m, i) =>
@@ -310,8 +317,16 @@ class Moyu32Connection implements SmartCubeConnection {
                 for (let i = moveDiff - 1; i >= 0; i--) {
                     const moveNotation = prevMoves[i].trim();
                     const m = "URFDLB".indexOf(moveNotation[0]) * 3 + " 2'".indexOf(moveNotation[1] || ' ');
-
-                    CubieCube.CubeMult(this.prevCubie, CubieCube.moveCube[m], this.curCubie);
+                    const serial = (history.sequence - i) & 0xff;
+                    const stateDelta = (serial - this.stateMoveCnt) & 0xff;
+                    const applyToState = this.cubeSize === 3 || (stateDelta > 0 && stateDelta < 128);
+                    if (applyToState) {
+                        CubieCube.CubeMult(this.prevCubie, CubieCube.moveCube[m], this.curCubie);
+                        const tmp = this.curCubie;
+                        this.curCubie = this.prevCubie;
+                        this.prevCubie = tmp;
+                        this.stateMoveCnt = serial;
+                    }
                     this.deviceTime += timeOffs[i];
 
                     const face = Math.floor(m / 3);
@@ -320,7 +335,7 @@ class Moyu32Connection implements SmartCubeConnection {
                     this.events$.next({
                         timestamp,
                         type: "MOVE",
-                        serial: (history.sequence - i) & 0xff,
+                        serial,
                         face,
                         direction,
                         move: moveNotation,
@@ -328,17 +343,18 @@ class Moyu32Connection implements SmartCubeConnection {
                         cubeTimestamp: this.deviceTime
                     });
 
-                    this.events$.next({
-                        timestamp,
-                        type: "FACELETS",
-                        source: "moves",
-                        serial: (history.sequence - i) & 0xff,
-                        facelets: this.cubeSize === 2 ? to2x2Facelets(this.curCubie) : this.curCubie.toFaceCube()
-                    });
-
-                    const tmp = this.curCubie;
-                    this.curCubie = this.prevCubie;
-                    this.prevCubie = tmp;
+                    // Older turns are still emitted with their timing, but a
+                    // newer snapshot must not have those turns applied twice
+                    // or be labelled with an older turn's counter.
+                    if (this.stateMoveCnt === serial) {
+                        this.events$.next({
+                            timestamp,
+                            type: "FACELETS",
+                            source: "moves",
+                            serial,
+                            facelets: this.cubeSize === 2 ? to2x2Facelets(this.prevCubie) : this.prevCubie.toFaceCube()
+                        });
+                    }
                 }
                 this.deviceTimeOffset = timestamp - this.deviceTime;
             }

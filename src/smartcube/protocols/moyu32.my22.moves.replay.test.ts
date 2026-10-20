@@ -46,6 +46,38 @@ async function replay(fixture: FixtureSession): Promise<SmartCubeEvent[]> {
 }
 
 describe('MY22 real move captures', () => {
+    it.each([false, true])('preserves delayed turn notifications when a requested snapshot already includes them (rollover %s)', async rollover => {
+        const fixture = await loadFixture(FIXTURES.moyu32_my22_known_moves);
+        const crypto = createMoyu32SessionCrypto(fixture.device.mac!);
+        if (rollover) {
+            let serial = 254;
+            fixture.traffic = fixture.traffic.map(entry => {
+                if (entry.op !== 'notify' || !entry.data) return entry;
+                const bytes = crypto.decrypt([...Buffer.from(entry.data, 'hex')]);
+                if (bytes[0] === 163) bytes[10] = 254;
+                else if (bytes[0] === 165) bytes[13] = ++serial & 0xff;
+                else return entry;
+                return { ...entry, data: Buffer.from(crypto.encrypt(bytes)).toString('hex') };
+            });
+        }
+        const stateEntry = fixture.traffic.find(entry => entry.op === 'notify' && entry.data &&
+            crypto.decrypt([...Buffer.from(entry.data, 'hex')])[0] === 163)!;
+        const state = crypto.decrypt([...Buffer.from(stateEntry.data!, 'hex')]);
+        let turns = 0;
+        fixture.traffic = fixture.traffic.flatMap(entry => {
+            if (entry.op !== 'notify' || !isTurn(fixture, entry.data) || ++turns !== 2) return [entry];
+            const turn = crypto.decrypt([...Buffer.from(entry.data!, 'hex')]);
+            // R R' is solved, so reuse the real solved state with the newer
+            // counter. Its response overtakes the second turn notification.
+            state[10] = turn[13];
+            return [{ ...entry, data: Buffer.from(crypto.encrypt(state)).toString('hex') }, entry];
+        });
+        const events = await replay(fixture);
+        expect(events.filter(e => e.type === 'MOVE').map(e => e.move)).toEqual(EXPECTED_MOVES);
+        const synthetic = events.flatMap(e => e.type === 'FACELETS' && e.source === 'moves' ? [e.facelets] : []);
+        expect(synthetic).toEqual(EXPECTED_STATES);
+    });
+
     it('preserves the reported U/R/F aliases for the physical D D\' L L\' B B\' capture', async () => {
         const fixture = await loadFixture(FIXTURES.moyu32_my22_opposite_moves);
         const events = await replay(fixture);
