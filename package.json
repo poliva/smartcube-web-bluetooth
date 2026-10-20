@@ -1,6 +1,6 @@
 {
   "name": "smartcube-web-bluetooth",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "Library for interaction with Smart Cubes (GAN, Giiker, GoCube, MoYu, QiYi) and GAN Smart Timers using Web Bluetooth API",
   "private": false,
   "types": "./dist/types/index.d.ts",
