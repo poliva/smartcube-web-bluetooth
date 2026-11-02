@@ -1,13 +1,25 @@
 import * as ganDef from '../../gan-cube-definitions';
 
 const STORAGE_PREFIX = 'smartcube-ble-mac:';
+const NAME_STORAGE_PREFIX = 'smartcube-ble-mac-name:';
+
+/** Fallback key for browsers where device.id is not stable across requestDevice() calls. */
+function nameStorageKey(device: BluetoothDevice): string | null {
+    const name = (device.name || '').trim();
+    return name ? NAME_STORAGE_PREFIX + name : null;
+}
 
 export function getCachedMacForDevice(device: BluetoothDevice): string | null {
     if (typeof localStorage === 'undefined') {
         return null;
     }
     try {
-        return localStorage.getItem(STORAGE_PREFIX + device.id);
+        const macById = localStorage.getItem(STORAGE_PREFIX + device.id);
+        if (macById) {
+            return macById;
+        }
+        const nameKey = nameStorageKey(device);
+        return nameKey ? localStorage.getItem(nameKey) : null;
     } catch {
         return null;
     }
@@ -19,6 +31,10 @@ export function setCachedMacForDevice(device: BluetoothDevice, mac: string): voi
     }
     try {
         localStorage.setItem(STORAGE_PREFIX + device.id, mac);
+        const nameKey = nameStorageKey(device);
+        if (nameKey) {
+            localStorage.setItem(nameKey, mac);
+        }
     } catch {
         /* ignore quota */
     }
@@ -30,6 +46,10 @@ export function removeCachedMacForDevice(device: BluetoothDevice): void {
     }
     try {
         localStorage.removeItem(STORAGE_PREFIX + device.id);
+        const nameKey = nameStorageKey(device);
+        if (nameKey) {
+            localStorage.removeItem(nameKey);
+        }
     } catch {
         /* ignore */
     }
